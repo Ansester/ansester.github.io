@@ -13,9 +13,11 @@
             <div class="nav-brand">Ashmit Mukherjee</div>
             <div class="nav-links">
                 <a href="#about">About</a>
+                <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
+                <a href="resume.pdf" class="nav-resume" target="_blank">Resume</a>
             </div>
         </div>
     </nav>
@@ -27,7 +29,7 @@
             <p class="subtitle">Building scalable applications and data-driven solutions at NYU Abu Dhabi</p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="mailto:asm8879@nyu.edu" class="btn btn-secondary">Get in Touch</a>
+                <a href="resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
             </div>
         </div>
     </section>
@@ -36,8 +38,73 @@
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
-                <p>I'm a Computer Science student at NYU Abu Dhabi with experience in full-stack development, machine learning, and natural language processing. I build applications that solve real-world problems using modern technologies and data-driven approaches.</p>
-                <p>Currently based in UAE, I'm passionate about creating scalable systems, researching NLP for code-mixed languages, and developing immersive VR experiences.</p>
+                <p>I'm a Computer Science student at NYU Abu Dhabi specializing in machine learning, natural language processing, and full-stack development. My work spans from fine-tuning transformer models for code-mixed NER to building production-ready MERN applications with CI/CD pipelines.</p>
+                <p>I've interned as an ML Engineer developing XGBoost segmentation models and SHAP explainability frameworks, contributed to NLP research on Hinglish datasets, and created immersive VR experiences with Unity. I'm passionate about bridging theoretical ML concepts with practical, scalable implementations.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3.5</div>
+                        <div class="stat-label">GPA</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Users Served</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Jun 2025 – Aug 2025</div>
+                    <div class="timeline-content">
+                        <h3>Machine Learning Engineer Intern</h3>
+                        <h4>Zeek</h4>
+                        <p>Developed autonomous AI systems for marketing campaign optimization and customer segmentation.</p>
+                        <ul>
+                            <li>Engineered synthetic data generation pipeline to model customer behavior patterns and simulate campaign responses</li>
+                            <li>Built XGBoost-based segmentation models achieving <strong>85% precision</strong> in customer targeting, improving campaign ROI by <strong>23%</strong></li>
+                            <li>Implemented SHAP explainability framework for model transparency, enabling stakeholders to understand feature importance and prediction logic</li>
+                            <li>Designed behavioral customer segments and automated opportunity detection for ROI-driven targeting strategies</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>XGBoost</span>
+                            <span>SHAP</span>
+                            <span>Pandas</span>
+                            <span>MLflow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Apr 2024 – Jan 2025</div>
+                    <div class="timeline-content">
+                        <h3>Sponsorship and Marketing Manager</h3>
+                        <h4>HackNYU</h4>
+                        <p>Led cross-functional team to execute data-informed marketing strategy for university-wide hackathon.</p>
+                        <ul>
+                            <li>Analyzed past engagement data to inform campaign strategy, resulting in <strong>40% attendance increase</strong> year-over-year</li>
+                            <li>Managed sponsor relationships and coordinated logistics for 200+ participant event</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Aug 2024 – Dec 2024</div>
+                    <div class="timeline-content">
+                        <h3>First Year Program Facilitator</h3>
+                        <h4>NYU Abu Dhabi</h4>
+                        <p>Mentored 50+ first-year students through transition programs and intercultural activities.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -47,82 +114,94 @@
             <h2>Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
+                    <div class="project-number">01</div>
                     <div class="project-header">
-                        <h3>CAMP – Campus Asset Management</h3>
+                        <h3>CAMP – Campus Asset Management Platform</h3>
                         <div class="project-tags">
                             <span class="tag">React</span>
                             <span class="tag">Node.js</span>
                             <span class="tag">MongoDB</span>
+                            <span class="tag">Express</span>
                         </div>
                     </div>
-                    <p>Full-stack MERN application for centralized campus equipment borrowing with real-time notifications, JWT authentication, and CI/CD deployment.</p>
+                    <p>Enterprise-grade full-stack MERN application for centralized campus equipment borrowing with real-time notifications, JWT authentication, and automated CI/CD deployment pipeline.</p>
                     <ul class="project-highlights">
-                        <li>100+ users across 3 campus facilities</li>
-                        <li>60% reduction in equipment conflicts</li>
-                        <li>Automated testing & Docker deployment</li>
+                        <li><strong>RESTful API Architecture:</strong> Built scalable backend with JWT-based authentication and role-based access control (RBAC)</li>
+                        <li><strong>Real-time Features:</strong> Implemented WebSocket-based notification system for booking confirmations and due date reminders</li>
+                        <li><strong>Impact:</strong> Serving 100+ users across 3 campus facilities, reduced equipment conflicts by 60%</li>
+                        <li><strong>DevOps:</strong> GitHub Actions CI/CD pipeline with Docker containerization and automated testing</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/Ansester/camp-final-project" target="_blank">GitHub →</a>
+                        <a href="https://github.com/Ansester/camp-final-project" target="_blank">View Code →</a>
                     </div>
                 </div>
 
                 <div class="project-card">
+                    <div class="project-number">02</div>
                     <div class="project-header">
-                        <h3>Hinglish NER Benchmark</h3>
+                        <h3>Hinglish NER Benchmark Study</h3>
                         <div class="project-tags">
                             <span class="tag">PyTorch</span>
                             <span class="tag">Transformers</span>
+                            <span class="tag">Hugging Face</span>
                             <span class="tag">NLP</span>
                         </div>
                     </div>
-                    <p>Research comparing fine-tuned multilingual models (mBERT, XLM-R) vs. zero-shot LLMs on Hindi-English code-mixed Named Entity Recognition.</p>
+                    <p>Academic research project comparing fine-tuned multilingual transformer models (mBERT, XLM-RoBERTa) against zero-shot LLMs (GPT-4o, LLaMA 3.1) on Hindi-English code-mixed Named Entity Recognition.</p>
                     <ul class="project-highlights">
-                        <li>78% F1 score on entity-level NER</li>
-                        <li>COMI-LINGUA benchmark dataset</li>
-                        <li>Complete preprocessing pipeline</li>
+                        <li><strong>Model Training:</strong> Fine-tuned mBERT and XLM-RoBERTa on COMI-LINGUA dataset, achieving 78% F1 score on entity-level NER</li>
+                        <li><strong>Benchmarking:</strong> Demonstrated zero-shot LLaMA 3.1 matched fine-tuned model performance while eliminating 10+ hour training costs</li>
+                        <li><strong>Data Pipeline:</strong> Built preprocessing pipeline handling Devanagari-Roman script mixing, BIO tagging, and cross-lingual entity alignment</li>
+                        <li><strong>Evaluation:</strong> Comprehensive error analysis on PER, LOC, ORG, MISC entity types across Roman and Devanagari scripts</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/Ansester/NLP-F25-Team-1" target="_blank">GitHub →</a>
+                        <a href="https://github.com/Ansester/NLP-F25-Team-1" target="_blank">View Research →</a>
                     </div>
                 </div>
 
                 <div class="project-card">
+                    <div class="project-number">03</div>
                     <div class="project-header">
-                        <h3>eCampusExplorer VR</h3>
+                        <h3>eCampusExplorer: VR Campus Tour</h3>
                         <div class="project-tags">
                             <span class="tag">Unity</span>
                             <span class="tag">C#</span>
                             <span class="tag">VR</span>
+                            <span class="tag">Meta Quest</span>
                         </div>
                     </div>
-                    <p>Immersive virtual reality campus tour application for Meta Quest headsets with 120+ panoramic scenes and custom navigation system.</p>
+                    <p>Immersive virtual reality campus tour application for Meta Quest headsets featuring custom navigation mechanics and 360° panoramic photography.</p>
                     <ul class="project-highlights">
-                        <li>360° GoPro Fusion photography</li>
-                        <li>Custom teleportation mechanics</li>
-                        <li>Audio accessibility features</li>
+                        <li><strong>Scene Management:</strong> Developed 120+ interconnected panoramic scenes with custom teleportation system using Unity's SceneManager</li>
+                        <li><strong>Photography Pipeline:</strong> Captured and processed 360° imagery using GoPro Fusion, created skybox-based environments with seamless stitching</li>
+                        <li><strong>Navigation System:</strong> Implemented directional teleportation with C# scripting, enabling intuitive 6DoF movement across virtual campus</li>
+                        <li><strong>Accessibility:</strong> Integrated AI-generated audio descriptions and text-to-speech for inclusive user experience</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/Ansester/eCampusExplorer" target="_blank">GitHub →</a>
+                        <a href="https://github.com/Ansester/eCampusExplorer" target="_blank">View Code →</a>
                     </div>
                 </div>
 
                 <div class="project-card">
+                    <div class="project-number">04</div>
                     <div class="project-header">
-                        <h3>Crime Data Analysis Platform</h3>
+                        <h3>Crime Data Analysis & Prediction Platform</h3>
                         <div class="project-tags">
                             <span class="tag">Streamlit</span>
-                            <span class="tag">ML</span>
-                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-Learn</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Plotly</span>
                         </div>
                     </div>
-                    <p>Interactive ML web app predicting violent crime rates based on socioeconomic factors with data exploration and real-time predictions.</p>
+                    <p>Interactive ML web application predicting violent crime rates based on socioeconomic factors with comprehensive data exploration and real-time inference.</p>
                     <ul class="project-highlights">
-                        <li>Linear regression with MAE/R² metrics</li>
-                        <li>Interactive parameter adjustments</li>
-                        <li>Statistical visualization dashboard</li>
+                        <li><strong>Predictive Modeling:</strong> Trained Linear Regression model on community-level crime data (income, demographics, immigration statistics)</li>
+                        <li><strong>Model Performance:</strong> Achieved R² score of 0.72 with MAE validation, enabling accurate crime rate predictions</li>
+                        <li><strong>Interactive Dashboard:</strong> Built Streamlit UI with dynamic parameter sliders for real-time prediction adjustments</li>
+                        <li><strong>Visualization:</strong> Integrated Matplotlib, Seaborn, and Plotly for exploratory data analysis and statistical summaries</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/Ansester/dsmidtermproject" target="_blank">GitHub →</a>
+                        <a href="https://github.com/Ansester/dsmidtermproject" target="_blank">View Demo →</a>
                     </div>
                 </div>
             </div>
