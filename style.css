@@ -204,6 +204,12 @@ section h2 {
 /* Experience Section */
 #experience {
     background: white;
+    padding-bottom: 6rem;
+}
+
+#projects {
+    background: var(--bg-light);
+    padding-top: 6rem;
 }
 
 .timeline {
