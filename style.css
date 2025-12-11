@@ -521,21 +521,30 @@ section h2 {
 
 .project-links {
     margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }
 
-.project-links a {
+.project-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(37, 99, 235, 0.08);
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 700;
-    transition: color 0.3s, transform 0.3s;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
+    border-radius: 0.65rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
-.project-links a:hover {
+.project-link-btn:hover {
+    background: rgba(14, 165, 233, 0.1);
     color: var(--secondary-color);
-    transform: translateX(4px);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
 }
 
 /* Skills Section */
@@ -639,6 +648,27 @@ footer p {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    nav .container {
+        flex-wrap: wrap;
+        gap: 0.75rem 1rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    #hero {
+        padding: 8rem 0 6rem;
+    }
+
+    section {
+        padding: 5rem 0;
+    }
+}
+
 @media (max-width: 768px) {
     #hero h1 {
         font-size: 2.4rem;
@@ -668,6 +698,25 @@ footer p {
         align-items: center;
     }
 
+    section {
+        padding: 4.5rem 0;
+    }
+
+    nav .container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.85rem 1rem;
+    }
+
+    .nav-links {
+        gap: 0.65rem;
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: 0.35rem 0.5rem;
+    }
+
     .stats {
         flex-direction: column;
         gap: 1.5rem;
@@ -691,8 +740,45 @@ footer p {
         grid-template-columns: 1fr;
     }
 
+    .project-card {
+        padding: 2rem;
+    }
+
     .contact-links {
         flex-direction: column;
         align-items: center;
+        width: 100%;
+    }
+
+    .contact-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 540px) {
+    body {
+        font-size: 0.98rem;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .project-link-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
