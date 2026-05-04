@@ -103,7 +103,7 @@ a {
     align-items: center;
     display: grid;
     gap: 56px;
-    grid-template-columns: minmax(0, 1fr) 380px;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 460px);
 }
 
 .eyebrow {
@@ -172,15 +172,21 @@ h3 {
     border: 1px solid var(--line);
     border-radius: 8px;
     box-shadow: var(--shadow);
-    padding: 24px;
+    padding: 20px;
+    width: 100%;
 }
 
 .profile-photo {
-    width: min(100%, 320px);
+    border: 2px solid var(--line);
+    border-radius: 50%;
+    display: block;
+    width: 100%;
+    max-width: 380px;
     height: auto;
     aspect-ratio: 1 / 1;
-    border-radius: 50%;
+    margin: 0 auto 24px;
     object-fit: cover;
+    object-position: center;
 }
 
 .profile-facts {
@@ -671,7 +677,7 @@ h3 {
 
     .profile-panel {
         margin: 0 auto;
-        max-width: 420px;
+        max-width: 460px;
     }
 
     .section-heading {
@@ -813,8 +819,7 @@ h3 {
     }
 
     .profile-photo {
-        height: 168px;
-        width: 168px;
+        max-width: 260px;
     }
 
     .profile-facts {
