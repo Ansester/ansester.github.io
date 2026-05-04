@@ -94,23 +94,6 @@ a {
     color: var(--accent);
 }
 
-.nav-links .nav-cv {
-    background: var(--ink);
-    color: var(--white);
-    margin-left: 6px;
-}
-
-.nav-links .nav-cv:hover,
-.nav-links .nav-cv:focus-visible {
-    background: var(--accent);
-    color: var(--white);
-}
-
-.nav-links .nav-cv[aria-current="page"] {
-    background: var(--accent);
-    color: var(--white);
-}
-
 .hero {
     border-bottom: 1px solid var(--line);
     padding: 96px 0 76px;
@@ -120,7 +103,7 @@ a {
     align-items: center;
     display: grid;
     gap: 56px;
-    grid-template-columns: minmax(0, 1fr) 360px;
+    grid-template-columns: minmax(0, 1fr) 380px;
 }
 
 .eyebrow {
@@ -171,73 +154,6 @@ h3 {
     max-width: 740px;
 }
 
-.hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 30px;
-}
-
-.button {
-    align-items: center;
-    border: 1px solid var(--ink);
-    border-radius: 6px;
-    display: inline-flex;
-    font-weight: 700;
-    justify-content: center;
-    min-height: 46px;
-    padding: 12px 18px;
-    text-decoration: none;
-}
-
-.button.primary {
-    background: var(--ink);
-    color: var(--white);
-}
-
-.button.primary:hover,
-.button.primary:focus-visible {
-    background: var(--accent);
-    border-color: var(--accent);
-    outline: none;
-}
-
-.button.secondary {
-    background: transparent;
-    color: var(--ink);
-}
-
-.button.secondary:hover,
-.button.secondary:focus-visible {
-    border-color: var(--accent);
-    color: var(--accent);
-    outline: none;
-}
-
-.button.primary.inverse {
-    background: var(--white);
-    border-color: var(--white);
-    color: var(--ink);
-}
-
-.button.primary.inverse:hover,
-.button.primary.inverse:focus-visible {
-    background: var(--wash);
-    border-color: var(--wash);
-    color: var(--ink);
-}
-
-.button.secondary.inverse {
-    border-color: rgba(255, 255, 255, 0.72);
-    color: var(--white);
-}
-
-.button.secondary.inverse:hover,
-.button.secondary.inverse:focus-visible {
-    border-color: var(--white);
-    color: var(--white);
-}
-
 .page-hero {
     border-bottom: 1px solid var(--line);
     padding: 86px 0 58px;
@@ -256,17 +172,17 @@ h3 {
     border: 1px solid var(--line);
     border-radius: 8px;
     box-shadow: var(--shadow);
-    padding: 22px;
+    padding: 24px;
 }
 
 .profile-photo {
     border-radius: 50%;
     display: block;
-    height: 164px;
-    margin: 0 auto 22px;
+    height: 220px;
+    margin: 0 auto 24px;
     object-fit: cover;
     object-position: center;
-    width: 164px;
+    width: 220px;
     border: 2px solid var(--line);
 }
 
@@ -524,48 +440,6 @@ h3 {
     outline: none;
 }
 
-.contact-section {
-    background: var(--ink);
-    color: var(--white);
-}
-
-.contact-grid {
-    align-items: start;
-    display: grid;
-    gap: 42px;
-    grid-template-columns: minmax(0, 1fr) 320px;
-}
-
-.contact-section h2,
-.contact-section .eyebrow {
-    color: var(--white);
-}
-
-.contact-section p {
-    color: rgba(255, 255, 255, 0.78);
-    max-width: 720px;
-}
-
-.contact-section .contact-cta {
-    color: var(--white);
-    font-size: 1.18rem;
-    font-weight: 600;
-    margin-bottom: 14px;
-}
-
-.contact-section .inline-link {
-    color: var(--white);
-    font-weight: 700;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-.contact-section .inline-link:hover,
-.contact-section .inline-link:focus-visible {
-    color: rgba(255, 255, 255, 0.85);
-    outline: none;
-}
-
 .profile-facts dd a {
     color: var(--accent);
     font-weight: 700;
@@ -722,41 +596,41 @@ h3 {
     width: 100%;
 }
 
-.contact-links {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 8px;
-    display: grid;
-    overflow: hidden;
-}
-
-.contact-links a {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-    color: var(--white);
-    font-weight: 700;
-    padding: 15px 16px;
-    text-decoration: none;
-    overflow-wrap: anywhere;
-}
-
-.contact-links a:last-child {
-    border-bottom: 0;
-}
-
-.contact-links a:hover,
-.contact-links a:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    outline: none;
-}
-
 .site-footer {
     background: #0f182c;
     color: rgba(255, 255, 255, 0.72);
     padding: 22px 0;
 }
 
+.site-footer .container {
+    align-items: center;
+    display: flex;
+    gap: 18px;
+    justify-content: space-between;
+}
+
 .site-footer p {
     font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.footer-links a {
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    outline: none;
 }
 
 @media (max-width: 900px) {
@@ -846,10 +720,6 @@ h3 {
         padding: 8px 8px;
     }
 
-    .nav-links .nav-cv {
-        margin-left: 0;
-    }
-
     h1 {
         font-size: clamp(2.4rem, 9vw, 3.6rem);
         margin-bottom: 14px;
@@ -875,16 +745,6 @@ h3 {
 
     .page-hero {
         padding: 40px 0 42px;
-    }
-
-    .hero-actions {
-        align-items: stretch;
-        flex-direction: column;
-        margin-top: 24px;
-    }
-
-    .button {
-        width: 100%;
     }
 
     .section {
@@ -956,20 +816,18 @@ h3 {
     }
 
     .profile-photo {
-        height: 132px;
-        width: 132px;
+        height: 168px;
+        width: 168px;
     }
 
     .profile-facts {
         gap: 12px;
     }
 
-    .contact-grid {
-        gap: 24px;
-    }
-
-    .contact-links a {
-        padding: 14px 14px;
+    .site-footer .container {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
