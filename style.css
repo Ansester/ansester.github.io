@@ -120,7 +120,7 @@ a {
     align-items: center;
     display: grid;
     gap: 56px;
-    grid-template-columns: minmax(0, 1fr) 340px;
+    grid-template-columns: minmax(0, 1fr) 360px;
 }
 
 .eyebrow {
@@ -256,17 +256,17 @@ h3 {
     border: 1px solid var(--line);
     border-radius: 8px;
     box-shadow: var(--shadow);
-    padding: 18px;
+    padding: 22px;
 }
 
 .profile-photo {
     border-radius: 50%;
     display: block;
-    height: 112px;
-    margin: 0 auto 18px;
+    height: 164px;
+    margin: 0 auto 22px;
     object-fit: cover;
     object-position: center;
-    width: 112px;
+    width: 164px;
     border: 2px solid var(--line);
 }
 
@@ -956,8 +956,8 @@ h3 {
     }
 
     .profile-photo {
-        height: 96px;
-        width: 96px;
+        height: 132px;
+        width: 132px;
     }
 
     .profile-facts {
