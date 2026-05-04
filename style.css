@@ -173,16 +173,18 @@ h3 {
     border-radius: 8px;
     box-shadow: var(--shadow);
     padding: 24px;
+    text-align: center;
 }
 
 .profile-photo {
-    width: min(100%, 600px);
+    width: 100%;
+    max-width: 280px;   /* control size here */
     height: auto;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     object-fit: cover;
+    margin: 0 auto 24px; 
 }
-
 .profile-facts {
     display: grid;
     gap: 14px;
@@ -813,8 +815,8 @@ h3 {
     }
 
     .profile-photo {
-        height: 168px;
-        width: 168px;
+        height: 200px;
+        width: 200px;
     }
 
     .profile-facts {
