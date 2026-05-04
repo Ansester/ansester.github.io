@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ashmit Mukherjee is a Computer Science undergraduate researcher at NYU Abu Dhabi working across NLP, machine learning, computational social science, and protein representation learning.">
-    <title>Ashmit Mukherjee | Academic Portfolio</title>
+    <meta name="description" content="Ashmit Mukherjee is an undergraduate researcher at NYU Abu Dhabi working in computational social science, human-AI interaction, scientific representation learning, and multilingual NLP.">
+    <title>Ashmit Mukherjee</title>
     <link rel="canonical" href="https://ashmitmukherjee.com/">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314213d'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='32' fill='%23fffdf8'%3EA%3C/text%3E%3C/svg%3E">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ashmitmukherjee.com/">
-    <meta property="og:title" content="Ashmit Mukherjee | Academic Portfolio">
-    <meta property="og:description" content="Undergraduate researcher at NYU Abu Dhabi working across NLP, machine learning, computational social science, and protein representation learning.">
+    <meta property="og:title" content="Ashmit Mukherjee">
+    <meta property="og:description" content="Undergraduate researcher at NYU Abu Dhabi working in computational social science and human-AI interaction.">
     <meta property="og:image" content="https://ashmitmukherjee.com/ashmit-profile.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ashmit Mukherjee | Academic Portfolio">
-    <meta name="twitter:description" content="Undergraduate researcher at NYU Abu Dhabi working across NLP, machine learning, computational social science, and protein representation learning.">
+    <meta name="twitter:title" content="Ashmit Mukherjee">
+    <meta name="twitter:description" content="Undergraduate researcher at NYU Abu Dhabi working in computational social science and human-AI interaction.">
     <meta name="twitter:image" content="https://ashmitmukherjee.com/ashmit-profile.jpg">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,9 +26,9 @@
         <nav class="container" aria-label="Primary navigation">
             <a class="nav-brand" href="#top">Ashmit Mukherjee</a>
             <div class="nav-links">
+                <a href="#about">About</a>
                 <a href="#research">Research</a>
-                <a href="#education">Education</a>
-                <a href="#experience">Experience</a>
+                <a href="#publications">Publications</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
                 <a href="cv.pdf" class="nav-cv" target="_blank" rel="noopener">CV</a>
@@ -37,269 +37,241 @@
     </header>
 
     <main id="top">
-        <section class="hero">
+        <section id="about" class="hero">
             <div class="container hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow">Undergraduate Researcher | NYU Abu Dhabi</p>
+                    <p class="eyebrow">NYU Abu Dhabi</p>
                     <h1>Ashmit Mukherjee</h1>
-                    <p class="lead">Computer Science student preparing for graduate research in machine learning, NLP, and computational social science.</p>
-                    <p class="hero-summary">My current work studies how models learn structure from social, linguistic, and biological data, with projects spanning multilingual code-mixed NLP, protein language models, and multi-agent simulations of Human-AI interaction.</p>
+                    <p class="lead">Undergraduate researcher in computational social science and human&ndash;AI interaction.</p>
+                    <p class="hero-summary">I am interested in how artificial agents reshape the dynamics of human cooperation, coordination, and norm formation. My current work models social dilemmas in mixed human&ndash;AI populations, asking when AI-mediated interventions stabilize cooperative equilibria and when they disrupt them.</p>
+                    <p class="hero-summary">I am drawn to questions where machine learning methods meet substantive social-scientific theory &mdash; where the goal is not only predictive accuracy but also mechanistic understanding of collective behavior. My broader research portfolio, spanning multilingual NLP and protein representation learning, reflects a methodological interest in how models learn meaningful structure from heterogeneous data, and how we evaluate that learning rigorously.</p>
                     <div class="hero-actions">
                         <a class="button primary" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
-                        <a class="button secondary" href="mailto:asm8879@nyu.edu">Email Me</a>
+                        <a class="button secondary" href="mailto:asm8879@nyu.edu">Email</a>
                     </div>
                 </div>
                 <aside class="profile-panel" aria-label="Profile summary">
                     <img class="profile-photo" src="ashmit-profile.jpg" alt="Ashmit Mukherjee" width="1400" height="788">
                     <dl class="profile-facts">
                         <div>
-                            <dt>Degree</dt>
-                            <dd>B.S. Computer Science, Minor in Economics</dd>
+                            <dt>Affiliation</dt>
+                            <dd>New York University Abu Dhabi</dd>
                         </div>
                         <div>
-                            <dt>Institution</dt>
-                            <dd>New York University Abu Dhabi</dd>
+                            <dt>Program</dt>
+                            <dd>B.S. Computer Science</dd>
                         </div>
                         <div>
                             <dt>Expected</dt>
                             <dd>May 2027</dd>
                         </div>
                         <div>
-                            <dt>GPA</dt>
-                            <dd>3.53 / 4.00</dd>
+                            <dt>Email</dt>
+                            <dd><a href="mailto:asm8879@nyu.edu">asm8879@nyu.edu</a></dd>
                         </div>
                     </dl>
                 </aside>
             </div>
         </section>
 
+        <section id="currently" class="section muted">
+            <div class="container two-column">
+                <div class="section-heading">
+                    <p class="eyebrow">Currently</p>
+                    <h2>What I&rsquo;m working on</h2>
+                </div>
+                <div class="content-stack">
+                    <ul class="detail-list currently-list">
+                        <li>Modeling AI-mediated interventions in human&ndash;AI social dilemmas as a Research Assistant at NYU Abu Dhabi.</li>
+                        <li>Working on <em>Bio-Informed LoRA</em>, a parameter-efficient fine-tuning method for protein language models (manuscript under review).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <section id="research" class="section">
             <div class="container two-column">
                 <div class="section-heading">
-                    <p class="eyebrow">Research Agenda</p>
-                    <h2>Research Interests</h2>
+                    <p class="eyebrow">Research</p>
+                    <h2>Research</h2>
                 </div>
                 <div class="content-stack">
-                    <p class="section-lead">I work at the intersection of natural language processing, machine learning, and computational social science. I am especially interested in evaluation, interpretability, and generalization across languages, domains, and tasks.</p>
-                    <div class="interest-grid">
-                        <article>
-                            <h3>Multilingual and Code-Mixed NLP</h3>
-                            <p>Benchmarking transformer and LLM behavior on Hindi-English named entity recognition, with attention to script variation, domain shift, and evaluation cost.</p>
-                        </article>
-                        <article>
-                            <h3>Scientific Language Models</h3>
-                            <p>Studying protein representation learning for membrane protein and signal peptide prediction using ESM, ProtBERT, LoRA, and biological priors.</p>
-                        </article>
-                        <article>
-                            <h3>Human-AI Social Dynamics</h3>
-                            <p>Building multi-agent simulations of coordination, norm emergence, and AI-mediated interventions under heterogeneous incentives.</p>
-                        </article>
+                    <p class="section-lead">My research sits at the intersection of machine learning and the empirical study of structured systems &mdash; both social and biological. I am most interested in questions where statistical learning methods need to engage with substantive domain theory: not just whether a model performs well, but what its representations reveal about the underlying system, and what counts as rigorous evidence of generalization. The three threads below organize my current work.</p>
+
+                    <article class="theme">
+                        <p class="theme-label">Theme 1</p>
+                        <h3>AI-Mediated Coordination in Multi-Party Social Dilemmas</h3>
+                        <p>How do artificial agents reshape cooperation in groups where responsibility is distributed across many actors? Most human&ndash;AI collaboration research studies one human interacting with one AI system, but many real-world coordination problems are multi-party: several actors share responsibility for a common outcome but each face private incentives to free-ride. I am interested in how AI agents &mdash; acting as advisors, coordinators, monitors, or commitment-support systems &mdash; can change the dynamics of cooperation in these settings.</p>
+                        <p>My current work develops a simulation-based research platform for this question, using global supply chains as the empirical domain. Supply chains combine several mechanisms in one environment: public-goods support for ethical production, strategic ignorance under noisy monitoring, threshold coordination on remediation, and exit-versus-engagement after misconduct. Together, these create a setting where individually rational behavior reliably produces collectively worse outcomes &mdash; and where AI intervention has plausible levers.</p>
+                        <div class="theme-project">
+                            <h4>AI-Mediated Coordination in Multi-Party Supply Chain Social Dilemmas</h4>
+                            <p class="theme-meta">Capstone Research Project, NYU Abu Dhabi &middot; 2026&ndash;Present &middot; Advisors: Prof. Hanan Salam, Prof. Benjamin Rosche</p>
+                            <p>Built a calibrated game-theoretic simulation modeling five buyers and three suppliers across repeated rounds, integrating public goods support, strategic ignorance, threshold remediation, exit-versus-engagement, and auditing into a single domain-grounded model. Buyer policy uses quantal response equilibrium with a Stage 2 belief solver that jointly fixes support, monitoring, and action probabilities. The simulation reproduces the target inefficient-equilibrium pattern (~22&ndash;26% welfare loss versus the cooperative ceiling, ~99% supplier defection rate, ~7% remediation rate) across a 12-cell calibration sweep with 50 simulations per cell. Backend has 101 passing tests with three completed audit rounds.</p>
+                            <p>The next phase turns this simulation into an experimental platform comparing the algorithmic baseline against human-participant sessions in which AI agents act as advisors, coordinators, monitors, or commitment-support systems. The longer-term question is whether AI mediation reduces welfare loss in genuinely multi-party settings &mdash; and through what mechanism: better information sharing, stronger commitments, clearer coordination, or redesigned incentives.</p>
+                            <p class="theme-aside">Capstone seminar paper available on request.</p>
+                        </div>
+                    </article>
+
+                    <article class="theme">
+                        <p class="theme-label">Theme 2</p>
+                        <h3>Representation Learning in Scientific Domains</h3>
+                        <p>Large pretrained models are increasingly used as general-purpose feature extractors in scientific domains, but their adaptation to specific downstream tasks remains expensive and often biologically uninformed. I am interested in how domain-specific structure &mdash; substitution patterns, physicochemical constraints, evolutionary priors &mdash; can be injected into parameter-efficient fine-tuning, and how we evaluate whether such inductive biases actually help.</p>
+                        <div class="theme-project">
+                            <h4>Bio-Informed LoRA for Signal Peptide Prediction</h4>
+                            <p class="theme-meta">Research Assistant, eBRAIN Lab, NYU Abu Dhabi &middot; 2026&ndash;Present</p>
+                            <p>Co-developed a parameter-efficient fine-tuning method that injects residue-level biological priors (BLOSUM62, hydrophobicity, Grantham distance) into LoRA adapters for ESM-2 protein language models. On SignalP6 benchmarks, BLOSUM62-guided LoRA matches or exceeds full fine-tuning across SP MCC, cleavage-site exactness, and residue-level F1 &mdash; while training only ~3.6% of parameters and using ~43% less peak GPU memory at the 3B-parameter scale.</p>
+                            <p>A key methodological finding: single-seed improvements frequently fail to replicate under multi-seed confirmation. We document a hyperparameter screen where the strongest single-seed alternatives both lost to the original baseline under three-seed validation, motivating multi-seed evaluation as a default in this setting.</p>
+                            <p class="theme-aside">Manuscript under review.</p>
+                        </div>
+                    </article>
+
+                    <article class="theme">
+                        <p class="theme-label">Theme 3</p>
+                        <h3>Multilingual and Code-Mixed NLP</h3>
+                        <p>Large multilingual models often perform well on resource-rich languages but degrade on code-mixed and low-resource settings &mdash; a problem with both practical and methodological dimensions. I am interested in how task-specific fine-tuning compares to large-model in-context approaches when the underlying linguistic structure is genuinely mixed.</p>
+                        <div class="theme-project">
+                            <h4>Hinglish Named Entity Recognition Benchmark</h4>
+                            <p class="theme-meta">Fall 2024</p>
+                            <p>Fine-tuned multilingual transformers (mBERT, XLM-RoBERTa) on the COMI-LINGUA dataset for Hindi&ndash;English code-mixed NER, achieving 78% entity-level F1 &mdash; outperforming zero-shot GPT-4o and LLaMA 3.1 baselines under controlled evaluation. Analyzed trade-offs between model scale, task-specific fine-tuning, generalization, and computational cost.</p>
+                            <p class="theme-links"><a href="https://github.com/Ansester/hinglish-ner-research" target="_blank" rel="noopener">GitHub &rarr;</a></p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="section muted">
+            <div class="container two-column">
+                <div class="section-heading">
+                    <p class="eyebrow">Publications</p>
+                    <h2>Publications</h2>
+                </div>
+                <div class="content-stack">
+                    <div class="pub-group">
+                        <h3>Under Review</h3>
+                        <ol class="pub-list">
+                            <li>
+                                <p class="pub-authors"><strong>A. Mukherjee</strong> (co-first author).</p>
+                                <p class="pub-title">&ldquo;Bio-Informed LoRA for Signal Peptide Prediction.&rdquo;</p>
+                                <p class="pub-venue">Under review at EMNLP 2026 Workshop, 2026.</p>
+                            </li>
+                        </ol>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="education" class="section muted">
+        <section id="projects" class="section">
             <div class="container two-column">
                 <div class="section-heading">
-                    <p class="eyebrow">Academic Preparation</p>
-                    <h2>Education</h2>
+                    <p class="eyebrow">Projects</p>
+                    <h2>Projects</h2>
                 </div>
                 <div class="content-stack">
-                    <article class="entry">
-                        <div class="entry-header">
+                    <p class="section-lead">Engineering-focused or smaller research artifacts.</p>
+                    <div class="project-list">
+                        <article class="project">
+                            <div class="project-meta">Fall 2025</div>
                             <div>
-                                <h3>New York University Abu Dhabi</h3>
-                                <p>B.S. in Computer Science, Minor in Economics</p>
+                                <h3>Data Science Salary Prediction Platform</h3>
+                                <p>Methodological study using AutoML (PyCaret) to benchmark 15+ regression models on 3,000+ data science job postings. SHAP-based feature attribution to study labor market dynamics. MLflow for experiment tracking.</p>
+                                <div class="tag-list compact">
+                                    <span>PyCaret</span>
+                                    <span>XGBoost</span>
+                                    <span>SHAP</span>
+                                    <span>MLflow</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Ansester/salary-prediction-ml" target="_blank" rel="noopener">GitHub &rarr;</a>
+                                </div>
                             </div>
-                            <span>Expected May 2027</span>
-                        </div>
-                        <ul class="detail-list">
-                            <li>GPA: 3.53 / 4.00</li>
-                            <li>Study away: NYU Paris and NYU College of Arts & Science, New York</li>
-                            <li>Coursework emphasizes NLP, data science, systems, networks, algorithms, statistics, economics, and social networks.</li>
-                        </ul>
-                    </article>
-                    <div class="coursework">
-                        <h3>Selected Coursework</h3>
-                        <div class="tag-list">
-                            <span>Natural Language Processing</span>
-                            <span>Research Seminar in Computer Science</span>
-                            <span>Principles of Data Science</span>
-                            <span>Operating Systems</span>
-                            <span>Computer Systems Organization</span>
-                            <span>Computer Networking</span>
-                            <span>Algorithms</span>
-                            <span>Data Structures</span>
-                            <span>Statistics for Social and Behavioral Sciences</span>
-                            <span>Social Networks</span>
-                            <span>Technology and Economic Development</span>
-                        </div>
+                        </article>
+
+                        <article class="project">
+                            <div class="project-meta">Spring 2025</div>
+                            <div>
+                                <h3>Crime Data Analysis and Prediction</h3>
+                                <p>Regression modeling of socioeconomic indicators and violent crime rates across 1,994 communities. Cross-validated R&sup2; = 0.85.</p>
+                                <div class="tag-list compact">
+                                    <span>Scikit-Learn</span>
+                                    <span>Pandas</span>
+                                    <span>Plotly</span>
+                                    <span>Streamlit</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Ansester/crime-prediction-ml" target="_blank" rel="noopener">GitHub &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project">
+                            <div class="project-meta">Fall 2024</div>
+                            <div>
+                                <h3>CAMP &mdash; Campus Asset Management Platform</h3>
+                                <p>Multi-user resource allocation and scheduling system with role-based access. RESTful APIs, Docker, GitHub Actions CI/CD.</p>
+                                <div class="tag-list compact">
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                    <span>Docker</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Ansester/camp-final-project" target="_blank" rel="noopener">GitHub &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project">
+                            <div class="project-meta">2024</div>
+                            <div>
+                                <h3>eCampusExplorer &mdash; VR Prototype</h3>
+                                <p>Virtual reality prototype for immersive campus exploration. Built as an exploratory project in spatial UX, scene composition, and 3D interaction design.</p>
+                                <div class="tag-list compact">
+                                    <span>Unity</span>
+                                    <span>C#</span>
+                                    <span>VR</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Ansester/eCampusExplorer" target="_blank" rel="noopener">GitHub &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project">
+                            <div class="project-meta">2024</div>
+                            <div>
+                                <h3>Iterated Prisoner&rsquo;s Dilemma Simulation</h3>
+                                <p>C++ command-line simulator for repeated prisoner&rsquo;s dilemma games with configurable player strategies including cooperation, defection, tit-for-tat, and random play.</p>
+                                <div class="tag-list compact">
+                                    <span>C++</span>
+                                    <span>Game Theory</span>
+                                    <span>Simulation</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Ansester/Game-Theory-Simulation" target="_blank" rel="noopener">GitHub &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project">
+                            <div class="project-meta">2024</div>
+                            <div>
+                                <h3>Fear Index Calculator</h3>
+                                <p>MATLAB signal-processing pipeline for GSR recordings, including filtering, normalization, feature extraction, and fear-index estimation from baseline and fear-condition data.</p>
+                                <div class="tag-list compact">
+                                    <span>MATLAB</span>
+                                    <span>GSR</span>
+                                    <span>Signal Processing</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Ansester/Fear-Index-Calculator" target="_blank" rel="noopener">GitHub &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="section">
-            <div class="container two-column">
-                <div class="section-heading">
-                    <p class="eyebrow">Research and Professional Work</p>
-                    <h2>Experience</h2>
-                </div>
-                <div class="timeline">
-                    <article class="entry">
-                        <div class="entry-header">
-                            <div>
-                                <h3>Research Assistant, Human-AI Collaboration</h3>
-                                <p>NYU Abu Dhabi</p>
-                            </div>
-                            <span>Feb 2026 - Present</span>
-                        </div>
-                        <ul class="detail-list">
-                            <li>Implementing multi-agent Human-AI social dilemma simulations in Python with NumPy and NetworkX.</li>
-                            <li>Modeling norm emergence and coordination dynamics using game-theoretic and sequential decision-making frameworks.</li>
-                            <li>Evaluating AI-mediated intervention mechanisms with PyTorch-based agents, reinforcement learning setups, and statistical experiments.</li>
-                        </ul>
-                    </article>
-
-                    <article class="entry">
-                        <div class="entry-header">
-                            <div>
-                                <h3>Research Assistant, eBRAIN Lab</h3>
-                                <p>NYU Abu Dhabi</p>
-                            </div>
-                            <span>Jan 2026 - Present</span>
-                        </div>
-                        <ul class="detail-list">
-                            <li>Researching scientific large language models and protein representation learning for membrane protein and signal peptide prediction.</li>
-                            <li>Benchmarking ESM and ProtBERT across supervised biological classification tasks with standardized datasets and metrics.</li>
-                            <li>Exploring LoRA-based fine-tuning to inject physicochemical priors such as hydrophobicity while reducing training cost.</li>
-                        </ul>
-                    </article>
-
-                    <article class="entry">
-                        <div class="entry-header">
-                            <div>
-                                <h3>Machine Learning Engineer Intern</h3>
-                                <p>Zeek</p>
-                            </div>
-                            <span>Jun 2025 - Aug 2025</span>
-                        </div>
-                        <ul class="detail-list">
-                            <li>Developed customer segmentation models on transaction data, identifying high-value cohorts that informed targeted retention campaigns.</li>
-                            <li>Applied SHAP-based interpretability to surface dominant behavioral features, enabling stakeholder-facing explanations of model decisions.</li>
-                            <li>Built synthetic data generation pipelines and tuned XGBoost classifiers to address class imbalance in churn prediction.</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section muted">
-            <div class="container two-column">
-                <div class="section-heading">
-                    <p class="eyebrow">Selected Work</p>
-                    <h2>Research Projects</h2>
-                </div>
-                <div class="project-list">
-                    <article class="project">
-                        <div class="project-meta">Fall 2024</div>
-                        <div>
-                            <h3>Hinglish Named Entity Recognition Benchmark</h3>
-                            <p>Fine-tuned mBERT and XLM-RoBERTa on the COMI-LINGUA dataset for Hindi-English code-mixed NER, reaching 78% entity-level F1 and comparing task-specific fine-tuning against zero-shot GPT-4o and LLaMA 3.1 baselines.</p>
-                            <div class="tag-list compact">
-                                <span>PyTorch</span>
-                                <span>Transformers</span>
-                                <span>Hugging Face</span>
-                                <span>NLP Evaluation</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Ansester" target="_blank" rel="noopener">GitHub &rarr;</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project">
-                        <div class="project-meta">Fall 2025</div>
-                        <div>
-                            <h3>Data Science Salary Prediction Platform</h3>
-                            <p>Conducted large-scale regression benchmarking across 15+ models on 3,000+ job postings, tracked experiments with MLflow, and used SHAP to analyze geography, firm size, and skill effects.</p>
-                            <div class="tag-list compact">
-                                <span>PyCaret</span>
-                                <span>XGBoost</span>
-                                <span>SHAP</span>
-                                <span>MLflow</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Ansester" target="_blank" rel="noopener">GitHub &rarr;</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project">
-                        <div class="project-meta">Spring 2025</div>
-                        <div>
-                            <h3>Crime Data Analysis and Prediction</h3>
-                            <p>Studied relationships between socioeconomic indicators and violent crime rates using regression modeling on 1,994 communities, cross-validation, and exploratory statistical analysis.</p>
-                            <div class="tag-list compact">
-                                <span>Scikit-Learn</span>
-                                <span>Pandas</span>
-                                <span>Plotly</span>
-                                <span>Streamlit</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Ansester" target="_blank" rel="noopener">GitHub &rarr;</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project">
-                        <div class="project-meta">Fall 2024</div>
-                        <div>
-                            <h3>CAMP - Campus Asset Management Platform</h3>
-                            <p>Designed and implemented a multi-user system for campus resource allocation and scheduling under shared constraints, including RESTful APIs, Docker workflows, and GitHub Actions CI/CD.</p>
-                            <div class="tag-list compact">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>MongoDB</span>
-                                <span>Docker</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Ansester" target="_blank" rel="noopener">GitHub &rarr;</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="service" class="section muted">
-            <div class="container two-column">
-                <div class="section-heading">
-                    <p class="eyebrow">Leadership</p>
-                    <h2>Service</h2>
-                </div>
-                <div class="content-stack">
-                    <article class="entry">
-                        <div class="entry-header">
-                            <div>
-                                <h3>Sponsorship and Marketing Manager</h3>
-                                <p>HackNYU</p>
-                            </div>
-                            <span>Apr 2024 - Jan 2025</span>
-                        </div>
-                        <p>Led data-informed outreach and sponsor coordination for a university-wide hackathon, contributing to a 40% year-over-year attendance increase.</p>
-                    </article>
-                    <article class="entry">
-                        <div class="entry-header">
-                            <div>
-                                <h3>First Year Program Facilitator</h3>
-                                <p>NYU Abu Dhabi</p>
-                            </div>
-                            <span>Aug 2024 - Dec 2024</span>
-                        </div>
-                        <p>Mentored first-year students through academic transition programming and intercultural community activities.</p>
-                    </article>
+                    <div class="project-links">
+                        <a href="https://github.com/Ansester" target="_blank" rel="noopener">More on GitHub &rarr;</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -308,9 +280,8 @@
             <div class="container contact-grid">
                 <div>
                     <p class="eyebrow">Contact</p>
-                    <h2>Let's collaborate</h2>
-                    <p class="contact-cta">Actively seeking graduate research opportunities for Fall 2027 in NLP, machine learning, computational social science, and model evaluation.</p>
-                    <p>If you are working on related problems, or have questions about any of the projects above, I would be glad to hear from you.</p>
+                    <h2>Get in touch</h2>
+                    <p>I am always happy to hear from researchers, students, and practitioners working on related problems. For research collaborations, PhD-related questions, or anything else, reach me at <a href="mailto:asm8879@nyu.edu" class="inline-link">asm8879@nyu.edu</a>.</p>
                 </div>
                 <div class="contact-links" aria-label="Contact links">
                     <a href="mailto:asm8879@nyu.edu">asm8879@nyu.edu</a>
