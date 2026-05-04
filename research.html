@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research profile of Ashmit Mukherjee: AI-mediated coordination, scientific representation learning, and multilingual NLP.">
+    <title>Research | Ashmit Mukherjee</title>
+    <link rel="canonical" href="https://ashmitmukherjee.com/research.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314213d'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='32' fill='%23fffdf8'%3EA%3C/text%3E%3C/svg%3E">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ashmitmukherjee.com/research.html">
+    <meta property="og:title" content="Research | Ashmit Mukherjee">
+    <meta property="og:description" content="Research across AI-mediated social dilemmas, scientific representation learning, and multilingual NLP.">
+    <meta property="og:image" content="https://ashmitmukherjee.com/ashmit-profile.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container" aria-label="Primary navigation">
+            <a class="nav-brand" href="index.html">Ashmit Mukherjee</a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="research.html" aria-current="page">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+                <a href="cv.pdf" class="nav-cv" target="_blank" rel="noopener">CV</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <p class="eyebrow">Research</p>
+                <h1>Research</h1>
+                <p class="lead">My research sits at the intersection of machine learning and the empirical study of structured systems &mdash; both social and biological.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container two-column">
+                <div class="section-heading">
+                    <p class="eyebrow">Agenda</p>
+                    <h2>Research themes</h2>
+                </div>
+                <div class="content-stack">
+                    <p class="section-lead">I am most interested in questions where statistical learning methods need to engage with substantive domain theory: not just whether a model performs well, but what its representations reveal about the underlying system, and what counts as rigorous evidence of generalization. The three threads below organize my current work.</p>
+
+                    <article class="theme">
+                        <p class="theme-label">Theme 1</p>
+                        <h3>AI-Mediated Coordination in Multi-Party Social Dilemmas</h3>
+                        <p>How do artificial agents reshape cooperation in groups where responsibility is distributed across many actors? Most human&ndash;AI collaboration research studies one human interacting with one AI system, but many real-world coordination problems are multi-party: several actors share responsibility for a common outcome but each face private incentives to free-ride. I am interested in how AI agents &mdash; acting as advisors, coordinators, monitors, or commitment-support systems &mdash; can change the dynamics of cooperation in these settings.</p>
+                        <p>My current work develops a simulation-based research platform for this question, using global supply chains as the empirical domain. Supply chains combine several mechanisms in one environment: public-goods support for ethical production, strategic ignorance under noisy monitoring, threshold coordination on remediation, and exit-versus-engagement after misconduct. Together, these create a setting where individually rational behavior reliably produces collectively worse outcomes &mdash; and where AI intervention has plausible levers.</p>
+                        <div class="theme-project">
+                            <h4>AI-Mediated Coordination in Multi-Party Supply Chain Social Dilemmas</h4>
+                            <p class="theme-meta">Capstone Research Project, NYU Abu Dhabi &middot; 2026&ndash;Present &middot; Advisors: Prof. Hanan Salam, Prof. Benjamin Rosche</p>
+                            <p>Built a calibrated game-theoretic simulation modeling five buyers and three suppliers across repeated rounds, integrating public goods support, strategic ignorance, threshold remediation, exit-versus-engagement, and auditing into a single domain-grounded model. Buyer policy uses quantal response equilibrium with a Stage 2 belief solver that jointly fixes support, monitoring, and action probabilities. The simulation reproduces the target inefficient-equilibrium pattern (~22&ndash;26% welfare loss versus the cooperative ceiling, ~99% supplier defection rate, ~7% remediation rate) across a 12-cell calibration sweep with 50 simulations per cell. Backend has 101 passing tests with three completed audit rounds.</p>
+                            <p>The next phase turns this simulation into an experimental platform comparing the algorithmic baseline against human-participant sessions in which AI agents act as advisors, coordinators, monitors, or commitment-support systems. The longer-term question is whether AI mediation reduces welfare loss in genuinely multi-party settings &mdash; and through what mechanism: better information sharing, stronger commitments, clearer coordination, or redesigned incentives.</p>
+                            <p class="theme-aside">Capstone seminar paper available on request.</p>
+                        </div>
+                    </article>
+
+                    <article class="theme">
+                        <p class="theme-label">Theme 2</p>
+                        <h3>Representation Learning in Scientific Domains</h3>
+                        <p>Large pretrained models are increasingly used as general-purpose feature extractors in scientific domains, but their adaptation to specific downstream tasks remains expensive and often biologically uninformed. I am interested in how domain-specific structure &mdash; substitution patterns, physicochemical constraints, evolutionary priors &mdash; can be injected into parameter-efficient fine-tuning, and how we evaluate whether such inductive biases actually help.</p>
+                        <div class="theme-project">
+                            <h4>Bio-Informed LoRA for Signal Peptide Prediction</h4>
+                            <p class="theme-meta">Research Assistant, eBRAIN Lab, NYU Abu Dhabi &middot; 2026&ndash;Present</p>
+                            <p>Co-developed a parameter-efficient fine-tuning method that injects residue-level biological priors (BLOSUM62, hydrophobicity, Grantham distance) into LoRA adapters for ESM-2 protein language models. On SignalP6 benchmarks, BLOSUM62-guided LoRA matches or exceeds full fine-tuning across SP MCC, cleavage-site exactness, and residue-level F1 &mdash; while training only ~3.6% of parameters and using ~43% less peak GPU memory at the 3B-parameter scale.</p>
+                            <p>A key methodological finding: single-seed improvements frequently fail to replicate under multi-seed confirmation. We document a hyperparameter screen where the strongest single-seed alternatives both lost to the original baseline under three-seed validation, motivating multi-seed evaluation as a default in this setting.</p>
+                            <p class="theme-aside">Manuscript under review.</p>
+                        </div>
+                    </article>
+
+                    <article class="theme">
+                        <p class="theme-label">Theme 3</p>
+                        <h3>Multilingual and Code-Mixed NLP</h3>
+                        <p>Large multilingual models often perform well on resource-rich languages but degrade on code-mixed and low-resource settings &mdash; a problem with both practical and methodological dimensions. I am interested in how task-specific fine-tuning compares to large-model in-context approaches when the underlying linguistic structure is genuinely mixed.</p>
+                        <div class="theme-project">
+                            <h4>Hinglish Named Entity Recognition Benchmark</h4>
+                            <p class="theme-meta">Fall 2024</p>
+                            <p>Fine-tuned multilingual transformers (mBERT, XLM-RoBERTa) on the COMI-LINGUA dataset for Hindi&ndash;English code-mixed NER, achieving 78% entity-level F1 &mdash; outperforming zero-shot GPT-4o and LLaMA 3.1 baselines under controlled evaluation. Analyzed trade-offs between model scale, task-specific fine-tuning, generalization, and computational cost.</p>
+                            <p class="theme-links"><a href="https://github.com/Ansester/hinglish-ner-research" target="_blank" rel="noopener">GitHub &rarr;</a></p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Ashmit Mukherjee.</p>
+        </div>
+    </footer>
+</body>
+</html>
