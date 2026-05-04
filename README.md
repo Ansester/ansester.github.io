@@ -1,26 +1,26 @@
-# Ashmit Mukherjee | Portfolio
+# Ashmit Mukherjee | Academic Portfolio
 
-Personal portfolio website showcasing projects, skills, and experience.
+Academic portfolio website for Ashmit Mukherjee, focused on research interests, education, selected projects, CV, and contact information.
 
-## 🚀 Live Site
+## Live Site
 
-Visit: [ansester.github.io](https://ansester.github.io)
+Visit: [ashmitmukherjee.com](https://ashmitmukherjee.com)
 
-## 📂 Projects Featured
+## Focus Areas
 
-- **CAMP** - Full-stack MERN campus asset management platform
-- **Hinglish NER Benchmark** - NLP research on code-mixed text
-- **eCampusExplorer** - VR campus tour application
-- **Crime Data Analysis** - ML prediction dashboard
+- Natural language processing and code-mixed language evaluation
+- Machine learning and model interpretability
+- Computational social science and Human-AI interaction
+- Scientific language models and protein representation learning
 
-## 🛠️ Built With
+## Built With
 
 - HTML5
-- CSS3 (Custom styling with Inter font)
+- CSS3
 - Responsive design
 - GitHub Pages
 
-## 📧 Contact
+## Contact
 
 - Email: asm8879@nyu.edu
 - LinkedIn: [ashmit-mukherjee](https://www.linkedin.com/in/ashmit-mukherjee/)
