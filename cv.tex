@@ -1,0 +1,169 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{latexsym}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\titleformat{\section}{\bfseries\large}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{5pt}
+
+\hypersetup{colorlinks=false}
+
+\pagestyle{empty}
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=1.4em}
+\setlength{\parskip}{0.3em}
+\setlength{\parindent}{0pt}
+\sloppy
+
+\begin{document}
+
+% ── Header ─────────────────────────────────────────────────────────────────
+\begin{center}
+    {\LARGE\bfseries Ashmit S Mukherjee} \\[0.3em]
+    {\small New York University Abu Dhabi} \\[0.2em]
+    \small
+    \href{mailto:asm8879@nyu.edu}{asm8879@nyu.edu} \;\textbar\;
+    \href{https://ashmitmukherjee.com}{ashmitmukherjee.com}
+\end{center}
+
+% ── Education ──────────────────────────────────────────────────────────────
+\section*{Education}
+
+\noindent\textbf{New York University Abu Dhabi} \hfill \textit{Expected May 2027} \\
+B.S.\ in Computer Science \\
+\textit{Studied at:} NYU Abu Dhabi; NYU Paris; NYU New York
+
+\smallskip
+\noindent\textbf{Relevant Coursework:} Natural Language Processing; Principles of Data Science;
+Statistics for Social \& Behavioral Sciences; Data Structures \& Algorithms;
+Computer Systems Architecture; Operating Systems
+
+% ── Research Interests ─────────────────────────────────────────────────────
+\section*{Research Interests}
+
+I work at the intersection of machine learning and computational social science,
+with a particular focus on how artificial agents reshape human cooperation,
+coordination, and norm formation. My current work models social dilemmas in
+mixed Human--AI populations, asking when AI-mediated interventions stabilize
+cooperative equilibria and when they disrupt them. My broader portfolio --- spanning
+multilingual and code-mixed NLP and protein representation learning --- reflects a
+methodological interest in how models learn meaningful structure from heterogeneous
+data, and how we evaluate that learning rigorously.
+
+% ── Publications ───────────────────────────────────────────────────────────
+\section*{Publications}
+
+\noindent
+\textbf{A. Mukherjee} (co-first author).
+``Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation.''
+\textit{Under review at EMNLP 2026 Workshop}, 2026.
+
+% ── Research Experience ────────────────────────────────────────────────────
+\section*{Research Experience}
+
+\noindent\textbf{Research Assistant --- Human-AI Collaboration}, NYU Abu Dhabi
+\hfill \textit{Feb 2026--Present}
+\begin{itemize}
+    \item Developing a simulation-based research platform for studying \textbf{AI-mediated
+          coordination in multi-party social dilemmas}, using global supply chains as the
+          domain (advisors: Prof.\ Hanan Salam, Prof.\ Benjamin Rosche).
+    \item Built a calibrated game-theoretic environment with five buyers and three suppliers
+          across repeated rounds, integrating public goods support, strategic ignorance,
+          threshold remediation, exit-versus-engagement, and auditing into a single domain-grounded
+          model; main buyer policy uses quantal response equilibrium with a Stage 2 belief solver.
+    \item Reproduced the target inefficient-equilibrium pattern (\textasciitilde 22--26\% welfare
+          loss vs cooperative ceiling, \textasciitilde 99\% supplier defection, \textasciitilde 7\%
+          remediation) across a 12-cell calibration sweep with 50 simulations per cell;
+          backend has 101 passing tests with three completed audit rounds.
+    \item Designing the next phase as an experimental platform comparing algorithmic baselines
+          against human-participant sessions in which AI agents act as advisors, coordinators,
+          monitors, or commitment-support systems.
+\end{itemize}
+
+\vspace{0.3em}
+\noindent\textbf{Research Assistant}, eBRAIN Lab --- NYU Abu Dhabi
+\hfill \textit{Jan 2026--Present}
+\begin{itemize}
+    \item Co-developed \textbf{Bio-LoRA}, a parameter-efficient fine-tuning method
+          that injects residue-level biological priors (BLOSUM62, hydrophobicity, Grantham)
+          into LoRA adapters for ESM-2 protein language models on signal peptide prediction.
+    \item Showed BLOSUM62-guided LoRA matches or exceeds full fine-tuning on SignalP6
+          benchmarks across SP MCC, cleavage-site exactness, and residue-level F1, while
+          training only \textasciitilde3.6\% of parameters and using \textasciitilde43\% less
+          peak GPU memory at the 3B-parameter scale.
+    \item Designed multi-seed evaluation protocols and a one-factor sensitivity screen
+          demonstrating that single-seed improvements frequently fail to replicate ---
+          a methodological finding central to the paper's contribution.
+    \item Manuscript under review (see Publications).
+\end{itemize}
+
+% ── Research Projects ──────────────────────────────────────────────────────
+\section*{Research Projects}
+
+\noindent\textbf{Hinglish Named Entity Recognition Benchmark} \hfill \textit{Fall 2024}
+\begin{itemize}
+    \item Fine-tuned multilingual transformer models (mBERT, XLM-RoBERTa) on the
+          COMI-LINGUA dataset for Hindi--English code-mixed NER.
+    \item Achieved 78\% entity-level F1, outperforming zero-shot GPT-4o and LLaMA 3.1
+          baselines under controlled evaluation.
+    \item Analyzed trade-offs between model scale, task-specific fine-tuning,
+          generalization, and computational cost.
+\end{itemize}
+
+\vspace{0.3em}
+\noindent\textbf{Data Science Salary Prediction Platform (Methodological Study)}
+\hfill \textit{Fall 2025}
+\begin{itemize}
+    \item Conducted large-scale regression benchmarking using AutoML (PyCaret) across
+          15+ models on a dataset of 3{,}000+ job postings.
+    \item Analyzed feature contributions using SHAP to study labor market dynamics
+          across geography, firm size, and skill requirements.
+    \item Tracked experiments with MLflow; reported MAE, RMSE, and $R^2$ across conditions.
+\end{itemize}
+
+\vspace{0.3em}
+\noindent\textbf{Crime Data Analysis and Prediction} \hfill \textit{Spring 2025}
+\begin{itemize}
+    \item Studied relationships between socioeconomic indicators and violent crime rates
+          using regression modeling on data from 1{,}994 communities.
+    \item Evaluated model performance via cross-validation ($R^2 = 0.85$) and exploratory
+          statistical analysis; built interactive visualizations for interpretability.
+\end{itemize}
+
+\vspace{0.3em}
+\noindent\textbf{CAMP --- Campus Asset Management Platform} \hfill \textit{Fall 2024}
+\begin{itemize}
+    \item Designed and implemented a multi-user system for resource allocation and
+          scheduling under shared constraints, with role-based access and conflict resolution.
+    \item Developed RESTful APIs and automated CI/CD pipelines using Docker and
+          GitHub Actions for reproducible deployment.
+\end{itemize}
+
+% ── Industry Experience ────────────────────────────────────────────────────
+\section*{Industry Experience}
+
+\noindent\textbf{Machine Learning Engineer Intern}, Zeek \hfill \textit{Jun--Aug 2025}
+\begin{itemize}
+    \item Developed and evaluated segmentation models on noisy real-world data,
+          iterating on preprocessing and model selection to meet production
+          reliability constraints.
+    \item Applied model interpretability techniques to study robustness and bias
+          sensitivity, informing decisions on which model variants to deploy.
+    \item Contributed to the team's evaluation workflow, integrating standardized
+          metrics and validation procedures into the model development cycle.
+\end{itemize}
+
+% ── Technical Skills ───────────────────────────────────────────────────────
+\section*{Technical Skills}
+
+\noindent
+\textbf{Languages:} Python, C++, C\#, JavaScript \\
+\textbf{ML \& NLP:} PyTorch, Transformers (Hugging Face), Scikit-Learn, XGBoost,
+  PyCaret, SHAP \\
+\textbf{Multi-Agent \& RL:} NumPy, NetworkX, reinforcement learning pipelines \\
+\textbf{Data Analysis:} Pandas, SciPy, Matplotlib, Seaborn, Plotly \\
+\textbf{Experiment Tracking:} MLflow, Git, Docker, GitHub Actions \\
+\textbf{Other:} Streamlit, MongoDB, \LaTeX
+
+\end{document}
