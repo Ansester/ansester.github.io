@@ -1,6 +1,6 @@
 # Ashmit Mukherjee | Academic Portfolio
 
-Academic portfolio website for Ashmit Mukherjee, focused on research interests, education, selected projects, CV, and contact information.
+Academic portfolio website for Ashmit Mukherjee, with research interests, education, projects, CV, and contact information.
 
 ## Live Site
 
