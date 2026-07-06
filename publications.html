@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Publications and manuscripts by Ashmit Mukherjee.">
     <title>Publications | Ashmit Mukherjee</title>
@@ -19,20 +20,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
         <nav class="container" aria-label="Primary navigation">
             <div class="nav-left">
                 <a class="nav-brand" href="index.html">Ashmit Mukherjee</a>
                 <div class="nav-icons">
                     <a href="mailto:asm8879@nyu.edu" aria-label="Email">
-                    <i data-feather="mail"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     </a>
-                    <a href="https://github.com/ansester" target="_blank" aria-label="GitHub">
-                    <i data-feather="github"></i>
+                    <a href="https://github.com/ansester" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" aria-label="LinkedIn">
-                    <i data-feather="linkedin"></i>
+                    <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                     </a>
+                    <button class="theme-toggle" type="button" aria-label="Switch theme" title="Toggle light/dark theme">
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </button>
                 </div>
             </div>
             <div class="nav-links">
@@ -40,25 +46,44 @@
                 <a href="research.html">Research</a>
                 <a href="publications.html" aria-current="page">Publications</a>
                 <a href="projects.html">Projects</a>
+                <a href="cv.html">CV</a>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="section muted">
+    <main id="main">
+        <section class="page-hero">
+            <div class="container">
+                <p class="eyebrow">Publications</p>
+                <h1>Publications &amp; Manuscripts</h1>
+                <p class="lead">I am early in my research career; this list reflects work submitted or in preparation rather than a long publication record.</p>
+            </div>
+        </section>
+
+        <section class="section">
             <div class="container two-column">
                 <div class="section-heading">
-                    <p class="eyebrow">Publications</p>
-                    <h2>Research Outputs</h2>
+                    <p class="eyebrow">Status</p>
+                    <h2>Current Work</h2>
                 </div>
                 <div class="content-stack">
                     <div class="pub-group">
-                        <h3>Under Review</h3>
+                        <h2>Under Review</h2>
                         <ol class="pub-list">
                             <li>
-                                <p class="pub-authors"><strong>A. Mukherjee</strong> (co-first author).</p>
-                                <p class="pub-title">&ldquo;Bio-Informed LoRA for Signal Peptide Prediction.&rdquo;</p>
-                                <p class="pub-venue">Under review at EMNLP 2026 Workshop, 2026.</p>
+                                <p class="pub-title">&ldquo;Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation.&rdquo;</p>
+                                <p class="pub-authors"><strong>A. Mukherjee</strong> (co-first author) and collaborators, eBRAIN Lab.</p>
+                                <p class="pub-venue">Submitted to an EMNLP 2026 workshop &middot; NYU Abu Dhabi &middot; Manuscript available on request.</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="pub-group">
+                        <h2>In Preparation</h2>
+                        <ol class="pub-list">
+                            <li>
+                                <p class="pub-title">&ldquo;AI-Mediated Coordination in Multi-Party Supply Chain Social Dilemmas.&rdquo;</p>
+                                <p class="pub-authors"><strong>A. Mukherjee</strong>.</p>
+                                <p class="pub-venue">Capstone research project, NYU Abu Dhabi &middot; advised by Prof. Hanan Salam and Prof. Benjamin Rosche &middot; Seminar manuscript available on request.</p>
                             </li>
                         </ol>
                     </div>
@@ -71,16 +96,17 @@
         <div class="container">
             <p>&copy; 2026 Ashmit Mukherjee.</p>
             <div class="footer-links">
-                <a href="mailto:asm8879@nyu.edu">Email me</a>
+                <a href="mailto:asm8879@nyu.edu">Email</a>
                 <a href="cv.html">CV</a>
-                <a href="https://www.linkedin.com/in/ashmit-mukherjee/">LinkedIn</a>
-                <a href="https://github.com/ansester">Github</a>
+                <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/ansester" target="_blank" rel="noopener">GitHub</a>
+                <!-- When you have these, uncomment and fill in the real URLs:
+                <a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
+                <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a>
+                -->
             </div>
         </div>
     </footer>
+    <script src="theme.js"></script>
 </body>
-<script src="https://unpkg.com/feather-icons"></script>
-<script>
-feather.replace();
-</script>
 </html>

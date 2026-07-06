@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Research profile of Ashmit Mukherjee: AI-mediated coordination, scientific representation learning, and multilingual NLP.">
     <title>Research | Ashmit Mukherjee</title>
@@ -19,20 +20,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
         <nav class="container" aria-label="Primary navigation">
             <div class="nav-left">
                 <a class="nav-brand" href="index.html">Ashmit Mukherjee</a>
                 <div class="nav-icons">
                     <a href="mailto:asm8879@nyu.edu" aria-label="Email">
-                    <i data-feather="mail"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     </a>
-                    <a href="https://github.com/ansester" target="_blank" aria-label="GitHub">
-                    <i data-feather="github"></i>
+                    <a href="https://github.com/ansester" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" aria-label="LinkedIn">
-                    <i data-feather="linkedin"></i>
+                    <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                     </a>
+                    <button class="theme-toggle" type="button" aria-label="Switch theme" title="Toggle light/dark theme">
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </button>
                 </div>
             </div>
             <div class="nav-links">
@@ -40,41 +46,59 @@
                 <a href="research.html" aria-current="page">Research</a>
                 <a href="publications.html">Publications</a>
                 <a href="projects.html">Projects</a>
+                <a href="cv.html">CV</a>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main id="main">
+        <section class="page-hero">
+            <div class="container">
+                <p class="eyebrow">Research Agenda</p>
+                <h1>Research</h1>
+                <p class="lead">My primary interest is <strong>cooperative AI</strong>: how artificial agents change cooperation and coordination in groups of people and machines. Around that center, I work on representation learning and evaluation in scientific and multilingual domains &mdash; partly because those problems are interesting in their own right, and partly because they sharpen a methodological commitment that runs through everything I do: not just whether a model performs well, but what counts as rigorous evidence that a result is real and will generalize.</p>
+            </div>
+        </section>
+
         <section class="section">
             <div class="container two-column">
                 <div class="section-heading">
-                    <p class="eyebrow">Research Agenda</p>
-                    <h2>Research Interests</h2>
+                    <p class="eyebrow">Overview</p>
+                    <h2>Focus Areas</h2>
                 </div>
                 <div class="content-stack">
-                    <p class="section-lead">My research sits at the intersection of machine learning and the empirical study of structured systems &mdash; both social and biological. I am most interested in questions where statistical learning methods need to engage with substantive domain theory: not just whether a model performs well, but what its representations reveal about the underlying system, and what counts as rigorous evidence of generalization. The three threads below organize my current work.</p>
                     <div class="interest-grid">
                         <article>
-                            <h3>Multilingual and Code-Mixed NLP</h3>
+                            <h3>Cooperative AI &amp; Human-AI Coordination</h3>
+                            <p>Multi-agent simulation and human-participant study of how AI agents reshape cooperation, norm emergence, and coordination under shared responsibility and heterogeneous incentives.</p>
+                        </article>
+                        <article>
+                            <h3>Scientific Representation Learning</h3>
+                            <p>Parameter-efficient adaptation of protein language models (ESM-2, LoRA, biological priors), with a focus on biologically informed and replication-aware evaluation.</p>
+                        </article>
+                        <article>
+                            <h3>Multilingual &amp; Code-Mixed NLP</h3>
                             <p>Benchmarking transformer and LLM behavior on Hindi-English named entity recognition, with attention to script variation, domain shift, and evaluation cost.</p>
                         </article>
-                        <article>
-                            <h3>Scientific Language Models</h3>
-                            <p>Studying protein representation learning for membrane protein and signal peptide prediction using ESM, ProtBERT, LoRA, and biological priors.</p>
-                        </article>
-                        <article>
-                            <h3>Human-AI Social Dynamics</h3>
-                            <p>Building multi-agent simulations of coordination, norm emergence, and AI-mediated interventions under heterogeneous incentives.</p>
-                        </article>
                     </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="section muted">
+            <div class="container two-column">
+                <div class="section-heading">
+                    <p class="eyebrow">In Depth</p>
+                    <h2>Themes</h2>
+                </div>
+                <div class="content-stack">
                     <article class="theme">
                         <p class="theme-label">Theme 1</p>
-                        <h3>AI-Mediated Coordination in Multi-Party Social Dilemmas</h3>
+                        <h2>AI-Mediated Coordination in Multi-Party Social Dilemmas</h2>
                         <p>How do artificial agents reshape cooperation in groups where responsibility is distributed across many actors? Most human&ndash;AI collaboration research studies one human interacting with one AI system, but many real-world coordination problems are multi-party: several actors share responsibility for a common outcome but each face private incentives to free-ride. I am interested in how AI agents &mdash; acting as advisors, coordinators, monitors, or commitment-support systems &mdash; can change the dynamics of cooperation in these settings.</p>
                         <p>My current work develops a simulation-based research platform for this question, using global supply chains as the empirical domain. Supply chains are a useful site for studying multi-party coordination because they combine several mechanisms in one environment: public-goods support for ethical production, strategic ignorance under noisy monitoring, threshold coordination on remediation, and exit-versus-engagement after misconduct. Together, these create a setting where individually rational behavior reliably produces collectively worse outcomes &mdash; and where AI intervention has plausible levers.</p>
                         <div class="theme-project">
-                            <h4>AI-Mediated Coordination in Multi-Party Supply Chain Social Dilemmas</h4>
+                            <h3>AI-Mediated Coordination in Multi-Party Supply Chain Social Dilemmas</h3>
                             <p class="theme-meta">Capstone Research Project, NYU Abu Dhabi &middot; 2026&ndash;Present &middot; Advisors: Prof. Hanan Salam, Prof. Benjamin Rosche</p>
                             <p>Built a calibrated game-theoretic simulation modeling five buyers and three suppliers across repeated rounds, integrating public goods support, strategic ignorance, threshold remediation, exit-versus-engagement, and auditing into a single domain-grounded model. Buyer policy uses quantal response equilibrium with a Stage 2 belief solver that jointly fixes support, monitoring, and action probabilities. The simulation reproduces the target inefficient-equilibrium pattern (~22&ndash;26% welfare loss versus the cooperative ceiling, ~99% supplier defection rate, ~7% remediation rate) across a 12-cell calibration sweep with 50 simulations per cell. Backend has 101 passing tests with three completed audit rounds.</p>
                             <p>The next phase turns this simulation into an experimental platform comparing the algorithmic baseline against human-participant sessions in which AI agents act as advisors, coordinators, monitors, or commitment-support systems. The longer-term question is whether AI mediation reduces welfare loss in genuinely multi-party settings &mdash; and through what mechanism: better information sharing, stronger commitments, clearer coordination, or redesigned incentives.</p>
@@ -84,24 +108,24 @@
 
                     <article class="theme">
                         <p class="theme-label">Theme 2</p>
-                        <h3>Representation Learning in Scientific Domains</h3>
-                        <p>Large pretrained models are increasingly used as general-purpose feature extractors in scientific domains, but their adaptation to specific downstream tasks remains expensive and often biologically uninformed. I am interested in how domain-specific structure &mdash; substitution patterns, physicochemical constraints, evolutionary priors &mdash; can be injected into parameter-efficient fine-tuning, and how we evaluate whether such inductive biases actually help.</p>
+                        <h2>Representation Learning in Scientific Domains</h2>
+                        <p>Large pretrained models are increasingly used as general-purpose feature extractors in scientific domains, but their adaptation to specific downstream tasks remains expensive and often biologically uninformed. I am interested in how domain-specific structure &mdash; substitution patterns, physicochemical constraints, evolutionary priors &mdash; can be injected into parameter-efficient fine-tuning, and how we evaluate whether such inductive biases actually help. This thread shares a backbone with my work on cooperation: a refusal to trust an improvement until it survives the right test &mdash; multi-seed evaluation here, a calibration robustness sweep there.</p>
                         <div class="theme-project">
-                            <h4>Bio-Informed LoRA for Signal Peptide Prediction</h4>
-                            <p class="theme-meta">Research Assistant, eBRAIN Lab, NYU Abu Dhabi &middot; 2026&ndash;Present</p>
-                            <p>Co-developed a parameter-efficient fine-tuning method that injects residue-level biological priors (BLOSUM62, hydrophobicity, Grantham distance) into LoRA adapters for ESM-2 protein language models. On SignalP6 benchmarks, BLOSUM62-guided LoRA matches or exceeds full fine-tuning across SP MCC, cleavage-site exactness, and residue-level F1 &mdash; while training only ~3.6% of parameters and using ~43% less peak GPU memory at the 3B-parameter scale.</p>
-                            <p>A key methodological finding: single-seed improvements frequently fail to replicate under multi-seed confirmation. We document a hyperparameter screen where the strongest single-seed alternatives both lost to the original baseline under three-seed validation, motivating multi-seed evaluation as a default in this setting.</p>
-                            <p class="theme-aside">Manuscript under review.</p>
+                            <h3>Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation</h3>
+                            <p class="theme-meta">Research Assistant, eBRAIN Lab, NYU Abu Dhabi &middot; 2026&ndash;Present &middot; Co-first author</p>
+                            <p>Co-developed Bio-LoRA, a parameter-efficient fine-tuning method that initializes LoRA adapters for ESM-2 protein language models with residue-level biological priors &mdash; evolutionary substitution matrices (BLOSUM62) and physicochemical distance (Grantham) &mdash; rather than a generic random subspace. Evaluated across three downstream tasks: mutation-effect prediction, protein-stability regression, and signal-peptide prediction.</p>
+                            <p>Bio-LoRA consistently improves over standard LoRA at no additional memory or runtime cost. On signal-peptide prediction at the 650M scale, BLOSUM62-guided Bio-LoRA exceeds both LoRA and full fine-tuning on MCC and cleavage-site exactness; on mutation-effect prediction it raises Spearman correlation from 0.434 to 0.453 over the LoRA baseline. Because the prior only shapes initialization, per-sample memory and runtime are identical to plain LoRA and several-fold lower than full fine-tuning.</p>
+                            <p class="theme-aside">Submitted to an EMNLP 2026 workshop. Manuscript available on request.</p>
                         </div>
                     </article>
 
                     <article class="theme">
                         <p class="theme-label">Theme 3</p>
-                        <h3>Multilingual and Code-Mixed NLP</h3>
+                        <h2>Multilingual and Code-Mixed NLP</h2>
                         <p>Large multilingual models often perform well on resource-rich languages but degrade on code-mixed and low-resource settings &mdash; a problem with both practical and methodological dimensions. I am interested in how task-specific fine-tuning compares to large-model in-context approaches when the underlying linguistic structure is genuinely mixed.</p>
                         <div class="theme-project">
-                            <h4>Hinglish Named Entity Recognition Benchmark</h4>
-                            <p class="theme-meta">Fall 2024</p>
+                            <h3>Hinglish Named Entity Recognition Benchmark</h3>
+                            <p class="theme-meta">Independent Research Project &middot; Fall 2024</p>
                             <p>Fine-tuned multilingual transformers (mBERT, XLM-RoBERTa) on the COMI-LINGUA dataset for Hindi&ndash;English code-mixed NER, achieving 78% entity-level F1 &mdash; outperforming zero-shot GPT-4o and LLaMA 3.1 baselines under controlled evaluation. Analyzed trade-offs between model scale, task-specific fine-tuning, generalization, and computational cost.</p>
                             <p class="theme-links"><a href="https://github.com/Ansester/hinglish-ner-research" target="_blank" rel="noopener">GitHub &rarr;</a></p>
                         </div>
@@ -115,16 +139,17 @@
         <div class="container">
             <p>&copy; 2026 Ashmit Mukherjee.</p>
             <div class="footer-links">
-                <a href="mailto:asm8879@nyu.edu">Email me</a>
+                <a href="mailto:asm8879@nyu.edu">Email</a>
                 <a href="cv.html">CV</a>
-                <a href="https://www.linkedin.com/in/ashmit-mukherjee/">LinkedIn</a>
-                <a href="https://github.com/ansester">Github</a>
+                <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/ansester" target="_blank" rel="noopener">GitHub</a>
+                <!-- When you have these, uncomment and fill in the real URLs:
+                <a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
+                <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a>
+                -->
             </div>
         </div>
     </footer>
+    <script src="theme.js"></script>
 </body>
-<script src="https://unpkg.com/feather-icons"></script>
-<script>
-feather.replace();
-</script>
 </html>
