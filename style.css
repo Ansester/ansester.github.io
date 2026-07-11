@@ -1,4 +1,4 @@
-/* Ashmit Mukherjee — quiet editorial portfolio */
+/* Ashmit Mukherjee: academic portfolio */
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--paper:#f7f5f0;--surface:#fbfaf7;--ink:#171713;--text:#3e3d38;--muted:#747169;--line:#d8d4ca;--accent:#1e5547;--accent-hover:#123e34;--accent-soft:#e7eeea;--footer-bg:#191a17;--footer-text:#aaa9a2;--footer-link:#f3f1eb;--serif:"Source Serif 4",Georgia,serif;--sans:"Inter",system-ui,sans-serif}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#171815;--surface:#1d1f1b;--ink:#f1eee5;--text:#c8c5bb;--muted:#97958d;--line:#343630;--accent:#8db9a8;--accent-hover:#b0d1c3;--accent-soft:#23352e;--footer-bg:#10110f;--footer-text:#92938c;--footer-link:#eeece4}}

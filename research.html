@@ -56,7 +56,7 @@
             <div class="container">
                 <p class="eyebrow">Questions, methods, and current work</p>
                 <h1>Research</h1>
-                <p class="lead">I want to understand when AI helps groups cooperate—and when it merely adds another strategic actor to an already difficult problem.</p>
+                <p class="lead">I study how AI agents affect cooperation in groups with shared outcomes, incomplete information, and conflicting individual incentives.</p>
             </div>
         </section>
 
@@ -64,7 +64,7 @@
             <div class="container two-column">
                 <div class="section-heading">
                     <p class="eyebrow">Overview</p>
-                    <h2>Three connected threads</h2>
+                    <h2>Research areas</h2>
                 </div>
                 <div class="content-stack">
                     <div class="interest-grid">
@@ -95,13 +95,13 @@
                     <article class="theme">
                         <p class="theme-label">Theme 1</p>
                         <h2>AI-Mediated Coordination in Multi-Party Social Dilemmas</h2>
-                        <p>Most human-AI collaboration research studies one person working with one system. I focus on the harder case: several actors share responsibility for an outcome, each has incomplete information, and each can benefit by letting someone else bear the cost.</p>
+                        <p>Much of the human-AI collaboration literature studies one person working with one system. My work considers settings with several actors who share responsibility for an outcome, have incomplete information, and face incentives to shift costs to other group members.</p>
                         <p>Global supply chains make these tensions concrete. Buyers must decide whether to fund safer production, investigate warning signs, remediate harm, or leave a supplier. My simulation brings those choices into one repeated game so I can isolate where cooperation fails and test specific roles for AI intervention.</p>
                         <div class="theme-project">
                             <h3>AI-Mediated Coordination in Multi-Party Supply Chain Social Dilemmas</h3>
-                            <p class="theme-meta">Capstone Research Project, NYU Abu Dhabi &middot; 2026&ndash;Present &middot; Advisors: Prof. Hanan Salam, Prof. Benjamin Rosche</p>
-                            <p>I built a calibrated environment with five buyers and three suppliers interacting over repeated rounds. Buyer behavior follows a quantal-response model with a belief solver linking support, monitoring, and action choices. Across a 12-condition sweep, the baseline reproduces the intended inefficient equilibrium: roughly 22–26% welfare loss relative to the cooperative ceiling, near-universal supplier defection, and little remediation.</p>
-                            <p>Next, I am turning the simulation into an experimental platform. The central comparison is between the algorithmic baseline and human sessions in which AI serves as an advisor, coordinator, monitor, or commitment-support system. The aim is not only to ask whether AI improves welfare, but to identify why.</p>
+                            <p class="theme-meta">Capstone Research Project, NYU Abu Dhabi &middot; 2026 to Present &middot; Advisors: Prof. Hanan Salam, Prof. Benjamin Rosche</p>
+                            <p>I built a calibrated environment with five buyers and three suppliers interacting over repeated rounds. Buyer behavior follows a quantal-response model with a belief solver linking support, monitoring, and action choices. Across a 12-condition sweep, the baseline produces roughly 22 to 26% welfare loss relative to the cooperative ceiling, near-universal supplier defection, and little remediation.</p>
+                            <p>The next stage will use the simulation as an experimental platform. I plan to compare the algorithmic baseline with human sessions in which AI serves as an advisor, coordinator, monitor, or commitment-support system. This design will test both whether an intervention improves welfare and which mechanism accounts for any change.</p>
                             <p class="theme-aside">Capstone seminar paper available on request.</p>
                         </div>
                     </article>
@@ -109,12 +109,12 @@
                     <article class="theme">
                         <p class="theme-label">Theme 2</p>
                         <h2>Representation Learning in Scientific Domains</h2>
-                        <p>Protein language models learn from sequence at enormous scale, but adapting them can be expensive and biologically agnostic. I study whether known biological structure—such as evolutionary substitution patterns and physicochemical distance—can provide a better starting point for efficient fine-tuning.</p>
+                        <p>Protein language models learn from large sequence corpora, but adapting them can be expensive and may not use established biological knowledge. I study whether evolutionary substitution patterns and physicochemical distances provide useful initializations for parameter-efficient fine-tuning.</p>
                         <div class="theme-project">
                             <h3>Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation</h3>
-                            <p class="theme-meta">Research Assistant, eBRAIN Lab, NYU Abu Dhabi &middot; 2026&ndash;Present &middot; Co-first author</p>
+                            <p class="theme-meta">Research Assistant, eBRAIN Lab, NYU Abu Dhabi &middot; 2026 to Present &middot; Co-first author</p>
                             <p>I co-developed Bio-LoRA, which initializes ESM-2 LoRA adapters with BLOSUM62 or Grantham priors instead of a generic random subspace. We evaluate the method on mutation effects, protein stability, and signal peptides.</p>
-                            <p>Bio-LoRA improves on standard LoRA without changing inference cost. At the 650M scale, the BLOSUM62 variant outperforms both LoRA and full fine-tuning on signal-peptide MCC and cleavage-site exactness; on mutation effects, it improves Spearman correlation from 0.434 to 0.453. Multi-seed experiments remain central because several apparent single-run gains do not replicate.</p>
+                            <p>Bio-LoRA improves on standard LoRA without changing inference cost. At the 650M scale, the BLOSUM62 variant outperforms both LoRA and full fine-tuning on signal-peptide MCC and cleavage-site exactness. On mutation effects, it improves Spearman correlation from 0.434 to 0.453. Multi-seed experiments are necessary because several apparent single-run gains do not replicate.</p>
                             <p class="theme-aside">Submitted to an EMNLP 2026 workshop. Manuscript available on request.</p>
                         </div>
                     </article>
