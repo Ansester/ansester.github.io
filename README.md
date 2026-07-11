@@ -8,10 +8,10 @@ Visit: [ashmitmukherjee.com](https://ashmitmukherjee.com)
 
 ## Focus Areas
 
-- Natural language processing and code-mixed language evaluation
-- Machine learning and model interpretability
-- Computational social science and Human-AI interaction
-- Scientific language models and protein representation learning
+- Human-AI collaboration and collective action
+- Computational social science and online experiments
+- Parameter-efficient protein language models
+- Multilingual and code-mixed NLP evaluation
 
 ## Built With
 
