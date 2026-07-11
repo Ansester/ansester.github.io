@@ -1,6 +1,6 @@
-# Ashmit Mukherjee | Academic Portfolio
+# Ashmit Mukherjee | Research and Engineering Portfolio
 
-Academic portfolio website for Ashmit Mukherjee, with research interests, education, projects, CV, and contact information.
+Research and engineering portfolio for Ashmit Mukherjee, with applied AI work, publications, projects, CV, and contact information.
 
 ## Live Site
 
@@ -8,10 +8,10 @@ Visit: [ashmitmukherjee.com](https://ashmitmukherjee.com)
 
 ## Focus Areas
 
-- Human-AI collaboration and collective action
-- Computational social science and online experiments
-- Parameter-efficient protein language models
-- Multilingual and code-mixed NLP evaluation
+- Data-intensive applied AI research
+- Computational experimentation and statistical analysis
+- Efficient model training and evaluation
+- Human and social applications of AI
 
 ## Built With
 
