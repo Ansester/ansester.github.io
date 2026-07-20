@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Applied AI, data analysis, model evaluation, and software projects by Ashmit Mukherjee.">
+    <meta name="description" content="Selected applied AI, model evaluation, data analysis, and software projects by Ashmit Mukherjee, with code and research artifacts.">
     <title>Projects | Ashmit Mukherjee</title>
     <link rel="canonical" href="https://ashmitmukherjee.com/projects.html">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314213d'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='32' fill='%23fffdf8'%3EA%3C/text%3E%3C/svg%3E">
@@ -11,8 +11,11 @@
     <meta property="og:url" content="https://ashmitmukherjee.com/projects.html">
     <meta property="og:title" content="Projects | Ashmit Mukherjee">
     <meta property="og:description" content="Research and engineering projects by Ashmit Mukherjee.">
-    <meta property="og:image" content="https://ashmitmukherjee.com/ashmit-profile.jpg">
+    <meta property="og:image" content="https://ashmitmukherjee.com/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://ashmitmukherjee.com/social-card.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +54,7 @@
             <div class="container">
                 <p class="eyebrow">Selected Applied Work</p>
                 <h1>Projects</h1>
-                <p class="lead">Projects spanning data preparation, statistical analysis, model training, reproducible evaluation, and the development of usable computational systems.</p>
+                <p class="lead">Selected projects with the questions, methods, and artifacts behind my work in model evaluation, data analysis, and usable computational systems.</p>
             </div>
         </section>
 
@@ -67,7 +70,12 @@
                             <div class="project-meta">Fall 2024</div>
                             <div>
                                 <h3>Hinglish Named Entity Recognition Benchmark</h3>
-                                <p>Prepared the COMI-LINGUA data for entity-level evaluation, fine-tuned mBERT and XLM-RoBERTa, and compared them with zero-shot GPT-4o and LLaMA 3.1 under a common protocol. The best fine-tuned model achieved 78% entity-level F1. The repository includes data preparation, evaluation, and error-slice analysis code.</p>
+                                <p>Prepared COMI-LINGUA for entity-level evaluation, fine-tuned mBERT and XLM-RoBERTa, and compared them with zero-shot GPT-4o and Claude 3.5 Sonnet under a common protocol. The repository includes data preparation, evaluation, and error-slice analysis code.</p>
+                                <dl class="project-proof" aria-label="Hinglish NER results">
+                                    <div><dt>78%</dt><dd>entity-level F1 for fine-tuned XLM-RoBERTa</dd></div>
+                                    <div><dt>76%</dt><dd>F1 for the zero-shot GPT-4o baseline</dd></div>
+                                    <div><dt>2 scripts</dt><dd>Roman and Devanagari Hinglish evaluation</dd></div>
+                                </dl>
                                 <div class="tag-list">
                                     <span>PyTorch</span>
                                     <span>Transformers</span>
@@ -75,7 +83,9 @@
                                     <span>Evaluation</span>
                                 </div>
                                 <div class="project-links">
-                                    <a href="https://github.com/Ansester/hinglish-ner-research" target="_blank" rel="noopener">GitHub &rarr;</a>
+                                    <a href="https://github.com/Ansester/hinglish-ner-research" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+                                    <span aria-hidden="true">&middot;</span>
+                                    <a href="https://github.com/Ansester/hinglish-ner-research/blob/main/research_report.pdf" target="_blank" rel="noopener">Research report <span aria-hidden="true">&rarr;</span></a>
                                 </div>
                             </div>
                         </article>
@@ -85,6 +95,11 @@
                             <div>
                                 <h3>Data Science Salary Prediction Platform</h3>
                                 <p>Built a benchmarking pipeline for more than 15 regression models using over 3,000 job postings. Experiments were tracked with MLflow and compared using MAE, RMSE, and R&sup2;. SHAP analysis was used to interpret associations between model predictions and features including geography, firm size, and skill requirements.</p>
+                                <dl class="project-proof" aria-label="Salary prediction results">
+                                    <div><dt>3,000+</dt><dd>job postings analyzed</dd></div>
+                                    <div><dt>15+</dt><dd>regression models compared</dd></div>
+                                    <div><dt>0.87</dt><dd>R&sup2; for the best XGBoost model</dd></div>
+                                </dl>
                                 <div class="tag-list">
                                     <span>PyCaret</span>
                                     <span>XGBoost</span>
@@ -92,7 +107,7 @@
                                     <span>MLflow</span>
                                 </div>
                                 <div class="project-links">
-                                    <a href="https://github.com/Ansester/salary-prediction-ml" target="_blank" rel="noopener">GitHub &rarr;</a>
+                                    <a href="https://github.com/Ansester/salary-prediction-ml" target="_blank" rel="noopener">Repository and methods <span aria-hidden="true">&rarr;</span></a>
                                 </div>
                             </div>
                         </article>
@@ -102,6 +117,11 @@
                             <div>
                                 <h3>Community-Level Crime Modeling</h3>
                                 <p>Modeled statistical associations between socioeconomic indicators and violent crime rates across 1,994 communities. Cross-validation yielded R&sup2; = 0.85 for the selected predictive model. The analysis does not make causal claims, and the results were presented through an interactive Streamlit interface.</p>
+                                <dl class="project-proof" aria-label="Community-level crime modeling results">
+                                    <div><dt>1,994</dt><dd>communities in the analysis</dd></div>
+                                    <div><dt>0.85</dt><dd>cross-validated R&sup2; for the selected model</dd></div>
+                                    <div><dt>6</dt><dd>interpretable socioeconomic features</dd></div>
+                                </dl>
                                 <div class="tag-list">
                                     <span>Scikit-Learn</span>
                                     <span>Pandas</span>
@@ -109,7 +129,7 @@
                                     <span>Streamlit</span>
                                 </div>
                                 <div class="project-links">
-                                    <a href="https://github.com/Ansester/crime-prediction-ml" target="_blank" rel="noopener">GitHub &rarr;</a>
+                                    <a href="https://github.com/Ansester/crime-prediction-ml" target="_blank" rel="noopener">Repository and methods <span aria-hidden="true">&rarr;</span></a>
                                 </div>
                             </div>
                         </article>
@@ -127,10 +147,14 @@
                 <div class="content-stack">
                     <div class="project-list">
                         <article class="project">
-                            <div class="project-meta">Fall 2024</div>
+                            <div class="project-meta">Fall 2025</div>
                             <div>
                                 <h3>CAMP: Campus Asset Management Platform</h3>
-                                <p>Designed and implemented a multi-user platform for campus resource allocation and scheduling under shared constraints. The work covered role-based access, conflict resolution, RESTful APIs, integration testing, containerized deployment, and automated CI/CD workflows.</p>
+                                <p>Contributed to a team-built platform for campus resource allocation and scheduling under shared constraints. The project covered role-based access, conflict resolution, RESTful APIs, integration testing, containerized deployment, and automated CI/CD workflows.</p>
+                                <figure class="project-preview">
+                                    <img src="assets/camp-home.png" alt="Mobile home screen concept for CAMP showing asset search, current checkouts, upcoming reservations, and borrowing links." width="390" height="844" loading="lazy">
+                                    <figcaption>Mobile home-screen concept from the team&rsquo;s CAMP design work.</figcaption>
+                                </figure>
                                 <div class="tag-list">
                                     <span>React</span>
                                     <span>Node.js</span>
@@ -138,7 +162,7 @@
                                     <span>Docker</span>
                                 </div>
                                 <div class="project-links">
-                                    <a href="https://github.com/Ansester/camp-final-project" target="_blank" rel="noopener">GitHub &rarr;</a>
+                                    <a href="https://github.com/Ansester/camp-final-project" target="_blank" rel="noopener">Project repository <span aria-hidden="true">&rarr;</span></a>
                                 </div>
                             </div>
                         </article>

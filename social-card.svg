@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Ashmit Mukherjee — AI Research and Evaluation</title>
+  <desc id="description">Academic portfolio card for Ashmit Mukherjee at NYU Abu Dhabi.</desc>
+  <rect width="1200" height="630" fill="#fbfbf9"/>
+  <rect x="0" y="0" width="1200" height="16" fill="#245e50"/>
+  <g fill="none" stroke="#d9dedb" stroke-width="2">
+    <path d="M790 82h314M790 162h246M790 242h314M790 322h210M790 402h314M790 482h258"/>
+    <path d="M870 42v510M950 42v510M1030 42v510M1110 42v510"/>
+  </g>
+  <g fill="#e8f0ed">
+    <circle cx="870" cy="162" r="14"/>
+    <circle cx="1030" cy="242" r="14"/>
+    <circle cx="950" cy="322" r="14"/>
+    <circle cx="1110" cy="402" r="14"/>
+  </g>
+  <g fill="#245e50">
+    <circle cx="870" cy="162" r="7"/>
+    <circle cx="1030" cy="242" r="7"/>
+    <circle cx="950" cy="322" r="7"/>
+    <circle cx="1110" cy="402" r="7"/>
+  </g>
+  <text x="88" y="145" fill="#245e50" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="4">COMPUTER SCIENCE · NYU ABU DHABI</text>
+  <text x="82" y="274" fill="#192229" font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700">Ashmit Mukherjee</text>
+  <text x="88" y="357" fill="#3f4a51" font-family="Arial, Helvetica, sans-serif" font-size="32">AI research, computational experiments,</text>
+  <text x="88" y="404" fill="#3f4a51" font-family="Arial, Helvetica, sans-serif" font-size="32">and careful model evaluation.</text>
+  <rect x="88" y="490" width="335" height="4" fill="#245e50"/>
+  <text x="88" y="548" fill="#245e50" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">ashmitmukherjee.com</text>
+</svg>

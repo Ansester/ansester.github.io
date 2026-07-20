@@ -1,167 +1,138 @@
 \documentclass[a4paper,10pt]{article}
-\usepackage{latexsym}
-\usepackage[margin=0.85in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.70in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{hyperref}
+\usepackage{fancyhdr}
 
-\titleformat{\section}{\bfseries\large}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{5pt}
+\titleformat{\section}{\bfseries\large}{}{0em}{}[\vspace{-0.45em}\titlerule]
+\titlespacing*{\section}{0pt}{0.85em}{0.30em}
 
-\hypersetup{colorlinks=false}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+  pdfauthor={Ashmit Mukherjee},
+  pdftitle={Curriculum Vitae -- Ashmit Mukherjee}
+}
 
-\pagestyle{empty}
-\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=1.4em}
-\setlength{\parskip}{0.3em}
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\footnotesize Ashmit Mukherjee \enspace|\enspace \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{0pt}
+\setlength{\footskip}{18pt}
+
+\setlist[itemize]{leftmargin=1.35em, nosep, topsep=0.15em, partopsep=0pt}
+\setlength{\parskip}{0pt}
 \setlength{\parindent}{0pt}
+\raggedbottom
 \sloppy
+
+\newcommand{\entry}[2]{\noindent\textbf{#1}\hfill\textit{#2}\par}
+\newcommand{\subentry}[1]{\noindent\textit{#1}\par\vspace{-0.25em}}
 
 \begin{document}
 
-% ── Header ─────────────────────────────────────────────────────────────────
 \begin{center}
-    {\LARGE\bfseries Ashmit S Mukherjee} \\[0.3em]
-    {\small New York University Abu Dhabi} \\[0.2em]
-    \small
-    \href{mailto:asm8879@nyu.edu}{asm8879@nyu.edu} \;\textbar\;
-    \href{https://ashmitmukherjee.com}{ashmitmukherjee.com}
+  {\LARGE\bfseries Ashmit Mukherjee} \\[0.18em]
+  {\small New York University Abu Dhabi} \\[0.18em]
+  \small
+  \href{mailto:asm8879@nyu.edu}{asm8879@nyu.edu}
+  \enspace|\enspace
+  \href{https://ashmitmukherjee.com}{ashmitmukherjee.com}
+  \enspace|\enspace
+  \href{https://www.linkedin.com/in/ashmit-mukherjee/}{LinkedIn}
+  \enspace|\enspace
+  \href{https://github.com/ansester}{GitHub}
 \end{center}
+\vspace{-0.65em}
 
-% ── Education ──────────────────────────────────────────────────────────────
 \section*{Education}
 
-\noindent\textbf{New York University Abu Dhabi} \hfill \textit{Expected May 2027} \\
-B.S.\ in Computer Science \\
-\textit{Studied at:} NYU Abu Dhabi; NYU Paris; NYU New York
+\entry{New York University Abu Dhabi}{Expected May 2027}
+B.S.\ in Computer Science. Studied at NYU Abu Dhabi, NYU Paris, and NYU New York.\\[-0.1em]
+\textbf{Relevant coursework:} Natural Language Processing; Principles of Data Science; Statistics for Social \& Behavioral Sciences; Data Structures \& Algorithms; Computer Systems Architecture; Operating Systems.
 
-\smallskip
-\noindent\textbf{Relevant Coursework:} Natural Language Processing; Principles of Data Science;
-Statistics for Social \& Behavioral Sciences; Data Structures \& Algorithms;
-Computer Systems Architecture; Operating Systems
-
-% ── Research Interests ─────────────────────────────────────────────────────
 \section*{Research Interests}
 
-I work at the intersection of machine learning and computational social science,
-with a focus on how artificial agents affect cooperation, coordination, and norm
-formation. My current work models social dilemmas in mixed human-AI populations
-and asks when AI-mediated interventions support cooperation, and when they get in
-the way. My broader work in multilingual NLP and protein representation learning
-reflects the same methodological interest: how models learn structure from
-heterogeneous data, and how we test that learning carefully.
+I build and evaluate AI systems using data, statistical inference, machine learning, experimental design, and research engineering. My work spans human-AI collaboration, parameter-efficient model adaptation, and multilingual NLP.
 
-% ── Publications ───────────────────────────────────────────────────────────
-\section*{Publications}
+\section*{Publications and Working Papers}
 
-\noindent
-\textbf{A. Mukherjee} (co-first author).
-``Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation.''
-\textit{Under review at EMNLP 2026 Workshop}, 2026.
+\noindent Benjamin Rosche, \textbf{Ashmit Mukherjee}, and Hanan Salam. ``AI and Human Collaboration in Social Dilemmas: Strategic Interpretation, Normative Interpretation, and Collective Action in Shared Supply Chains.'' \textit{Working paper}, June 2026.
 
-% ── Research Experience ────────────────────────────────────────────────────
+\vspace{0.22em}
+\noindent \textbf{Ashmit Mukherjee} and collaborators. ``Bio-Informed LoRA for Signal Peptide Prediction.'' Co-first author. \textit{Under review at an EMNLP 2026 workshop}, 2026.
+
 \section*{Research Experience}
 
-\noindent\textbf{Research Assistant: Human-AI Collaboration}, NYU Abu Dhabi
-\hfill \textit{Feb 2026--Present}
+\entry{Research Assistant: Human-AI Collaboration, NYU Abu Dhabi}{Feb 2026--Present}
 \begin{itemize}
-    \item Developing a simulation-based research platform for studying \textbf{AI-mediated
-          coordination in multi-party social dilemmas}, using global supply chains as the
-          domain (advisors: Prof.\ Hanan Salam, Prof.\ Benjamin Rosche).
-    \item Built a calibrated game-theoretic environment with five buyers and three suppliers
-          across repeated rounds, combining public goods support, strategic ignorance,
-          threshold remediation, exit versus engagement, and auditing in one domain-grounded
-          model. The main buyer policy uses quantal response equilibrium with a Stage 2 belief solver.
-    \item Reproduced the target inefficient-equilibrium pattern, with about 22-26\% welfare
-          loss versus the cooperative ceiling, about 99\% supplier defection, and about 7\%
-          remediation across a 12-cell calibration sweep with 50 simulations per cell.
-          The backend has 101 passing tests and three completed audit rounds.
-    \item Designing the next phase as an experimental platform comparing algorithmic baselines
-          against human-participant sessions in which AI agents act as advisors, coordinators,
-          monitors, or commitment-support systems.
+  \item Co-developing an online experiment on how AI-mediated interpretation and coordination affect collective action in shared global supply chains, with Benjamin Rosche and Hanan Salam.
+  \item Designed a repeated sourcing game in which five human buyers choose fair pay, auditing, information-sharing links, communication, and threshold-dependent remediation around one supplier governed by a fixed decision rule.
+  \item Developed a group-level, four-arm treatment design comparing structured information with strategic interpretation AI, normative interpretation AI, and collective action AI.
+  \item Specified behavioral outcomes and mechanism measures for cooperation, responsibility attribution, behavioral homogenization, coalition formation, and persistence following AI withdrawal.
 \end{itemize}
 
-\vspace{0.3em}
-\noindent\textbf{Research Assistant: eBRAIN Lab}, NYU Abu Dhabi
-\hfill \textit{Jan 2026--Present}
+\vspace{0.20em}
+\entry{Research Assistant: eBRAIN Lab, NYU Abu Dhabi}{Jan 2026--Present}
 \begin{itemize}
-    \item Co-developed \textbf{Bio-LoRA}, a parameter-efficient fine-tuning method
-          that injects residue-level biological priors (BLOSUM62, hydrophobicity, Grantham)
-          into LoRA adapters for ESM-2 protein language models on signal peptide prediction.
-    \item Showed BLOSUM62-guided LoRA matches or exceeds full fine-tuning on SignalP6
-          benchmarks across SP MCC, cleavage-site exactness, and residue-level F1, while
-          training only \textasciitilde3.6\% of parameters and using \textasciitilde43\% less
-          peak GPU memory at the 3B-parameter scale.
-    \item Designed multi-seed evaluation protocols and a one-factor sensitivity screen
-          showing that single-seed improvements often fail to replicate, a methodological
-          finding central to the paper's contribution.
-    \item Manuscript under review (see Publications).
+  \item Co-developed \textbf{Bio-Informed LoRA}, a parameter-efficient fine-tuning method that injects residue-level biological priors (BLOSUM62, hydrophobicity, Grantham) into LoRA adapters for ESM-2 protein language models on signal peptide prediction.
+  \item Showed BLOSUM62-guided LoRA matches or exceeds full fine-tuning on SignalP6 benchmarks across MCC, cleavage-site exactness, and residue-level F1, while training approximately 3.6\% of model parameters and using approximately 43\% less peak GPU memory at the 3B-parameter scale.
+  \item Designed multi-seed evaluation protocols and a one-factor sensitivity screen showing that several single-seed improvements did not replicate.
+  \item Manuscript under review (see Publications and Working Papers).
 \end{itemize}
 
-% ── Research Projects ──────────────────────────────────────────────────────
+\clearpage
+
 \section*{Research Projects}
 
-\noindent\textbf{Hinglish Named Entity Recognition Benchmark} \hfill \textit{Fall 2024}
+\entry{Hinglish Named Entity Recognition Benchmark}{Fall 2024}
 \begin{itemize}
-    \item Fine-tuned multilingual transformer models, mBERT and XLM-RoBERTa, on the
-          COMI-LINGUA dataset for Hindi-English code-mixed NER.
-    \item Achieved 78\% entity-level F1, outperforming zero-shot GPT-4o and LLaMA 3.1
-          baselines under controlled evaluation.
-    \item Analyzed trade-offs between model scale, task-specific fine-tuning,
-          generalization, and computational cost.
+  \item Fine-tuned multilingual transformer models, mBERT and XLM-RoBERTa, on the COMI-LINGUA dataset for Hindi-English code-mixed NER.
+  \item Compared against zero-shot GPT-4o and Claude-3.5-Sonnet baselines under a common evaluation protocol; fine-tuned XLM-RoBERTa achieved 78\% entity-level F1 versus 76\% for GPT-4o.
+  \item Analyzed trade-offs between model scale, task-specific fine-tuning, generalization, and computational cost.
 \end{itemize}
 
-\vspace{0.3em}
-\noindent\textbf{Data Science Salary Prediction Platform (Methodological Study)}
-\hfill \textit{Fall 2025}
+\vspace{0.20em}
+\entry{Data Science Salary Prediction Platform}{Fall 2025}
 \begin{itemize}
-    \item Conducted large-scale regression benchmarking using AutoML (PyCaret) across
-          15+ models on a dataset of 3{,}000+ job postings.
-    \item Analyzed feature contributions using SHAP to study labor market dynamics
-          across geography, firm size, and skill requirements.
-    \item Tracked experiments with MLflow; reported MAE, RMSE, and $R^2$ across conditions.
+  \item Built a benchmarking pipeline for more than 15 regression models using over 3{,}000 job postings; tracked experiments with MLflow and compared MAE, RMSE, and $R^2$.
+  \item Used SHAP to interpret associations between model predictions and features including geography, firm size, and skill requirements.
 \end{itemize}
 
-\vspace{0.3em}
-\noindent\textbf{Crime Data Analysis and Prediction} \hfill \textit{Spring 2025}
+\vspace{0.20em}
+\entry{Community-Level Crime Modeling}{Spring 2025}
 \begin{itemize}
-    \item Studied relationships between socioeconomic indicators and violent crime rates
-          using regression modeling on data from 1{,}994 communities.
-    \item Evaluated model performance via cross-validation ($R^2 = 0.85$) and exploratory
-          statistical analysis; built interactive visualizations for interpretability.
+  \item Modeled statistical associations between socioeconomic indicators and violent crime rates across 1{,}994 communities; the analysis does not make causal claims.
+  \item Cross-validation yielded $R^2 = 0.85$ for the selected predictive model; presented results through an interactive Streamlit interface.
 \end{itemize}
 
-\vspace{0.3em}
-\noindent\textbf{CAMP: Campus Asset Management Platform} \hfill \textit{Fall 2024}
+\vspace{0.20em}
+\entry{CAMP: Campus Asset Management Platform}{Fall 2025}
 \begin{itemize}
-    \item Designed and implemented a multi-user system for resource allocation and
-          scheduling under shared constraints, including role-based access and conflict resolution.
-    \item Developed RESTful APIs and automated CI/CD pipelines using Docker and
-          GitHub Actions for reproducible deployment.
+  \item Contributed to a team-built platform for campus resource allocation and scheduling under shared constraints, including role-based access and conflict resolution.
+  \item Built RESTful APIs, integration testing, containerized deployment, and automated CI/CD workflows.
 \end{itemize}
 
-% ── Industry Experience ────────────────────────────────────────────────────
 \section*{Industry Experience}
 
-\noindent\textbf{Machine Learning Engineer Intern}, Zeek \hfill \textit{Jun--Aug 2025}
+\entry{Machine Learning Engineer Intern, Zeek}{Jun--Aug 2025}
 \begin{itemize}
-    \item Developed and evaluated segmentation models on noisy real-world data,
-          iterating on preprocessing and model selection for production reliability.
-    \item Applied model interpretability techniques to study robustness and bias
-          sensitivity, helping the team decide which model variants to deploy.
-    \item Contributed to the team's evaluation workflow by adding standardized metrics
-          and validation procedures to the model development cycle.
+  \item Developed and evaluated segmentation models on noisy real-world data, iterating on preprocessing and model selection for production reliability.
+  \item Applied model interpretability techniques to study robustness and bias sensitivity, helping the team decide which model variants to deploy.
+  \item Contributed to the team's evaluation workflow by adding standardized metrics and validation procedures to the model development cycle.
 \end{itemize}
 
-% ── Technical Skills ───────────────────────────────────────────────────────
 \section*{Technical Skills}
 
-\noindent
 \textbf{Languages:} Python, C++, C\#, JavaScript \\
-\textbf{ML \& NLP:} PyTorch, Transformers (Hugging Face), Scikit-Learn, XGBoost,
-  PyCaret, SHAP \\
-\textbf{Multi-Agent \& RL:} NumPy, NetworkX, reinforcement learning pipelines \\
+\textbf{ML \& NLP:} PyTorch, Transformers (Hugging Face), Scikit-Learn, XGBoost, PyCaret, SHAP \\
+\textbf{Computational Modeling:} NumPy, NetworkX, game-theoretic simulation \\
 \textbf{Data Analysis:} Pandas, SciPy, Matplotlib, Seaborn, Plotly \\
-\textbf{Experiment Tracking:} MLflow, Git, Docker, GitHub Actions \\
-\textbf{Other:} Streamlit, MongoDB, \LaTeX
+\textbf{Experimental Methods:} Experimental design, regression, cross-validation, multi-seed evaluation, sensitivity analysis \\
+\textbf{Research Engineering:} MLflow, Git, Docker, GitHub Actions, REST APIs, automated testing, MongoDB \\
+\textbf{Applications:} Streamlit, React, Node.js, \LaTeX
 
 \end{document}
