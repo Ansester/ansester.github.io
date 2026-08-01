@@ -96,7 +96,7 @@
                                     <p class="project-date">Fall 2024</p>
                                 </div>
                                 <h2>Hinglish named entity recognition benchmark</h2>
-                                <p>Prepared COMI-LINGUA for entity-level evaluation, fine-tuned mBERT and XLM-RoBERTa, and compared them with zero-shot baselines under a common protocol. The repository includes data preparation, evaluation, and error-slice analysis code.</p>
+                                <p>Prepared COMI-LINGUA for entity-level evaluation, fine-tuned mBERT and XLM-RoBERTa, and documented zero-shot baseline experiments. The repository includes data preparation, evaluation, and error-slice analysis code.</p>
                                 <div class="tag-list" aria-label="Tools used">
                                     <span>PyTorch</span>
                                     <span>Transformers</span>
@@ -105,9 +105,9 @@
                                 </div>
                                 <p class="project-links"><a href="https://github.com/Ansester/hinglish-ner-research" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a> <span aria-hidden="true">·</span> <a href="https://github.com/Ansester/hinglish-ner-research/blob/main/research_report.pdf" target="_blank" rel="noopener">Research report <span aria-hidden="true">&rarr;</span></a></p>
                             </div>
-                            <dl class="project-proof" aria-label="Hinglish NER results">
-                                <div><dt>78%</dt><dd>entity-level F1 for fine-tuned XLM-RoBERTa</dd></div>
-                                <div><dt>76%</dt><dd>F1 for the zero-shot GPT-4o baseline</dd></div>
+                            <dl class="project-proof" aria-label="Hinglish NER project details">
+                                <div><dt>mBERT</dt><dd>fine-tuned multilingual baseline</dd></div>
+                                <div><dt>XLM-R</dt><dd>fine-tuned multilingual baseline</dd></div>
                                 <div><dt>2 scripts</dt><dd>Roman and Devanagari Hinglish evaluation</dd></div>
                             </dl>
                         </article>
@@ -118,11 +118,11 @@
                                 <p class="project-date">Fall 2025</p>
                             </div>
                             <h2>Data science salary prediction platform</h2>
-                            <p>Built a benchmarking pipeline for more than 15 regression models using over 3,000 job postings. Experiments were tracked with MLflow and compared using MAE, RMSE, and R&sup2;. SHAP analysis was used to interpret associations between predictions and features including geography, firm size, and skills.</p>
+                            <p>Built an interactive Streamlit prototype for exploring a 742-record cleaned salary-posting dataset, training a salary model, and inspecting feature contributions with SHAP. The project includes optional PyCaret and MLflow workflows for model comparison and experiment logging.</p>
                             <dl class="project-proof" aria-label="Salary prediction results">
-                                <div><dt>3,000+</dt><dd>job postings analyzed</dd></div>
-                                <div><dt>15+</dt><dd>regression models compared</dd></div>
-                                <div><dt>0.87</dt><dd>R&sup2; for the best XGBoost model</dd></div>
+                                <div><dt>742</dt><dd>records in the committed dataset</dd></div>
+                                <div><dt>PyCaret</dt><dd>optional AutoML workflow</dd></div>
+                                <div><dt>SHAP</dt><dd>feature-contribution inspection</dd></div>
                             </dl>
                             <div class="tag-list" aria-label="Tools used">
                                 <span>PyCaret</span>
@@ -139,11 +139,11 @@
                                 <p class="project-date">Spring 2025</p>
                             </div>
                             <h2>Community-level crime modeling</h2>
-                            <p>Modeled statistical associations between socioeconomic indicators and violent crime rates across 1,994 communities. Cross-validation yielded R&sup2; = 0.85 for the selected predictive model. The analysis does not make causal claims, and the results were presented through an interactive Streamlit interface.</p>
+                            <p>Built an interactive Streamlit prototype that fits a six-feature linear regression to 1,994 complete cases from a community-crime dataset. It includes exploratory visualizations and scenario inputs; results are descriptive rather than causal.</p>
                             <dl class="project-proof" aria-label="Community-level crime modeling results">
-                                <div><dt>1,994</dt><dd>communities in the analysis</dd></div>
-                                <div><dt>0.85</dt><dd>cross-validated R&sup2; for the selected model</dd></div>
-                                <div><dt>6</dt><dd>interpretable socioeconomic features</dd></div>
+                                <div><dt>1,994</dt><dd>complete cases in the analysis</dd></div>
+                                <div><dt>6</dt><dd>socioeconomic features</dd></div>
+                                <div><dt>Streamlit</dt><dd>exploratory prototype</dd></div>
                             </dl>
                             <div class="tag-list" aria-label="Tools used">
                                 <span>Scikit-Learn</span>
@@ -160,7 +160,7 @@
                                 <p class="project-date">Fall 2025</p>
                             </div>
                             <h2>CAMP: Campus Asset Management Platform</h2>
-                            <p>Contributed to a team-built platform for campus resource allocation and scheduling under shared constraints. The project covered role-based access, RESTful APIs, integration testing, containerized deployment, and automated CI/CD workflows.</p>
+                            <p>Contributed to a team-built platform for campus asset reservation and management. The project includes role-based workflows, RESTful APIs, integration tests, and GitHub Actions CI/CD.</p>
                             <figure class="project-preview">
                                 <img src="assets/camp-home.png" alt="Mobile home screen concept for CAMP showing asset search, current checkouts, upcoming reservations, and borrowing links." width="390" height="844" loading="lazy">
                                 <figcaption>Mobile home-screen concept from the team's CAMP design work.</figcaption>
@@ -169,7 +169,7 @@
                                 <span>React</span>
                                 <span>Node.js</span>
                                 <span>MongoDB</span>
-                                <span>Docker</span>
+                                <span>GitHub Actions</span>
                             </div>
                             <p class="project-links"><a href="https://github.com/Ansester/camp-final-project" target="_blank" rel="noopener">Project repository <span aria-hidden="true">&rarr;</span></a></p>
                         </article>

@@ -99,7 +99,7 @@
                 <div class="cv-section">
                     <h2>Publications and Working Papers</h2>
                     <div class="cv-entry">
-                        <p>Benjamin Rosche, <strong>Ashmit Mukherjee</strong>, and Hanan Salam. &ldquo;AI and Human Collaboration in Social Dilemmas: Strategic Interpretation, Normative Interpretation, and Collective Action in Shared Supply Chains.&rdquo; <em>Working paper</em>, June 2026.</p>
+                        <p>Benjamin Rosche, <strong>Ashmit Mukherjee</strong>, and Hanan Salam. <em>Working paper on human-AI collaboration in shared supply chains</em>, June 2026.</p>
                     </div>
                     <div class="cv-entry">
                         <p><strong>Ashmit Mukherjee</strong> and collaborators. &ldquo;Bio-Informed LoRA for Signal Peptide Prediction.&rdquo; <em>Manuscript in preparation</em>, 2026.</p>
@@ -111,24 +111,23 @@
                     <div class="cv-entry">
                         <div class="cv-entry-header">
                             <h3>Research Assistant: Human-AI Collaboration</h3>
-                            <span class="cv-date">Feb 2026 to Present</span>
+                            <span class="cv-date">2026 to Present</span>
                         </div>
                         <p class="cv-sub">NYU Abu Dhabi</p>
                         <ul>
-                            <li>Co-developing an online experiment on how AI-mediated interpretation and coordination affect collective action in shared global supply chains, with Benjamin Rosche and Hanan Salam.</li>
-                            <li>Designed the study's repeated decision setting, AI-support conditions, and behavioral measurement plan.</li>
-                            <li>Specified controls and outcomes for evaluating cooperation, responsibility attribution, and coordination over time.</li>
+                            <li>Contributing to study development and behavioral measurement for an online research project on collaboration in shared supply chains, with Benjamin Rosche and Hanan Salam.</li>
+                            <li>Co-authored a June 2026 working paper; implementation of related research is ongoing.</li>
                         </ul>
                     </div>
                     <div class="cv-entry">
                         <div class="cv-entry-header">
                             <h3>Research Assistant: eBRAIN Lab</h3>
-                            <span class="cv-date">Jan 2026 to Present</span>
+                            <span class="cv-date">2026 to Present</span>
                         </div>
                         <p class="cv-sub">NYU Abu Dhabi</p>
                         <ul>
-                            <li>Implemented and evaluated <strong>Bio-Informed LoRA</strong>, a parameter-efficient adaptation method that injects BLOSUM62, hydrophobicity, and Grantham priors into LoRA adapters for ESM-2 signal peptide prediction.</li>
-                            <li>Found BLOSUM62-guided LoRA to be the strongest mean performer among evaluated methods at 650M; model-scale reruns made clear that full fine-tuning is favored at 150M and on 3B cleavage metrics.</li>
+                            <li>Implemented and evaluated <strong>Bio-Informed LoRA</strong>, an ESM-2 adaptation method that combines LoRA adapters with a separate projected path for BLOSUM62, hydrophobicity, and Grantham residue priors, added to hidden states before classification.</li>
+                            <li>In the original three-seed 650M comparison, BLOSUM62-guided LoRA had the highest mean across the reported primary metrics.</li>
                             <li>Designed multi-seed evaluation protocols and a one-factor sensitivity screen showing that several single-seed improvements did not replicate.</li>
                             <li>Manuscript in preparation (see Writing).</li>
                         </ul>
@@ -144,7 +143,7 @@
                         </div>
                         <ul>
                             <li>Fine-tuned multilingual transformer models, mBERT and XLM-RoBERTa, on the COMI-LINGUA dataset for Hindi-English code-mixed NER.</li>
-                            <li>Compared against zero-shot GPT-4o and Claude 3.5 Sonnet under a common evaluation protocol; fine-tuned XLM-RoBERTa achieved 78% entity-level F1 versus 76% for GPT-4o.</li>
+                            <li>Documented zero-shot baseline experiments alongside fine-tuned models, with evaluation and error-analysis code in the public repository.</li>
                             <li>Analyzed trade-offs between model scale, task-specific fine-tuning, generalization, and computational cost.</li>
                         </ul>
                     </div>
@@ -154,9 +153,8 @@
                             <span class="cv-date">Fall 2025</span>
                         </div>
                         <ul>
-                            <li>Benchmarked 15+ regression models using AutoML (PyCaret) on a dataset of 3,000+ job postings.</li>
-                            <li>Used SHAP to interpret associations between model predictions and features including geography, firm size, and skill requirements.</li>
-                            <li>Tracked experiments with MLflow; reported MAE, RMSE, and R&sup2; across conditions.</li>
+                            <li>Built an interactive Streamlit prototype for exploring a 742-record cleaned salary-posting dataset, training a salary model, and inspecting feature contributions with SHAP.</li>
+                            <li>Implemented optional PyCaret and MLflow workflows for model comparison and experiment logging.</li>
                         </ul>
                     </div>
                     <div class="cv-entry">
@@ -165,8 +163,8 @@
                             <span class="cv-date">Spring 2025</span>
                         </div>
                         <ul>
-                            <li>Modeled statistical associations between socioeconomic indicators and violent crime rates across 1,994 communities without making causal claims.</li>
-                            <li>Evaluated predictive performance using cross-validation (R&sup2; = 0.85) and built interactive visualizations for interpretation.</li>
+                            <li>Built an interactive Streamlit prototype that fits a six-feature linear regression to 1,994 complete cases from a community-crime dataset.</li>
+                            <li>Added exploratory visualizations and scenario inputs; results are descriptive rather than causal.</li>
                         </ul>
                     </div>
                     <div class="cv-entry">
@@ -176,7 +174,7 @@
                         </div>
                         <ul>
                             <li>Contributed to a team-built system for resource allocation and scheduling under shared constraints, including role-based access and conflict resolution.</li>
-                            <li>Developed RESTful APIs and automated CI/CD pipelines using Docker and GitHub Actions for reproducible deployment.</li>
+                            <li>Developed RESTful APIs and contributed to integration testing and GitHub Actions CI/CD.</li>
                         </ul>
                     </div>
                 </div>
@@ -190,8 +188,8 @@
                         </div>
                         <p class="cv-sub">Zeek</p>
                         <ul>
-                            <li>Developed and evaluated segmentation models on noisy real-world data, iterating on preprocessing and model selection for production reliability.</li>
-                            <li>Applied model interpretability techniques to study robustness and bias sensitivity, helping the team decide which model variants to deploy.</li>
+                            <li>Developed and evaluated segmentation models on noisy real-world data, iterating on preprocessing and model selection to assess model reliability.</li>
+                            <li>Applied model-interpretability techniques to study robustness and bias sensitivity as part of model evaluation.</li>
                             <li>Contributed to the team&rsquo;s evaluation workflow by adding standardized metrics and validation procedures to the model development cycle.</li>
                         </ul>
                     </div>

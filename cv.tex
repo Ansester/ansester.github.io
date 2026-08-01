@@ -60,25 +60,24 @@ I build and evaluate AI systems using data, statistical inference, machine learn
 
 \section*{Publications and Working Papers}
 
-\noindent Benjamin Rosche, \textbf{Ashmit Mukherjee}, and Hanan Salam. ``AI and Human Collaboration in Social Dilemmas: Strategic Interpretation, Normative Interpretation, and Collective Action in Shared Supply Chains.'' \textit{Working paper}, June 2026.
+\noindent Benjamin Rosche, \textbf{Ashmit Mukherjee}, and Hanan Salam. \textit{Working paper on human-AI collaboration in shared supply chains}, June 2026.
 
 \vspace{0.22em}
 \noindent \textbf{Ashmit Mukherjee} and collaborators. ``Bio-Informed LoRA for Signal Peptide Prediction.'' \textit{Manuscript in preparation}, 2026.
 
 \section*{Research Experience}
 
-\entry{Research Assistant: Human-AI Collaboration, NYU Abu Dhabi}{Feb 2026--Present}
+\entry{Research Assistant: Human-AI Collaboration, NYU Abu Dhabi}{2026--Present}
 \begin{itemize}
-  \item Co-developing an online experiment on how AI-mediated interpretation and coordination affect collective action in shared global supply chains, with Benjamin Rosche and Hanan Salam.
-  \item Designed the study's repeated decision setting, AI-support conditions, and behavioral measurement plan.
-  \item Specified controls and outcomes for evaluating cooperation, responsibility attribution, and coordination over time.
+  \item Contributing to study development and behavioral measurement for an online research project on collaboration in shared supply chains, with Benjamin Rosche and Hanan Salam.
+  \item Co-authored a June 2026 working paper; implementation of related research is ongoing.
 \end{itemize}
 
 \vspace{0.20em}
-\entry{Research Assistant: eBRAIN Lab, NYU Abu Dhabi}{Jan 2026--Present}
+\entry{Research Assistant: eBRAIN Lab, NYU Abu Dhabi}{2026--Present}
 \begin{itemize}
-  \item Implemented and evaluated \textbf{Bio-Informed LoRA}, a parameter-efficient adaptation method that injects BLOSUM62, hydrophobicity, and Grantham priors into LoRA adapters for ESM-2 signal peptide prediction.
-  \item Found BLOSUM62-guided LoRA to be the strongest mean performer among evaluated methods at 650M; model-scale reruns made clear that full fine-tuning is favored at 150M and on 3B cleavage metrics.
+  \item Implemented and evaluated \textbf{Bio-Informed LoRA}, an ESM-2 adaptation method that combines LoRA adapters with a separate projected path for BLOSUM62, hydrophobicity, and Grantham residue priors, added to hidden states before classification.
+  \item In the original three-seed 650M comparison, BLOSUM62-guided LoRA had the highest mean across the reported primary metrics.
   \item Designed multi-seed evaluation protocols and a one-factor sensitivity screen showing that several single-seed improvements did not replicate.
   \item Manuscript in preparation (see Writing).
 \end{itemize}
@@ -90,37 +89,37 @@ I build and evaluate AI systems using data, statistical inference, machine learn
 \entry{Hinglish Named Entity Recognition Benchmark}{Fall 2024}
 \begin{itemize}
   \item Fine-tuned multilingual transformer models, mBERT and XLM-RoBERTa, on the COMI-LINGUA dataset for Hindi-English code-mixed NER.
-  \item Compared against zero-shot GPT-4o and Claude-3.5-Sonnet baselines under a common evaluation protocol; fine-tuned XLM-RoBERTa achieved 78\% entity-level F1 versus 76\% for GPT-4o.
+  \item Documented zero-shot baseline experiments alongside fine-tuned models, with evaluation and error-analysis code in the public repository.
   \item Analyzed trade-offs between model scale, task-specific fine-tuning, generalization, and computational cost.
 \end{itemize}
 
 \vspace{0.20em}
 \entry{Data Science Salary Prediction Platform}{Fall 2025}
 \begin{itemize}
-  \item Built a benchmarking pipeline for more than 15 regression models using over 3{,}000 job postings; tracked experiments with MLflow and compared MAE, RMSE, and $R^2$.
-  \item Used SHAP to interpret associations between model predictions and features including geography, firm size, and skill requirements.
+  \item Built an interactive Streamlit prototype for exploring a 742-record cleaned salary-posting dataset, training a salary model, and inspecting feature contributions with SHAP.
+  \item Implemented optional PyCaret and MLflow workflows for model comparison and experiment logging.
 \end{itemize}
 
 \vspace{0.20em}
 \entry{Community-Level Crime Modeling}{Spring 2025}
 \begin{itemize}
-  \item Modeled statistical associations between socioeconomic indicators and violent crime rates across 1{,}994 communities; the analysis does not make causal claims.
-  \item Cross-validation yielded $R^2 = 0.85$ for the selected predictive model; presented results through an interactive Streamlit interface.
+  \item Built an interactive Streamlit prototype that fits a six-feature linear regression to 1{,}994 complete cases from a community-crime dataset.
+  \item Added exploratory visualizations and scenario inputs; results are descriptive rather than causal.
 \end{itemize}
 
 \vspace{0.20em}
 \entry{CAMP: Campus Asset Management Platform}{Fall 2025}
 \begin{itemize}
   \item Contributed to a team-built platform for campus resource allocation and scheduling under shared constraints, including role-based access and conflict resolution.
-  \item Built RESTful APIs, integration testing, containerized deployment, and automated CI/CD workflows.
+  \item Developed RESTful APIs and contributed to integration testing and GitHub Actions CI/CD.
 \end{itemize}
 
 \section*{Industry Experience}
 
 \entry{Machine Learning Engineer Intern, Zeek}{Jun--Aug 2025}
 \begin{itemize}
-  \item Developed and evaluated segmentation models on noisy real-world data, iterating on preprocessing and model selection for production reliability.
-  \item Applied model interpretability techniques to study robustness and bias sensitivity, helping the team decide which model variants to deploy.
+  \item Developed and evaluated segmentation models on noisy real-world data, iterating on preprocessing and model selection to assess model reliability.
+  \item Applied model-interpretability techniques to study robustness and bias sensitivity as part of model evaluation.
   \item Contributed to the team's evaluation workflow by adding standardized metrics and validation procedures to the model development cycle.
 \end{itemize}
 
