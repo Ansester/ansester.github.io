@@ -16,35 +16,41 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://ashmitmukherjee.com/social-card.png">
-    <link rel="stylesheet" href="style.css?v=20260720">
+    <link rel="stylesheet" href="style.css?v=20260801">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&amp;display=swap" rel="stylesheet">
+    <script src="site.js?v=20260801" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-        <nav class="container" aria-label="Primary navigation">
-            <div class="nav-left">
-                <a class="nav-brand" href="index.html">Ashmit Mukherjee</a>
-                <div class="nav-icons">
-                    <a href="mailto:asm8879@nyu.edu" aria-label="Email">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                    </a>
-                    <a href="https://github.com/ansester" target="_blank" rel="noopener" aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="nav-links">
+        <nav class="site-nav container" aria-label="Primary navigation">
+            <a class="nav-brand" href="index.html" aria-label="Ashmit Mukherjee home">
+                <span class="nav-monogram" aria-hidden="true">A</span>
+                <span>Ashmit Mukherjee</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+                <span class="menu-toggle-icon" aria-hidden="true"></span>
+                <span>Menu</span>
+            </button>
+            <div class="nav-links" id="site-menu">
                 <a href="index.html">Home</a>
                 <a href="research.html">Research</a>
-                <a href="publications.html">Publications</a>
+                <a href="publications.html">Writing</a>
                 <a href="projects.html">Projects</a>
                 <a href="cv.html" aria-current="page">CV</a>
+            </div>
+            <div class="nav-icons" aria-label="Contact and social links">
+                <a href="mailto:asm8879@nyu.edu" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </a>
+                <a href="https://github.com/ansester" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
             </div>
         </nav>
     </header>
@@ -61,6 +67,7 @@
                     <div class="cv-actions">
                         <a class="btn primary" href="cv.pdf" target="_blank" rel="noopener">View PDF</a>
                         <a class="btn" href="cv.pdf" download>Download</a>
+                        <button class="btn" type="button" data-print-cv>Print page</button>
                     </div>
                 </div>
             </div>
@@ -92,10 +99,10 @@
                 <div class="cv-section">
                     <h2>Publications and Working Papers</h2>
                     <div class="cv-entry">
-                        <p>Benjamin Rosche, <strong>Ashmit Mukherjee</strong>, and Hanan Salam. &ldquo;AI and Human Collaboration in Social Dilemmas: Strategic Interpretation, Normative Interpretation, and Collective Action in Shared Supply Chains.&rdquo; <em>Working paper</em>, June 2026.</p>
+                        <p>Benjamin Rosche, <strong>Ashmit Mukherjee</strong>, and Hanan Salam. <em>Working paper on human-AI collaboration in shared supply chains</em>, June 2026.</p>
                     </div>
                     <div class="cv-entry">
-                        <p><strong>Ashmit Mukherjee</strong> and collaborators. &ldquo;Bio-Informed LoRA for Signal Peptide Prediction.&rdquo; Co-first author. <em>Under review at an EMNLP 2026 workshop</em>, 2026.</p>
+                        <p><strong>Ashmit Mukherjee</strong> and collaborators. &ldquo;Bio-Informed LoRA for Signal Peptide Prediction.&rdquo; <em>Manuscript in preparation</em>, 2026.</p>
                     </div>
                 </div>
 
@@ -104,27 +111,25 @@
                     <div class="cv-entry">
                         <div class="cv-entry-header">
                             <h3>Research Assistant: Human-AI Collaboration</h3>
-                            <span class="cv-date">Feb 2026 to Present</span>
+                            <span class="cv-date">2026 to Present</span>
                         </div>
                         <p class="cv-sub">NYU Abu Dhabi</p>
                         <ul>
-                            <li>Co-developing an online experiment on how AI-mediated interpretation and coordination affect collective action in shared global supply chains, with Benjamin Rosche and Hanan Salam.</li>
-                            <li>Designed a repeated sourcing game in which five human buyers choose fair pay, auditing, information-sharing links, communication, and threshold-dependent remediation around one supplier governed by a fixed decision rule.</li>
-                            <li>Developed a group-level, four-arm treatment design comparing structured information with strategic interpretation AI, normative interpretation AI, and collective action AI.</li>
-                            <li>Specified behavioral outcomes and mechanism measures for cooperation, responsibility attribution, behavioral homogenization, coalition formation, and persistence following AI withdrawal.</li>
+                            <li>Contributing to study development and behavioral measurement for an online research project on collaboration in shared supply chains, with Benjamin Rosche and Hanan Salam.</li>
+                            <li>Co-authored a June 2026 working paper; implementation of related research is ongoing.</li>
                         </ul>
                     </div>
                     <div class="cv-entry">
                         <div class="cv-entry-header">
                             <h3>Research Assistant: eBRAIN Lab</h3>
-                            <span class="cv-date">Jan 2026 to Present</span>
+                            <span class="cv-date">2026 to Present</span>
                         </div>
                         <p class="cv-sub">NYU Abu Dhabi</p>
                         <ul>
-                            <li>Co-developed <strong>Bio-Informed LoRA</strong>, a parameter-efficient fine-tuning method that injects residue-level biological priors (BLOSUM62, hydrophobicity, Grantham) into LoRA adapters for ESM-2 protein language models on signal peptide prediction.</li>
-                            <li>Showed BLOSUM62-guided LoRA matches or exceeds full fine-tuning on SignalP6 benchmarks across MCC, cleavage-site exactness, and residue-level F1, while training only ~3.6% of parameters and using ~43% less peak GPU memory at the 3B-parameter scale.</li>
+                            <li>Implemented and evaluated <strong>Bio-Informed LoRA</strong>, an ESM-2 adaptation method that combines LoRA adapters with a separate projected path for BLOSUM62, hydrophobicity, and Grantham residue priors, added to hidden states before classification.</li>
+                            <li>In the original three-seed 650M comparison, BLOSUM62-guided LoRA had the highest mean across the reported primary metrics.</li>
                             <li>Designed multi-seed evaluation protocols and a one-factor sensitivity screen showing that several single-seed improvements did not replicate.</li>
-                            <li>Manuscript under review (see Publications).</li>
+                            <li>Manuscript in preparation (see Writing).</li>
                         </ul>
                     </div>
                 </div>
@@ -138,7 +143,7 @@
                         </div>
                         <ul>
                             <li>Fine-tuned multilingual transformer models, mBERT and XLM-RoBERTa, on the COMI-LINGUA dataset for Hindi-English code-mixed NER.</li>
-                            <li>Compared against zero-shot GPT-4o and Claude 3.5 Sonnet under a common evaluation protocol; fine-tuned XLM-RoBERTa achieved 78% entity-level F1 versus 76% for GPT-4o.</li>
+                            <li>Documented zero-shot baseline experiments alongside fine-tuned models, with evaluation and error-analysis code in the public repository.</li>
                             <li>Analyzed trade-offs between model scale, task-specific fine-tuning, generalization, and computational cost.</li>
                         </ul>
                     </div>
@@ -148,9 +153,8 @@
                             <span class="cv-date">Fall 2025</span>
                         </div>
                         <ul>
-                            <li>Benchmarked 15+ regression models using AutoML (PyCaret) on a dataset of 3,000+ job postings.</li>
-                            <li>Used SHAP to interpret associations between model predictions and features including geography, firm size, and skill requirements.</li>
-                            <li>Tracked experiments with MLflow; reported MAE, RMSE, and R&sup2; across conditions.</li>
+                            <li>Built an interactive Streamlit prototype for exploring a 742-record cleaned salary-posting dataset, training a salary model, and inspecting feature contributions with SHAP.</li>
+                            <li>Implemented optional PyCaret and MLflow workflows for model comparison and experiment logging.</li>
                         </ul>
                     </div>
                     <div class="cv-entry">
@@ -159,8 +163,8 @@
                             <span class="cv-date">Spring 2025</span>
                         </div>
                         <ul>
-                            <li>Modeled statistical associations between socioeconomic indicators and violent crime rates across 1,994 communities without making causal claims.</li>
-                            <li>Evaluated predictive performance using cross-validation (R&sup2; = 0.85) and built interactive visualizations for interpretation.</li>
+                            <li>Built an interactive Streamlit prototype that fits a six-feature linear regression to 1,994 complete cases from a community-crime dataset.</li>
+                            <li>Added exploratory visualizations and scenario inputs; results are descriptive rather than causal.</li>
                         </ul>
                     </div>
                     <div class="cv-entry">
@@ -170,7 +174,7 @@
                         </div>
                         <ul>
                             <li>Contributed to a team-built system for resource allocation and scheduling under shared constraints, including role-based access and conflict resolution.</li>
-                            <li>Developed RESTful APIs and automated CI/CD pipelines using Docker and GitHub Actions for reproducible deployment.</li>
+                            <li>Developed RESTful APIs and contributed to integration testing and GitHub Actions CI/CD.</li>
                         </ul>
                     </div>
                 </div>
@@ -184,8 +188,8 @@
                         </div>
                         <p class="cv-sub">Zeek</p>
                         <ul>
-                            <li>Developed and evaluated segmentation models on noisy real-world data, iterating on preprocessing and model selection for production reliability.</li>
-                            <li>Applied model interpretability techniques to study robustness and bias sensitivity, helping the team decide which model variants to deploy.</li>
+                            <li>Developed and evaluated segmentation models on noisy real-world data, iterating on preprocessing and model selection to assess model reliability.</li>
+                            <li>Applied model-interpretability techniques to study robustness and bias sensitivity as part of model evaluation.</li>
                             <li>Contributed to the team&rsquo;s evaluation workflow by adding standardized metrics and validation procedures to the model development cycle.</li>
                         </ul>
                     </div>
@@ -238,12 +242,9 @@
                 <a href="cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
                 <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="https://github.com/ansester" target="_blank" rel="noopener">GitHub</a>
-                <!-- When you have these, uncomment and fill in the real URLs:
-                <a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
-                <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a>
-                -->
             </div>
         </div>
     </footer>
+    <button class="back-to-top" type="button" aria-label="Back to top" data-back-to-top>&uarr;</button>
 </body>
 </html>

@@ -3,48 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Research by Ashmit Mukherjee on AI evaluation, computational experiments, human-AI collaboration, and parameter-efficient model adaptation.">
+    <meta name="description" content="Research by Ashmit Mukherjee on AI evaluation, human-AI collaboration, model adaptation, and computational experimentation.">
     <title>Research | Ashmit Mukherjee</title>
     <link rel="canonical" href="https://ashmitmukherjee.com/research.html">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314213d'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='32' fill='%23fffdf8'%3EA%3C/text%3E%3C/svg%3E">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ashmitmukherjee.com/research.html">
     <meta property="og:title" content="Research | Ashmit Mukherjee">
-    <meta property="og:description" content="Research on applied AI, computational experimentation, data-driven discovery, and machine learning evaluation.">
+    <meta property="og:description" content="AI evaluation, computational experiments, and research engineering.">
     <meta property="og:image" content="https://ashmitmukherjee.com/social-card.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://ashmitmukherjee.com/social-card.png">
-    <link rel="stylesheet" href="style.css?v=20260720">
+    <link rel="stylesheet" href="style.css?v=20260801">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&amp;display=swap" rel="stylesheet">
+    <script src="site.js?v=20260801" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-        <nav class="container" aria-label="Primary navigation">
-            <div class="nav-left">
-                <a class="nav-brand" href="index.html">Ashmit Mukherjee</a>
-                <div class="nav-icons">
-                    <a href="mailto:asm8879@nyu.edu" aria-label="Email">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                    </a>
-                    <a href="https://github.com/ansester" target="_blank" rel="noopener" aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="nav-links">
+        <nav class="site-nav container" aria-label="Primary navigation">
+            <a class="nav-brand" href="index.html" aria-label="Ashmit Mukherjee home">
+                <span class="nav-monogram" aria-hidden="true">A</span>
+                <span>Ashmit Mukherjee</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+                <span class="menu-toggle-icon" aria-hidden="true"></span>
+                <span>Menu</span>
+            </button>
+            <div class="nav-links" id="site-menu">
                 <a href="index.html">Home</a>
                 <a href="research.html" aria-current="page">Research</a>
-                <a href="publications.html">Publications</a>
+                <a href="publications.html">Writing</a>
                 <a href="projects.html">Projects</a>
                 <a href="cv.html">CV</a>
+            </div>
+            <div class="nav-icons" aria-label="Contact and social links">
+                <a href="mailto:asm8879@nyu.edu" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2,2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </a>
+                <a href="https://github.com/ansester" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
             </div>
         </nav>
     </header>
@@ -54,95 +60,86 @@
             <div class="container">
                 <p class="eyebrow">Current work</p>
                 <h1>Research</h1>
-                <p class="lead">I design AI systems and studies, then test whether the apparent gains are stable, interpretable, and meaningful beyond a single result.</p>
+                <p class="lead">I design AI systems and studies, then test whether an apparent gain is stable, interpretable, and meaningful beyond a single result.</p>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" aria-labelledby="areas-title">
             <div class="container two-column">
                 <div class="section-heading">
                     <p class="eyebrow">Overview</p>
-                    <h2>Research areas</h2>
+                    <h2 id="areas-title">Research areas</h2>
                 </div>
                 <div class="content-stack">
                     <div class="interest-grid">
                         <article>
-                            <h3>Data and Computational Inference</h3>
+                            <h3>Data and computational inference</h3>
                             <p>Constructing useful measurements and representations from structured and unstructured data, then testing what can be inferred from them.</p>
                         </article>
                         <article>
-                            <h3>AI Experimentation</h3>
+                            <h3>AI experimentation</h3>
                             <p>Designing controlled interventions to study how AI systems change decisions, coordination, and other downstream outcomes.</p>
                         </article>
                         <article>
-                            <h3>Model and System Evaluation</h3>
-                            <p>Training and adapting language models, building reproducible pipelines, measuring computational efficiency, and testing whether improvements generalize.</p>
+                            <h3>Model and system evaluation</h3>
+                            <p>Training and adapting language models, building reproducible pipelines, measuring efficiency, and testing whether improvements generalize.</p>
                         </article>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section muted">
+        <section class="section muted" aria-labelledby="current-research-title">
             <div class="container two-column">
                 <div class="section-heading">
-                    <p class="eyebrow">In Depth</p>
-                    <h2>Current research</h2>
+                    <p class="eyebrow">In depth</p>
+                    <h2 id="current-research-title">Current research</h2>
                 </div>
                 <div class="content-stack">
                     <article class="theme">
-                        <p class="theme-label">Computational Experimentation</p>
-                        <h2>How AI support changes collective action</h2>
-                        <p>I am co-developing an online experiment that separates information provision from strategic interpretation, normative framing, and coordination support. The goal is to identify which kinds of assistance change what people do&mdash;not merely what they are shown.</p>
-                        <p>Shared supply chains provide a concrete social dilemma: buyers can improve labor conditions together, but each has an incentive to reduce its own costs and hope others act. The study turns that tension into repeated choices, messages, links, and group outcomes.</p>
+                        <p class="theme-label">Computational experimentation</p>
+                        <h2>Collective action in shared supply chains</h2>
+                        <p>I am contributing to study development and behavioral measurement for an online research project on collaboration in shared supply chains.</p>
                         <dl class="research-snapshot" aria-label="Study at a glance">
-                            <div><dt>Design</dt><dd>Five human buyers, one fixed-rule supplier, four experimental conditions</dd></div>
-                            <div><dt>Role</dt><dd>Co-developing the study design, treatments, and behavioral measures</dd></div>
-                            <div><dt>Status</dt><dd>Working paper complete; experimental implementation in progress</dd></div>
+                            <div><dt>Approach</dt><dd>Online group-decision research project</dd></div>
+                            <div><dt>Contribution</dt><dd>Study development and behavioral measurement</dd></div>
+                            <div><dt>Status</dt><dd>Working paper, June 2026 · Implementation in progress</dd></div>
                         </dl>
                         <div class="theme-project">
-                            <h3>AI and Human Collaboration in Social Dilemmas</h3>
-                            <p class="theme-meta">With Benjamin Rosche and Hanan Salam &middot; Working paper, June 2026</p>
-                            <p>Participants decide whether to pay fairly, audit, form information-sharing links, communicate, and join costly remediation. The AI does not choose on anyone&rsquo;s behalf; it changes how people interpret and coordinate around the decision.</p>
-                            <ul class="treatment-list">
-                                <li><strong>Structured-information control:</strong> rules, records, findings, and communication tools without AI interpretation.</li>
-                                <li><strong>Strategic interpretation:</strong> a private explanation of the decision&rsquo;s strategic structure.</li>
-                                <li><strong>Normative interpretation:</strong> responsibility, complicity, and harm frames alongside the strategic context.</li>
-                                <li><strong>Collective-action support:</strong> partner suggestions, conditional-message drafting, and coalition tracking.</li>
-                            </ul>
-                            <p class="theme-aside">Measures include fair pay, auditing, links, remediation, welfare, responsibility attribution, and persistence after AI withdrawal.</p>
-                            <p class="theme-links"><a href="mailto:asm8879@nyu.edu?subject=Working%20paper%20request%3A%20AI%20and%20Human%20Collaboration%20in%20Social%20Dilemmas">Request the working paper <span aria-hidden="true">&rarr;</span></a></p>
+                            <h3>Human-AI collaboration in shared supply chains</h3>
+                            <p class="theme-meta">With Benjamin Rosche and Hanan Salam · Working paper, June 2026</p>
+                            <p>Study materials and condition details are not publicly posted while implementation is ongoing.</p>
                         </div>
                     </article>
 
                     <article class="theme">
-                        <p class="theme-label">Model Training and Evaluation</p>
+                        <p class="theme-label">Model training and evaluation</p>
                         <h2>Efficient adaptation with biological priors</h2>
                         <p>This project asks how domain knowledge can be introduced into pretrained protein models while preserving the efficiency benefits of parameter-efficient fine-tuning.</p>
                         <div class="theme-project">
                             <h3>Bio-Informed LoRA for Signal Peptide Prediction</h3>
-                            <p class="theme-meta">Research Assistant, eBRAIN Lab, NYU Abu Dhabi &middot; 2026 to present &middot; Co-first author</p>
-                            <p>I co-developed a method that incorporates BLOSUM62, hydrophobicity, and Grantham priors into LoRA adapters for ESM-2. BLOSUM62-guided adaptation matches or exceeds full fine-tuning on SignalP6 benchmarks while training approximately 3.6% of model parameters and using approximately 43% less peak GPU memory at the 3B-parameter scale.</p>
-                            <div class="research-result-grid" aria-label="Selected evaluation results">
-                                <p><strong>~3.6%</strong><span>of parameters trained</span></p>
-                                <p><strong>~43%</strong><span>less peak GPU memory at 3B scale</span></p>
-                                <p><strong>Multi-seed</strong><span>evaluation and sensitivity analysis</span></p>
+                            <p class="theme-meta">Research Assistant, eBRAIN Lab, NYU Abu Dhabi · 2026 to present</p>
+                            <p>I implemented and evaluated an ESM-2 adaptation method that combines LoRA adapters with a separate projected path for BLOSUM62, hydrophobicity, and Grantham residue priors, added to hidden states before classification. In the original three-seed 650M comparison, BLOSUM62-guided LoRA had the highest mean across the reported primary metrics.</p>
+                            <div class="research-result-grid" aria-label="Evaluation approach">
+                                <p><strong>650M</strong><span>original three-seed comparison</span></p>
+                                <p><strong>3 seeds</strong><span>used to confirm the reported result</span></p>
+                                <p><strong>Follow-up screens</strong><span>exploratory, not benchmark-comparable</span></p>
                             </div>
-                            <p>My contribution focuses on training and evaluation design. I developed multi-seed protocols and a one-factor sensitivity analysis; several single-seed gains did not replicate, underscoring the importance of controlled comparison.</p>
-                            <p class="theme-aside">Under review at an EMNLP 2026 workshop.</p>
-                            <p class="theme-links"><a href="mailto:asm8879@nyu.edu?subject=Manuscript%20request%3A%20Bio-Informed%20LoRA">Request the manuscript <span aria-hidden="true">&rarr;</span></a></p>
+                            <p>My contribution focuses on training and evaluation design, including multi-seed protocols and a one-factor sensitivity analysis. Several promising single-seed gains did not replicate, reinforcing the need for controlled comparison.</p>
+                            <p class="theme-aside">Manuscript in preparation.</p>
+                            <p class="theme-links"><a href="mailto:asm8879@nyu.edu?subject=Manuscript%20request%3A%20Bio-Informed%20LoRA">Request information about the manuscript <span aria-hidden="true">&rarr;</span></a></p>
                         </div>
                     </article>
 
                     <article class="theme">
-                        <p class="theme-label">Data and Representation</p>
+                        <p class="theme-label">Data and representation</p>
                         <h2>Learning from code-mixed language data</h2>
                         <p>This project compared task-specific multilingual fine-tuning with zero-shot general-purpose models on Hinglish named-entity recognition, where languages and scripts are mixed within the same data.</p>
                         <div class="theme-project">
                             <h3>Hinglish Named Entity Recognition Benchmark</h3>
-                            <p class="theme-meta">Research project &middot; Fall 2024</p>
-                            <p>I fine-tuned mBERT and XLM-RoBERTa on the COMI-LINGUA dataset, then evaluated them against GPT-4o and Claude 3.5 Sonnet baselines under a common protocol. Fine-tuned XLM-RoBERTa achieved 78% entity-level F1, compared with 76% for the GPT-4o baseline.</p>
-                            <p class="theme-links"><a href="https://github.com/Ansester/hinglish-ner-research" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a> <span aria-hidden="true">&middot;</span> <a href="https://github.com/Ansester/hinglish-ner-research/blob/main/research_report.pdf" target="_blank" rel="noopener">Read the report <span aria-hidden="true">&rarr;</span></a></p>
+                            <p class="theme-meta">Research project · Fall 2024</p>
+                            <p>I fine-tuned mBERT and XLM-RoBERTa on the COMI-LINGUA dataset and documented zero-shot baseline experiments. The public repository includes data preparation and evaluation code.</p>
+                            <p class="theme-links"><a href="https://github.com/Ansester/hinglish-ner-research" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a> <span aria-hidden="true">·</span> <a href="https://github.com/Ansester/hinglish-ner-research/blob/main/research_report.pdf" target="_blank" rel="noopener">Read the report <span aria-hidden="true">&rarr;</span></a></p>
                         </div>
                     </article>
                 </div>
@@ -158,12 +155,9 @@
                 <a href="cv.html">CV</a>
                 <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="https://github.com/ansester" target="_blank" rel="noopener">GitHub</a>
-                <!-- When you have these, uncomment and fill in the real URLs:
-                <a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
-                <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a>
-                -->
             </div>
         </div>
     </footer>
+    <button class="back-to-top" type="button" aria-label="Back to top" data-back-to-top>&uarr;</button>
 </body>
 </html>
