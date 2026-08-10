@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Selected machine-learning, data analysis, and software projects by Ashmit Mukherjee.">
+    <meta name="description" content="Selected projects in data, language, and software by Ashmit Mukherjee.">
     <title>Projects | Ashmit Mukherjee</title>
     <link rel="canonical" href="https://ashmitmukherjee.com/projects.html">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314213d'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='32' fill='%23fffdf8'%3EA%3C/text%3E%3C/svg%3E">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ashmitmukherjee.com/projects.html">
     <meta property="og:title" content="Projects | Ashmit Mukherjee">
-    <meta property="og:description" content="Selected machine-learning, data analysis, and software projects by Ashmit Mukherjee.">
+    <meta property="og:description" content="Selected projects in data, language, and software by Ashmit Mukherjee.">
     <meta property="og:image" content="https://ashmitmukherjee.com/social-card.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://ashmitmukherjee.com/social-card.png">
-    <link rel="stylesheet" href="style.css?v=20260801">
+    <link rel="stylesheet" href="style.css?v=20260810">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&amp;display=swap" rel="stylesheet">
@@ -37,9 +37,8 @@
             <div class="nav-links" id="site-menu">
                 <a href="index.html">Home</a>
                 <a href="research.html">Research</a>
-                <a href="publications.html">Writing</a>
                 <a href="projects.html" aria-current="page">Projects</a>
-                <a href="cv.html">CV</a>
+                <a href="cv.html">Resume</a>
             </div>
             <div class="nav-icons" aria-label="Contact and social links">
                 <a href="mailto:asm8879@nyu.edu" aria-label="Email">
@@ -60,7 +59,7 @@
             <div class="container">
                 <p class="eyebrow">Projects</p>
                 <h1>Projects</h1>
-                <p class="lead">Selected research and coursework projects in machine learning, data analysis, and software systems.</p>
+                <p class="lead">Coursework and independent projects in data, language, and software.</p>
             </div>
         </section>
 
@@ -76,7 +75,7 @@
                             <p class="filter-label">Filter by area</p>
                             <div class="filter-buttons" aria-label="Filter projects by area">
                                 <button class="filter-button" type="button" aria-pressed="true" data-project-filter="all">All work</button>
-                                <button class="filter-button" type="button" aria-pressed="false" data-project-filter="ai">AI and NLP</button>
+                                <button class="filter-button" type="button" aria-pressed="false" data-project-filter="ai">Language and AI</button>
                                 <button class="filter-button" type="button" aria-pressed="false" data-project-filter="data">Data analysis</button>
                                 <button class="filter-button" type="button" aria-pressed="false" data-project-filter="systems">Software systems</button>
                             </div>
@@ -92,11 +91,11 @@
                         <article class="project-card project-card--featured" data-project-card data-project-topics="ai">
                             <div>
                                 <div class="project-card-topline">
-                                    <p class="project-type">AI and NLP</p>
+                                    <p class="project-type">Language and AI</p>
                                     <p class="project-date">Fall 2024</p>
                                 </div>
                                 <h2>Hinglish named entity recognition benchmark</h2>
-                                <p>Prepared COMI-LINGUA for entity-level evaluation, fine-tuned mBERT and XLM-RoBERTa, and documented zero-shot baseline experiments. The repository includes data preparation, evaluation, and error-slice analysis code.</p>
+                                <p>Built a benchmark for Hindi-English named-entity recognition. I prepared COMI-LINGUA for entity-level evaluation, fine-tuned mBERT and XLM-RoBERTa, and documented zero-shot baselines. The repository includes data-preparation, evaluation, and error-analysis code.</p>
                                 <div class="tag-list" aria-label="Tools used">
                                     <span>PyTorch</span>
                                     <span>Transformers</span>
@@ -117,8 +116,8 @@
                                 <p class="project-type">Data analysis</p>
                                 <p class="project-date">Fall 2025</p>
                             </div>
-                            <h2>Data science salary prediction platform</h2>
-                            <p>Built an interactive Streamlit prototype for exploring a 742-record cleaned salary-posting dataset, training a salary model, and inspecting feature contributions with SHAP. The project includes optional PyCaret and MLflow workflows for model comparison and experiment logging.</p>
+                            <h2>Salary data analysis</h2>
+                            <p>Built a Streamlit project for exploring a cleaned salary-posting dataset, comparing salary models, and inspecting feature contributions with SHAP. The repository includes optional workflows for model comparison and experiment logging.</p>
                             <dl class="project-proof" aria-label="Salary prediction results">
                                 <div><dt>742</dt><dd>records in the committed dataset</dd></div>
                                 <div><dt>PyCaret</dt><dd>optional AutoML workflow</dd></div>
@@ -139,7 +138,7 @@
                                 <p class="project-date">Spring 2025</p>
                             </div>
                             <h2>Community-level crime modeling</h2>
-                            <p>Built an interactive Streamlit prototype that fits a six-feature linear regression to 1,994 complete cases from a community-crime dataset. It includes exploratory visualizations and scenario inputs; results are descriptive rather than causal.</p>
+                            <p>Built a Streamlit project for exploring patterns in a community-level crime dataset. The model uses six socioeconomic features across 1,994 complete cases; the results are descriptive rather than causal.</p>
                             <dl class="project-proof" aria-label="Community-level crime modeling results">
                                 <div><dt>1,994</dt><dd>complete cases in the analysis</dd></div>
                                 <div><dt>6</dt><dd>socioeconomic features</dd></div>
@@ -160,7 +159,7 @@
                                 <p class="project-date">Fall 2025</p>
                             </div>
                             <h2>CAMP: Campus Asset Management Platform</h2>
-                            <p>Contributed to a team-built platform for campus asset reservation and management. The project includes role-based workflows, RESTful APIs, integration tests, and GitHub Actions CI/CD.</p>
+                            <p>Worked on a team-built platform for campus asset reservation and management. The project includes role-based workflows, RESTful APIs, integration tests, and GitHub Actions CI/CD.</p>
                             <figure class="project-preview">
                                 <img src="assets/camp-home.png" alt="Mobile home screen concept for CAMP showing asset search, current checkouts, upcoming reservations, and borrowing links." width="390" height="844" loading="lazy">
                                 <figcaption>Mobile home-screen concept from the team's CAMP design work.</figcaption>
@@ -187,7 +186,7 @@
             <p>&copy; 2026 Ashmit Mukherjee.</p>
             <div class="footer-links">
                 <a href="mailto:asm8879@nyu.edu">Email</a>
-                <a href="cv.html">CV</a>
+                <a href="cv.html">Resume</a>
                 <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="https://github.com/ansester" target="_blank" rel="noopener">GitHub</a>
             </div>
