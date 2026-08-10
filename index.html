@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ashmit Mukherjee is a Computer Science student at NYU Abu Dhabi working across computational social science, applied machine learning, and experimental research.">
-    <title>Ashmit Mukherjee | Computer Science at NYU Abu Dhabi</title>
+    <title>Ashmit Mukherjee | Computational Social Science and Applied Machine Learning</title>
     <link rel="canonical" href="https://ashmitmukherjee.com/">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314213d'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='32' fill='%23fffdf8'%3EA%3C/text%3E%3C/svg%3E">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ashmitmukherjee.com/">
-    <meta property="og:title" content="Ashmit Mukherjee | Computer Science at NYU Abu Dhabi">
-    <meta property="og:description" content="Computer Science student at NYU Abu Dhabi working across computational social science, applied machine learning, and experimental research.">
+    <meta property="og:title" content="Ashmit Mukherjee | Computational Social Science and Applied Machine Learning">
+    <meta property="og:description" content="Computer Science student at NYU Abu Dhabi | Computational Social Science | Applied Machine Learning | Experimental Research">
     <meta property="og:image" content="https://ashmitmukherjee.com/social-card.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ashmit Mukherjee | Computer Science at NYU Abu Dhabi">
-    <meta name="twitter:description" content="Computer Science student at NYU Abu Dhabi working across computational social science, applied machine learning, and experimental research.">
+    <meta name="twitter:title" content="Ashmit Mukherjee | Computational Social Science and Applied Machine Learning">
+    <meta name="twitter:description" content="Computer Science student at NYU Abu Dhabi | Computational Social Science | Applied Machine Learning | Experimental Research">
     <meta name="twitter:image" content="https://ashmitmukherjee.com/social-card.png">
-    <link rel="stylesheet" href="style.css?v=20260810">
+    <link rel="stylesheet" href="style.css?v=20260810j">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&amp;display=swap" rel="stylesheet">
-    <script src="site.js?v=20260801" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;display=swap" rel="stylesheet">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -31,6 +30,7 @@
         "url": "https://ashmitmukherjee.com/",
         "image": "https://ashmitmukherjee.com/ashmit-profile.jpg",
         "email": "mailto:asm8879@nyu.edu",
+        "jobTitle": "Computer Science Student",
         "affiliation": {
             "@type": "CollegeOrUniversity",
             "name": "New York University Abu Dhabi"
@@ -45,108 +45,348 @@
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-        <nav class="site-nav container" aria-label="Primary navigation">
-            <a class="nav-brand" href="index.html" aria-label="Ashmit Mukherjee home">
+        <div class="site-nav container">
+            <a class="nav-brand" href="#main" aria-label="Ashmit Mukherjee">
                 <span class="nav-monogram" aria-hidden="true">A</span>
                 <span>Ashmit Mukherjee</span>
             </a>
-            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
-                <span class="menu-toggle-icon" aria-hidden="true"></span>
-                <span>Menu</span>
+            
+            <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-menu" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-close" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
-            <div class="nav-links" id="site-menu">
-                <a href="index.html" aria-current="page">Home</a>
-                <a href="research.html">Research</a>
-                <a href="projects.html">Projects</a>
-                <a href="cv.html">Resume</a>
-            </div>
-            <div class="nav-icons" aria-label="Contact and social links">
-                <a href="mailto:asm8879@nyu.edu" aria-label="Email">
+
+            <nav class="nav-links" id="site-menu" aria-label="Sections">
+                <a href="#research">Research</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#background">Education &amp; Skills</a>
+            </nav>
+
+            <div class="nav-actions" aria-label="Contact and Theme Toggle">
+                <button class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark theme" title="Toggle dark theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sun" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <button class="nav-icon" data-copy-email="asm8879@nyu.edu" aria-label="Copy Email address" title="Copy Email">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                </a>
-                <a href="https://github.com/ansester" target="_blank" rel="noopener" aria-label="GitHub">
+                </button>
+                <a class="nav-icon" href="https://github.com/ansester" target="_blank" rel="noopener" aria-label="GitHub">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <a class="nav-icon" href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener" aria-label="LinkedIn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
             </div>
-        </nav>
+        </div>
     </header>
 
     <main id="main">
         <section class="hero">
             <div class="container hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow">Computer Science · NYU Abu Dhabi · Expected May 2027</p>
+                    <p class="eyebrow">Computer Science at NYU Abu Dhabi</p>
                     <h1>Ashmit Mukherjee</h1>
-                    <p class="hero-lead">I use data, models, and experiments to investigate social, economic, and historical questions.</p>
-                    <p class="hero-summary">My current work includes leading technical implementation for an online human-AI research platform and building training and evaluation pipelines for pretrained models.</p>
+                    <p class="lead">Computer Science student at NYU Abu Dhabi | Computational Social Science | Applied Machine Learning | Experimental Research</p>
+                    <p>I am a computer science student at New York University Abu Dhabi, graduating in May 2027.</p>
+                    <p>My work spans computational social science, applied machine learning, and experimental research. I use statistical and computational methods to investigate social, economic, and historical questions. I also build the systems needed to collect data, run experiments, and evaluate models.</p>
+                    <p>I currently lead the technical implementation of an online platform for a human-AI research project and contribute to study design. At the eBRAIN Lab, I build training and evaluation pipelines for adapting protein language models. I have also worked on multilingual natural language processing, applied data analysis, and software systems.</p>
+                    <p>I am most interested in work that follows the full empirical cycle: formulating a question, structuring data, building a model or system, testing it, and interpreting what the evidence means.</p>
                     <div class="cta-row">
-                        <a class="btn primary" href="research.html">Research <span class="arrow" aria-hidden="true">&rarr;</span></a>
-                        <a class="btn" href="projects.html">Public projects</a>
-                        <a class="btn" href="cv.pdf" download>Download resume</a>
+                        <a class="btn primary" href="#research">Research</a>
+                        <a class="btn" href="#projects">Projects</a>
+                        <a class="btn" href="#experience">Experience</a>
                     </div>
-                    <p class="hero-identity">Computational social science · applied machine learning · experimental research</p>
                 </div>
-                <aside class="hero-aside" aria-label="Current practice">
-                    <img class="hero-photo" src="ashmit-profile.jpg" alt="Ashmit Mukherjee" width="677" height="677">
-                    <div class="hero-aside-copy">
-                        <p class="eyebrow">Current practice</p>
-                    <dl class="hero-record">
+                <aside class="profile-panel" aria-label="Profile summary">
+                    <img class="profile-photo" src="ashmit-profile.jpg" alt="Ashmit Mukherjee" width="677" height="677">
+                    <dl class="profile-facts">
                         <div>
-                            <dt>Build</dt>
-                            <dd>Research systems and data workflows</dd>
+                            <dt>Based at</dt>
+                            <dd>New York University Abu Dhabi</dd>
                         </div>
                         <div>
-                            <dt>Evaluate</dt>
-                            <dd>Models and repeated experiments</dd>
+                            <dt>Focus</dt>
+                            <dd>Computational social science, applied machine learning, and experimental research</dd>
                         </div>
                         <div>
-                            <dt>Public work</dt>
-                            <dd><a href="https://github.com/Ansester/hinglish-ner-research" target="_blank" rel="noopener">Hinglish NER benchmark</a></dd>
+                            <dt>Methods</dt>
+                            <dd>Statistical analysis, experimental design, model evaluation, and research engineering</dd>
+                        </div>
+                        <div>
+                            <dt>Graduation</dt>
+                            <dd>Expected May 2027</dd>
                         </div>
                     </dl>
-                    </div>
                 </aside>
             </div>
         </section>
 
-        <section class="section evidence-section" aria-labelledby="selected-work-title">
-            <div class="container two-column">
-                <div class="section-heading">
-                    <p class="eyebrow">Selected work</p>
-                    <h2 id="selected-work-title">What I am building and evaluating</h2>
+        <section class="section" id="research" aria-labelledby="research-title">
+            <div class="container">
+                <h2 id="research-title">Research</h2>
+                <p class="section-lead">My research interests lie in computational social science, applied machine learning, and experimental research. I use statistical and computational methods to investigate social, economic, and historical phenomena. Depending on the question, the work may involve constructing data, designing an experiment, training a model, building a research platform, or evaluating whether an apparent result survives repeated testing.</p>
+
+                <h3 class="sub-title">Research areas</h3>
+                <div class="area-list">
+                    <article>
+                        <h4>Computational social science</h4>
+                        <p>I am interested in the empirical study of institutions, markets, collective behavior, language, culture, and historical change. Computation is useful because it allows questions to be operationalized, measured, and examined across forms of data that would otherwise be difficult to analyze systematically.</p>
+                    </article>
+                    <article>
+                        <h4>Applied machine learning and AI evaluation</h4>
+                        <p>I train and adapt models, construct evaluation pipelines, compare meaningful baselines, and examine how results change across repeated runs and model configurations. I am especially interested in the difference between an apparent improvement and one that remains credible after controlled evaluation.</p>
+                    </article>
+                    <article>
+                        <h4>Experimental research and research engineering</h4>
+                        <p>I enjoy research in which the experimental system is itself a substantial part of the work. This includes translating theoretical questions into procedures, implementing the research platform, validating its behavior, and producing data that can support a defensible analysis.</p>
+                    </article>
                 </div>
-                <div class="content-stack">
-                    <p class="section-lead">Current research systems and model-evaluation work, followed by a public research artifact.</p>
-                    <div class="evidence-grid">
-                        <article class="evidence-card">
-                            <p class="evidence-label">Research systems</p>
-                            <h3>Online research platform</h3>
-                            <p>I lead the technical implementation of an online platform for a human-AI research project.</p>
-                            <p class="evidence-meta">Technical implementation · deployment · data workflows</p>
-                            <p class="evidence-links"><a href="research.html">Research overview <span aria-hidden="true">&rarr;</span></a></p>
-                        </article>
-                        <article class="evidence-card">
-                            <p class="evidence-label">Model evaluation</p>
-                            <h3>Pretrained model adaptation</h3>
-                            <p>At eBRAIN, I build training and evaluation pipelines for protein language models and examine which results hold up across repeated runs.</p>
-                            <p class="evidence-meta">Training pipelines · multi-seed evaluation · NYU Abu Dhabi HPC</p>
-                            <p class="evidence-links"><a href="research.html">Research overview <span aria-hidden="true">&rarr;</span></a></p>
-                        </article>
-                        <article class="evidence-card">
-                            <p class="evidence-label">Public research artifact</p>
-                            <h3>Hindi-English NER benchmark</h3>
-                            <p>I prepared COMI-LINGUA for entity-level evaluation, fine-tuned mBERT and XLM-RoBERTa, and documented zero-shot baselines.</p>
-                            <p class="evidence-meta">Data preparation · evaluation · research report</p>
-                            <p class="evidence-links"><a href="https://github.com/Ansester/hinglish-ner-research" target="_blank" rel="noopener">View code <span aria-hidden="true">&rarr;</span></a> <span aria-hidden="true">·</span> <a href="https://github.com/Ansester/hinglish-ner-research/blob/main/research_report.pdf" target="_blank" rel="noopener">Read report <span aria-hidden="true">&rarr;</span></a></p>
-                        </article>
+
+                <h3 class="sub-title">Current research</h3>
+                <article class="entry">
+                    <div class="entry-head">
+                        <h4>Human-AI collaboration</h4>
+                        <p class="entry-date">Feb 2026 to present</p>
                     </div>
-                </div>
+                    <p class="entry-org">Research Assistant, New York University Abu Dhabi</p>
+                    <p>At New York University Abu Dhabi, I contribute to the study design of an experimental research project on human-AI collaboration and lead the technical implementation of its online research platform.</p>
+                    <p>My work focuses on translating theoretical requirements into platform behavior, structured validation checks, and data workflows for subsequent empirical analysis.</p>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h4>Protein language models</h4>
+                        <p class="entry-date">Feb 2026 to present</p>
+                    </div>
+                    <p class="entry-org">Research Assistant, eBRAIN Lab, New York University Abu Dhabi</p>
+                    <p>At the eBRAIN Lab, I develop and evaluate parameter-efficient methods for adapting protein language models to protein-sequence tasks.</p>
+                    <p>The work focuses on constructing training and evaluation pipelines, running multi-seed experiment sweeps on the university high-performance computing cluster, and examining whether results remain stable across model configurations.</p>
+                </article>
+
+                <h3 class="sub-title">Previous research</h3>
+                <article class="entry">
+                    <div class="entry-head">
+                        <h4>Hinglish named-entity recognition</h4>
+                        <p class="entry-date">Fall 2024</p>
+                    </div>
+                    <p>Fine-tuned mBERT and XLM-RoBERTa for named-entity recognition on Hindi-English code-mixed text from COMI-LINGUA and benchmarked them against zero-shot general-purpose language-model baselines.</p>
+                    <p class="entry-links"><a href="https://github.com/Ansester/hinglish-ner-research" target="_blank" rel="noopener">Repository &rarr;</a> <a href="https://github.com/Ansester/hinglish-ner-research/blob/main/research_report.pdf" target="_blank" rel="noopener">Research report &rarr;</a></p>
+                </article>
             </div>
         </section>
 
+        <section class="section" id="projects" aria-labelledby="projects-title">
+            <div class="container">
+                <h2 id="projects-title">Projects</h2>
+                <p class="section-lead">Selected projects in applied machine learning, data analysis, multilingual NLP, and software systems.</p>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h4>Data Science Salary Prediction Platform</h4>
+                        <p class="entry-date">Fall 2025</p>
+                    </div>
+                    <ul>
+                        <li>Built an AutoML salary-prediction workflow using cleaned Glassdoor job-listing data, with PyCaret model comparison, XGBoost, SHAP interpretation, MLflow experiment tracking, and Streamlit.</li>
+                    </ul>
+                    <p class="entry-methods"><span>Methods</span> PyCaret, XGBoost, SHAP, MLflow, Streamlit</p>
+                    <p class="entry-links"><a href="https://github.com/Ansester/salary-prediction-ml" target="_blank" rel="noopener">Repository &rarr;</a></p>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h4>Crime Data Analysis and Prediction Platform</h4>
+                        <p class="entry-date">Spring 2025</p>
+                    </div>
+                    <ul>
+                        <li>Modeled observational relationships between socioeconomic indicators and violent-crime rates across U.S. communities using regression and holdout evaluation, with an interactive application for descriptive exploration and model-based prediction.</li>
+                    </ul>
+                    <p class="entry-methods"><span>Methods</span> scikit-learn, pandas, Plotly, Streamlit, regression</p>
+                    <p class="entry-links"><a href="https://github.com/Ansester/crime-prediction-ml" target="_blank" rel="noopener">Repository &rarr;</a></p>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h4>Hinglish Named Entity Recognition Benchmark</h4>
+                        <p class="entry-date">Fall 2024</p>
+                    </div>
+                    <ul>
+                        <li>Fine-tuned mBERT and XLM-RoBERTa for named-entity recognition on Hindi-English code-mixed text from COMI-LINGUA and benchmarked them against zero-shot general-purpose language-model baselines.</li>
+                    </ul>
+                    <p class="entry-methods"><span>Methods</span> PyTorch, Hugging Face Transformers, multilingual NLP, entity-level evaluation</p>
+                    <p class="entry-links"><a href="https://github.com/Ansester/hinglish-ner-research" target="_blank" rel="noopener">Repository &rarr;</a> <a href="https://github.com/Ansester/hinglish-ner-research/blob/main/research_report.pdf" target="_blank" rel="noopener">Research report &rarr;</a></p>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h4>CAMP: Campus Asset Management Platform</h4>
+                        <p class="entry-date">Fall 2024</p>
+                    </div>
+                    <ul>
+                        <li>Designed and implemented a multi-user resource scheduling platform with role-based access control, conflict-resolution workflows, authenticated REST APIs, and GitHub Actions CI/CD.</li>
+                    </ul>
+                    <p class="entry-methods"><span>Methods</span> React, Node.js, MongoDB, REST APIs, GitHub Actions</p>
+                    <p class="entry-links"><a href="https://github.com/Ansester/camp-final-project" target="_blank" rel="noopener">Repository &rarr;</a></p>
+                </article>
+
+                <p class="more-link"><a href="https://github.com/ansester" target="_blank" rel="noopener">More work on GitHub &rarr;</a></p>
+            </div>
+        </section>
+
+        <section class="section" id="experience" aria-labelledby="experience-title">
+            <div class="container">
+                <h2 id="experience-title">Experience</h2>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h4>Research Assistant, Human-AI Collaboration</h4>
+                        <p class="entry-date">Feb 2026 to present</p>
+                    </div>
+                    <p class="entry-org">New York University Abu Dhabi</p>
+                    <ul>
+                        <li>Lead the technical implementation of an online platform for a human-AI research project.</li>
+                        <li>Build, deploy, and maintain the system used to conduct the research and collect structured experimental data.</li>
+                        <li>Contribute to study design and translate research requirements into platform behavior, data workflows, and validation checks.</li>
+                    </ul>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h4>Research Assistant, eBRAIN Lab</h4>
+                        <p class="entry-date">Feb 2026 to present</p>
+                    </div>
+                    <p class="entry-org">New York University Abu Dhabi</p>
+                    <ul>
+                        <li>Develop and evaluate parameter-efficient methods for adapting protein language models to protein-sequence tasks.</li>
+                        <li>Build training and evaluation pipelines and run multi-seed experiments on the NYU Abu Dhabi HPC cluster.</li>
+                        <li>Compare models and configurations to determine which results hold up across repeated runs.</li>
+                    </ul>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h4>Machine Learning Engineer Intern</h4>
+                        <p class="entry-date">Jun 2025 to Aug 2025</p>
+                    </div>
+                    <p class="entry-org">Zeek</p>
+                    <ul>
+                        <li>Built and evaluated customer-segmentation workflows using real-world data.</li>
+                        <li>Compared preprocessing and model choices, then used SHAP to inspect model behavior.</li>
+                        <li>Contributed to validation and evaluation procedures used in the model-development workflow.</li>
+                    </ul>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h4>Market Research Consultant</h4>
+                        <p class="entry-date">Jun 2024</p>
+                    </div>
+                    <p class="entry-org">Global Media Alliance Broadcasting</p>
+                    <ul>
+                        <li>Led audience analysis, survey design, and customer engagement analysis for a broadcasting company.</li>
+                        <li>Synthesized quantitative and qualitative findings into recommendations presented to senior leadership.</li>
+                    </ul>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h4>First Year Program Facilitator</h4>
+                        <p class="entry-date">Aug 2024 to Dec 2024</p>
+                    </div>
+                    <p class="entry-org">Office of Student Life, New York University Abu Dhabi</p>
+                    <ul>
+                        <li>Facilitated workshops, group discussions, peer activities, and weekly one-to-one check-ins for more than 20 first-year students.</li>
+                        <li>Connected students with academic, wellbeing, and campus resources and organized off-campus cultural excursions.</li>
+                    </ul>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h4>Front of House Staff</h4>
+                        <p class="entry-date">Jan 2024 to May 2024</p>
+                    </div>
+                    <p class="entry-org">New York University Abu Dhabi Arts Center</p>
+                    <ul>
+                        <li>Managed guest check-in, crowd flow, and ticketing operations for events with more than 500 attendees.</li>
+                        <li>Supported VIP guests, performing artists, and last-minute operational changes.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="background" aria-labelledby="background-title">
+            <div class="container">
+                <h2 id="background-title">Education and technical skills</h2>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h4>New York University Abu Dhabi</h4>
+                        <p class="entry-date">Expected May 2027</p>
+                    </div>
+                    <p class="entry-org">B.S. in Computer Science. Study away: NYU Paris and NYU New York.</p>
+                    <p><span class="inline-label">Relevant coursework</span> Natural Language Processing, Principles of Data Science, Statistics, Data Structures and Algorithms, Computer Systems Architecture, Operating Systems.</p>
+                </article>
+
+                <h3 class="sub-title">Pinned core skills</h3>
+                <div class="skill-badges pinned-skills">
+                    <span class="badge primary">Python</span>
+                    <span class="badge primary">Machine Learning</span>
+                    <span class="badge primary">Experimental Design</span>
+                </div>
+
+                <h3 class="sub-title">Programming languages</h3>
+                <div class="skill-badges">
+                    <span class="badge">Python</span>
+                    <span class="badge">C++</span>
+                    <span class="badge">C#</span>
+                    <span class="badge">JavaScript</span>
+                </div>
+
+                <h3 class="sub-title">Machine learning &amp; NLP</h3>
+                <div class="skill-badges">
+                    <span class="badge">PyTorch</span>
+                    <span class="badge">Hugging Face Transformers</span>
+                    <span class="badge">scikit-learn</span>
+                    <span class="badge">XGBoost</span>
+                    <span class="badge">PyCaret</span>
+                    <span class="badge">SHAP</span>
+                    <span class="badge">LoRA</span>
+                    <span class="badge">ESM-2</span>
+                    <span class="badge">Natural Language Processing</span>
+                </div>
+
+                <h3 class="sub-title">Data &amp; statistics</h3>
+                <div class="skill-badges">
+                    <span class="badge">Computational Social Science</span>
+                    <span class="badge">Data Analysis</span>
+                    <span class="badge">Statistical Analysis</span>
+                    <span class="badge">Model Evaluation</span>
+                    <span class="badge">Research Design</span>
+                    <span class="badge">pandas</span>
+                    <span class="badge">NumPy</span>
+                    <span class="badge">SciPy</span>
+                    <span class="badge">Matplotlib</span>
+                    <span class="badge">Seaborn</span>
+                    <span class="badge">Plotly</span>
+                </div>
+
+                <h3 class="sub-title">Systems &amp; infrastructure</h3>
+                <div class="skill-badges">
+                    <span class="badge">FastAPI</span>
+                    <span class="badge">Empirica</span>
+                    <span class="badge">REST APIs</span>
+                    <span class="badge">MongoDB</span>
+                    <span class="badge">Docker</span>
+                    <span class="badge">Slurm</span>
+                    <span class="badge">pytest</span>
+                    <span class="badge">MLflow</span>
+                    <span class="badge">GitHub Actions</span>
+                    <span class="badge">Git</span>
+                    <span class="badge">Streamlit</span>
+                    <span class="badge">LaTeX</span>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
@@ -154,12 +394,14 @@
             <p>&copy; 2026 Ashmit Mukherjee.</p>
             <div class="footer-links">
                 <a href="mailto:asm8879@nyu.edu">Email</a>
-                <a href="cv.html">Resume</a>
                 <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="https://github.com/ansester" target="_blank" rel="noopener">GitHub</a>
             </div>
         </div>
     </footer>
-    <button class="back-to-top" type="button" aria-label="Back to top" data-back-to-top>&uarr;</button>
+    <button class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+    </button>
+    <script src="site.js?v=20260810j"></script>
 </body>
 </html>
