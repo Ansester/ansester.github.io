@@ -1,6 +1,6 @@
-# Ashmit Mukherjee | Research and Engineering Portfolio
+# Ashmit Mukherjee | Personal Website
 
-Research and engineering portfolio for Ashmit Mukherjee, with applied AI work, publications, projects, CV, and contact information.
+Personal website for Ashmit Mukherjee, a Computer Science student at New York University Abu Dhabi. It includes research, projects, a resume, and contact information.
 
 ## Live Site
 
@@ -8,10 +8,10 @@ Visit: [ashmitmukherjee.com](https://ashmitmukherjee.com)
 
 ## Focus Areas
 
-- Data-intensive applied AI research
-- Computational experimentation and statistical analysis
-- Efficient model training and evaluation
-- Human and social applications of AI
+- Computational social science
+- Applied machine learning
+- Experimental research
+- Statistical analysis and research systems
 
 ## Built With
 
