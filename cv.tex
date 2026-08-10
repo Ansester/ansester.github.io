@@ -13,7 +13,7 @@
   colorlinks=true,
   urlcolor=black,
   pdfauthor={Ashmit Mukherjee},
-  pdftitle={Curriculum Vitae -- Ashmit Mukherjee}
+  pdftitle={Resume | Ashmit Mukherjee}
 }
 
 \pagestyle{fancy}
@@ -28,6 +28,7 @@
 \setlength{\parindent}{0pt}
 \raggedbottom
 \sloppy
+\hyphenpenalty=10000
 
 \newcommand{\entry}[2]{\noindent\textbf{#1}\hfill\textit{#2}\par}
 \newcommand{\subentry}[1]{\noindent\textit{#1}\par\vspace{-0.25em}}
@@ -48,89 +49,76 @@
 \end{center}
 \vspace{-0.65em}
 
+\section*{Profile}
+
+{\raggedright
+Computer Science student working across computational social science, applied machine learning, and experimental research. I use statistical and computational methods to investigate social, economic, and historical questions, and build systems for data collection, experimentation, and model evaluation.\par}
+
 \section*{Education}
 
 \entry{New York University Abu Dhabi}{Expected May 2027}
 B.S.\ in Computer Science. Studied at NYU Abu Dhabi, NYU Paris, and NYU New York.\\[-0.1em]
-\textbf{Relevant coursework:} Natural Language Processing; Principles of Data Science; Statistics for Social \& Behavioral Sciences; Data Structures \& Algorithms; Computer Systems Architecture; Operating Systems.
+\textbf{Relevant coursework:} Natural Language Processing; Principles of Data Science; Statistics for Social and Behavioral Sciences; Data Structures and Algorithms; Computer Systems Architecture; Operating Systems.
 
-\section*{Research Interests}
+\section*{Experience}
 
-I build and evaluate AI systems using data, statistical inference, machine learning, experimental design, and research engineering. My work spans human-AI collaboration, parameter-efficient model adaptation, and multilingual NLP.
-
-\section*{Publications and Working Papers}
-
-\noindent Benjamin Rosche, \textbf{Ashmit Mukherjee}, and Hanan Salam. \textit{Working paper on human-AI collaboration in shared supply chains}, June 2026.
-
-\vspace{0.22em}
-\noindent \textbf{Ashmit Mukherjee} and collaborators. ``Bio-Informed LoRA for Signal Peptide Prediction.'' \textit{Manuscript in preparation}, 2026.
-
-\section*{Research Experience}
-
-\entry{Research Assistant: Human-AI Collaboration, NYU Abu Dhabi}{2026--Present}
+\entry{Research Assistant, Human-AI Collaboration, New York University Abu Dhabi}{2026 to present}
 \begin{itemize}
-  \item Contributing to study development and behavioral measurement for an online research project on collaboration in shared supply chains, with Benjamin Rosche and Hanan Salam.
-  \item Co-authored a June 2026 working paper; implementation of related research is ongoing.
+  \item Lead the technical implementation of an online platform for a human-AI research project.
+  \item Build, deploy, and maintain the system used to run the study.
+  \item Contribute to study design and translate research requirements into platform behavior and data workflows.
 \end{itemize}
 
 \vspace{0.20em}
-\entry{Research Assistant: eBRAIN Lab, NYU Abu Dhabi}{2026--Present}
+\entry{Research Assistant, eBRAIN Lab, New York University Abu Dhabi}{2026 to present}
 \begin{itemize}
-  \item Implemented and evaluated \textbf{Bio-Informed LoRA}, an ESM-2 adaptation method that combines LoRA adapters with a separate projected path for BLOSUM62, hydrophobicity, and Grantham residue priors, added to hidden states before classification.
-  \item In the original three-seed 650M comparison, BLOSUM62-guided LoRA had the highest mean across the reported primary metrics.
-  \item Designed multi-seed evaluation protocols and a one-factor sensitivity screen showing that several single-seed improvements did not replicate.
-  \item Manuscript in preparation (see Writing).
-\end{itemize}
-
-\clearpage
-
-\section*{Research Projects}
-
-\entry{Hinglish Named Entity Recognition Benchmark}{Fall 2024}
-\begin{itemize}
-  \item Fine-tuned multilingual transformer models, mBERT and XLM-RoBERTa, on the COMI-LINGUA dataset for Hindi-English code-mixed NER.
-  \item Documented zero-shot baseline experiments alongside fine-tuned models, with evaluation and error-analysis code in the public repository.
-  \item Analyzed trade-offs between model scale, task-specific fine-tuning, generalization, and computational cost.
+  \item Develop and evaluate parameter-efficient methods for adapting protein language models to protein-sequence tasks.
+  \item Build training and evaluation pipelines and run multi-seed experiments on the NYU Abu Dhabi HPC cluster.
+  \item Compare models and configurations to determine which results hold up across repeated runs.
 \end{itemize}
 
 \vspace{0.20em}
-\entry{Data Science Salary Prediction Platform}{Fall 2025}
+\entry{Machine Learning Engineer Intern, Zeek}{June 2025 to August 2025}
 \begin{itemize}
-  \item Built an interactive Streamlit prototype for exploring a 742-record cleaned salary-posting dataset, training a salary model, and inspecting feature contributions with SHAP.
-  \item Implemented optional PyCaret and MLflow workflows for model comparison and experiment logging.
+  \item Built and evaluated customer-segmentation workflows using real-world data.
+  \item Compared preprocessing and model choices, then used SHAP to inspect model behavior.
+  \item Contributed to validation and evaluation procedures used in the model-development workflow.
 \end{itemize}
 
 \vspace{0.20em}
-\entry{Community-Level Crime Modeling}{Spring 2025}
+\entry{Market Research Consultant, Global Media Alliance Broadcasting}{June 2024}
 \begin{itemize}
-  \item Built an interactive Streamlit prototype that fits a six-feature linear regression to 1{,}994 complete cases from a community-crime dataset.
-  \item Added exploratory visualizations and scenario inputs; results are descriptive rather than causal.
+  \item Led audience analysis, survey design, and customer-engagement analysis for a broadcasting company.
+  \item Synthesized findings into recommendations presented to senior leadership.
+\end{itemize}
+
+\section*{Selected Projects}
+
+\entry{Hinglish Named-Entity Recognition Benchmark}{}
+\begin{itemize}
+  \item Fine-tuned mBERT and XLM-RoBERTa on Hindi-English code-mixed text from the COMI-LINGUA dataset.
+  \item Built data-preparation, evaluation, and error-analysis workflows and documented zero-shot baselines.
 \end{itemize}
 
 \vspace{0.20em}
-\entry{CAMP: Campus Asset Management Platform}{Fall 2025}
+\entry{Salary Data Analysis}{}
 \begin{itemize}
-  \item Contributed to a team-built platform for campus resource allocation and scheduling under shared constraints, including role-based access and conflict resolution.
-  \item Developed RESTful APIs and contributed to integration testing and GitHub Actions CI/CD.
+  \item Built a Streamlit project for exploring salary data, comparing models, and inspecting feature contributions with SHAP.
+  \item Used PyCaret and MLflow workflows for model comparison and experiment logging.
 \end{itemize}
 
-\section*{Industry Experience}
-
-\entry{Machine Learning Engineer Intern, Zeek}{Jun--Aug 2025}
+\vspace{0.20em}
+\entry{CAMP: Campus Asset Management Platform}{}
 \begin{itemize}
-  \item Developed and evaluated segmentation models on noisy real-world data, iterating on preprocessing and model selection to assess model reliability.
-  \item Applied model-interpretability techniques to study robustness and bias sensitivity as part of model evaluation.
-  \item Contributed to the team's evaluation workflow by adding standardized metrics and validation procedures to the model development cycle.
+  \item Worked on a team-built platform for campus asset reservation and management.
+  \item Contributed to role-based workflows, REST APIs, integration testing, and GitHub Actions CI/CD.
 \end{itemize}
 
 \section*{Technical Skills}
 
 \textbf{Languages:} Python, C++, C\#, JavaScript \\
-\textbf{ML \& NLP:} PyTorch, Transformers (Hugging Face), Scikit-Learn, XGBoost, PyCaret, SHAP \\
-\textbf{Computational Modeling:} NumPy, NetworkX, game-theoretic simulation \\
-\textbf{Data Analysis:} Pandas, SciPy, Matplotlib, Seaborn, Plotly \\
-\textbf{Experimental Methods:} Experimental design, regression, cross-validation, multi-seed evaluation, sensitivity analysis \\
-\textbf{Research Engineering:} MLflow, Git, Docker, GitHub Actions, REST APIs, automated testing, MongoDB \\
-\textbf{Applications:} Streamlit, React, Node.js, \LaTeX
+\textbf{Machine learning:} PyTorch, Hugging Face Transformers, scikit-learn, XGBoost, PyCaret, SHAP \\
+\textbf{Data and experiments:} Pandas, NumPy, SciPy, regression, cross-validation, multi-seed evaluation, experimental design \\
+\textbf{Systems and tools:} FastAPI, Empirica, MLflow, Git, Docker, GitHub Actions, REST APIs, automated testing, Streamlit
 
 \end{document}
