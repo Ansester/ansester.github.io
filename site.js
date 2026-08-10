@@ -29,51 +29,6 @@
         });
     }
 
-    const explorer = document.querySelector("[data-project-explorer]");
-    if (explorer) {
-        const filterButtons = Array.from(explorer.querySelectorAll("[data-project-filter]"));
-        const cards = Array.from(explorer.querySelectorAll("[data-project-card]"));
-        const searchInput = explorer.querySelector("[data-project-search]");
-        const count = explorer.querySelector("[data-project-count]");
-        const empty = explorer.querySelector("[data-project-empty]");
-        let activeFilter = "all";
-
-        const updateResults = () => {
-            const query = (searchInput?.value || "").trim().toLowerCase();
-            let visibleCount = 0;
-
-            cards.forEach((card) => {
-                const topics = (card.dataset.projectTopics || "").split(" ");
-                const text = card.textContent.toLowerCase();
-                const matchesFilter = activeFilter === "all" || topics.includes(activeFilter);
-                const matchesSearch = !query || text.includes(query);
-                const isVisible = matchesFilter && matchesSearch;
-                card.hidden = !isVisible;
-                visibleCount += Number(isVisible);
-            });
-
-            if (count) {
-                count.textContent = `${visibleCount} ${visibleCount === 1 ? "project" : "projects"} shown`;
-            }
-            if (empty) {
-                empty.hidden = visibleCount !== 0;
-            }
-        };
-
-        filterButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                activeFilter = button.dataset.projectFilter || "all";
-                filterButtons.forEach((candidate) => {
-                    candidate.setAttribute("aria-pressed", String(candidate === button));
-                });
-                updateResults();
-            });
-        });
-
-        searchInput?.addEventListener("input", updateResults);
-        updateResults();
-    }
-
     document.querySelectorAll("[data-copy-email]").forEach((button) => {
         const label = button.textContent;
         button.addEventListener("click", async () => {
