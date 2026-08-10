@@ -45,7 +45,7 @@ html.dark-theme {
 }
 
 @media (prefers-color-scheme: dark) {
-    :root:not(.light-theme) {
+    html:not(.light-theme):not(.dark-theme) {
         --paper: #0f1717;
         --surface: #172222;
         --surface-hover: #1e2b2b;
@@ -126,7 +126,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline
 }
 html.dark-theme .site-header { background: rgba(15, 23, 23, 0.88); }
 @media (prefers-color-scheme: dark) {
-    :root:not(.light-theme) .site-header { background: rgba(15, 23, 23, 0.88); }
+    html:not(.light-theme):not(.dark-theme) .site-header { background: rgba(15, 23, 23, 0.88); }
 }
 
 .site-nav { min-height: 66px; display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; align-items: center; padding: 10px 0; }
@@ -187,8 +187,8 @@ html.dark-theme .site-header { background: rgba(15, 23, 23, 0.88); }
 html.dark-theme .theme-toggle .icon-sun { display: block; }
 html.dark-theme .theme-toggle .icon-moon { display: none; }
 @media (prefers-color-scheme: dark) {
-    :root:not(.light-theme) .theme-toggle .icon-sun { display: block; }
-    :root:not(.light-theme) .theme-toggle .icon-moon { display: none; }
+    html:not(.light-theme):not(.dark-theme) .theme-toggle .icon-sun { display: block; }
+    html:not(.light-theme):not(.dark-theme) .theme-toggle .icon-moon { display: none; }
 }
 
 .menu-toggle {
@@ -267,7 +267,7 @@ p + p { margin-top: 13px; }
 .btn.primary { border-color: var(--accent-dark); background: var(--accent-dark); color: #fff; box-shadow: var(--shadow-sm); }
 html.dark-theme .btn.primary { color: #0f1717; }
 @media (prefers-color-scheme: dark) {
-    :root:not(.light-theme) .btn.primary { color: #0f1717; }
+    html:not(.light-theme):not(.dark-theme) .btn.primary { color: #0f1717; }
 }
 .btn.primary:hover { border-color: var(--accent); background: var(--accent); box-shadow: var(--shadow-md); }
 

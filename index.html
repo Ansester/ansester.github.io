@@ -17,8 +17,19 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ashmit Mukherjee | Computational Social Science and Applied Machine Learning">
     <meta name="twitter:description" content="Computer Science student at NYU Abu Dhabi | Computational Social Science | Applied Machine Learning | Experimental Research">
-    <meta name="twitter:image" content="https://ashmitmukherjee.com/social-card.png">
-    <link rel="stylesheet" href="style.css?v=20260810j">
+    <script>
+    (function() {
+        try {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+            } else if (theme === 'light') {
+                document.documentElement.classList.add('light-theme');
+            }
+        } catch (e) {}
+    })();
+    </script>
+    <link rel="stylesheet" href="style.css?v=20260810k">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;display=swap" rel="stylesheet">
