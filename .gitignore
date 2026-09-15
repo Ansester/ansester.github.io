@@ -1,1 +1,13 @@
 20251107_163233.jpg
+node_modules/
+dist/
+.astro/
+tmp/
+public/cv.pdf
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+.DS_Store

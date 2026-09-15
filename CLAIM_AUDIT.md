@@ -1,6 +1,19 @@
 # Claim Ledger & Audit Record (`CLAIM_AUDIT.md`)
 
-This document serves as the ground-truth ledger of public factual claims across Ashmit Mukherjee's repositories, personal website (`ansester.github.io`), and profile surfaces.
+This document records the evidence and qualifications behind public claims. Earlier numerical evaluations remain historical audit results unless explicitly re-run; the portfolio uses qualified descriptions rather than unsupported headline scores.
+
+## September 15, 2026 — Portfolio reconciliation
+
+- Reconciled the website and CV against this audit and the current local project READMEs and relevant modeling code. No model experiments were re-run for this overhaul.
+- Removed the CV's 3,000+ postings, 15+ models, 87% R², crime-model cross-validation / 0.85 R², and unqualified 78% F1 claims.
+- Retained the documented 742 cleaned salary listings and 1,994 community observations. Described the crime analysis as observational with single-holdout evaluation.
+- The current salary application selects five predictors plus the salary target (`streamlit_app.py:28`); the earlier six-feature wording below has been corrected. Historical score reproducibility is not asserted for the current dependency environment.
+- CAMP's README identifies a five-person team and Ashmit's staff API endpoints, alerts/statistics, backend testing setup, client API utilities, and Product Owner / Scrum Master sprint roles. Used those specific contributions; removed Docker from the CAMP project description.
+- Hinglish NER's README identifies a four-person course-project team. Added team context and retained the 4,829-example encoder / 100-example zero-shot evaluation distinction.
+- The Human–AI and protein-model case studies describe ongoing infrastructure/methods work, not established human effects, universal model improvements, or accepted publications.
+- `assets/camp-home.png` is presented as an interface concept, not a verified live-product screenshot.
+- The previous Hinglish research-report URL returned HTTP 404 and no matching PDF is tracked in the available local repository. Removed the dead report link and described the available code/evaluation documentation instead.
+- Public content now lives in `src/pages/` and `src/content/work/`; `cv.tex` is the CV source, and the build copies the compiled `cv.pdf` to public output.
 
 ---
 
@@ -28,7 +41,7 @@ This document serves as the ground-truth ledger of public factual claims across 
 - **Metric Definition**: Holdout test set $R^2$ score (`xgb_model.score(X_test, y_test)`).
 - **Data / Evaluation Context**:
   - Cleaned modeling dataset contains 742 job listings (3,000+ figure referred to unverified raw scrapes).
-  - Implemented 6-feature XGBoost regressor (`n_estimators=19`, `learning_rate=0.81`, `max_depth=6`) achieves holdout test $R^2 = 0.57$ on `random_state=8`, `test_size=0.15` split ($R^2 = 0.36$ on 20% split). Old $R^2 = 0.87$ claim was unverified hardcoded README prose.
+  - The current code selects five predictors. The earlier audit recorded XGBoost (`n_estimators=19`, `learning_rate=0.81`, `max_depth=6`) holdout test $R^2 = 0.57$ on `random_state=8`, `test_size=0.15` ($R^2 = 0.36$ on a 20% split). These historical scores were not re-run for the portfolio overhaul. Old $R^2 = 0.87$ wording was unverified hardcoded README prose.
   - SHAP used for model feature-contribution analysis (beeswarm summary plots, scatter dependence plots).
 - **Verification Status**: `VERIFIED WITH QUALIFICATION` (Cleaned 742 rows verified; holdout test $R^2 = 0.57$ verified; 3,000+ and 0.87 R² contradicted).
 - **Recommended Public Wording**: "Built an AutoML salary-prediction workflow using cleaned Glassdoor job-listing data, with PyCaret model comparison, XGBoost, SHAP interpretation, MLflow experiment tracking, and Streamlit."

@@ -1,0 +1,13 @@
+---
+import { Image } from 'astro:assets';
+import camp from '../../assets/camp-home.png';
+interface Props { kind: 'human'|'protein'|'camp'|'ner'; }
+const { kind } = Astro.props;
+---
+{kind === 'camp' ? (
+  <figure class="case-visual camp-visual"><div><p class="eyebrow">Campus workflows</p><h2>One platform.<br />Two sides of a reservation.</h2><div class="workflow-pair"><div><h3>Students</h3><p>Browse equipment<br />Request a reservation<br />Manage borrowings</p></div><div><h3>Staff</h3><p>Manage inventory<br />Issue and return items<br />Review reservation activity</p></div></div><figcaption>Interface concept retained from the project assets; not a live application screenshot.</figcaption></div><Image src={camp} alt="CAMP mobile interface concept showing equipment reservations, due items, and campus resources" width={260} format="webp" /></figure>
+) : kind === 'ner' ? (
+  <figure class="case-visual ner-visual"><p class="eyebrow">Evaluation design</p><div class="evaluation-grid"><div><span class="eval-number">4,829</span><p class="eval-title">Full test examples</p><p>Fine-tuned mBERT and XLM-RoBERTa</p></div><div><span class="eval-number">100</span><p class="eval-title">Sampled examples</p><p>Zero-shot GPT-4o and Llama baselines</p></div></div><figcaption>Different evaluation scopes. These are dataset sizes, not model-performance scores.</figcaption></figure>
+) : (
+  <figure class="case-visual pipeline-visual"><p class="eyebrow">{kind === 'human' ? 'Research platform / Conceptual overview' : 'Experiment workflow / Conceptual overview'}</p><div class="pipeline">{(kind === 'human' ? [['01','Requirements','Study procedures and information boundaries'],['02','Platform','Participant flow, orchestration, and rules'],['03','Records','Structured data for subsequent analysis']] : [['01','Configure','Task, model, and adaptation method'],['02','Train','Repeated experiments on the HPC cluster'],['03','Evaluate','Compare results across configurations']]).map(([n,title,detail]) => <div class="pipeline-node"><span>{n}</span><p class="diagram-title">{title}</p><p>{detail}</p></div>)}</div><figcaption>{kind === 'human' ? 'Implementation and validation support the study; they do not establish a behavioral finding.' : 'Repeated runs help assess stability. No benchmark performance is implied by this diagram.'}</figcaption></figure>
+)}

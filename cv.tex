@@ -1,124 +1,109 @@
 \documentclass[a4paper,10pt]{article}
-\usepackage[T1]{fontenc}
-\usepackage[margin=0.70in]{geometry}
+\usepackage[margin=0.68in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{hyperref}
-\usepackage{fancyhdr}
-
-\titleformat{\section}{\bfseries\large}{}{0em}{}[\vspace{-0.45em}\titlerule]
-\titlespacing*{\section}{0pt}{0.85em}{0.30em}
-
-\hypersetup{
-  colorlinks=true,
-  urlcolor=black,
-  pdfauthor={Ashmit Mukherjee},
-  pdftitle={Resume | Ashmit Mukherjee}
-}
-
-\pagestyle{fancy}
-\fancyhf{}
-\rfoot{\footnotesize Ashmit Mukherjee \enspace|\enspace \thepage}
-\renewcommand{\headrulewidth}{0pt}
-\setlength{\headheight}{0pt}
-\setlength{\footskip}{18pt}
-
-\setlist[itemize]{leftmargin=1.35em, nosep, topsep=0.15em, partopsep=0pt}
-\setlength{\parskip}{0pt}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\titleformat{\section}{\bfseries\large}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{7pt}{4pt}
+\hypersetup{hidelinks,pdftitle={Ashmit Mukherjee - Curriculum Vitae},pdfauthor={Ashmit Mukherjee}}
+\pagestyle{plain}
+\setlist[itemize]{noitemsep, topsep=1pt, leftmargin=1.25em}
+\setlength{\parskip}{0.22em}
 \setlength{\parindent}{0pt}
-\raggedbottom
 \sloppy
-\hyphenpenalty=10000
-
-\newcommand{\entry}[2]{\noindent\textbf{#1}\hfill\textit{#2}\par}
-\newcommand{\subentry}[1]{\noindent\textit{#1}\par\vspace{-0.25em}}
-
+\newcommand{\entry}[2]{\textbf{#1}\hfill\textit{#2}}
 \begin{document}
-
 \begin{center}
-  {\LARGE\bfseries Ashmit Mukherjee} \\[0.18em]
-  {\small New York University Abu Dhabi} \\[0.18em]
-  \small
-  \href{mailto:asm8879@nyu.edu}{asm8879@nyu.edu}
-  \enspace|\enspace
-  \href{https://ashmitmukherjee.com}{ashmitmukherjee.com}
-  \enspace|\enspace
-  \href{https://www.linkedin.com/in/ashmit-mukherjee/}{LinkedIn}
-  \enspace|\enspace
-  \href{https://github.com/ansester}{GitHub}
+    {\LARGE\bfseries Ashmit Mukherjee}\\[-0.1em]
+    NYU Abu Dhabi \;|\; \href{mailto:asm8879@nyu.edu}{asm8879@nyu.edu} \;|\; +971 56 617 7307 \;|\;
+    \href{https://github.com/Ansester}{github.com/Ansester} \;|\;
+    \href{https://www.linkedin.com/in/ashmit-mukherjee/}{linkedin.com/in/ashmit-mukherjee}
 \end{center}
-\vspace{-0.65em}
+\vspace{-0.8em}
 
 \section*{Profile}
-
-{\raggedright
-Computer Science student working across computational social science, applied machine learning, and experimental research. I use statistical and computational methods to investigate social, economic, and historical questions, and build systems for data collection, experimentation, and model evaluation.\par}
+Computer Science student at NYU Abu Dhabi building research platforms, machine-learning pipelines, and software systems. Experience spans human-AI experimental infrastructure, protein language model adaptation, multilingual NLP, and applied data analysis.
 
 \section*{Education}
+\entry{New York University Abu Dhabi}{Expected May 2027}\\
+B.S. in Computer Science\\
+\textit{Study Away:} NYU Paris; NYU New York\\
+\textbf{Relevant Coursework:} Natural Language Processing, Principles of Data Science, Statistics for Social and Behavioral Sciences, Data Structures and Algorithms, Computer Systems Architecture, Operating Systems
 
-\entry{New York University Abu Dhabi}{Expected May 2027}
-B.S.\ in Computer Science. Studied at NYU Abu Dhabi, NYU Paris, and NYU New York.\\[-0.1em]
-\textbf{Relevant coursework:} Natural Language Processing; Principles of Data Science; Statistics for Social and Behavioral Sciences; Data Structures and Algorithms; Computer Systems Architecture; Operating Systems.
-
-\section*{Experience}
-
-\entry{Research Assistant, Human-AI Collaboration, New York University Abu Dhabi}{2026 to present}
+\section*{Research Experience}
+\entry{Research Assistant, Human-AI Collaboration, NYU Abu Dhabi}{Feb 2026 to present}
 \begin{itemize}
-  \item Lead the technical implementation of an online platform for a human-AI research project.
-  \item Build, deploy, and maintain the system used to run the study.
-  \item Contribute to study design and translate research requirements into platform behavior and data workflows.
+    \item Lead the technical implementation of an online platform for a human-AI research project.
+    \item Build, deploy, and maintain the system used to conduct the research and collect structured experimental data.
+    \item Contribute to study design and translate research requirements into platform behavior, data workflows, and validation checks.
 \end{itemize}
 
-\vspace{0.20em}
-\entry{Research Assistant, eBRAIN Lab, New York University Abu Dhabi}{2026 to present}
+\entry{Research Assistant, eBRAIN Lab, NYU Abu Dhabi}{Feb 2026 to present}
 \begin{itemize}
-  \item Develop and evaluate parameter-efficient methods for adapting protein language models to protein-sequence tasks.
-  \item Build training and evaluation pipelines and run multi-seed experiments on the NYU Abu Dhabi HPC cluster.
-  \item Compare models and configurations to determine which results hold up across repeated runs.
+    \item Develop and evaluate parameter-efficient methods for adapting protein language models to protein-sequence tasks.
+    \item Build training and evaluation pipelines and run multi-seed experiments on the NYU Abu Dhabi HPC cluster.
+    \item Compare models and configurations to determine which results hold up across repeated runs.
 \end{itemize}
 
-\vspace{0.20em}
-\entry{Machine Learning Engineer Intern, Zeek}{June 2025 to August 2025}
+\section*{Industry and Applied Research Experience}
+\entry{Machine Learning Engineer Intern, Zeek}{Jun to Aug 2025}
 \begin{itemize}
-  \item Built and evaluated customer-segmentation workflows using real-world data.
-  \item Compared preprocessing and model choices, then used SHAP to inspect model behavior.
-  \item Contributed to validation and evaluation procedures used in the model-development workflow.
+    \item Built and evaluated customer-segmentation workflows using real-world data.
+    \item Compared preprocessing and model choices, then used SHAP to inspect model behavior.
+    \item Contributed to validation and evaluation procedures used in the model-development workflow.
 \end{itemize}
 
-\vspace{0.20em}
-\entry{Market Research Consultant, Global Media Alliance Broadcasting}{June 2024}
+\entry{Market Research Consultant, Global Media Alliance Broadcasting}{Jun 2024}
 \begin{itemize}
-  \item Led audience analysis, survey design, and customer-engagement analysis for a broadcasting company.
-  \item Synthesized findings into recommendations presented to senior leadership.
+    \item Led audience analysis, survey design, and customer-engagement analysis for a broadcasting company.
+    \item Synthesized quantitative and qualitative findings into recommendations presented to senior leadership.
 \end{itemize}
 
+\newpage
 \section*{Selected Projects}
-
-\entry{Hinglish Named-Entity Recognition Benchmark}{}
+\entry{Data Science Salary Prediction Platform}{Fall 2025}
 \begin{itemize}
-  \item Fine-tuned mBERT and XLM-RoBERTa on Hindi-English code-mixed text from the COMI-LINGUA dataset.
-  \item Built data-preparation, evaluation, and error-analysis workflows and documented zero-shot baselines.
+    \item Built a salary-prediction workflow on 742 cleaned Glassdoor job listings using PyCaret model comparison and XGBoost.
+    \item Integrated SHAP feature-contribution analysis, MLflow experiment tracking, and a Streamlit interface for exploring model-based estimates.
 \end{itemize}
 
-\vspace{0.20em}
-\entry{Salary Data Analysis}{}
+\entry{Crime Data Analysis and Prediction Platform}{Spring 2025}
 \begin{itemize}
-  \item Built a Streamlit project for exploring salary data, comparing models, and inspecting feature contributions with SHAP.
-  \item Used PyCaret and MLflow workflows for model comparison and experiment logging.
+    \item Modeled relationships between socioeconomic indicators and violent crime rates using data from 1{,}994 communities.
+    \item Evaluated regression using a single holdout split and built a Streamlit application for descriptive exploration and model-based prediction; results represent observational associations.
 \end{itemize}
 
-\vspace{0.20em}
-\entry{CAMP: Campus Asset Management Platform}{}
+\entry{Hinglish Named Entity Recognition Benchmark}{Fall 2024}
 \begin{itemize}
-  \item Worked on a team-built platform for campus asset reservation and management.
-  \item Contributed to role-based workflows, REST APIs, integration testing, and GitHub Actions CI/CD.
+    \item Contributed to a team project fine-tuning mBERT and XLM-RoBERTa for Hindi-English named-entity recognition on COMI-LINGUA.
+    \item Worked on training, evaluation, and error analysis; encoder evaluation used 4{,}829 test examples, while zero-shot language-model baselines used a separate 100-example sample.
+\end{itemize}
+
+\entry{CAMP, Campus Asset Management Platform}{Fall 2024}
+\begin{itemize}
+    \item Contributed backend REST endpoints for staff workflows, equipment alerts, and dashboard statistics to a five-person campus asset-management project.
+    \item Configured backend integration testing and client API utilities; served as Product Owner and Scrum Master in team sprint rotations.
+\end{itemize}
+
+\section*{Leadership and Campus Experience}
+\entry{First Year Program Facilitator, Office of Student Life, NYU Abu Dhabi}{Aug to Dec 2024}
+\begin{itemize}
+    \item Facilitated workshops, group discussions, peer activities, and weekly one-to-one check-ins for more than 20 first-year students.
+    \item Connected students with academic, wellbeing, and campus resources and organized off-campus cultural excursions.
+\end{itemize}
+
+\entry{Front of House Staff, NYU Abu Dhabi Arts Center}{Jan to May 2024}
+\begin{itemize}
+    \item Managed guest check-in, crowd flow, and ticketing operations for events with more than 500 attendees.
+    \item Supported VIP guests, performing artists, and last-minute operational changes.
 \end{itemize}
 
 \section*{Technical Skills}
-
-\textbf{Languages:} Python, C++, C\#, JavaScript \\
-\textbf{Machine learning:} PyTorch, Hugging Face Transformers, scikit-learn, XGBoost, PyCaret, SHAP \\
-\textbf{Data and experiments:} Pandas, NumPy, SciPy, regression, cross-validation, multi-seed evaluation, experimental design \\
-\textbf{Systems and tools:} FastAPI, Empirica, MLflow, Git, Docker, GitHub Actions, REST APIs, automated testing, Streamlit
+\textbf{Programming:} Python, C++, C\#, JavaScript\\
+\textbf{Machine Learning and NLP:} PyTorch, Hugging Face Transformers, scikit-learn, XGBoost, PyCaret, SHAP, LoRA, ESM-2\\
+\textbf{Data and Statistics:} pandas, NumPy, SciPy, Matplotlib, Seaborn, Plotly, cross-validation, regression modeling, experimental design\\
+\textbf{Systems and Tools:} FastAPI, Empirica, REST APIs, MongoDB, Docker, Slurm, pytest, MLflow, GitHub Actions, Git, Streamlit, \LaTeX
 
 \end{document}
