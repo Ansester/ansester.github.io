@@ -1,6 +1,6 @@
 # Ashmit Mukherjee — Portfolio
 
-A static Astro portfolio focused on human–AI interaction, computational research, and research engineering. It includes a homepage, research overview, six Markdown case studies, legacy URL redirects, and a separate application CV.
+A static Astro portfolio focused on computational social science, experimental systems, and machine learning. It includes a homepage, research overview, six Markdown case studies, legacy URL redirects, and a separate application CV.
 
 Canonical domain: [ashmitmukherjee.com](https://ashmitmukherjee.com/). A local build or private Sites preview does not update that domain.
 
@@ -20,11 +20,11 @@ Astro 7 may start its development server in the background. Use `npx astro dev s
 - Homepage: `src/pages/index.astro`.
 - Case studies: `src/content/work/*.md`. Edit the title, summary, role, dates, tags, and links in frontmatter; write the story below. Both the work index and case-study route use this content.
 - Research overview: `src/pages/research.astro`. Keep the manuscript status consistent with its case study and `cv.tex`.
-- Work order: the `order` field in frontmatter. The homepage explicitly selects Human–AI, Synthetic Pilot Lab, Bio-LoRA, and FieldLens. The work index separates research from supporting engineering.
+- Work order: the `order` field in frontmatter. The homepage explicitly selects Human–AI, Bio-LoRA, Synthetic Pilot Lab, and FieldLens. The work index separates research from supporting engineering.
 - Shared navigation, metadata, theme, and footer: `src/layouts/Layout.astro`.
 - Visual styles: `src/styles/global.css`.
-- Project diagrams, FieldLens screenshot, and CAMP concept: `src/components/ProjectVisual.astro`.
-- Application CV: `cv.tex` and `cv.pdf` are separate application documents. They are not copied into or linked from the website. Updating the website does not require updating the CV.
+- Project figures, FieldLens screenshot, and CAMP concept: `src/components/ProjectVisual.astro`.
+- Application CV: `cv.tex` and `cv.pdf` are separate application documents. They are not copied into or linked from the website. Updating the website does not require updating the CV. The reviewed Overleaf project is "Ashmit Mukherjee - Research CV": `00_Master_CV.tex` is its main document, and `01_Research_and_Applied_AI.tex` inputs that source. The Career folder contains matching research/master copies; pre-review versions are in its dated Archive folder. Other older role variants are historical references, not reviewed submission copies.
 
 Keep contributions, team context, status, and evaluation scope consistent with `CLAIM_AUDIT.md`. It is an internal source note and is not included in the published site.
 

@@ -68,9 +68,9 @@ assert(research, 'Research overview missing');
 for (const name of ['research/index.html','work/protein-language-models/index.html']) {
   const text = documents.get(join(root,name)).body.textContent;
   assert.match(text,/co-first author/i, `${name}: manuscript contribution missing`);
-  assert.match(text,/not accepted/i, `${name}: manuscript status missing`);
   assert.match(text,/unpublished/i, `${name}: manuscript must be labeled unpublished`);
 }
+assert.match(documents.get(join(root,'work/protein-language-models/index.html')).body.textContent,/not accepted/i,'Bio-LoRA submission history missing');
 assert.match(documents.get(join(root,'work/synthetic-pilot-lab/index.html')).body.textContent,/In development/,'Capstone status missing');
 assert.match(documents.get(join(root,'work/human-ai-collaboration/index.html')).body.textContent,/deterministic fixture advisers/,'Human–AI validation boundary missing');
 assert(!existsSync(join(root,'cv.pdf')),'Application CV must not be hosted on the website');

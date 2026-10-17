@@ -6,7 +6,7 @@ role: Capstone research direction and diagnostic specification
 organization: New York University Abu Dhabi
 period: October 2026 — present
 status: In development
-order: 2
+order: 3
 tags: [Synthetic participants, Experimental validation, Python, Reproducibility]
 updated: 17 October 2026
 visual: capstone

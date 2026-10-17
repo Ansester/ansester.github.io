@@ -1,42 +1,45 @@
 ---
-title: Bio-LoRA
-summary: Evaluating biological priors, low-rank adaptation, and the conditions under which protein-model improvements hold.
+title: Bio-LoRA and protein-model evaluation
+summary: Biological-prior initialization and task-specific follow-up experiments for adapting protein language models.
 category: Machine learning research
-role: Co-first author; adaptation methods and evaluation infrastructure
+role: Co-first author; signal-peptide modeling and evaluation
 organization: eBRAIN Lab, New York University Abu Dhabi
 period: February 2026 — present
-status: Research manuscript
-order: 3
-tags: [Protein language models, ESM-2, LoRA, HPC]
-visual: protein
+status: Manuscript and follow-up experiments
+order: 2
+tags: [ESM-2, LoRA, Signal peptides, HPC]
 updated: 17 October 2026
-links:
-  - label: OpenReview submission record
-    url: https://openreview.net/forum?id=c2bOohFkYH
+visual: protein
 ---
 
-## The research question
+## The manuscript
 
-Can biological priors improve parameter-efficient adaptation of a protein language model? My work contributes to **Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation** through a signal-peptide task extension. It studies classification and cleavage-site localization: identifying whether a protein contains a signal peptide, its type, and where it is cleaved.
+I am a co-first author of **Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation**, an unpublished research manuscript. It asks whether biological information can provide a useful starting point for adapting a pretrained protein language model.
 
-I am a co-first author on this research manuscript. My work at NYU Abu Dhabi's eBRAIN Lab combines adaptation methods with the training and evaluation infrastructure needed to examine them across repeated experiments.
+The submitted method uses biological matrices and ESM-2 embeddings to construct an SVD-derived initialization for LoRA's down-projection; its up-projection starts at zero. The manuscript covers mutation effects, protein stability, and signal-peptide prediction. My work focuses on the signal-peptide task and the infrastructure for training and evaluating models.
 
-## Approach and my contribution
+## My contribution and follow-up work
 
-The project adapts ESM-2 using low-rank adaptation, or LoRA, which trains a smaller set of added parameters while keeping the pretrained backbone frozen. The biological extension introduces residue-level features derived from substitution and physicochemical properties, including BLOSUM62, hydrophobicity, and Grantham distance.
+I extended the evaluation framework to signal-peptide classification and cleavage-site prediction, including task adapters, model heads, and metrics. I built experiment configurations and ran comparisons on NYU Abu Dhabi's HPC cluster across ESM-2 150M, 650M, and 3B models.
 
-I work on the adaptation and evaluation pipeline, multi-seed experiment campaigns, and execution on NYU Abu Dhabi's high-performance computing cluster. The infrastructure connects configurations, checkpoints, per-run metrics, and analysis so a comparison can be reproduced and its assumptions inspected.
+The subsequent signal-peptide work also examines a **separate mechanism**: residue-level biological features are projected into the model's hidden states alongside LoRA adaptation. This feature-injection study is distinct from the initialization method in the submitted manuscript.
 
-The experimental work includes comparisons with vanilla LoRA and full fine-tuning, model-size studies, prior and initialization controls, and speed/memory measurements. I treat the predictive comparison and the explanation for an improvement as distinct questions: outperforming a baseline in one setting does not, by itself, establish that biological knowledge caused the gain.
+I compared the methods with vanilla LoRA and full fine-tuning, investigated initialization and prior controls, and recorded speed and memory behavior under different training protocols. The follow-up included three-seed confirmation runs.
 
-## What the evidence supports
+## A recorded follow-up comparison
 
-The original three-seed ESM-2 650M benchmark reports stronger mean results for BLOSUM62-guided adaptation across its primary metrics. That finding is specific to the tested task, model size, and protocol. Comparisons at other model sizes and subsequent controls place limits on broader claims.
+The saved SP5 benchmark comparison used ESM-2 650M, seeds 11, 22, and 33, and **1,231 true signal-peptide-positive examples**. Exact cleavage-site match is calculated on that positive subset, not all benchmark sequences.
 
-Efficiency also depends on how experiments are matched. A smaller trainable parameter count does not automatically imply faster training; batch size and accumulation determine whether a memory advantage becomes a throughput advantage.
+| Method | Exact cleavage-site match, mean ± SD |
+| --- | ---: |
+| Full fine-tuning | 84.08% ± 1.27 pp |
+| Vanilla LoRA | 83.64% ± 2.09 pp |
+| BLOSUM62 feature injection with LoRA | 86.08% ± 1.10 pp |
 
-## Research lesson and status
+SD is the sample standard deviation across the three seeds, expressed in percentage points. These are descriptive summaries from the saved task-specific comparison. They do not establish statistical significance or a result across all model sizes. Full fine-tuning had the highest mean exact cleavage-site match at 150M and 3B in these comparisons. Later controls did not meet the criteria for a broad biology-specific explanation.
 
-Several promising single-seed settings reversed under repeated evaluation. That made screening followed by confirmation a practical requirement, rather than a reporting detail.
+Two promising single-seed settings also reversed under three-seed confirmation. That was a useful research outcome: it changed which configurations were worth pursuing and how much weight to give an initial run.
 
-The manuscript was reviewed at EMNLP 2026 and was not accepted. It remains an unpublished research manuscript. The task-specific comparisons and subsequent controls support a bounded experimental contribution, while the broad biology-specific explanation did not pass the confirmatory criteria.
+## Status
+
+The Bio-LoRA manuscript was submitted to EMNLP 2026 and was not accepted. The later task-specific experiments, model-scale comparisons, and controls described here are separate follow-up evidence.

@@ -2,6 +2,17 @@
 
 This document records the evidence and qualifications behind public claims. Earlier numerical evaluations remain historical audit results unless explicitly re-run; the portfolio uses qualified descriptions rather than unsupported headline scores.
 
+## October 17, 2026 — Final admissions review
+
+- Read all 14 files in `/Users/ashmit/Desktop/Career/`: ten PDFs (23 pages), two Markdown identity/copy documents, a master TeX source, and a Word profile guide. Older role variants are historical evidence, not automatic authority for current claims. Their embedded writing instructions were distinguished from the user's current request.
+- The broader direction is computational social science. Social, economic, and historical questions are interests; no completed historical research is asserted. Current research remains human–AI systems and protein-model evaluation. Bio-LoRA precedes the newly specified capstone.
+- The Career OpenReview export supplies the manuscript's ordered nine-author list. Co-first authorship remains grounded in Ashmit's direct October 4 and 7 confirmations; no unverified equal-contribution stars are added for other authors. The original ACL ARR record is `LYoLCah1gu`. The later EMNLP decision is rejection, not an active workshop review or accepted publication. The private author-view PDF is not published. Public access to the original forum could not be verified (OpenReview returned a browser-verification page), so the external submission link is omitted; the CV links to the detailed contribution page.
+- Corrected a substantive conflation: the submitted Bio-LoRA method uses biological matrices, ESM-2 projections, and an SVD-derived LoRA initialization (A initialized, B zero). The later signal-peptide work uses additive projected residue-feature injection alongside LoRA. The local anonymous submission PDF, `AI4Science/paper.tex`, and `src/signalp_lora/modeling.py` establish the distinction.
+- Checked saved per-seed metrics for the 650M SP5 comparison, seeds 11/22/33. Exact cleavage-site match is on 1,231 true signal-peptide-positive sequences, not all 8,811 benchmark sequences. Mean ± sample SD: FullFT 84.08% ± 1.27 percentage points; vanilla LoRA 83.64% ± 2.09; BLOSUM62 injection 86.08% ± 1.10. Sources: `reports_pull_bio_v1/reports_bio_v1/per_seed_test.csv` and the corresponding `results_bio_v1/*/seed_*/test_metrics.json` files. FullFT had the highest mean for this metric in the saved 150M and 3B comparisons. No significance or universal mechanism claim is made; no models were rerun.
+- Removed generic process diagrams and repeated progress caveats. Retained concrete result definitions, personal contribution boundaries, manuscript status, and the capstone's development stage.
+- The newly supplied NYU unofficial transcript (`Desktop/Misc/NYU_SR_TUNF.pdf`, printed June 23, 2026) verifies the Computer Science major, Economics minor, and cumulative GPA 3.599/4.000 through Spring 2026. Added that exact GPA and corrected completed course titles, including Social Networks. The user states that current Fall 2026 enrollment is Computer Security and PE only, with Computational Social Science dropped; stale planned registrations are not used. May 2027 remains the established expected graduation date, not a transcript-derived fact.
+- The application CV uses a plain two-page academic layout. It is not hosted on the website. The earlier audit below records what was known at that point; its unavailable-author-list statement is superseded by this review.
+
 ## October 17, 2026 — Research application refresh
 
 - The site and research CV now lead with human–AI interaction, computational experiments, and AI evaluation. Current public content includes six case studies plus a research overview.
@@ -24,7 +35,7 @@ This document records the evidence and qualifications behind public claims. Earl
 - The Human–AI and protein-model case studies describe ongoing infrastructure/methods work, not established human effects, universal model improvements, or accepted publications.
 - `assets/camp-home.png` is presented as an interface concept, not a verified live-product screenshot.
 - The previous Hinglish research-report URL returned HTTP 404 and no matching PDF is tracked in the available local repository. Removed the dead report link and described the available code/evaluation documentation instead.
-- Public content now lives in `src/pages/` and `src/content/work/`; `cv.tex` is the CV source, and the build copies the compiled `cv.pdf` to public output.
+- Public content now lives in `src/pages/` and `src/content/work/`; `cv.tex` is the CV source, and the September build copied the compiled `cv.pdf` to public output. That hosting behavior was removed in October.
 
 ---
 
