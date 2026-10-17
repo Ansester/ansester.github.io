@@ -1,4 +1,6 @@
-# Portfolio overhaul plan
+# Portfolio overhaul plan — September baseline
+
+Current implementation was refreshed for research applications on 17 October 2026. The site now has a research overview, six case studies, and a separate application CV; no CV download is hosted. The rest of this file preserves the original planning brief.
 
 Original planning baseline: 15 September 2026. The implementation now includes the homepage, work index, four case studies, corrected CV, shared themes, legacy redirects, and GitHub Pages workflow. The original brief follows; deployment status is reported separately.
 

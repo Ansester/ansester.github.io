@@ -62,10 +62,21 @@ for (const [path,doc] of documents) {
 }
 const home = documents.get(join(root,'index.html'));
 for(const id of ['main','projects','research','experience','background','about','contact']) assert(home.getElementById(id),`Legacy anchor missing: ${id}`);
-for(const route of ['human-ai-collaboration','protein-language-models','camp','hinglish-ner']) assert(documents.has(join(root,'work',route,'index.html')),`Case study missing: ${route}`);
-assert.equal(readFileSync(join(root,'cv.pdf')).compare(readFileSync('cv.pdf')),0,'Public CV differs from source PDF');
+for(const route of ['human-ai-collaboration','synthetic-pilot-lab','protein-language-models','fieldlens','camp','hinglish-ner']) assert(documents.has(join(root,'work',route,'index.html')),`Case study missing: ${route}`);
+const research = documents.get(join(root,'research','index.html'));
+assert(research, 'Research overview missing');
+for (const name of ['research/index.html','work/protein-language-models/index.html']) {
+  const text = documents.get(join(root,name)).body.textContent;
+  assert.match(text,/co-first author/i, `${name}: manuscript contribution missing`);
+  assert.match(text,/not accepted/i, `${name}: manuscript status missing`);
+  assert.match(text,/unpublished/i, `${name}: manuscript must be labeled unpublished`);
+}
+assert.match(documents.get(join(root,'work/synthetic-pilot-lab/index.html')).body.textContent,/In development/,'Capstone status missing');
+assert.match(documents.get(join(root,'work/human-ai-collaboration/index.html')).body.textContent,/deterministic fixture advisers/,'Human–AI validation boundary missing');
+assert(!existsSync(join(root,'cv.pdf')),'Application CV must not be hosted on the website');
+for (const [path,doc] of documents) assert(!doc.querySelector('a[href="/cv.pdf"]'),`${relative(root,path)}: public CV link returned`);
 assert.equal(readFileSync(join(root,'CNAME'),'utf8').trim(),'ashmitmukherjee.com');
 assert(existsSync(join(root,'sitemap-index.xml')),'Sitemap missing');
 assert(!existsSync(join(root,'cv.tex')),'CV source should not be in public output');
 assert(!existsSync(join(root,'CLAIM_AUDIT.md')),'Internal claim audit should not be in public output');
-console.log(`Passed: ${htmlFiles.length} pages, ${checkedLinks} local links/assets, four case studies, legacy anchors, metadata, CV parity, and claim regression checks.`);
+console.log(`Passed: ${htmlFiles.length} pages, ${checkedLinks} local links/assets, six case studies, legacy anchors, metadata, application-CV separation, and claim regression checks.`);

@@ -11,3 +11,4 @@ public/cv.pdf
 *.fls
 *.fdb_latexmk
 .DS_Store
+output/

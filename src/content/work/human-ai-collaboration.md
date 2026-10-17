@@ -1,50 +1,44 @@
 ---
-title: Human–AI research platform
-summary: Turning experimental requirements into a platform for research and structured data collection.
-category: Research systems
-role: Lead technical implementation; contribute to study design
+title: Human–AI collaboration
+summary: Experimental software for studying AI advice and coordination in multi-party social dilemmas.
+category: Research engineering
+role: Technical implementation and research-design review
 organization: New York University Abu Dhabi
 period: February 2026 — present
-status: Ongoing research
+status: Ongoing faculty research
 order: 1
-tags: [Research engineering, Python, Empirica, Validation]
+tags: [Experimental systems, Python, AI agents, Evaluation]
+updated: 17 October 2026
 visual: human
+links:
+  - label: NYU research project
+    url: https://cs.shanghai.nyu.edu/characterizing-values-and-norms-multi-agent-human-ai-collaboration-resolve-social-dilemma
+  - label: Social Dynamics Lab
+    url: https://benrosche.com/social-dynamics-lab/
 ---
 
-## The problem
+## The research question
 
-Studying human–AI collaboration requires an experimental environment in which the software follows the study design. Instructions, participant decisions, the information each person sees, and the records available for analysis all need to agree. A small implementation choice can change the experience being studied.
+How does AI advice affect coordination when individual and collective incentives differ? The software needs to preserve the study's rules, information boundaries, advice, and records consistently across an experiment.
 
-At NYU Abu Dhabi, I lead the technical implementation of an online research platform and contribute to study design. My work connects the researchers' requirements to the systems used to run an experiment and collect its data.
+I work on a faculty-led project at NYU Abu Dhabi with Ben Rosche and Hanan Salam. I coordinate software development and review, translate research requirements into system behavior, and contribute implementation-focused feedback on the study design. Faculty collaborators lead the scientific design.
 
-## What I work on
+## My contribution
 
-The implementation spans participant workflows, platform behavior, deployment, and data collection. I translate research requirements into concrete procedures: what happens at each stage, which information is available, and what must be recorded for later analysis.
+The work spans Python game mechanics, participant and researcher interfaces, session orchestration, deployment workflows, and structured exports. I have directed repository and interface redesigns to make the system easier to operate and its responsibilities easier to inspect, and coordinate reviews against the study requirements.
 
-The project separates the participant-facing application, session orchestration, and Python rules logic. This gives the different parts of the experiment a defined place in the system. My work includes the validation and operational workflows needed to bring those parts together.
+The current computational path supports configurable games, adviser workflows, literal execution of validated recommendations, resumable runs, and retained request and outcome records. It separates strategic model output from deterministic mechanics so that an unexpected result can be traced to the advice, its validation, or the game implementation.
 
-I also contribute to the study design. That means working through the implications of a requirement before treating it as a screen or an endpoint. The software is part of the experimental method, so implementation and research questions need to inform one another.
+## What matters methodologically
 
-## Engineering decisions
+**An independent check of the experiment.** Validation should reconstruct what ought to have happened from the recorded inputs, rather than simply repeat the engine's own answer.
 
-### Turn requirements into observable behavior
+**Information boundaries that survive implementation.** A model or participant should receive the information the design permits. Private advice, shared information, and researcher-only records have different purposes.
 
-A requirement is useful to the implementation when it can be connected to a participant action, a system response, or a validation check. I work on that translation so the intended procedure can be examined in the running platform.
+**A common rules authority.** Computational runs and the later human-study interface should use the same underlying mechanics. This helps keep a comparison from becoming a comparison between two implementations.
 
-### Separate the experience from the rules
+## Current status
 
-Participant interfaces and underlying experiment logic solve different problems. The application needs a clear interaction flow, while the rules need consistent behavior. Separating these responsibilities makes it possible to reason about each without treating the visual interface as the complete experiment.
+The computational implementation has been exercised with deterministic fixture advisers. These checks establish software behavior under specified inputs; they do not establish real-model strategy or effects on people. The human-study platform remains a separate development path, and scientific configuration decisions are still being resolved.
 
-### Design data collection alongside the workflow
-
-The records produced by the platform need to support subsequent analysis. I build data workflows together with platform behavior, rather than treating the export as an unrelated final step. What a record means depends on when it was produced and what was happening in the experiment.
-
-## Validation and current scope
-
-My work includes structured validation checks, deployment, and maintenance of the research system. The engineering goal is to make platform behavior inspectable and keep the implementation aligned with the study's requirements.
-
-This is ongoing research. A functioning platform or a successful software check does not establish an effect on human behavior. This case study describes my infrastructure and study-design contribution; it does not report human-study findings.
-
-## Discuss the work
-
-I am happy to discuss the engineering approach, the translation from research requirements to software, and the challenges of maintaining experimental systems. [Get in touch](mailto:asm8879@nyu.edu).
+The project has drawn my attention to the methodological choices embedded in experimental software, particularly how information is shared and how recorded actions are interpreted.

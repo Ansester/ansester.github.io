@@ -1,50 +1,42 @@
 ---
-title: Adapting protein language models
-summary: Training and evaluation pipelines for comparing adaptation methods across repeated experiments.
-category: Applied machine learning
-role: Research assistant — adaptation methods and evaluation infrastructure
+title: Bio-LoRA
+summary: Evaluating biological priors, low-rank adaptation, and the conditions under which protein-model improvements hold.
+category: Machine learning research
+role: Co-first author; adaptation methods and evaluation infrastructure
 organization: eBRAIN Lab, New York University Abu Dhabi
 period: February 2026 — present
-status: Ongoing research
-order: 2
-tags: [PyTorch, ESM-2, LoRA, Slurm]
+status: Research manuscript
+order: 3
+tags: [Protein language models, ESM-2, LoRA, HPC]
 visual: protein
+updated: 17 October 2026
+links:
+  - label: OpenReview submission record
+    url: https://openreview.net/forum?id=c2bOohFkYH
 ---
 
-## The question
+## The research question
 
-How should a pretrained protein language model be adapted to a more specific protein-sequence task? The choice involves both predictive performance and the resources required to train and evaluate the model.
+Can biological priors improve parameter-efficient adaptation of a protein language model? My work contributes to **Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation** through a signal-peptide task extension. It studies classification and cleavage-site localization: identifying whether a protein contains a signal peptide, its type, and where it is cleaved.
 
-At the eBRAIN Lab, I develop and evaluate parameter-efficient adaptation methods and build the pipelines used to compare them. A central part of the work is checking whether an apparent improvement remains consistent across repeated runs and model configurations.
+I am a co-first author on this research manuscript. My work at NYU Abu Dhabi's eBRAIN Lab combines adaptation methods with the training and evaluation infrastructure needed to examine them across repeated experiments.
 
-## What I work on
+## Approach and my contribution
 
-I build training and evaluation workflows around pretrained protein language models, including ESM-2. The project considers low-rank adaptation, or LoRA: a method that trains a smaller set of added parameters while keeping the pretrained backbone frozen. It also explores adaptation informed by properties of protein sequences.
+The project adapts ESM-2 using low-rank adaptation, or LoRA, which trains a smaller set of added parameters while keeping the pretrained backbone frozen. The biological extension introduces residue-level features derived from substitution and physicochemical properties, including BLOSUM62, hydrophobicity, and Grantham distance.
 
-My work includes running multi-seed experiment sweeps on NYU Abu Dhabi's high-performance computing cluster. Repeated runs are important because a single training result can reflect the particular random initialization or configuration as much as the method under study.
+I work on the adaptation and evaluation pipeline, multi-seed experiment campaigns, and execution on NYU Abu Dhabi's high-performance computing cluster. The infrastructure connects configurations, checkpoints, per-run metrics, and analysis so a comparison can be reproduced and its assumptions inspected.
 
-The infrastructure connects experiment configurations, training, and evaluation. That makes it possible to compare methods across a defined set of choices rather than relying on one memorable run.
+The experimental work includes comparisons with vanilla LoRA and full fine-tuning, model-size studies, prior and initialization controls, and speed/memory measurements. I treat the predictive comparison and the explanation for an improvement as distinct questions: outperforming a baseline in one setting does not, by itself, establish that biological knowledge caused the gain.
 
-## Decisions that matter
+## What the evidence supports
 
-### Compare methods in a defined setting
+The original three-seed ESM-2 650M benchmark reports stronger mean results for BLOSUM62-guided adaptation across its primary metrics. That finding is specific to the tested task, model size, and protocol. Comparisons at other model sizes and subsequent controls place limits on broader claims.
 
-An adaptation method is evaluated within a particular model, task, and training setup. Those details determine the meaning of the comparison. I examine configurations alongside scores so that a result stays attached to the conditions that produced it.
+Efficiency also depends on how experiments are matched. A smaller trainable parameter count does not automatically imply faster training; batch size and accumulation determine whether a memory advantage becomes a throughput advantage.
 
-### Repeat promising experiments
+## Research lesson and status
 
-Initial runs can help identify useful directions, but they are only the beginning of a comparison. Multi-seed experiments help distinguish consistent behavior from a result that depends heavily on a single run. The workflow supports screening an idea and then returning to it under repeated evaluation.
+Several promising single-seed settings reversed under repeated evaluation. That made screening followed by confirmation a practical requirement, rather than a reporting detail.
 
-### Consider the training workflow as well as the model
-
-Parameter-efficient adaptation changes what is trained, but practical efficiency still depends on the experimental setup. Model size, configuration, and the execution environment all affect the comparison. I build and run the infrastructure needed to investigate those choices instead of assuming a smaller trainable parameter count answers every efficiency question.
-
-## Evaluation and current scope
-
-The work involves comparing models and configurations, tracking repeated experiments, and interpreting how stable their differences are. The training pipeline and the evaluation procedure are both part of that process.
-
-This is an ongoing research project. I do not claim a universal advantage for a particular adaptation method. Any result needs to be read with its model, task, comparison protocol, and uncertainty. This overview focuses on my methods and infrastructure contribution rather than presenting a benchmark leaderboard without that context.
-
-## Discuss the work
-
-I am interested in conversations about adaptation methods, evaluation design, and the practical work of running reproducible ML experiments. [Get in touch](mailto:asm8879@nyu.edu).
+The manuscript was reviewed at EMNLP 2026 and was not accepted. It remains an unpublished research manuscript. The task-specific comparisons and subsequent controls support a bounded experimental contribution, while the broad biology-specific explanation did not pass the confirmatory criteria.

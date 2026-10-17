@@ -1,6 +1,6 @@
 # Ashmit Mukherjee — Portfolio
 
-A static Astro portfolio focused on research engineering and applied machine learning. It includes a concise homepage, a work index, four Markdown case studies, a corrected CV, and legacy URL redirects.
+A static Astro portfolio focused on human–AI interaction, computational research, and research engineering. It includes a homepage, research overview, six Markdown case studies, legacy URL redirects, and a separate application CV.
 
 Canonical domain: [ashmitmukherjee.com](https://ashmitmukherjee.com/). A local build or private Sites preview does not update that domain.
 
@@ -19,11 +19,12 @@ Astro 7 may start its development server in the background. Use `npx astro dev s
 
 - Homepage: `src/pages/index.astro`.
 - Case studies: `src/content/work/*.md`. Edit the title, summary, role, dates, tags, and links in frontmatter; write the story below. Both the work index and case-study route use this content.
-- Featured work order: the `order` field in frontmatter. The first project has a dedicated homepage feature; the following two are generated from the collection.
+- Research overview: `src/pages/research.astro`. Keep the manuscript status consistent with its case study and `cv.tex`.
+- Work order: the `order` field in frontmatter. The homepage explicitly selects Human–AI, Synthetic Pilot Lab, Bio-LoRA, and FieldLens. The work index separates research from supporting engineering.
 - Shared navigation, metadata, theme, and footer: `src/layouts/Layout.astro`.
 - Visual styles: `src/styles/global.css`.
-- Project diagrams and CAMP concept: `src/components/ProjectVisual.astro`.
-- CV: edit `cv.tex`, compile it to `cv.pdf`, and inspect both pages. `npm run build` copies the PDF into the output automatically. Do not edit `public/cv.pdf` directly.
+- Project diagrams, FieldLens screenshot, and CAMP concept: `src/components/ProjectVisual.astro`.
+- Application CV: `cv.tex` and `cv.pdf` are separate application documents. They are not copied into or linked from the website. Updating the website does not require updating the CV.
 
 Keep contributions, team context, status, and evaluation scope consistent with `CLAIM_AUDIT.md`. It is an internal source note and is not included in the published site.
 
@@ -35,7 +36,7 @@ npm run check
 npm run preview
 ```
 
-`build` syncs the CV, checks Astro/TypeScript, produces static pages in `dist/`, optimizes images, and creates the sitemap. `check` verifies local routes, links, anchors, assets, metadata, CV parity, redirect fallbacks, and regressions to superseded claims. It does not prove real-user performance or complete accessibility compliance.
+`build` checks Astro/TypeScript, produces static pages in `dist/`, optimizes images, and creates the sitemap. `check` verifies local routes, links, anchors, assets, metadata, absence of public CV files/links, redirect fallbacks, and regressions to superseded claims. It does not prove real-user performance or complete accessibility compliance.
 
 Fonts are self-hosted. Core content and navigation work as static HTML. JavaScript adds theme preference and optional email copying; storage/clipboard failures are handled.
 
@@ -43,10 +44,21 @@ Fonts are self-hosted. Core content and navigation work as static HTML. JavaScri
 
 `.github/workflows/pages.yml` builds and checks pull requests targeting `master`. Pushes to `master` and manual runs on that branch also deploy the `dist/` artifact through GitHub Pages.
 
-For the initial migration, select **GitHub Actions** as the Pages build source in the repository settings, then merge the reviewed changes into `master`. Preserve the existing custom domain and DNS settings. `public/CNAME` is copied to the static output.
+Pages already uses **GitHub Actions** as its build source. Merge the reviewed changes into `master` to publish. Preserve the existing custom domain and DNS settings. `public/CNAME` is copied to the static output.
 
-The old `/projects.html`, `/research.html`, `/publications.html`, and `/cv.html` paths retain redirect documents with ordinary fallback links. The old homepage anchors remain available. The `/cv.pdf` URL stays stable.
+The old `/projects.html`, `/research.html`, `/publications.html`, and `/cv.html` paths retain redirect documents with ordinary fallback links. The old homepage anchors remain available. The retired `/cv.html` points to the research overview; `/cv.pdf` is no longer hosted.
 
 ## Private Sites preview
 
 `.openai/hosting.json` identifies the separate private preview and packages the same static `dist/` output. Its canonical metadata still identifies the existing public domain. Preview deployment does not merge into GitHub or change DNS.
+
+## Monthly review
+
+The website uses dated project summaries rather than live task status or a hosted CV. Most months only project content needs attention.
+
+1. Read `src/content/work/*.md`; change a status or outcome only when the evidence has changed. Update that case study's `updated` date when you edit it. Titles, summaries, roles, and statuses feed the homepage and indices automatically.
+2. If the manuscript status changes, update its case study and the short entry in `src/pages/research.astro`. Add only a verified public record.
+3. Update the research overview's review date after checking its content. Affiliation or graduation changes belong in the homepage and shared metadata.
+4. Run the normal build/check commands and publish through the existing Pages workflow.
+
+There is no weekly progress feed, automatic research-status inference, or CV synchronization to maintain.

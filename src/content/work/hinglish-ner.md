@@ -5,8 +5,8 @@ category: Multilingual NLP
 role: Training pipelines, evaluation tooling, and error analysis within a team
 organization: Four-person course project, NYU Abu Dhabi
 period: Fall 2024
-status: Code and methods
-order: 4
+status: Course project
+order: 5
 tags: [PyTorch, Transformers, mBERT, XLM-RoBERTa]
 visual: ner
 links:
@@ -52,4 +52,4 @@ The full test split and the smaller zero-shot sample answer related questions un
 
 The project produced training and evaluation code, prediction utilities, and documentation of the evaluation setup. Error analysis examined entity boundaries, label ambiguity, and language-switching context.
 
-The public repository contains the implementation, setup instructions, and evaluation notes. This is a course project; the portfolio does not present it as a peer-reviewed publication.
+The public repository contains the implementation, setup instructions, and evaluation notes from this four-person course project.

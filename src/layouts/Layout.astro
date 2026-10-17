@@ -2,12 +2,13 @@
 import '../styles/global.css';
 interface Props { title?: string; description?: string; noindex?: boolean; }
 const {
-  title = 'Ashmit Mukherjee — Research engineering & applied ML',
-  description = 'Computer Science at NYU Abu Dhabi. I build research platforms, machine-learning pipelines, and software for real workflows.',
+  title = 'Ashmit Mukherjee — Human–AI systems & research engineering',
+  description = 'Computer Science at NYU Abu Dhabi. Research interests in human–AI interaction, multi-agent systems, and the evaluation of AI-supported decisions.',
   noindex = false,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const isWork = Astro.url.pathname.startsWith('/work');
+const isResearch = Astro.url.pathname.startsWith('/research/');
 ---
 <!doctype html>
 <html lang="en">
@@ -49,20 +50,20 @@ const isWork = Astro.url.pathname.startsWith('/work');
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="/" aria-label="Ashmit Mukherjee, home"><span class="brand-mark" aria-hidden="true">am/</span><span>Ashmit Mukherjee</span></a>
+        <a class="brand" href="/" aria-label="Ashmit Mukherjee, home"><span>Ashmit Mukherjee</span></a>
         <nav aria-label="Main navigation">
+          <a href="/research/" aria-current={isResearch ? 'page' : undefined}>Research</a>
           <a href="/work/" aria-current={isWork ? 'page' : undefined}>Work</a>
-          <a href="/#research">Research</a>
           <a href="/#about">About</a>
-          <a href="/cv.pdf">CV <span aria-hidden="true">↗</span></a>
+          <a href="/#contact">Contact</a>
         </nav>
         <button class="theme-toggle" type="button" aria-label="Switch color theme" hidden><span data-theme-label>Theme</span><span aria-hidden="true">◐</span></button>
       </div>
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer container" id="contact">
-      <div class="contact-heading"><p class="eyebrow">Let's talk</p><h2>Have a question worth building for?</h2><a class="contact-email" href="mailto:asm8879@nyu.edu">asm8879@nyu.edu <span aria-hidden="true">↗</span></a></div>
-      <div class="footer-bottom"><span>© {new Date().getFullYear()} Ashmit Mukherjee</span><div><a href="https://github.com/Ansester" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="/cv.pdf">Download CV</a><button class="copy-email" type="button" hidden>Copy email</button></div></div>
+      <div class="contact-heading"><p class="eyebrow">Contact</p><h2>Get in touch</h2><a class="contact-email" href="mailto:asm8879@nyu.edu">asm8879@nyu.edu <span aria-hidden="true">↗</span></a></div>
+      <div class="footer-bottom"><span>© {new Date().getFullYear()} Ashmit Mukherjee</span><div><a href="https://github.com/Ansester" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><button class="copy-email" type="button" hidden>Copy email</button></div></div>
       <p class="copy-status" role="status" aria-live="polite"></p>
     </footer>
     <script>

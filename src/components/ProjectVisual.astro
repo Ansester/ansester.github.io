@@ -1,13 +1,23 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import camp from '../../assets/camp-home.png';
-interface Props { kind: 'human'|'protein'|'camp'|'ner'; }
+import fieldlens from '../../assets/fieldlens-review.png';
+interface Props { kind: 'human'|'protein'|'camp'|'ner'|'capstone'|'fieldlens'; }
 const { kind } = Astro.props;
+const fieldlensFull = kind === 'fieldlens' ? await getImage({src:fieldlens,width:1440,format:'webp'}) : undefined;
+const diagrams = {
+  human: {label:'Experimental systems', nodes:[['01','Specify','Rules, advice, and information boundaries'],['02','Validate','Mechanics and independent outcome checks'],['03','Inspect','Retained actions and analysis records']],caption:'Research workflow. Current computational checks use deterministic fixture advisers.'},
+  protein: {label:'Signal-peptide evaluation',nodes:[['01','Adapt','ESM-2 with full fine-tuning and LoRA variants'],['02','Compare','Matched tasks, seeds, and model sizes'],['03','Challenge','Prior controls and efficiency analyses']],caption:'Task-specific comparisons and controls inform the interpretation of the results.'},
+  capstone: {label:'First diagnostic / In development',nodes:[['01','Specify','Correct and deliberately faulty versions'],['02','Exercise','Scripted trajectories and controls'],['03','Check','Independent reconstruction of outcomes']],caption:'Planned diagnostic workflow. The specification is complete; implementation and executed evaluation are the next milestone.'},
+};
+const diagram = diagrams[kind as keyof typeof diagrams];
 ---
 {kind === 'camp' ? (
   <figure class="case-visual camp-visual"><div><p class="eyebrow">Campus workflows</p><h2>One platform.<br />Two sides of a reservation.</h2><div class="workflow-pair"><div><h3>Students</h3><p>Browse equipment<br />Request a reservation<br />Manage borrowings</p></div><div><h3>Staff</h3><p>Manage inventory<br />Issue and return items<br />Review reservation activity</p></div></div><figcaption>Interface concept retained from the project assets; not a live application screenshot.</figcaption></div><Image src={camp} alt="CAMP mobile interface concept showing equipment reservations, due items, and campus resources" width={260} format="webp" /></figure>
 ) : kind === 'ner' ? (
   <figure class="case-visual ner-visual"><p class="eyebrow">Evaluation design</p><div class="evaluation-grid"><div><span class="eval-number">4,829</span><p class="eval-title">Full test examples</p><p>Fine-tuned mBERT and XLM-RoBERTa</p></div><div><span class="eval-number">100</span><p class="eval-title">Sampled examples</p><p>Zero-shot GPT-4o and Llama baselines</p></div></div><figcaption>Different evaluation scopes. These are dataset sizes, not model-performance scores.</figcaption></figure>
-) : (
-  <figure class="case-visual pipeline-visual"><p class="eyebrow">{kind === 'human' ? 'Research platform / Conceptual overview' : 'Experiment workflow / Conceptual overview'}</p><div class="pipeline">{(kind === 'human' ? [['01','Requirements','Study procedures and information boundaries'],['02','Platform','Participant flow, orchestration, and rules'],['03','Records','Structured data for subsequent analysis']] : [['01','Configure','Task, model, and adaptation method'],['02','Train','Repeated experiments on the HPC cluster'],['03','Evaluate','Compare results across configurations']]).map(([n,title,detail]) => <div class="pipeline-node"><span>{n}</span><p class="diagram-title">{title}</p><p>{detail}</p></div>)}</div><figcaption>{kind === 'human' ? 'Implementation and validation support the study; they do not establish a behavioral finding.' : 'Repeated runs help assess stability. No benchmark performance is implied by this diagram.'}</figcaption></figure>
+) : kind === 'fieldlens' && fieldlensFull ? (
+  <figure class="case-visual fieldlens-visual"><p class="eyebrow">Working prototype / Synthetic demonstration</p><a href={fieldlensFull.src} target="_blank" rel="noopener noreferrer" aria-label="Open the FieldLens prototype screenshot at full size"><Image src={fieldlens} alt="FieldLens synthetic replay showing a question, model-selected answer, application warnings, and the exact supporting GPS record" width={1440} format="webp" loading="lazy" /></a><figcaption>Saved prototype run using fictional incident records. The answer and its supporting record remain visible together. <a href={fieldlensFull.src} target="_blank" rel="noopener noreferrer">View full-size screenshot ↗</a></figcaption></figure>
+) : diagram && (
+  <figure class="case-visual pipeline-visual"><p class="eyebrow">{diagram.label}</p><div class="pipeline">{diagram.nodes.map(([n,title,detail]) => <div class="pipeline-node"><span>{n}</span><p class="diagram-title">{title}</p><p>{detail}</p></div>)}</div><figcaption>{diagram.caption}</figcaption></figure>
 )}

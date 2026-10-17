@@ -6,7 +6,7 @@ role: Backend endpoints, integration testing, and client API utilities
 organization: Five-person software engineering team, NYU Abu Dhabi
 period: Fall 2024
 status: Course project
-order: 3
+order: 6
 tags: [React, Express, MongoDB, Mocha / Chai]
 visual: camp
 links:
@@ -26,7 +26,7 @@ I implemented backend REST API endpoints for staff workflows, equipment alerts, 
 
 The team rotated agile responsibilities during the project. I served as Product Owner in Sprint 1 and Scrum Master in Sprint 3, alongside my technical contributions. Those roles connected implementation work with the team's planning and delivery process.
 
-The full platform was a shared effort with Saad Iftikhar, Talal Naveed, Shaf Khalid, and Akshith Karthik. The interface, application-wide feature set, and deployment describe the team's project; they are not a claim of sole authorship.
+The full platform was a shared effort with Saad Iftikhar, Talal Naveed, Shaf Khalid, and Akshith Karthik. We shared responsibility for the interface, application-wide feature set, and deployment.
 
 ## How the platform fits together
 

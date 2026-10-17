@@ -1,109 +1,109 @@
-\documentclass[a4paper,10pt]{article}
-\usepackage[margin=0.68in]{geometry}
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=0.65in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{hyperref}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \titleformat{\section}{\bfseries\large}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{7pt}{4pt}
-\hypersetup{hidelinks,pdftitle={Ashmit Mukherjee - Curriculum Vitae},pdfauthor={Ashmit Mukherjee}}
+\titlespacing{\section}{0pt}{8pt}{4pt}
+\hypersetup{hidelinks,pdftitle={Ashmit Mukherjee - Research Curriculum Vitae},pdfauthor={Ashmit Mukherjee}}
 \pagestyle{plain}
-\setlist[itemize]{noitemsep, topsep=1pt, leftmargin=1.25em}
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=1.25em}
 \setlength{\parskip}{0.22em}
 \setlength{\parindent}{0pt}
-\sloppy
 \newcommand{\entry}[2]{\textbf{#1}\hfill\textit{#2}}
 \begin{document}
 \begin{center}
-    {\LARGE\bfseries Ashmit Mukherjee}\\[-0.1em]
-    NYU Abu Dhabi \;|\; \href{mailto:asm8879@nyu.edu}{asm8879@nyu.edu} \;|\; +971 56 617 7307 \;|\;
-    \href{https://github.com/Ansester}{github.com/Ansester} \;|\;
-    \href{https://www.linkedin.com/in/ashmit-mukherjee/}{linkedin.com/in/ashmit-mukherjee}
+    {\LARGE\bfseries Ashmit Mukherjee}\\[0.25em]
+    \href{mailto:asm8879@nyu.edu}{asm8879@nyu.edu} \;|\;
+    \href{https://ashmitmukherjee.com}{ashmitmukherjee.com} \;|\;
+    \href{https://github.com/Ansester}{github.com/Ansester}\\
+    New York University Abu Dhabi \;|\; Abu Dhabi, United Arab Emirates
 \end{center}
-\vspace{-0.8em}
+\vspace{-0.6em}
 
-\section*{Profile}
-Computer Science student at NYU Abu Dhabi building research platforms, machine-learning pipelines, and software systems. Experience spans human-AI experimental infrastructure, protein language model adaptation, multilingual NLP, and applied data analysis.
+\section*{Research Interests}
+Human-AI interaction; AI-mediated cooperation and collective decision-making; multi-agent systems; computational social science; rigorous evaluation of AI systems.
 
 \section*{Education}
 \entry{New York University Abu Dhabi}{Expected May 2027}\\
-B.S. in Computer Science\\
-\textit{Study Away:} NYU Paris; NYU New York\\
-\textbf{Relevant Coursework:} Natural Language Processing, Principles of Data Science, Statistics for Social and Behavioral Sciences, Data Structures and Algorithms, Computer Systems Architecture, Operating Systems
+B.S. in Computer Science; minor in Economics\\
+\textit{Study away:} NYU Paris and NYU New York\\
+\textbf{Selected coursework:} Natural Language Processing, Principles of Data Science, Statistics for Social and Behavioral Sciences, Data Structures and Algorithms, Operating Systems
 
 \section*{Research Experience}
-\entry{Research Assistant, Human-AI Collaboration, NYU Abu Dhabi}{Feb 2026 to present}
+\entry{Research Assistant, Human-AI Collaboration}{Feb 2026 - present}\\
+New York University Abu Dhabi \;|\; Ben Rosche and Hanan Salam
 \begin{itemize}
-    \item Lead the technical implementation of an online platform for a human-AI research project.
-    \item Build, deploy, and maintain the system used to conduct the research and collect structured experimental data.
-    \item Contribute to study design and translate research requirements into platform behavior, data workflows, and validation checks.
+    \item Direct software implementation and review for faculty-led research on AI advice, coordination, and social dilemmas; translate study requirements into executable mechanics and data workflows.
+    \item Coordinate development and review across Python/FastAPI, Empirica participant interfaces, session orchestration, and structured exports; contribute implementation-focused study-design feedback.
+    \item Develop requirements for inspectable computational experiments, including validated actions, resumable execution, retained records, and independent checks of outcomes.
+    \item Current computational validation uses deterministic fixture advisers; real-model experiments and the human-study platform have separate development and validation milestones.
 \end{itemize}
 
-\entry{Research Assistant, eBRAIN Lab, NYU Abu Dhabi}{Feb 2026 to present}
+\entry{Research Assistant, eBRAIN Lab}{Feb 2026 - present}\\
+New York University Abu Dhabi \;|\; Muhammad Shafique and Minghao Shao
 \begin{itemize}
-    \item Develop and evaluate parameter-efficient methods for adapting protein language models to protein-sequence tasks.
-    \item Build training and evaluation pipelines and run multi-seed experiments on the NYU Abu Dhabi HPC cluster.
-    \item Compare models and configurations to determine which results hold up across repeated runs.
+    \item Extended BioInjectionEval to signal-peptide classification and cleavage-site prediction with ESM-2; contributed task adapters, model heads, and evaluation metrics.
+    \item Implemented and evaluated biological-prior adaptation variants and comparisons with vanilla LoRA and full fine-tuning; ran multi-seed HPC studies across 150M, 650M, and 3B model scales.
+    \item Examined prior and initialization controls, leakage checks, and low-resource settings. Recorded speed and memory comparisons alongside configurations, results, and limitations.
+    \item Analyzed task-specific results under confirmatory controls, separating predictive improvements from evidence about the underlying biological mechanism.
 \end{itemize}
 
-\section*{Industry and Applied Research Experience}
-\entry{Machine Learning Engineer Intern, Zeek}{Jun to Aug 2025}
-\begin{itemize}
-    \item Built and evaluated customer-segmentation workflows using real-world data.
-    \item Compared preprocessing and model choices, then used SHAP to inspect model behavior.
-    \item Contributed to validation and evaluation procedures used in the model-development workflow.
-\end{itemize}
+\section*{Research Manuscript}
+\textbf{Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation.}\\
+Co-first author. Unpublished research manuscript, 2026. Submitted to EMNLP 2026; not accepted.\\
+\href{https://openreview.net/forum?id=c2bOohFkYH}{OpenReview submission record} \;|\;
+\href{https://ashmitmukherjee.com/work/protein-language-models/}{Research contribution and experimental scope}
 
-\entry{Market Research Consultant, Global Media Alliance Broadcasting}{Jun 2024}
+\section*{Independent Research}
+\entry{Synthetic Pilot Lab - Computer Science Capstone}{Oct 2026 - present}
 \begin{itemize}
-    \item Led audience analysis, survey design, and customer-engagement analysis for a broadcasting company.
-    \item Synthesized quantitative and qualitative findings into recommendations presented to senior leadership.
+    \item Investigate whether synthetic participants can expose faults in experimental systems before human piloting, with reproducible diagnostic evidence and explicit evaluation criteria.
+    \item Specify paired correct/faulty implementations, exposing and non-exposing scripted trajectories, and an independent evaluator that reconstructs expected state and payoffs.
+    \item Established the standalone project and first diagnostic specification. Implementation and executed evaluations are the next milestone; model-based fault discovery remains planned work.
 \end{itemize}
 
 \newpage
-\section*{Selected Projects}
-\entry{Data Science Salary Prediction Platform}{Fall 2025}
+\section*{Selected Research and Engineering Projects}
+\entry{FieldLens - Evidence-linked Incident Review}{Oct 2026}
 \begin{itemize}
-    \item Built a salary-prediction workflow on 742 cleaned Glassdoor job listings using PyCaret model comparison and XGBoost.
-    \item Integrated SHAP feature-contribution analysis, MLflow experiment tracking, and a Streamlit interface for exploring model-based estimates.
+    \item Directed the design and development of a local-model prototype using fictional incident records; specified bounded retrieval, application-owned claims, exact references, and deterministic failure handling.
+    \item Separated output validity, proposition coverage, and relevance in saved synthetic comparisons; preserved incomplete answers, model failures, and portability limitations.
 \end{itemize}
 
-\entry{Crime Data Analysis and Prediction Platform}{Spring 2025}
+\entry{Hinglish Named-Entity Recognition}{Fall 2024}
 \begin{itemize}
-    \item Modeled relationships between socioeconomic indicators and violent crime rates using data from 1{,}994 communities.
-    \item Evaluated regression using a single holdout split and built a Streamlit application for descriptive exploration and model-based prediction; results represent observational associations.
+    \item Contributed training pipelines, evaluation tooling, and error analysis in a four-person course project using mBERT and XLM-RoBERTa on COMI-LINGUA.
+    \item Encoder evaluation used the full 4,829-example test split; zero-shot language-model baselines used a separate 100-example sample. These evaluation scopes are distinct.
 \end{itemize}
 
-\entry{Hinglish Named Entity Recognition Benchmark}{Fall 2024}
+\entry{CAMP - Campus Asset Management Platform}{Fall 2024}
 \begin{itemize}
-    \item Contributed to a team project fine-tuning mBERT and XLM-RoBERTa for Hindi-English named-entity recognition on COMI-LINGUA.
-    \item Worked on training, evaluation, and error analysis; encoder evaluation used 4{,}829 test examples, while zero-shot language-model baselines used a separate 100-example sample.
+    \item Built staff-workflow REST endpoints, equipment alerts, and dashboard statistics in a five-person project using React, Express, and MongoDB; configured backend integration testing and client API utilities.
+    \item Served as Product Owner and Scrum Master in rotating team sprints.
 \end{itemize}
 
-\entry{CAMP, Campus Asset Management Platform}{Fall 2024}
+\section*{Industry and Applied Experience}
+\entry{Machine Learning Engineer Intern, Zeek}{Jun - Aug 2025}
 \begin{itemize}
-    \item Contributed backend REST endpoints for staff workflows, equipment alerts, and dashboard statistics to a five-person campus asset-management project.
-    \item Configured backend integration testing and client API utilities; served as Product Owner and Scrum Master in team sprint rotations.
+    \item Built and evaluated customer-segmentation workflows; compared preprocessing and model choices and used SHAP to inspect model behavior.
+\end{itemize}
+\entry{Market Research Consultant, Global Media Alliance Broadcasting}{Jun 2024}
+\begin{itemize}
+    \item Conducted audience analysis, survey design, and customer-engagement research; presented quantitative and qualitative findings to senior leadership.
 \end{itemize}
 
-\section*{Leadership and Campus Experience}
-\entry{First Year Program Facilitator, Office of Student Life, NYU Abu Dhabi}{Aug to Dec 2024}
-\begin{itemize}
-    \item Facilitated workshops, group discussions, peer activities, and weekly one-to-one check-ins for more than 20 first-year students.
-    \item Connected students with academic, wellbeing, and campus resources and organized off-campus cultural excursions.
-\end{itemize}
-
-\entry{Front of House Staff, NYU Abu Dhabi Arts Center}{Jan to May 2024}
-\begin{itemize}
-    \item Managed guest check-in, crowd flow, and ticketing operations for events with more than 500 attendees.
-    \item Supported VIP guests, performing artists, and last-minute operational changes.
-\end{itemize}
+\section*{Leadership and Service}
+\textbf{First Year Program Facilitator, NYU Abu Dhabi} \hfill \textit{Aug - Dec 2024}\\
+Facilitated workshops, group activities, and weekly check-ins for more than 20 first-year students.\\
+\textbf{Front of House Staff, NYU Abu Dhabi Arts Center} \hfill \textit{Jan - May 2024}\\
+Supported guest check-in, ticketing, and event operations for audiences exceeding 500 attendees.
 
 \section*{Technical Skills}
-\textbf{Programming:} Python, C++, C\#, JavaScript\\
-\textbf{Machine Learning and NLP:} PyTorch, Hugging Face Transformers, scikit-learn, XGBoost, PyCaret, SHAP, LoRA, ESM-2\\
-\textbf{Data and Statistics:} pandas, NumPy, SciPy, Matplotlib, Seaborn, Plotly, cross-validation, regression modeling, experimental design\\
-\textbf{Systems and Tools:} FastAPI, Empirica, REST APIs, MongoDB, Docker, Slurm, pytest, MLflow, GitHub Actions, Git, Streamlit, \LaTeX
-
+\textbf{Programming:} Python, JavaScript, C++, C\#\\
+\textbf{ML and NLP:} PyTorch, Transformers, scikit-learn, ESM-2, LoRA, XGBoost, SHAP\\
+\textbf{Research and data:} Experimental design, model evaluation, pandas, NumPy, SciPy, statistical modeling, Matplotlib, Plotly\\
+\textbf{Systems:} FastAPI, Empirica, REST APIs, Slurm, Docker, pytest, Git, GitHub Actions, MLflow, \LaTeX
 \end{document}
