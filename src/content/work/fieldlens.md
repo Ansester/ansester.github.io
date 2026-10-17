@@ -1,6 +1,6 @@
 ---
 title: FieldLens
-summary: A local prototype that constrains model answers to retrieved, application-owned claims and keeps supporting records inspectable.
+summary: A local prototype for reviewing fictional incident records, with model answers linked to their sources.
 category: Research engineering
 role: Project direction, requirements, and evaluation
 organization: Independent prototype
@@ -27,8 +27,6 @@ I directed the prototype, specifying requirements for evidence retrieval, failur
 The application creates an immutable evidence snapshot and calculates quantities such as record age in ordinary code. A local model can choose from three read-only retrieval tools, subject to application-enforced limits.
 
 For the released answer path, the model selects application-owned claims derived from the retrieved records. Required qualifications remain attached to those claims, and the interface renders their exact text and references. Separate warnings and a deterministic baseline remain available when inference fails.
-
-This constrains what the model can say, but leaves a harder question: did it select the information the reader actually needed?
 
 ## Evidence and current limits
 

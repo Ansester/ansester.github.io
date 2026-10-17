@@ -14,42 +14,18 @@ links:
     url: https://github.com/Ansester/camp-final-project
 ---
 
-## The problem
+## The project
 
-Campus equipment booking connects several workflows: students need to find and reserve items, while staff need to manage inventory, issue equipment, record returns, and understand what is happening across reservations. Those workflows share data but require different permissions.
-
-CAMP brings resource scheduling, equipment reservations, and inventory management into one web application. It was developed as a five-person software engineering project at NYU Abu Dhabi.
+CAMP is a campus equipment-reservation and inventory application, developed by a five-person software engineering team at NYU Abu Dhabi. Students can browse equipment and request reservations; staff manage inventory, issue items, and record returns.
 
 ## My contribution
 
-I implemented backend REST API endpoints for staff workflows, equipment alerts, and dashboard statistics in Express.js. I also configured the backend integration-testing setup and worked on client API integration utilities.
+I implemented Express.js REST endpoints for staff workflows, equipment alerts, and dashboard statistics. I configured the backend integration-testing setup with Mocha and Chai and worked on client API integration utilities.
 
-The team rotated agile responsibilities during the project. I served as Product Owner in Sprint 1 and Scrum Master in Sprint 3, alongside my technical contributions. Those roles connected implementation work with the team's planning and delivery process.
+I also served as Product Owner in Sprint 1 and Scrum Master in Sprint 3. My teammates were Saad Iftikhar, Talal Naveed, Shaf Khalid, and Akshith Karthik; the interface, application-wide features, and deployment were shared work.
 
-The full platform was a shared effort with Saad Iftikhar, Talal Naveed, Shaf Khalid, and Akshith Karthik. We shared responsibility for the interface, application-wide feature set, and deployment.
+## Implementation
 
-## How the platform fits together
+The application uses React, an Express API on Node.js, and MongoDB Atlas. JWT authentication and role-based access distinguish student and staff operations. Reservation workflows include booking-conflict checks, item issuance, and returns.
 
-The application uses a React frontend, an Express REST API running on Node.js, and MongoDB Atlas. JWT authentication and role-based access distinguish student and staff workflows.
-
-The platform supports browsing equipment, submitting reservation requests, checking for booking conflicts, and managing item issuance and returns. The staff dashboard brings together reservation activity and operational information.
-
-The project used GitHub Actions for continuous integration and was deployed on a DigitalOcean droplet with Nginx and PM2. That describes the documented project deployment; the portfolio links to the repository rather than assuming the original live service is still available.
-
-## Engineering choices
-
-### Give staff operations an explicit API
-
-Equipment alerts and dashboard statistics need defined server responses that the client can consume. My endpoint work focused on those staff-facing needs, with client utilities connecting the frontend to the API.
-
-### Test across the integration boundary
-
-The backend testing setup uses Mocha and Chai, with Supertest available in the project. Integration tests provide a way to exercise API behavior beyond an isolated function. Configuring that setup was part of my contribution to making backend changes easier to check.
-
-### Keep responsibilities clear
-
-Student and staff tasks are different. The platform's authentication and role-based workflows provide the context in which the API operates. Team sprint rotations also made responsibilities explicit at the project level.
-
-## Outcome and artifacts
-
-The outcome was a team-built campus asset-management application with documented setup and testing instructions. The repository records the stack, implemented functionality, team members, and contribution breakdown. It is the best starting point for inspecting the code or running the project locally.
+The team used GitHub Actions for continuous integration and deployed the project on a DigitalOcean droplet with Nginx and PM2. The repository contains the source, setup and testing instructions, and contribution breakdown.

@@ -29,16 +29,10 @@ The work spans Python game mechanics, participant and researcher interfaces, ses
 
 The current computational path supports configurable games, adviser workflows, literal execution of validated recommendations, resumable runs, and retained request and outcome records. It separates strategic model output from deterministic mechanics so that an unexpected result can be traced to the advice, its validation, or the game implementation.
 
-## What matters methodologically
+## Validation
 
-**An independent check of the experiment.** Validation should reconstruct what ought to have happened from the recorded inputs, rather than simply repeat the engine's own answer.
-
-**Information boundaries that survive implementation.** A model or participant should receive the information the design permits. Private advice, shared information, and researcher-only records have different purposes.
-
-**A common rules authority.** Computational runs and the later human-study interface should use the same underlying mechanics. This helps keep a comparison from becoming a comparison between two implementations.
+My implementation review covers reconstructing expected outcomes from recorded inputs, checking which information reaches advisers, participants, and researchers, and maintaining consistent game mechanics across computational runs and the human-study interface.
 
 ## Current status
 
 The computational implementation has been exercised with deterministic fixture advisers. These checks establish software behavior under specified inputs; they do not establish real-model strategy or effects on people. The human-study platform remains a separate development path, and scientific configuration decisions are still being resolved.
-
-The project has drawn my attention to the methodological choices embedded in experimental software, particularly how information is shared and how recorded actions are interpreted.

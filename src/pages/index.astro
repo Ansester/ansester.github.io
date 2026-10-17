@@ -11,29 +11,28 @@ const selected = ['protein-language-models', 'synthetic-pilot-lab', 'fieldlens']
   <div class="container">
     <section class="hero">
       <div>
-        <p class="eyebrow">Computer Science · NYU Abu Dhabi</p>
         <h1>Ashmit Mukherjee</h1>
-        <p class="hero-description">I'm a Computer Science senior at NYU Abu Dhabi. I'm interested in computational social science: using data, statistics, and computing to explore social, economic, and historical questions. I lead the technical implementation of a human–AI research platform and work on model adaptation at the eBRAIN Lab.</p>
-        <div class="actions"><a class="button primary" href="/research/">Research overview <span aria-hidden="true">↗</span></a><a class="text-link" href="mailto:asm8879@nyu.edu">Contact ↗</a></div>
+        <p class="hero-description">I'm a Computer Science senior at NYU Abu Dhabi, interested in computational social science. I lead technical implementation for human–AI research and work on adapting protein language models at the eBRAIN Lab.</p>
+        <div class="actions"><a class="text-link" href="/research/">Research overview</a><a class="text-link" href="mailto:asm8879@nyu.edu">Contact</a></div>
       </div>
-      <aside class="current"><p class="eyebrow">At NYU Abu Dhabi</p><dl><dt>Social Dynamics Lab</dt><dd>Human–AI research engineering</dd><dt>Independent capstone</dt><dd>Synthetic Pilot Lab · In development</dd><dt>eBRAIN Lab</dt><dd>Protein-model adaptation and evaluation</dd><dt>B.S. Computer Science</dt><dd>Expected May 2027</dd></dl></aside>
+      <aside class="current"><p class="eyebrow">Research groups</p><dl><dt>Social Dynamics Lab</dt><dd>Human–AI research engineering</dd><dt>eBRAIN Lab</dt><dd>Protein-model adaptation and evaluation</dd></dl></aside>
     </section>
     <section class="section" id="projects">
-      <div class="section-head"><h2>Selected work</h2><a class="text-link" href="/work/">All work ↗</a></div>
-      <article class="featured"><div class="featured-copy"><span class="eyebrow">01 / Human–AI research</span><h3>{featured.data.title}</h3><p>{featured.data.summary}</p><div class="tags"><span>Experimental infrastructure</span><span>Multi-agent simulation</span><span>Research engineering</span></div><a class="text-link" href="/work/human-ai-collaboration/">Read about the project ↗</a></div><div class="project-context"><p class="eyebrow">Project details</p><dl><dt>Faculty collaborators</dt><dd>Ben Rosche &amp; Hanan Salam</dd><dt>My work</dt><dd>Experimental software, simulation workflows, and implementation review</dd><dt>Focus</dt><dd>AI advice, cooperation, and collective decisions</dd></dl></div></article>
+      <div class="section-head"><h2>Selected work</h2><a class="text-link" href="/work/">All work</a></div>
+      <article class="featured"><div class="featured-copy"><p class="eyebrow">{featured.data.status}</p><h3><a href="/work/human-ai-collaboration/">{featured.data.title}</a></h3><p>{featured.data.summary}</p></div><div class="project-context"><dl><dt>Faculty collaborators</dt><dd>Ben Rosche &amp; Hanan Salam</dd><dt>My work</dt><dd>Experimental software, simulation workflows, and implementation review</dd></dl></div></article>
+      <div class="home-projects">{selected.map(p=><article class="project-row"><p class="eyebrow">{p.data.status}</p><h3><a href={`/work/${p.id}/`}>{p.data.title}</a></h3><p>{p.data.summary}</p></article>)}</div>
     </section>
-    <div class="home-projects">{selected.map((p,i)=><article class="project-row"><span class="project-number">0{i+2}</span><div><p class="eyebrow">{p.data.status}</p><h3><a href={`/work/${p.id}/`}>{p.data.title}</a></h3><p>{p.data.summary}</p><div class="tags">{p.data.tags.map(t=><span>{t}</span>)}</div></div><a class="row-link" href={`/work/${p.id}/`} aria-label={`Read ${p.data.title}`}>↗</a></article>)}</div>
     <section class="section split" id="research">
-      <div><p class="eyebrow">Research direction</p><h2>Research interests</h2></div>
-      <div><p>My current work concerns AI-supported decisions and the use of computational experiments in social research. I want to understand when simulation is informative about a social question, and what needs to be checked through observation or experiments with people.</p><p class="muted">The protein-model work gives me a different setting in which to test methods, compare models, and examine why a promising result changes across experimental settings.</p><div class="inline-links"><a class="text-link" href="/research/">Research overview &amp; manuscript ↗</a><a class="text-link" href="/work/hinglish-ner/">Earlier NLP work ↗</a></div></div>
+      <div><h2>Research interests</h2></div>
+      <div><p>I want to use data, statistics, and computing to study social, economic, and historical questions. My current work concerns AI-supported decisions and computational experiments: when can simulation help answer a social question, and what needs to be checked through observation or experiments with people?</p><div class="inline-links"><a class="text-link" href="/research/">Research overview &amp; manuscript</a><a class="text-link" href="/work/hinglish-ner/">Earlier NLP work</a></div></div>
     </section>
     <section class="section split" id="experience">
-      <div><p class="eyebrow">Experience</p><h2>Experience</h2></div>
+      <div><h2>Experience</h2></div>
       <ol class="timeline"><li><strong>Research Assistant · Human–AI Collaboration</strong><time>Feb 2026 — present</time><p>NYU Abu Dhabi, with Ben Rosche and Hanan Salam. Research engineering, implementation direction, and experimental data workflows.</p></li><li><strong>Research Assistant · eBRAIN Lab</strong><time>Feb 2026 — present</time><p>NYU Abu Dhabi, with Muhammad Shafique and Minghao Shao. Protein-model adaptation, signal-peptide evaluation, and controlled HPC experiments.</p></li><li><strong>ML Engineer Intern · Zeek</strong><time>Jun — Aug 2025</time><p>Customer segmentation, preprocessing and model comparison, and SHAP analysis.</p></li></ol>
     </section>
     <section class="section split" id="about">
-      <div><p class="eyebrow">About</p><h2>About me</h2></div>
-      <div class="about-grid" id="background"><div><p>I like problems where building the system is part of answering the question. My work has involved experimental platforms, multilingual NLP, model evaluation, and applied data analysis.</p><p class="muted">I expect to graduate from NYU Abu Dhabi in May 2027 and am preparing for doctoral research in computational social science. I have studied in Paris and New York, supported first-year students, and worked with the NYU Abu Dhabi Arts Center.</p><div class="inline-links"><a class="text-link" href="/research/">Research background ↗</a><a class="text-link" href="https://benrosche.com/social-dynamics-lab/" target="_blank" rel="noopener noreferrer">Social Dynamics Lab ↗</a></div></div><Image class="portrait" src={portrait} alt="Ashmit Mukherjee" width={160} height={160} format="webp" loading="lazy" /></div>
+      <div><h2>About me</h2></div>
+      <div class="about-grid" id="background"><div><p>I expect to graduate from NYU Abu Dhabi in May 2027 and am preparing for doctoral research in computational social science.</p><p class="muted">I have studied in Paris and New York, supported first-year students, and worked with the NYU Abu Dhabi Arts Center.</p><div class="inline-links"><a class="text-link" href="https://benrosche.com/social-dynamics-lab/" target="_blank" rel="noopener noreferrer">Social Dynamics Lab ↗</a></div></div><Image class="portrait" src={portrait} alt="Ashmit Mukherjee" width={160} height={160} format="webp" loading="lazy" /></div>
     </section>
   </div>
 </Layout>

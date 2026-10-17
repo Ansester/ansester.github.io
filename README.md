@@ -38,7 +38,7 @@ npm run preview
 
 `build` checks Astro/TypeScript, produces static pages in `dist/`, optimizes images, and creates the sitemap. `check` verifies local routes, links, anchors, assets, metadata, absence of public CV files/links, redirect fallbacks, and regressions to superseded claims. It does not prove real-user performance or complete accessibility compliance.
 
-Fonts are self-hosted. Core content and navigation work as static HTML. JavaScript adds theme preference and optional email copying; storage/clipboard failures are handled.
+The site uses one self-hosted Inter variable font file. Core content and navigation work as static HTML. JavaScript adds theme preference and optional email copying; storage/clipboard failures are handled.
 
 ## GitHub Pages
 

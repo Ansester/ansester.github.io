@@ -20,9 +20,7 @@ I want to distinguish unusual participant behavior from an actual implementation
 
 ## My direction
 
-I am defining a standalone project with its own examples, implementation, and evaluation. The capstone draws on my experience with experimental software and has its own research question, repository, and diagnostic examples.
-
-My first example specifies a small contribution game with a deliberately injected accounting fault. Paired correct and faulty versions receive the same scripted action sequences. An independent evaluator reconstructs the expected state and payoffs from those actions and checks the observed evidence.
+My first example specifies a small contribution game with a deliberately injected accounting fault. The specification pairs correct and faulty versions with the same scripted action sequences. It defines an independent evaluator that reconstructs expected state and payoffs from those actions and checks the observed evidence.
 
 The specification includes both trajectories that expose the fault and controls that leave it unexposed. Passing a control means that no violation was observed on that trajectory; it does not establish that the implementation is free of defects.
 
@@ -34,6 +32,4 @@ The planned evidence includes accepted actions, participant observations, state 
 
 ## Current status
 
-The first diagnostic's rules, fixtures, and expected outcomes are specified, and the standalone repository has been established. Implementation and executed results are the next step. The current milestone is a specified diagnostic; model-based discovery and benchmark evaluation remain planned work.
-
-The broader goal is to compare diagnostic approaches under explicit assumptions and understand when synthetic pilots provide useful evidence for experimental development.
+The first diagnostic's rules, fixtures, and expected outcomes are specified, and the standalone repository is established. Implementation, executed evaluations, and model-based fault discovery remain planned work.
