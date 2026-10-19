@@ -1,38 +1,59 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import portrait from '../../ashmit-profile.jpg';
-const projects = (await getCollection('work')).sort((a,b)=>a.data.order-b.data.order);
-const featured = projects.find(p => p.id === 'human-ai-collaboration')!;
-const selected = ['protein-language-models', 'synthetic-pilot-lab', 'fieldlens'].map(id => projects.find(p=>p.id===id)).filter(p=>p!==undefined);
+import ProteinComparison from '../components/ProteinComparison.astro';
+import ValidationExcerpt from '../components/ValidationExcerpt.astro';
 ---
 <Layout>
   <div class="container">
-    <section class="hero">
+    <header class="introduction">
       <div>
+        <p class="affiliation">Computer Science · NYU Abu Dhabi</p>
         <h1>Ashmit Mukherjee</h1>
-        <p class="hero-description">I'm a Computer Science senior at NYU Abu Dhabi, interested in computational social science. I lead technical implementation for human–AI research and work on adapting protein language models at the eBRAIN Lab.</p>
-        <div class="actions"><a class="text-link" href="/research/">Research overview</a><a class="text-link" href="mailto:asm8879@nyu.edu">Contact</a></div>
+        <p>I work on software for studying how AI advice affects cooperation, and on evaluating adaptations of protein language models.</p>
+        <p>My interests are in computational social science: how experiments and simulation can help us understand decisions people make together.</p>
+        <div class="intro-links"><a href="mailto:asm8879@nyu.edu">asm8879@nyu.edu</a><a href="https://github.com/Ansester" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
       </div>
-      <aside class="current"><p class="eyebrow">Research groups</p><dl><dt>Social Dynamics Lab</dt><dd>Human–AI research engineering</dd><dt>eBRAIN Lab</dt><dd>Protein-model adaptation and evaluation</dd></dl></aside>
+      <Image class="portrait" src={portrait} alt="Ashmit Mukherjee" width={144} height={144} format="webp" loading="eager" />
+    </header>
+
+    <section class="research-stories" id="research" aria-labelledby="research-heading">
+      <div class="section-label" id="projects"><h2 id="research-heading">Research</h2><span>Two ongoing collaborations</span></div>
+      <article class="research-story">
+        <div class="story-copy">
+          <p class="byline">With Ben Rosche &amp; Hanan Salam · 2026–present</p>
+          <h3><a href="/work/human-ai-collaboration/">Human–AI collaboration</a></h3>
+          <p class="research-question">How does AI advice affect cooperation when individual and group incentives differ?</p>
+          <p>I coordinate software development and review for this faculty-led project. One part of my work is checking that an adviser’s recommendation, the action executed by the game, and the recorded outcome agree.</p>
+          <p>The computational runner has been exercised with scripted advisers. Studies of model and human behaviour are still ahead.</p>
+          <a class="read-link" href="/work/human-ai-collaboration/">The software and my contribution</a>
+        </div>
+        <ValidationExcerpt />
+      </article>
+      <article class="research-story protein-story">
+        <div class="story-copy">
+          <p class="byline">Co-first author · eBRAIN Lab · 2026–present</p>
+          <h3><a href="/work/protein-language-models/">Bio-LoRA &amp; protein-model evaluation</a></h3>
+          <p class="research-question">Can biological information help adapt a protein language model?</p>
+          <p>I extended the evaluation to signal-peptide prediction and ran comparisons across three ESM-2 model sizes. In follow-up work, two promising single-seed settings reversed when repeated across seeds, changing which configurations were worth pursuing.</p>
+          <a class="read-link" href="/work/protein-language-models/">Methods, results, and what changed</a>
+        </div>
+        <ProteinComparison />
+      </article>
+      <div class="manuscript-entry" id="manuscript"><span>Manuscript</span><p><a href="/work/protein-language-models/#the-manuscript"><cite>Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation.</cite></a><br />Co-first author. Unpublished manuscript, 2026.</p></div>
     </section>
-    <section class="section" id="projects">
-      <div class="section-head"><h2>Selected work</h2><a class="text-link" href="/work/">All work</a></div>
-      <article class="featured"><div class="featured-copy"><p class="eyebrow">{featured.data.status}</p><h3><a href="/work/human-ai-collaboration/">{featured.data.title}</a></h3><p>{featured.data.summary}</p></div><div class="project-context"><dl><dt>Faculty collaborators</dt><dd>Ben Rosche &amp; Hanan Salam</dd><dt>My work</dt><dd>Experimental software, simulation workflows, and implementation review</dd></dl></div></article>
-      <div class="home-projects">{selected.map(p=><article class="project-row"><p class="eyebrow">{p.data.status}</p><h3><a href={`/work/${p.id}/`}>{p.data.title}</a></h3><p>{p.data.summary}</p></article>)}</div>
+
+    <section class="current-direction" aria-labelledby="direction-heading">
+      <h2 id="direction-heading">Current direction</h2>
+      <div><h3><a href="/work/synthetic-pilot-lab/">Synthetic Pilot Lab</a></h3><p>For my independent capstone, I’m asking whether synthetic participants can help expose faults in experimental software before a human pilot. The first diagnostic pairs correct and faulty versions of a contribution game.</p><p class="note">In development · First diagnostic specified; implementation and evaluation are planned.</p></div>
     </section>
-    <section class="section split" id="research">
-      <div><h2>Research interests</h2></div>
-      <div><p>I want to use data, statistics, and computing to study social, economic, and historical questions. My current work concerns AI-supported decisions and computational experiments: when can simulation help answer a social question, and what needs to be checked through observation or experiments with people?</p><div class="inline-links"><a class="text-link" href="/research/">Research overview &amp; manuscript</a><a class="text-link" href="/work/hinglish-ner/">Earlier NLP work</a></div></div>
-    </section>
-    <section class="section split" id="experience">
-      <div><h2>Experience</h2></div>
-      <ol class="timeline"><li><strong>Research Assistant · Human–AI Collaboration</strong><time>Feb 2026 — present</time><p>NYU Abu Dhabi, with Ben Rosche and Hanan Salam. Research engineering, implementation direction, and experimental data workflows.</p></li><li><strong>Research Assistant · eBRAIN Lab</strong><time>Feb 2026 — present</time><p>NYU Abu Dhabi, with Muhammad Shafique and Minghao Shao. Protein-model adaptation, signal-peptide evaluation, and controlled HPC experiments.</p></li><li><strong>ML Engineer Intern · Zeek</strong><time>Jun — Aug 2025</time><p>Customer segmentation, preprocessing and model comparison, and SHAP analysis.</p></li></ol>
-    </section>
-    <section class="section split" id="about">
-      <div><h2>About me</h2></div>
-      <div class="about-grid" id="background"><div><p>I expect to graduate from NYU Abu Dhabi in May 2027 and am preparing for doctoral research in computational social science.</p><p class="muted">I have studied in Paris and New York, supported first-year students, and worked with the NYU Abu Dhabi Arts Center.</p><div class="inline-links"><a class="text-link" href="https://benrosche.com/social-dynamics-lab/" target="_blank" rel="noopener noreferrer">Social Dynamics Lab ↗</a></div></div><Image class="portrait" src={portrait} alt="Ashmit Mukherjee" width={160} height={160} format="webp" loading="lazy" /></div>
+
+    <section class="other-work" aria-labelledby="other-heading"><h2 id="other-heading">Other projects</h2><p><a href="/work/fieldlens/">FieldLens</a>, a local tool for reviewing fictional incident records; <a href="/work/hinglish-ner/">Hinglish named-entity recognition</a>; and <a href="/work/camp/">CAMP</a>, a team-built campus equipment application.</p><a class="read-link" href="/work/">Projects and coursework</a></section>
+
+    <section class="about-section" id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">A little background</h2>
+      <div id="background"><p>I’m a Computer Science senior at NYU Abu Dhabi, with a minor in Economics. I expect to graduate in May 2027. I’m preparing for doctoral research and am interested in applying computation to social, economic, and historical questions.</p><p>I studied away at NYU Paris and NYU New York. On campus, I’ve facilitated workshops for first-year students and worked front of house at the Arts Center.</p><p id="experience">Previously, I was an ML engineering intern at Zeek (summer 2025), working on customer segmentation and model comparison.</p></div>
     </section>
   </div>
 </Layout>

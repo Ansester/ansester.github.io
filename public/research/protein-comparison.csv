@@ -1,0 +1,4 @@
+method,mean_exact_match_percent,sample_sd_percentage_points,model,benchmark,seed_count,positive_test_examples
+Full fine-tuning,84.08,1.27,ESM-2 650M,SP5,3,1231
+Vanilla LoRA,83.64,2.09,ESM-2 650M,SP5,3,1231
+BLOSUM62 feature injection with LoRA,86.08,1.10,ESM-2 650M,SP5,3,1231

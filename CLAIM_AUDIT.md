@@ -2,6 +2,14 @@
 
 This document records the evidence and qualifications behind public claims. Earlier numerical evaluations remain historical audit results unless explicitly re-run; the portfolio uses qualified descriptions rather than unsupported headline scores.
 
+## October 19, 2026 — Research story and evidence presentation
+
+- Consolidated the research overview into the homepage. `/research/` and legacy research/publication/CV URLs resolve to the relevant homepage anchors. Supporting software/coursework has its own index; all six case-study URLs remain. The capstone stays explicitly specified-only and receives a compact homepage entry.
+- Human–AI examples were checked read-only against the maintained cleanup checkout (`3b4fffb4`): `software/scripts/v19_sim/validate_run.py` has `literal_execution` and independent `payoffs` checks; its `Rules` implementation is imported from `rederive`, not the game engine. `software/backend/app/tests/test_sim_v19_integrity.py::test_tampered_outcomes_fail_validation_and_are_never_published` changes a saved payoff and asserts validator failure and summary refusal. The public example describes this test definition and its expected behaviour, not a newly executed run. No private treatment names, calibration values, participant records, or faculty design files are published.
+- Human–AI software contribution remains coordination, requirements, development direction, and review. No sole manual authorship or scientific-design ownership is added. The maintained README still describes validation with deterministic fixture advisers only.
+- Added a Matplotlib figure and downloadable CSV of the previously verified 650M follow-up summaries. `src/data/protein-comparison.json` is the figure/export/table source. Values come from the October 17 audit below; no new model runs or per-seed data are claimed. The figure shows means and sample SD across three seeds on the 1,231 true positive sequences, labels feature injection as separate from manuscript initialization, and states that full fine-tuning led at 150M and 3B. Overlapping SD bars are not represented as a significance test.
+- The existing manuscript author list and unpublished/rejected status remain intact. Current application CV files were not edited in this website revision.
+
 ## October 17, 2026 — Final admissions review
 
 - Simplified the portfolio presentation: removed decorative project counters, duplicate arrow links, repeated labels, boxed feature styling, the CAMP slogan, and oversized dataset-count displays. Shortened older case studies while preserving contribution attribution and evaluation scope. Human–AI validation wording describes Ashmit's implementation review rather than asserting parity between completed computational and human-study systems. The CV remains separate from the published website.

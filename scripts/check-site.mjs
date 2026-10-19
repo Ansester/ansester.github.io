@@ -64,8 +64,10 @@ const home = documents.get(join(root,'index.html'));
 for(const id of ['main','projects','research','experience','background','about','contact']) assert(home.getElementById(id),`Legacy anchor missing: ${id}`);
 for(const route of ['human-ai-collaboration','synthetic-pilot-lab','protein-language-models','fieldlens','camp','hinglish-ner']) assert(documents.has(join(root,'work',route,'index.html')),`Case study missing: ${route}`);
 const research = documents.get(join(root,'research','index.html'));
-assert(research, 'Research overview missing');
-for (const name of ['research/index.html','work/protein-language-models/index.html']) {
+assert(research, 'Legacy research route missing');
+assert.equal(research.querySelector('meta[http-equiv="refresh"]')?.getAttribute('content'), '0; url=/#research', 'Research overview should resolve to the homepage');
+assert(home.getElementById('manuscript'), 'Homepage manuscript anchor missing');
+for (const name of ['index.html','work/protein-language-models/index.html']) {
   const text = documents.get(join(root,name)).body.textContent;
   assert.match(text,/co-first author/i, `${name}: manuscript contribution missing`);
   assert.match(text,/unpublished/i, `${name}: manuscript must be labeled unpublished`);
@@ -73,6 +75,13 @@ for (const name of ['research/index.html','work/protein-language-models/index.ht
 assert.match(documents.get(join(root,'work/protein-language-models/index.html')).body.textContent,/not accepted/i,'Bio-LoRA submission history missing');
 assert.match(documents.get(join(root,'work/synthetic-pilot-lab/index.html')).body.textContent,/In development/,'Capstone status missing');
 assert.match(documents.get(join(root,'work/human-ai-collaboration/index.html')).body.textContent,/deterministic fixture advisers/,'Human–AI validation boundary missing');
+const comparison = JSON.parse(readFileSync('src/data/protein-comparison.json','utf8'));
+const summaryCSV = readFileSync(join(root,'research/protein-comparison.csv'),'utf8');
+const protein = documents.get(join(root,'work/protein-language-models/index.html'));
+for (const method of comparison.methods) {
+  assert(summaryCSV.includes(`${method.mean.toFixed(2)},${method.sd.toFixed(2)}`), 'Figure data export differs from source summaries');
+  assert(protein.body.textContent.includes(`${method.mean.toFixed(2)}% ± ${method.sd.toFixed(2)} pp`), 'Accessible results table differs from source summaries');
+}
 assert(!existsSync(join(root,'cv.pdf')),'Application CV must not be hosted on the website');
 for (const [path,doc] of documents) assert(!doc.querySelector('a[href="/cv.pdf"]'),`${relative(root,path)}: public CV link returned`);
 assert.equal(readFileSync(join(root,'CNAME'),'utf8').trim(),'ashmitmukherjee.com');

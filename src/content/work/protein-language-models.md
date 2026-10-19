@@ -1,6 +1,6 @@
 ---
 title: Bio-LoRA and protein-model evaluation
-summary: Biological-prior initialization and task-specific follow-up experiments for adapting protein language models.
+summary: Co-first-author work on biological-prior initialization, followed by experiments on signal-peptide prediction across model sizes.
 category: Machine learning research
 role: Co-first author; signal-peptide modeling and evaluation
 organization: eBRAIN Lab, New York University Abu Dhabi
@@ -8,7 +8,7 @@ period: February 2026 — present
 status: Manuscript and follow-up experiments
 order: 2
 tags: [ESM-2, LoRA, Signal peptides, HPC]
-updated: 17 October 2026
+updated: 19 October 2026
 visual: protein
 ---
 
@@ -30,16 +30,12 @@ I compared the methods with vanilla LoRA and full fine-tuning, investigated init
 
 The saved SP5 benchmark comparison used ESM-2 650M, seeds 11, 22, and 33, and **1,231 true signal-peptide-positive examples**. Exact cleavage-site match is calculated on that positive subset, not all benchmark sequences.
 
-| Method | Exact cleavage-site match, mean ± SD |
-| --- | ---: |
-| Full fine-tuning | 84.08% ± 1.27 pp |
-| Vanilla LoRA | 83.64% ± 2.09 pp |
-| BLOSUM62 feature injection with LoRA | 86.08% ± 1.10 pp |
-
-SD is the sample standard deviation across the three seeds, expressed in percentage points. These are descriptive summaries from the saved task-specific comparison. They do not establish statistical significance or a result across all model sizes. Full fine-tuning had the highest mean exact cleavage-site match at 150M and 3B in these comparisons. Later controls did not meet the criteria for a broad biology-specific explanation.
+The figure and downloadable table above report the means and sample standard deviations across the three seeds. These are descriptive summaries from the saved task-specific comparison. They do not establish statistical significance or a result across all model sizes. Full fine-tuning had the highest mean exact cleavage-site match at 150M and 3B in these comparisons. Later controls did not meet the criteria for a broad biology-specific explanation.
 
 Two promising single-seed settings also reversed under three-seed confirmation. That was a useful research outcome: it changed which configurations were worth pursuing and how much weight to give an initial run.
 
-## Status
+## Manuscript record
 
-The Bio-LoRA manuscript was submitted to EMNLP 2026 and was not accepted. The later task-specific experiments, model-scale comparisons, and controls described here are separate follow-up evidence.
+D. S. Abubaker, M. Faheem, **A. S. Mukherjee**, S. Othman, S. Sifar, S. Sthapit, Y. Wang, M. Shao, and M. Shafique. *Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation.* Unpublished manuscript, 2026. Co-first author.
+
+Submitted to EMNLP 2026; not accepted. The feature-injection experiments described on this page are separate follow-up work.

@@ -1,0 +1,11 @@
+---
+import comparison from '../data/protein-comparison.json';
+interface Props { detailed?: boolean; }
+const { detailed = false } = Astro.props;
+---
+<figure class="protein-comparison" id={detailed ? 'recorded-comparison' : undefined}>
+  <p class="figure-heading">Follow-up experiment · {comparison.model}</p>
+  <img src="/research/protein-comparison.svg" width="460" height="350" loading="lazy" alt="Exact cleavage-site match: full fine-tuning 84.08%, vanilla LoRA 83.64%, and BLOSUM62 feature injection with LoRA 86.08%. Error bars show sample standard deviation across three seeds." />
+  <figcaption>Means ± sample SD across three seeds; 1,231 signal-peptide-positive examples. Full fine-tuning led at 150M and 3B. This feature-injection experiment is separate from the manuscript’s initialization method.</figcaption>
+  {detailed && <details class="result-details"><summary>Data and evaluation scope</summary><table><thead><tr><th scope="col">Method</th><th scope="col">Mean ± SD</th></tr></thead><tbody>{comparison.methods.map(row=><tr><th scope="row">{row.name}</th><td>{row.mean.toFixed(2)}% ± {row.sd.toFixed(2)} pp</td></tr>)}</tbody></table><p>SP5; seeds {comparison.seeds.join(', ')}. Exact match is measured on the true signal-peptide-positive subset. The error bars are sample standard deviations in percentage points, not confidence intervals.</p><a href="/research/protein-comparison.csv" download>Download the summary data (CSV)</a></details>}
+</figure>

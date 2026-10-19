@@ -1,0 +1,12 @@
+{
+  "model": "ESM-2 650M",
+  "benchmark": "SP5",
+  "metric": "Exact cleavage-site match",
+  "positiveExamples": 1231,
+  "seeds": [11, 22, 33],
+  "methods": [
+    { "name": "Full fine-tuning", "shortName": "Full fine-tuning", "mean": 84.08, "sd": 1.27 },
+    { "name": "Vanilla LoRA", "shortName": "Vanilla LoRA", "mean": 83.64, "sd": 2.09 },
+    { "name": "BLOSUM62 feature injection with LoRA", "shortName": "Feature injection + LoRA", "mean": 86.08, "sd": 1.10 }
+  ]
+}

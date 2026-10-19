@@ -2,21 +2,27 @@
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import ProjectVisual from '../../components/ProjectVisual.astro';
+import ProteinComparison from '../../components/ProteinComparison.astro';
 export async function getStaticPaths() {
   return (await getCollection('work')).map(post => ({ params: { id: post.id }, props: { post } }));
 }
 const { post } = Astro.props;
-const { Content, headings } = await render(post);
-const projects = (await getCollection('work')).sort((a,b)=>a.data.order-b.data.order);
-const next = projects[(projects.findIndex(p=>p.id===post.id)+1)%projects.length];
+const { Content } = await render(post);
+const research = ['human-ai-collaboration','protein-language-models','synthetic-pilot-lab'].includes(post.id);
 ---
 <Layout title={`${post.data.title} — Ashmit Mukherjee`} description={post.data.summary}>
   <article class="container case-page">
-    <a class="back-link" href="/work/">← All work</a>
-    <header class="case-header"><p class="eyebrow">{post.data.category} · {post.data.status}</p><h1>{post.data.title}</h1><p class="case-summary">{post.data.summary}</p><dl class="case-facts"><div><dt>My role</dt><dd>{post.data.role}</dd></div><div><dt>Context</dt><dd>{post.data.organization}</dd></div><div><dt>Period</dt><dd>{post.data.period}</dd></div></dl><div class="tags">{post.data.tags.map(tag=><span>{tag}</span>)}</div>{post.data.links.length>0 && <div class="inline-links">{post.data.links.map(link=><a class="text-link" href={link.url} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}</div>}</header>
-    {post.data.updated && <p class="content-date">Updated {post.data.updated}</p>}
-    <ProjectVisual kind={post.data.visual} />
-    <div class="case-body"><aside class="case-toc" aria-label="On this page"><p class="eyebrow">In this project</p><ol>{headings.filter(h=>h.depth===2).map(h=><li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol></aside><div class="prose"><Content /></div></div>
-    <a class="next-project" href={`/work/${next.id}/`}><span class="eyebrow">Next project</span><h2>{next.data.title}</h2></a>
+    <header class="case-header">
+      <a class="back-link" href={research ? '/#research' : '/work/'}>← {research ? 'Research' : 'Projects'}</a>
+      <p class="byline">{post.data.status} · {post.data.period}</p>
+      <h1>{post.data.title}</h1>
+      <p class="case-summary">{post.data.summary}</p>
+      <p class="case-credit"><strong>{post.data.role}</strong><br />{post.data.organization}</p>
+      {post.data.links.length>0 && <div class="inline-links">{post.data.links.map(link=><a href={link.url} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}</div>}
+    </header>
+    {post.id === 'protein-language-models' && <ProteinComparison detailed />}
+    <div class="prose"><Content /></div>
+    {!research && <ProjectVisual kind={post.data.visual} />}
+    <footer class="case-end"><a href={research ? '/#research' : '/work/'}>{research ? 'Back to research' : 'All projects'}</a>{post.data.updated && <span>Updated {post.data.updated}</span>}</footer>
   </article>
 </Layout>

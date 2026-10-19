@@ -1,14 +1,14 @@
 ---
 title: Human–AI collaboration
-summary: Experimental software for studying AI advice and coordination in multi-party social dilemmas.
+summary: Software for studying how AI advice affects cooperation when individual and group incentives differ.
 category: Research engineering
-role: Technical implementation and research-design review
-organization: New York University Abu Dhabi
+role: Research assistant · software development and review
+organization: With Ben Rosche and Hanan Salam, NYU Abu Dhabi
 period: February 2026 — present
 status: Ongoing faculty research
 order: 1
 tags: [Experimental systems, Python, AI agents, Evaluation]
-updated: 17 October 2026
+updated: 19 October 2026
 visual: human
 links:
   - label: NYU research project
@@ -17,22 +17,31 @@ links:
     url: https://benrosche.com/social-dynamics-lab/
 ---
 
-## The research question
+## What I work on
 
-How does AI advice affect coordination when individual and collective incentives differ? The software needs to preserve the study's rules, information boundaries, advice, and records consistently across an experiment.
+How does advice from an AI system change cooperation? Answering that question requires software that keeps the experimental rules, the information available to each participant, and the recorded outcomes consistent.
 
-I work on a faculty-led project at NYU Abu Dhabi with Ben Rosche and Hanan Salam. I coordinate software development and review, translate research requirements into system behavior, and contribute implementation-focused feedback on the study design. Faculty collaborators lead the scientific design.
+I coordinate technical development and review, translate study requirements into software behaviour, and contribute implementation-focused feedback on the design. Ben Rosche and Hanan Salam lead the scientific work. My responsibilities span the Python game mechanics, participant and researcher interfaces, session recovery, and data exports.
 
-## My contribution
+## From a recommendation to a recorded outcome
 
-The work spans Python game mechanics, participant and researcher interfaces, session orchestration, deployment workflows, and structured exports. I have directed repository and interface redesigns to make the system easier to operate and its responsibilities easier to inspect, and coordinate reviews against the study requirements.
+In the computational runner, a validated recommendation becomes the action executed by the game. A separate validator reads the retained records and checks the recommendation against the executed action, then recalculates payoffs from the recorded actions and rules.
 
-The current computational path supports configurable games, adviser workflows, literal execution of validated recommendations, resumable runs, and retained request and outcome records. It separates strategic model output from deterministic mechanics so that an unexpected result can be traced to the advice, its validation, or the game implementation.
+These are two checks in that validator:
 
-## Validation
+| Check | What it compares |
+| --- | --- |
+| `literal_execution` | Validated recommendation and executed action |
+| `payoffs` | Recorded payoffs and an independent calculation from the actions |
 
-My implementation review covers reconstructing expected outcomes from recorded inputs, checking which information reaches advisers, participants, and researchers, and maintaining consistent game mechanics across computational runs and the human-study interface.
+One test deliberately changes a stored group payoff while leaving the underlying action records intact. It asserts that validation fails and that the summary process refuses the altered run.
 
-## Current status
+This separation matters because an engine that checks its own answers can repeat its own mistake. The independent calculation provides another way to detect a disagreement. Other checks cover the information sent to advisers, including whether private recommendations appear where they should not.
 
-The computational implementation has been exercised with deterministic fixture advisers. These checks establish software behavior under specified inputs; they do not establish real-model strategy or effects on people. The human-study platform remains a separate development path, and scientific configuration decisions are still being resolved.
+My work includes coordinating these checks against the study requirements and reviewing the records needed to diagnose a failure. Retaining both requests and outcomes makes it possible to ask whether an unexpected result came from the advice, its validation, or the game implementation.
+
+## Current evidence
+
+The computational implementation has been exercised with **deterministic fixture advisers**: scripted inputs with known behaviour. These checks cover software behaviour under specified conditions. They do not establish real-model strategy or effects on people.
+
+The human-study platform is a separate development path. Scientific configuration decisions are still being resolved before live model or human studies.
