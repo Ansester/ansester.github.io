@@ -1,6 +1,6 @@
 ---
 title: CAMP — Campus asset management
-summary: A team-built platform for authenticated campus resource workflows, with contributions to backend APIs and integration testing.
+summary: A campus equipment-reservation application built by a five-person team, with contributions to staff APIs, backend testing, and client API utilities.
 category: Software engineering
 role: Backend endpoints, integration testing, and client API utilities
 organization: Five-person software engineering team, NYU Abu Dhabi

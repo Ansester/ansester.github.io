@@ -8,7 +8,7 @@ period: February 2026 — present
 status: Ongoing faculty research
 order: 1
 tags: [Experimental systems, Python, AI agents, Evaluation]
-updated: 19 October 2026
+updated: 25 October 2026
 visual: human
 links:
   - label: NYU research project
@@ -19,9 +19,9 @@ links:
 
 ## What I work on
 
-How does advice from an AI system change cooperation? Answering that question requires software that keeps the experimental rules, the information available to each participant, and the recorded outcomes consistent.
+The project asks how AI advice changes cooperation when individual and group incentives differ.
 
-I coordinate technical development and review, translate study requirements into software behaviour, and contribute implementation-focused feedback on the design. Ben Rosche and Hanan Salam lead the scientific work. My responsibilities span the Python game mechanics, participant and researcher interfaces, session recovery, and data exports.
+Ben Rosche and Hanan Salam lead the research. I coordinate software development and review whether the implementation follows the study requirements. The work covers Python game mechanics, participant and researcher interfaces, session recovery, and data exports.
 
 ## From a recommendation to a recorded outcome
 
@@ -34,14 +34,12 @@ These are two checks in that validator:
 | `literal_execution` | Validated recommendation and executed action |
 | `payoffs` | Recorded payoffs and an independent calculation from the actions |
 
-One test deliberately changes a stored group payoff while leaving the underlying action records intact. It asserts that validation fails and that the summary process refuses the altered run.
+One test deliberately changes a stored group payoff while leaving the underlying action records intact. In an offline check on 25 October 2026, the validator detected the mismatch and summary generation refused the altered run. No summary files were created. The [check record](#payoff-check) below contains the result and source fingerprints.
 
-This separation matters because an engine that checks its own answers can repeat its own mistake. The independent calculation provides another way to detect a disagreement. Other checks cover the information sent to advisers, including whether private recommendations appear where they should not.
+An engine checking its own output can repeat the same error. The validator therefore recalculates payoffs independently of the game engine. Other checks look for information appearing where it should not, such as private recommendations.
 
-My work includes coordinating these checks against the study requirements and reviewing the records needed to diagnose a failure. Retaining both requests and outcomes makes it possible to ask whether an unexpected result came from the advice, its validation, or the game implementation.
+I review these checks against the study requirements and the records needed to diagnose a failure. Keeping requests, actions, and outcomes together lets us inspect the advice, validation, and game execution separately when a result looks wrong.
 
 ## Current evidence
 
-The computational implementation has been exercised with **deterministic fixture advisers**: scripted inputs with known behaviour. These checks cover software behaviour under specified conditions. They do not establish real-model strategy or effects on people.
-
-The human-study platform is a separate development path. Scientific configuration decisions are still being resolved before live model or human studies.
+The checks described here use **deterministic fixture advisers**: scripts with known behaviour. They test software consistency and do not measure how models or people cooperate. The human-study platform is a separate development path.

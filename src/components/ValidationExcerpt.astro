@@ -1,8 +1,13 @@
+---
+import check from '../../public/research/payoff-integrity-check.json';
+interface Props { detailed?: boolean; }
+const { detailed = false } = Astro.props;
+---
 <figure class="validation-excerpt">
-  <figcaption><strong>A test for corrupted results</strong><span>From the computational runner’s test suite</span></figcaption>
+  <figcaption><strong>A corrupted result is rejected</strong><span>Offline fixture test · 25 October 2026</span></figcaption>
   <dl>
-    <div><dt>Alter the saved result</dt><dd>Change the stored group payoff, leaving the action records intact.</dd></div>
-    <div><dt>Expected behaviour</dt><dd>Reject the mismatch and refuse to produce a summary.</dd></div>
+    <div><dt>Changed record</dt><dd>A stored group payoff was altered; the action records were left intact.</dd></div>
+    <div><dt>Observed result</dt><dd>The independent payoff check failed. Summary generation refused the run and created no summary files.</dd></div>
   </dl>
-  <p class="figure-note">A software check using scripted advisers. The validator recalculates the outcome from the underlying records.</p>
+  {detailed ? <><p class="check-test-result"><code>{check.test_result}</code></p><p class="figure-note">The validator recalculated the outcome from the retained action records. This single test used scripted advisers and measured software behaviour.</p><a class="read-link" href="/research/payoff-integrity-check.json" download>Download the check record (JSON)</a></> : <><p class="figure-note">The validator recalculates the outcome from the action records. This checks software behaviour using scripted advisers.</p><a class="read-link" href="/work/human-ai-collaboration/#payoff-check">Inspect the check record</a></>}
 </figure>

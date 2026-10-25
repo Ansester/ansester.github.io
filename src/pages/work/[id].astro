@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import ProjectVisual from '../../components/ProjectVisual.astro';
 import ProteinComparison from '../../components/ProteinComparison.astro';
+import ValidationExcerpt from '../../components/ValidationExcerpt.astro';
 export async function getStaticPaths() {
   return (await getCollection('work')).map(post => ({ params: { id: post.id }, props: { post } }));
 }
@@ -20,8 +21,9 @@ const research = ['human-ai-collaboration','protein-language-models','synthetic-
       <p class="case-credit"><strong>{post.data.role}</strong><br />{post.data.organization}</p>
       {post.data.links.length>0 && <div class="inline-links">{post.data.links.map(link=><a href={link.url} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}</div>}
     </header>
-    {post.id === 'protein-language-models' && <ProteinComparison detailed />}
+    {post.id === 'protein-language-models' && <><p class="comparison-context">This figure shows follow-up experiments on feature injection. The manuscript uses a different method: initializing LoRA with biological information.</p><ProteinComparison detailed /></>}
     <div class="prose"><Content /></div>
+    {post.id === 'human-ai-collaboration' && <section class="check-record" id="payoff-check" aria-label="Executed payoff integrity check"><ValidationExcerpt detailed /></section>}
     {!research && <ProjectVisual kind={post.data.visual} />}
     <footer class="case-end"><a href={research ? '/#research' : '/work/'}>{research ? 'Back to research' : 'All projects'}</a>{post.data.updated && <span>Updated {post.data.updated}</span>}</footer>
   </article>

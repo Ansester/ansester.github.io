@@ -8,7 +8,7 @@ period: October 2026
 status: Working prototype
 order: 4
 tags: [Python, Local inference, Evaluation, Evidence provenance]
-updated: 17 October 2026
+updated: 25 October 2026
 visual: fieldlens
 ---
 
@@ -16,22 +16,22 @@ visual: fieldlens
 
 How can a small local language model help someone inspect an incident while keeping its answer connected to the available evidence?
 
-FieldLens explores that question through a synthetic incident replay. A reader asks a question, reviews the answer, and opens its supporting records. The challenge is to preserve timestamps, uncertainty, and missing information through retrieval and answer generation.
+FieldLens lets a reader ask a small local language model about a fictional incident, then inspect the records behind its answer. Timestamps, uncertainty, and missing information stay visible as records pass through retrieval and answer generation.
 
 ## My role
 
-I directed the prototype, specifying requirements for evidence retrieval, failure handling, evaluation, and portability checks. My role covered the design decisions, evaluation criteria, and review of successive revisions.
+I set requirements for retrieval and failure handling, defined the evaluation criteria, and reviewed successive prototypes.
 
 ## Design choices
 
-The application creates an immutable evidence snapshot and calculates quantities such as record age in ordinary code. A local model can choose from three read-only retrieval tools, subject to application-enforced limits.
+Each request uses an immutable snapshot of the records. Ordinary code calculates quantities such as record age. The local model can call three retrieval tools; all are read-only and subject to limits enforced by the application.
 
-For the released answer path, the model selects application-owned claims derived from the retrieved records. Required qualifications remain attached to those claims, and the interface renders their exact text and references. Separate warnings and a deterministic baseline remain available when inference fails.
+In the released answer path, the model chooses from statements derived from the retrieved records. The interface displays the selected statements verbatim, with their caveats and source links. Warnings and a deterministic baseline remain available when inference fails.
 
 ## Evidence and current limits
 
-The saved v0.2.0 evaluation compares deterministic, free-prose, and constrained-selection paths on matched synthetic cases. It separates valid output from proposition coverage and relevance, preserving incomplete answers and failed experiments alongside successful cases.
+The v0.2.0 evaluation compared deterministic, free-prose, and constrained-selection answers on matched synthetic cases. It measured valid output, coverage, and relevance, retaining failed and incomplete answers in the results.
 
-Separate portability checks executed the frozen application and local runtime on ARM64 Linux CPU and Jubail CUDA environments. CPU deadline failures remained documented rather than being treated as successful model answers.
+The frozen application and local runtime also ran on ARM64 Linux CPU and Jubail CUDA environments. CPU runs that exceeded the deadline were recorded as failures.
 
-FieldLens uses fictional records and procedures. The checks cover the prototype and its synthetic cases; evaluation with human reviewers and on the intended physical device remains future work. The comparison exposed a practical limitation: an answer can contain supported claims and still omit what the question asked for.
+Some answers cited their sources correctly but still omitted information requested by the question. The checks used fictional records and procedures; evaluation with human reviewers and on the intended physical device remains future work.

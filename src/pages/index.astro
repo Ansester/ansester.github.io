@@ -11,8 +11,8 @@ import ValidationExcerpt from '../components/ValidationExcerpt.astro';
       <div>
         <p class="affiliation">Computer Science · NYU Abu Dhabi</p>
         <h1>Ashmit Mukherjee</h1>
-        <p>I work on software for studying how AI advice affects cooperation, and on evaluating adaptations of protein language models.</p>
-        <p>My interests are in computational social science: how experiments and simulation can help us understand decisions people make together.</p>
+        <p>I’m interested in computational social science, especially how AI advice affects decisions people make together.</p>
+        <p>I’m a Computer Science senior at NYU Abu Dhabi. I coordinate software development and review for cooperation experiments, and train and evaluate protein language models.</p>
         <div class="intro-links"><a href="mailto:asm8879@nyu.edu">asm8879@nyu.edu</a><a href="https://github.com/Ansester" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
       </div>
       <Image class="portrait" src={portrait} alt="Ashmit Mukherjee" width={144} height={144} format="webp" loading="eager" />
@@ -25,8 +25,8 @@ import ValidationExcerpt from '../components/ValidationExcerpt.astro';
           <p class="byline">With Ben Rosche &amp; Hanan Salam · 2026–present</p>
           <h3><a href="/work/human-ai-collaboration/">Human–AI collaboration</a></h3>
           <p class="research-question">How does AI advice affect cooperation when individual and group incentives differ?</p>
-          <p>I coordinate software development and review for this faculty-led project. One part of my work is checking that an adviser’s recommendation, the action executed by the game, and the recorded outcome agree.</p>
-          <p>The computational runner has been exercised with scripted advisers. Studies of model and human behaviour are still ahead.</p>
+          <p>I coordinate development and review whether the software follows the study requirements. My work includes checking that an adviser’s recommendation, the action executed by the game, and the recorded outcome agree.</p>
+          <p>The check shown here uses scripted advisers to test the software’s handling of a corrupted result.</p>
           <a class="read-link" href="/work/human-ai-collaboration/">The software and my contribution</a>
         </div>
         <ValidationExcerpt />
@@ -36,24 +36,24 @@ import ValidationExcerpt from '../components/ValidationExcerpt.astro';
           <p class="byline">Co-first author · eBRAIN Lab · 2026–present</p>
           <h3><a href="/work/protein-language-models/">Bio-LoRA &amp; protein-model evaluation</a></h3>
           <p class="research-question">Can biological information help adapt a protein language model?</p>
-          <p>I extended the evaluation to signal-peptide prediction and ran comparisons across three ESM-2 model sizes. In follow-up work, two promising single-seed settings reversed when repeated across seeds, changing which configurations were worth pursuing.</p>
-          <a class="read-link" href="/work/protein-language-models/">Methods, results, and what changed</a>
+          <p>I added signal-peptide prediction to the evaluation and compared three ESM-2 model sizes. On SP5, feature injection had the highest mean exact cleavage-site match at 650M; full fine-tuning led at 150M and 3B.</p>
+          <a class="read-link" href="/work/protein-language-models/">My contribution and comparison results</a>
         </div>
         <ProteinComparison />
       </article>
-      <div class="manuscript-entry" id="manuscript"><span>Manuscript</span><p><a href="/work/protein-language-models/#the-manuscript"><cite>Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation.</cite></a><br />Co-first author. Unpublished manuscript, 2026.</p></div>
+      <div class="manuscript-entry" id="manuscript"><span>Manuscript</span><p><cite>Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation.</cite><br />Co-first author. Unpublished manuscript, 2026.<br /><a href="/work/protein-language-models/#the-manuscript">About the manuscript and my contribution</a></p></div>
     </section>
 
     <section class="current-direction" aria-labelledby="direction-heading">
       <h2 id="direction-heading">Current direction</h2>
-      <div><h3><a href="/work/synthetic-pilot-lab/">Synthetic Pilot Lab</a></h3><p>For my independent capstone, I’m asking whether synthetic participants can help expose faults in experimental software before a human pilot. The first diagnostic pairs correct and faulty versions of a contribution game.</p><p class="note">In development · First diagnostic specified; implementation and evaluation are planned.</p></div>
+      <div><h3><a href="/work/synthetic-pilot-lab/">Synthetic Pilot Lab</a></h3><p>My capstone examines how faults in experimental software distort recorded outcomes. The implementation pairs correct and faulty game engines, replays scripted decisions, and checks the resulting records with an independent evaluator.</p><p class="note">Offline diagnostics and measurement analysis completed using synthetic data. Model-based fault discovery remains untested.</p></div>
     </section>
 
     <section class="other-work" aria-labelledby="other-heading"><h2 id="other-heading">Other projects</h2><p><a href="/work/fieldlens/">FieldLens</a>, a local tool for reviewing fictional incident records; <a href="/work/hinglish-ner/">Hinglish named-entity recognition</a>; and <a href="/work/camp/">CAMP</a>, a team-built campus equipment application.</p><a class="read-link" href="/work/">Projects and coursework</a></section>
 
     <section class="about-section" id="about" aria-labelledby="about-heading">
       <h2 id="about-heading">A little background</h2>
-      <div id="background"><p>I’m a Computer Science senior at NYU Abu Dhabi, with a minor in Economics. I expect to graduate in May 2027. I’m preparing for doctoral research and am interested in applying computation to social, economic, and historical questions.</p><p>I studied away at NYU Paris and NYU New York. On campus, I’ve facilitated workshops for first-year students and worked front of house at the Arts Center.</p><p id="experience">Previously, I was an ML engineering intern at Zeek (summer 2025), working on customer segmentation and model comparison.</p></div>
+      <div id="background"><p>I’m majoring in Computer Science with a minor in Economics and expect to graduate in May 2027. I’m preparing for doctoral research and am interested in applying computation to social, economic, and historical questions.</p><p>I studied away at NYU Paris and NYU New York. On campus, I’ve facilitated workshops for first-year students and worked front of house at the Arts Center.</p><p id="experience">Previously, I was an ML engineering intern at Zeek (summer 2025), working on customer segmentation and model comparison.</p></div>
     </section>
   </div>
 </Layout>

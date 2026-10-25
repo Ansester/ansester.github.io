@@ -1,27 +1,27 @@
 ---
 title: Synthetic Pilot Lab
-summary: Testing whether synthetic participants can help find faults in experimental software.
+summary: Offline diagnostics for faults in experimental software and the measurements it records.
 category: Independent research
-role: Capstone research direction and diagnostic specification
+role: Diagnostic design, specification, development direction, and review
 organization: New York University Abu Dhabi
 period: October 2026 — present
 status: In development
 order: 3
 tags: [Synthetic participants, Experimental validation, Python, Reproducibility]
-updated: 17 October 2026
+updated: 25 October 2026
 visual: capstone
 ---
 
-## A diagnostic before a human pilot
+## What I’m testing
 
-My independent capstone asks whether synthetic participants can help find faults in experimental software. The first diagnostic specifies a small contribution game with an injected accounting fault.
+My capstone examines how faults in experimental software distort recorded outcomes. The standalone implementation pairs correct and faulty game engines, replays scripted decisions, and checks the resulting records with an independent evaluator.
 
-The specification pairs correct and faulty versions with the same scripted actions. An independent evaluator reconstructs expected states and payoffs, then checks them against the observations. Some trajectories expose the fault; control trajectories leave it unexposed. A passing control means no violation was observed on that trajectory.
+The evaluator reconstructs expected states and payoffs, then compares them with the saved observations. Some sequences of decisions expose a fault; others leave it unexposed. A passing check means no violation was observed in that sequence.
 
-## Why start with scripts?
+## Work completed
 
-The first task is to establish whether the evaluator detects a known fault when given evidence that exposes it. Whether a model can discover such a trajectory is a separate question to test afterwards.
+The implementation includes offline diagnostics, a scripted benchmark, and measurement analysis. The saved benchmark and analysis have undergone independent numerical and artifact checks.
 
-## Current status
+## Next question
 
-In development. The first diagnostic's rules, fixtures, and expected outcomes are specified, and a standalone repository is established. Implementation, executed evaluations, and model-based fault discovery remain planned work.
+Model-based fault discovery remains untested. The completed work uses synthetic records and scripted decisions, with no human participants.

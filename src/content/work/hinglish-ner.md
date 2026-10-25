@@ -1,6 +1,6 @@
 ---
 title: Named-entity recognition in Hinglish
-summary: Fine-tuned multilingual encoders and separately evaluated zero-shot language-model baselines on Hindi–English code-mixed text.
+summary: Multilingual encoders for Hindi–English named-entity recognition, with zero-shot language models evaluated separately on a smaller sample.
 category: Multilingual NLP
 role: Training pipelines, evaluation tooling, and error analysis within a team
 organization: Four-person course project, NYU Abu Dhabi

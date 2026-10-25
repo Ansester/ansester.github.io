@@ -1,0 +1,21 @@
+{
+  "example": "Offline saved-payoff tampering test",
+  "checked_on": "2026-10-25",
+  "evidence_class": "Deterministic software fixture; no model or human behaviour measured",
+  "source_commit": "22f1777957b865a1a02e16774cc1d085f903aa82",
+  "test": "test_tampered_outcomes_fail_validation_and_are_never_published",
+  "test_result": "1 passed in 0.15s",
+  "modified_record": "One saved aggregate payoff; underlying action records left intact",
+  "validator_valid": false,
+  "failed_check": "outcomes_rederived",
+  "summary_refused": true,
+  "summary_files_created": false,
+  "provider": "Deterministic fixture; no network requests",
+  "scope": "The test checks that independent rederivation detects a changed saved payoff and summary generation refuses the run. This record omits experiment configurations and raw fixture records.",
+  "source_sha256": {
+    "integrity_test": "c2c87b95e7df189a5174faf86be3f88d4b4e3386580abd8679035fc24afe11b0",
+    "validator": "1f5ffad172d8275a4fa4f502a5e08842016bcbc3b790b380e173f60b9f3cea98",
+    "independent_rederivation": "c9397af9d7b94ee04c70960117b42644d2cd65fa6c7847b0803c9a480ee95b77",
+    "summarizer": "7e3b839271a31abb0aed43bf10e7723826de5229e4df93d3e8fd40747a5c1701"
+  }
+}

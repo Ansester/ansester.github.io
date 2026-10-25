@@ -106,6 +106,9 @@ nav a[aria-current] { color:var(--accent); }
 .case-header .inline-links { margin-top:12px; }
 .case-page>.protein-comparison { max-width:600px; margin:8px auto 38px; }
 .case-page>.protein-comparison img { max-width:460px; margin-inline:auto; }
+.comparison-context { max-width:600px; margin:0 auto 22px; color:var(--muted); font-size:.925rem; }
+.check-record { padding:12px 0 32px; }
+.check-test-result { margin-bottom:14px; }
 .result-details { margin-top:20px; font-size:.85rem; }
 .result-details summary { cursor:pointer; text-decoration:underline; text-underline-offset:4px; padding:10px 0; }
 .result-details p { color:var(--muted); margin:14px 0; }
