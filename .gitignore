@@ -12,3 +12,11 @@ public/cv.pdf
 *.fdb_latexmk
 .DS_Store
 output/
+
+# Local application documents and working notes
+cv.tex
+cv.pdf
+CLAIM_AUDIT.md
+PORTFOLIO_OVERHAUL_PLAN.md
+.openai/
+.private/

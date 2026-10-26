@@ -8,7 +8,7 @@ period: February 2026 — present
 status: Ongoing faculty research
 order: 1
 tags: [Experimental systems, Python, AI agents, Evaluation]
-updated: 25 October 2026
+updated: 26 October 2026
 visual: human
 links:
   - label: NYU research project
@@ -17,29 +17,26 @@ links:
     url: https://benrosche.com/social-dynamics-lab/
 ---
 
-## What I work on
+## The research question
 
-The project asks how AI advice changes cooperation when individual and group incentives differ.
+People often face choices where protecting their own interests can make everyone worse off. How does cooperation change when AI systems advise the people making those choices?
 
-Ben Rosche and Hanan Salam lead the research. I coordinate software development and review whether the implementation follows the study requirements. The work covers Python game mechanics, participant and researcher interfaces, session recovery, and data exports.
+The research examines repeated interactions between people and AI in social dilemmas. Different forms of assistance may change what people notice, how they interpret others’ actions, and whether they coordinate. Ben Rosche and Hanan Salam supervise my work at NYU Abu Dhabi as part of the wider NYU collaboration linked above.
 
-## From a recommendation to a recorded outcome
+## My contribution
 
-In the computational runner, a validated recommendation becomes the action executed by the game. A separate validator reads the retained records and checks the recommendation against the executed action, then recalculates payoffs from the recorded actions and rules.
+I coordinate software development and review how the experimental design is translated into a working system. My work spans the Python game mechanics, participant and researcher interfaces, AI integration, session recovery, and data exports.
 
-These are two checks in that validator:
+That means following a decision through the whole application. The participant must see the information allowed by their experimental condition; the game must apply the specified rules; and the exported records must preserve enough context to explain the outcome. I review implementation choices against those requirements and investigate mismatches between the interface, game state, and saved data.
 
-| Check | What it compares |
-| --- | --- |
-| `literal_execution` | Validated recommendation and executed action |
-| `payoffs` | Recorded payoffs and an independent calculation from the actions |
+## What the software supports
 
-One test deliberately changes a stored group payoff while leaving the underlying action records intact. In an offline check on 25 October 2026, the validator detected the mismatch and summary generation refused the altered run. No summary files were created. The [check record](#payoff-check) below contains the result and source fingerprints.
+The participant flow covers onboarding, comprehension checks, repeated decisions, feedback, and a final debrief. Researchers need to configure and monitor sessions, handle interrupted connections, and recover records for analysis.
 
-An engine checking its own output can repeat the same error. The validator therefore recalculates payoffs independently of the game engine. Other checks look for information appearing where it should not, such as private recommendations.
+AI advice adds a second layer of coordination. The software has to control what information an adviser receives and keep its recommendation separate from the participant’s decision. In the computational testing workflow, scripted advisers let us exercise those paths before relying on model-generated advice.
 
-I review these checks against the study requirements and the records needed to diagnose a failure. Keeping requests, actions, and outcomes together lets us inspect the advice, validation, and game execution separately when a result looks wrong.
+For example, an interrupted session should resume from the recorded decision rather than apply it twice. Likewise, a private recommendation should remain private even when the group sees a shared outcome. These are software requirements with direct consequences for what an experiment can measure.
 
-## Current evidence
+## Where the work stands
 
-The checks described here use **deterministic fixture advisers**: scripts with known behaviour. They test software consistency and do not measure how models or people cooperate. The human-study platform is a separate development path.
+The platform and its offline checks are under development. Scripted tests help check game mechanics, information access, and recorded outcomes. **No human-study results are reported here**, and passing those checks does not establish how AI changes cooperation.

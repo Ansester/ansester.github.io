@@ -1,15 +1,10 @@
 ---
 import { Image, getImage } from 'astro:assets';
-import camp from '../../assets/camp-home.png';
 import fieldlens from '../../assets/fieldlens-review.png';
 interface Props { kind: 'human'|'protein'|'camp'|'ner'|'capstone'|'fieldlens'; }
 const { kind } = Astro.props;
 const fieldlensFull = kind === 'fieldlens' ? await getImage({src:fieldlens,width:1440,format:'webp'}) : undefined;
 ---
-{kind === 'camp' ? (
-  <figure class="case-visual camp-visual"><div><h2>Student and staff workflows</h2><div class="workflow-pair"><div><h3>Students</h3><p>Browse equipment<br />Request a reservation<br />Manage borrowings</p></div><div><h3>Staff</h3><p>Manage inventory<br />Issue and return items<br />Review reservation activity</p></div></div></div><Image src={camp} alt="CAMP mobile interface concept showing equipment reservations, due items, and campus resources" width={260} format="webp" /><figcaption>CAMP interface concept.</figcaption></figure>
-) : kind === 'ner' ? (
-  <figure class="case-visual ner-visual"><table class="evaluation-table"><caption>Evaluation scope</caption><thead><tr><th scope="col">Method</th><th scope="col">Test set</th></tr></thead><tbody><tr><td>Fine-tuned mBERT and XLM-RoBERTa</td><td>4,829 examples · full test split</td></tr><tr><td>Zero-shot GPT-4o and Llama baselines</td><td>100 examples · sample</td></tr></tbody></table><figcaption>The models were evaluated on different test sets; their scores are not directly matched comparisons.</figcaption></figure>
-) : kind === 'fieldlens' && fieldlensFull ? (
+{kind === 'fieldlens' && fieldlensFull ? (
   <figure class="case-visual fieldlens-visual"><p class="eyebrow">Working prototype / Synthetic demonstration</p><a href={fieldlensFull.src} target="_blank" rel="noopener noreferrer" aria-label="Open the FieldLens prototype screenshot at full size"><Image src={fieldlens} alt="FieldLens synthetic replay showing a question, model-selected answer, application warnings, and the exact supporting GPS record" width={1440} format="webp" loading="lazy" /></a><figcaption>Saved prototype run using fictional incident records. The answer and its supporting record remain visible together. <a href={fieldlensFull.src} target="_blank" rel="noopener noreferrer">View full-size screenshot ↗</a></figcaption></figure>
 ) : null}

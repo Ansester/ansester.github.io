@@ -1,6 +1,6 @@
 ---
 title: Named-entity recognition in Hinglish
-summary: Multilingual encoders for Hindi–English named-entity recognition, with zero-shot language models evaluated separately on a smaller sample.
+summary: A team course project on recognizing named entities in Hindi–English text with multilingual encoders.
 category: Multilingual NLP
 role: Training pipelines, evaluation tooling, and error analysis within a team
 organization: Four-person course project, NYU Abu Dhabi
@@ -22,10 +22,10 @@ This course project studied named-entity recognition on COMI-LINGUA, a Hindi–E
 
 I contributed to the fine-tuning pipelines, evaluation tooling, and error analysis. The project was completed with Akshith Karthik, Harsh Agarwal, and Lovnish Julka at NYU Abu Dhabi.
 
-The encoder experiments used mBERT and XLM-RoBERTa with token-classification heads. The pipeline covered preprocessing, subword label alignment, training, and entity-span evaluation. Error analysis examined boundary errors, label ambiguity, and language-switching context.
+We worked with mBERT and XLM-RoBERTa token-classification models. The implementation has to keep word-level entity labels aligned when a tokenizer divides a word into several pieces, then map predictions back to the original text for evaluation.
 
-## Evaluation scope
+## Public code
 
-The fine-tuned encoders were evaluated on the complete COMI-LINGUA test split of **4,829 examples**. The zero-shot baselines—GPT-4o, Llama 3.1 8B, and Llama 3.3 70B—used a **100-example sample** because of API resource constraints.
+The repository contains the preprocessing, training, prediction, and evaluation pipeline. It does not include trained checkpoints or saved model predictions, so this page does not present model scores as a reproduced benchmark.
 
-The encoder and zero-shot scores therefore come from different test settings and are not directly matched comparisons. The repository contains training and evaluation code, prediction utilities, setup instructions, and evaluation notes.
+The original coursework also explored zero-shot language models on a smaller sample. Those runs are not packaged in the public repository and cannot support a matched comparison with the encoder pipeline.

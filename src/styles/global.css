@@ -48,13 +48,6 @@ nav a[aria-current] { color:var(--accent); }
 .story-copy>p:not(.byline) { margin-bottom:16px; font-size:.925rem; color:var(--muted); }
 .story-copy>p.research-question { font-size:1.05rem; color:var(--ink); }
 .read-link { display:inline-block; font-size:.85rem; margin-top:2px; }
-.validation-excerpt { border-left:2px solid var(--accent); padding:4px 0 4px 26px; }
-.validation-excerpt figcaption strong { display:block; color:var(--ink); font-size:.95rem; font-weight:550; }
-.validation-excerpt figcaption span { display:block; margin-top:5px; }
-.validation-excerpt dl { margin:24px 0 20px; }
-.validation-excerpt dl>div+div { margin-top:21px; }
-.validation-excerpt dt { color:var(--accent); }
-.validation-excerpt dd { margin:5px 0 0; font-size:.925rem; max-width:360px; }
 .figure-note { color:var(--muted); font-size:.8rem; line-height:1.65; }
 .figure-heading { font-size:.85rem; font-weight:550; margin-bottom:13px; }
 .protein-comparison img { width:100%; background:#f7f6f1; }
@@ -106,15 +99,12 @@ nav a[aria-current] { color:var(--accent); }
 .case-header .inline-links { margin-top:12px; }
 .case-page>.protein-comparison { max-width:600px; margin:8px auto 38px; }
 .case-page>.protein-comparison img { max-width:460px; margin-inline:auto; }
-.comparison-context { max-width:600px; margin:0 auto 22px; color:var(--muted); font-size:.925rem; }
-.check-record { padding:12px 0 32px; }
-.check-test-result { margin-bottom:14px; }
 .result-details { margin-top:20px; font-size:.85rem; }
 .result-details summary { cursor:pointer; text-decoration:underline; text-underline-offset:4px; padding:10px 0; }
 .result-details p { color:var(--muted); margin:14px 0; }
-.result-details table,.prose table,.evaluation-table { width:100%; border-collapse:collapse; font-size:.85rem; margin:16px 0; }
-.result-details th,.result-details td,.prose th,.prose td,.evaluation-table th,.evaluation-table td { text-align:left; vertical-align:top; padding:10px 8px; border-bottom:1px solid var(--line); }
-.result-details th,.prose th,.evaluation-table th { font-weight:550; }
+.result-details table,.prose table { width:100%; border-collapse:collapse; font-size:.85rem; margin:16px 0; }
+.result-details th,.result-details td,.prose th,.prose td { text-align:left; vertical-align:top; padding:10px 8px; border-bottom:1px solid var(--line); }
+.result-details th,.prose th { font-weight:550; }
 .result-details td { white-space:nowrap; }
 .prose { padding-bottom:16px; }
 .prose h2 { font:400 1.65rem/1.25 var(--serif); margin:30px 0 17px; }
@@ -129,13 +119,6 @@ nav a[aria-current] { color:var(--accent); }
 .case-visual figcaption { margin-top:16px; }
 .eyebrow { color:var(--muted); font-size:.8rem; }
 .fieldlens-visual img { margin-top:15px; border:1px solid var(--line); }
-.camp-visual { display:grid; grid-template-columns:1fr 180px; gap:20px 30px; align-items:center; }
-.camp-visual img { max-height:350px; width:auto; justify-self:center; }
-.camp-visual h2 { font-size:1.35rem; margin-bottom:20px; }
-.camp-visual h3 { font:550 .9rem var(--sans); margin-bottom:9px; }
-.camp-visual figcaption { grid-column:1/-1; margin:0; }
-.workflow-pair { display:grid; grid-template-columns:1fr 1fr; gap:20px; font-size:.8rem; color:var(--muted); }
-.evaluation-table caption { text-align:left; font-weight:550; padding-bottom:12px; }
 .case-end { display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px; border-top:1px solid var(--line); padding:22px 0 35px; font-size:.8rem; }
 .case-end span { color:var(--muted); }
 .actions { display:flex; flex-wrap:wrap; gap:24px; margin-top:20px; }
@@ -166,9 +149,6 @@ nav a[aria-current] { color:var(--accent); }
   .section-label>span { max-width:130px; text-align:right; line-height:1.5; }
   .research-story { grid-template-columns:1fr; gap:25px; padding:25px 0 32px; }
   .story-copy h3 { font-size:1.75rem; }
-  .validation-excerpt { padding-left:19px; }
-  .validation-excerpt dl { margin:17px 0; }
-  .validation-excerpt dd { max-width:none; }
   .protein-comparison { max-width:460px; width:100%; margin-inline:auto; }
   .manuscript-entry { grid-template-columns:1fr; gap:8px; padding-block:20px 24px; }
   .current-direction,.about-section { grid-template-columns:1fr; gap:18px; padding-block:26px; }
@@ -188,9 +168,15 @@ nav a[aria-current] { color:var(--accent); }
   .prose th,.prose td { padding:9px 5px; }
   .result-details table { font-size:.78rem; }
   .result-details th,.result-details td { padding:9px 4px; }
-  .camp-visual { grid-template-columns:1fr; }
-  .camp-visual img { width:170px; }
   .footer-bottom a,.copy-email { display:inline-block; padding-block:8px; }
 }
 @media(prefers-reduced-motion:no-preference) { html { scroll-behavior:smooth; } a,button { transition:color .15s; } }
 @media print { :root { color-scheme:light; } .site-header,.site-footer { display:none; } .container { width:100%; } .introduction,.research-story,.current-direction,.about-section { break-inside:avoid; } a { text-decoration:none; } }
+
+.cooperation-flow { border-left:2px solid var(--accent); padding:4px 0 4px 25px; }
+.cooperation-flow ol { list-style:none; padding:0; margin:21px 0; counter-reset:stage; }
+.cooperation-flow li { position:relative; padding-left:33px; counter-increment:stage; }
+.cooperation-flow li+li { margin-top:24px; }
+.cooperation-flow li::before { content:counter(stage, decimal-leading-zero); position:absolute; left:0; top:1px; font-size:.75rem; color:var(--accent); }
+.cooperation-flow strong { display:block; font-size:.925rem; font-weight:550; }
+.cooperation-flow span { display:block; color:var(--muted); font-size:.85rem; margin-top:4px; }

@@ -74,7 +74,8 @@ for (const name of ['index.html','work/protein-language-models/index.html']) {
 }
 assert.match(documents.get(join(root,'work/protein-language-models/index.html')).body.textContent,/not accepted/i,'Bio-LoRA submission history missing');
 assert.match(documents.get(join(root,'work/synthetic-pilot-lab/index.html')).body.textContent,/In development/,'Capstone status missing');
-assert.match(documents.get(join(root,'work/human-ai-collaboration/index.html')).body.textContent,/deterministic fixture advisers/,'Human–AI validation boundary missing');
+assert.match(documents.get(join(root,'work/human-ai-collaboration/index.html')).body.textContent,/No human-study results are reported here/,'Human–AI evidence boundary missing');
+assert(!home.querySelector('a[href*="payoff-integrity-check"]'), 'Internal test report returned to the homepage');
 const comparison = JSON.parse(readFileSync('src/data/protein-comparison.json','utf8'));
 const summaryCSV = readFileSync(join(root,'research/protein-comparison.csv'),'utf8');
 const protein = documents.get(join(root,'work/protein-language-models/index.html'));

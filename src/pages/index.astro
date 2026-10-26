@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import portrait from '../../ashmit-profile.jpg';
 import ProteinComparison from '../components/ProteinComparison.astro';
-import ValidationExcerpt from '../components/ValidationExcerpt.astro';
+import CooperationFlow from '../components/CooperationFlow.astro';
 ---
 <Layout>
   <div class="container">
@@ -25,18 +25,17 @@ import ValidationExcerpt from '../components/ValidationExcerpt.astro';
           <p class="byline">With Ben Rosche &amp; Hanan Salam · 2026–present</p>
           <h3><a href="/work/human-ai-collaboration/">Human–AI collaboration</a></h3>
           <p class="research-question">How does AI advice affect cooperation when individual and group incentives differ?</p>
-          <p>I coordinate development and review whether the software follows the study requirements. My work includes checking that an adviser’s recommendation, the action executed by the game, and the recorded outcome agree.</p>
-          <p>The check shown here uses scripted advisers to test the software’s handling of a corrupted result.</p>
+          <p>I work on the software behind these experiments: game rules, participant interfaces, AI advice, and the records researchers use for analysis. I coordinate development and review the implementation against the study design.</p>
           <a class="read-link" href="/work/human-ai-collaboration/">The software and my contribution</a>
         </div>
-        <ValidationExcerpt />
+        <CooperationFlow />
       </article>
       <article class="research-story protein-story">
         <div class="story-copy">
           <p class="byline">Co-first author · eBRAIN Lab · 2026–present</p>
           <h3><a href="/work/protein-language-models/">Bio-LoRA &amp; protein-model evaluation</a></h3>
           <p class="research-question">Can biological information help adapt a protein language model?</p>
-          <p>I added signal-peptide prediction to the evaluation and compared three ESM-2 model sizes. On SP5, feature injection had the highest mean exact cleavage-site match at 650M; full fine-tuning led at 150M and 3B.</p>
+          <p>I added signal-peptide prediction to the evaluation and ran comparisons across three ESM-2 model sizes. Follow-up feature-injection experiments produced a mixed result: an advantage at 650M did not carry across model sizes or establish a general benefit from biological features.</p>
           <a class="read-link" href="/work/protein-language-models/">My contribution and comparison results</a>
         </div>
         <ProteinComparison />

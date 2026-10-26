@@ -4,14 +4,17 @@ summary: A campus equipment-reservation application built by a five-person team,
 category: Software engineering
 role: Backend endpoints, integration testing, and client API utilities
 organization: Five-person software engineering team, NYU Abu Dhabi
-period: Fall 2024
+period: Fall 2025
 status: Course project
 order: 6
 tags: [React, Express, MongoDB, Mocha / Chai]
+updated: 26 October 2026
 visual: camp
 links:
   - label: Source code
     url: https://github.com/Ansester/camp-final-project
+  - label: Original team repository
+    url: https://github.com/agile-students-fall2025/4-final-camp
 ---
 
 ## The project
@@ -26,6 +29,6 @@ I also served as Product Owner in Sprint 1 and Scrum Master in Sprint 3. My team
 
 ## Implementation
 
-The application uses React, an Express API on Node.js, and MongoDB Atlas. JWT authentication and role-based access distinguish student and staff operations. Reservation workflows include booking-conflict checks, item issuance, and returns.
+The application uses React, an Express API on Node.js, and MongoDB. JWT authentication and role-based access distinguish student and staff operations. Reservation workflows include booking-conflict checks, item issuance, and returns.
 
-The team used GitHub Actions for continuous integration and deployed the project on a DigitalOcean droplet with Nginx and PM2. The repository contains the source, setup and testing instructions, and contribution breakdown.
+The original coursework deployment used a DigitalOcean droplet with Nginx and PM2. The public repository provides local setup instructions and automated checks; it does not advertise a running hosted service.
