@@ -72,7 +72,6 @@ for (const name of ['index.html','work/protein-language-models/index.html']) {
   assert.match(text,/co-first author/i, `${name}: manuscript contribution missing`);
   assert.match(text,/unpublished/i, `${name}: manuscript must be labeled unpublished`);
 }
-assert.match(documents.get(join(root,'work/protein-language-models/index.html')).body.textContent,/not accepted/i,'Bio-LoRA submission history missing');
 assert.match(documents.get(join(root,'work/synthetic-pilot-lab/index.html')).body.textContent,/In development/,'Capstone status missing');
 assert.match(documents.get(join(root,'work/human-ai-collaboration/index.html')).body.textContent,/No human-study results are reported here/,'Human–AI evidence boundary missing');
 assert(!home.querySelector('a[href*="payoff-integrity-check"]'), 'Internal test report returned to the homepage');

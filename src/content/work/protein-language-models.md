@@ -5,7 +5,7 @@ category: Machine learning research
 role: Co-first author; signal-peptide modeling and evaluation
 organization: eBRAIN Lab, New York University Abu Dhabi
 period: February 2026 — present
-status: Manuscript and follow-up experiments
+status: Unpublished manuscript
 order: 2
 tags: [ESM-2, LoRA, Signal peptides, HPC]
 updated: 26 October 2026
@@ -23,8 +23,6 @@ The submitted method uses biological matrices and ESM-2 embeddings to construct 
 
 
 D. S. Abubaker, M. Faheem, **A. S. Mukherjee**, S. Othman, S. Sifar, S. Sthapit, Y. Wang, M. Shao, and M. Shafique. *Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation.* Unpublished manuscript, 2026. Co-first author.
-
-Submitted to EMNLP 2026; not accepted.
 
 </details>
 
