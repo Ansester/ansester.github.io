@@ -4,7 +4,6 @@ summary: A team course project on recognizing named entities in Hindi–English 
 category: Multilingual NLP
 role: Training pipelines, evaluation tooling, and error analysis within a team
 organization: Four-person course project, NYU Abu Dhabi
-period: Fall 2024
 status: Course project
 order: 5
 tags: [PyTorch, Transformers, mBERT, XLM-RoBERTa]

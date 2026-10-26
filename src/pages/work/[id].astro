@@ -14,7 +14,7 @@ const research = ['human-ai-collaboration','protein-language-models','synthetic-
   <article class="container case-page">
     <header class="case-header">
       <a class="back-link" href={research ? '/#research' : '/work/'}>← {research ? 'Research' : 'Projects'}</a>
-      <p class="byline">{post.data.status} · {post.data.period}</p>
+      <p class="byline">{post.data.status}{post.data.period && ` · ${post.data.period}`}</p>
       <h1>{post.data.title}</h1>
       <p class="case-summary">{post.data.summary}</p>
       <p class="case-credit"><strong>{post.data.role}</strong><br />{post.data.organization}</p>
