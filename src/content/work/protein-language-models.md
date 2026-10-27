@@ -8,7 +8,7 @@ period: February 2026 — present
 status: Unpublished manuscript
 order: 2
 tags: [ESM-2, LoRA, Signal peptides, HPC]
-updated: 26 October 2026
+updated: 27 October 2026
 visual: protein
 ---
 
@@ -40,6 +40,6 @@ The saved SP5 benchmark comparison used ESM-2 650M, seeds 11, 22, and 33, and **
 
 At 650M, BLOSUM62 feature injection had the highest mean exact cleavage-site match in this comparison. Full fine-tuning had the highest mean at 150M and 3B. The figure below includes all six methods in the saved 650M comparison. Its error bars show sample standard deviations across three seeds and do not establish statistical significance.
 
-Later controls did not support a general explanation based on the biological features. The result is therefore specific to this task, model size, and training protocol.
+These comparisons are specific to the task, model size, and training protocol.
 
-Two initially promising single-seed settings reversed under three-seed confirmation, changing which configurations I prioritized.
+The follow-up also changed which configurations I prioritized. Removing weight decay or reducing the initial feature-injection scale looked better in the first seed. Across three seeds, their mean exact cleavage-site match fell below the original BLOSUM62 setting: 84.92% without weight decay and 85.30% with the smaller initial scale, compared with 86.08% for the original setting.

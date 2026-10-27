@@ -8,7 +8,7 @@ period: October 2026 — present
 status: In development
 order: 3
 tags: [Synthetic participants, Experimental validation, Python, Reproducibility]
-updated: 26 October 2026
+updated: 27 October 2026
 visual: capstone
 ---
 
@@ -18,16 +18,22 @@ My capstone examines how faults in experimental software distort recorded outcom
 
 The evaluator reconstructs expected states and payoffs, then compares them with the saved observations. Some sequences of decisions expose a fault; others leave it unexposed. A passing check means no violation was observed in that sequence.
 
-## Why the decision sequence matters
+## When correct totals hide an error
 
-A fault can be present without changing every outcome. If an action is recorded twice, for example, a sequence that never reaches that action cannot reveal the problem. A useful diagnostic needs both a way to exercise the faulty behavior and an independent calculation of what should have happened.
+One completed diagnostic deliberately assigned contributions to the wrong players. In a saved three-player episode, the correct and faulty engines produced these outcomes:
 
-This distinction separates detecting a known fault from measuring how well a participant or model searches for one.
+| Outcome (tokens) | Correct engine | Faulty engine |
+| --- | --- | --- |
+| Contribution pool | 44 | 44 |
+| Total payoff | 82 | 82 |
+| Player payoffs, A / B / C | 26, 30, 26 | 26, 26, 30 |
+
+Checks on the group totals missed the error. Recalculating each player's payoff from the original submitted actions exposed it. This was a deliberately constructed fault in a standalone synthetic benchmark.
 
 ## Work completed
 
 I designed the diagnostic requirements, directed development, and reviewed the implementation and analysis. The current software includes offline diagnostics, a scripted benchmark, and measurement analysis, checked against saved synthetic records.
 
-## Next question
+## Scope
 
-Model-based fault discovery remains untested. The completed work uses synthetic records and scripted decisions, with no human participants.
+The results shown here use synthetic records and scripted decisions, with no human participants. They do not measure a model's ability to discover faults.
