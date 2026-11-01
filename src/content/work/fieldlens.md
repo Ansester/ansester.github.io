@@ -2,7 +2,7 @@
 title: FieldLens
 summary: A local prototype for reviewing fictional incident records, with model answers linked to their sources.
 category: Research engineering
-role: Project direction, requirements, and evaluation
+role: Developer · design and evaluation
 organization: Independent prototype
 period: October 2026
 status: Working prototype
@@ -12,7 +12,7 @@ updated: 1 November 2026
 visual: fieldlens
 ---
 
-FieldLens is a local-model tool for inspecting incident records. A reader can ask a question, read an answer, and open the records behind it. I set the requirements for retrieval and failure handling, defined the evaluation criteria, and reviewed successive prototypes.
+I built FieldLens, a local-model tool for inspecting incident records. A reader can ask a question, read an answer, and open the records behind it. I implemented the retrieval and failure handling, defined the evaluation criteria, and tested successive versions.
 
 ## Keeping answers connected to records
 
@@ -22,7 +22,7 @@ The prototype also has a deterministic answer path for requests where model infe
 
 ## Evaluation
 
-The v0.2.0 evaluation compared deterministic, free-prose, and constrained-selection answers on the same fictional incident cases. It measured validity, coverage, and relevance, retaining failed and incomplete answers in the results.
+For the v0.2.0 evaluation, I compared deterministic, free-prose, and constrained-selection answers on the same fictional incident cases. I measured validity, coverage, and relevance, retaining failed and incomplete answers in the results.
 
 Some answers cited the right records but left out information the question asked for. That distinction is why the evaluation checks coverage as well as source references.
 

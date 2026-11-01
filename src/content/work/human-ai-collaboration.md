@@ -2,7 +2,7 @@
 title: Human–AI collaboration
 summary: Software for studying how AI advice affects cooperation when individual and group incentives differ.
 category: Research engineering
-role: Research assistant · software development and review
+role: Research assistant · developer and technical lead
 organization: With Ben Rosche and Hanan Salam, NYU Abu Dhabi
 period: February 2026 — present
 status: Ongoing faculty research
@@ -23,11 +23,11 @@ How does cooperation change when people receive advice from AI? This faculty-led
 
 ## My work on the platform
 
-I coordinate software development and review how the study design translates into the application. My work spans the Python game mechanics, participant and researcher interfaces, AI integration, session recovery, and data exports.
+I built the experiment platform and lead its ongoing development. It includes the Python game mechanics, participant and researcher interfaces, AI integration, session recovery, and data exports.
 
-A decision has to remain consistent across those parts. The participant should see the information allowed by their condition, the game should apply the specified rules, and the exported records should explain the outcome. I review these paths and investigate mismatches between the interface, game state, and saved data.
+A decision has to remain consistent across those parts. The participant sees the information allowed by their condition, the game applies the specified rules, and the exported records preserve the outcome. I implement and test these paths, and investigate mismatches between the interface, game state, and saved data.
 
-For example, an interrupted session should resume from its recorded decision without applying that decision twice. A private recommendation also needs to remain private when the group sees a shared outcome. These details affect what the experiment can measure.
+I implemented session recovery that resumes from recorded decisions without applying them twice, and information controls that keep private recommendations out of shared outcomes. These details affect what the experiment can measure.
 
 ## Current work
 

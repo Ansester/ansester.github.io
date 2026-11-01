@@ -2,7 +2,7 @@
 title: Synthetic Pilot Lab
 summary: Offline diagnostics for faults in experimental software and the measurements it records.
 category: Independent research
-role: Diagnostic design, specification, development direction, and review
+role: Independent developer · diagnostic design and evaluation
 organization: New York University Abu Dhabi
 period: October 2026 — present
 status: In development
@@ -12,11 +12,11 @@ updated: 1 November 2026
 visual: capstone
 ---
 
-My capstone examines how faults in experimental software affect the outcomes researchers record. I design diagnostic requirements, direct development, and review the implementation and analysis. The work so far includes an offline benchmark and measurement analysis using scripted decisions.
+My capstone examines how faults in experimental software affect the outcomes researchers record. I built the offline benchmark and measurement-analysis tools, and continue developing the diagnostics.
 
 ## Checking the same decisions in two engines
 
-The benchmark replays submitted actions through correct and deliberately faulty game engines. A separate evaluator reconstructs the expected states and payoffs from those actions, then compares them with the saved observations.
+I built paired correct and deliberately faulty game engines that replay the same submitted actions, and an independent evaluator that reconstructs the expected states and payoffs from those actions. It then compares them with the saved observations.
 
 Different sequences can expose different faults. A passing check means that the particular sequence did not reveal a violation.
 
