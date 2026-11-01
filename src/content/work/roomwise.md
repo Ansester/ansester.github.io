@@ -1,11 +1,11 @@
 ---
 title: RoomWise
-summary: A chair-fit checker for iPhone and desktop. A language model reads the request, and shared geometry code decides whether the chair's footprint fits the captured room.
+summary: Describe what you want to buy, browse furniture listings, and see the room preview update as you choose different items.
 category: Software engineering
 role: Co-developer
-organization: Collaborative project with Aadil Chasmawala
+organization: Collaborative software project
 period: September to November 2026
-status: Prototype
+status: Completed project
 order: 4
 tags: [Kotlin Multiplatform, SwiftUI, RoomPlan, ARKit, Compose Desktop, Groq, Tavily]
 updated: 1 November 2026
@@ -17,16 +17,18 @@ links:
     url: https://github.com/Ansester/RoomWise/blob/HEAD/docs/VALIDATION.md
 ---
 
-I’m developing RoomWise with Aadil Chasmawala. It checks whether a chair’s footprint fits a captured room, with an iPhone app and a desktop companion. The iPhone app can capture a room through Apple’s RoomPlan or import a room file; both apps use shared Kotlin code for geometry and product information.
+I co-developed RoomWise to bring furniture shopping and room previews into the same app. You describe the chair you want in ordinary language, browse options from different retailers, and see the preview change as you select another item.
 
-## From a room scan to a fit check
+## Shopping with your room in view
 
-The app shows a scaled room preview and lets the user place and rotate a chair. Geometry code calculates the fit. A language model interprets search preferences such as budget and colour, and retailer pages supply the product information.
+A language model interprets requests such as “a black office chair with armrests under 500 AED.” The app searches retailer listings and builds a shortlist with product details and links to the shopping pages.
 
-Dimensions need a clear source: a package measurement is different from an assembled chair measurement. When listings conflict or a size is missing, the app leaves that information unresolved. The sample room, manual chair entry, and fit checks work without provider accounts.
+Selecting a different chair updates the room preview with its dimensions. You can move and rotate it to compare placements, then switch to another option without starting a new room scan. On iPhone, an AR view also places a simplified chair model, sized to the selected product, in the camera view.
 
-## Incomplete room geometry
+## Connecting search and the preview
 
-An early version joined wall endpoints within 15 cm. That could turn a 10 cm gap in a scan into an apparently closed room. Endpoints now join only when each has exactly one partner within 3 cm; otherwise, the app keeps the partial room visible and withholds a fit result.
+The iPhone app uses SwiftUI, RoomPlan, and ARKit; a Compose desktop companion shares the Kotlin geometry and product models. RoomPlan captures the room, while imported room files and the included sample make the same workflow available without scanning hardware.
 
-The current prototype has automated checks for shared geometry and the desktop and iPhone apps. Physical-room measurements and testing with users are still ahead. A fit result describes the captured floor footprint; it does not account for door swings or overhead clearance.
+Product selection connects the shopping interface to the preview. The language model interprets the request, retailer records supply the product dimensions, and geometry code checks the chair’s footprint against room boundaries and other objects. Missing dimensions stay visible so the user can enter measurements rather than previewing a guessed size.
+
+The public repository includes the completed iPhone and desktop apps, automated tests, and build instructions.
