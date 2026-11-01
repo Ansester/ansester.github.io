@@ -16,7 +16,7 @@ visual: protein
 
 I am a co-first author of **Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation**, an unpublished research manuscript. It asks whether biological information can provide a useful starting point for adapting a pretrained protein language model.
 
-The submitted method uses biological matrices and ESM-2 embeddings to construct an SVD-derived initialization for LoRA's down-projection; its up-projection starts at zero. The manuscript covers mutation effects, protein stability, and signal-peptide prediction. My work focuses on the signal-peptide task and the infrastructure for training and evaluating models.
+The manuscript's method uses biological matrices and ESM-2 embeddings to construct an SVD-derived initialization for LoRA's down-projection; its up-projection starts at zero. The manuscript covers mutation effects, protein stability, and signal-peptide prediction. I developed the signal-peptide training and evaluation code.
 
 <details>
 <summary>Manuscript record</summary>

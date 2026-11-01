@@ -17,7 +17,7 @@ links:
 
 This course project studied named-entity recognition in COMI-LINGUA, a Hindi–English dataset. We used mBERT and XLM-RoBERTa to identify entities in text that switches between languages and writing systems.
 
-I worked with Akshith Karthik, Harsh Agarwal, and Lovnish Julka, contributing to the fine-tuning pipelines, evaluation tooling, and error analysis.
+I implemented training, prediction, evaluation, and error-analysis tools as part of a team with Akshith Karthik, Harsh Agarwal, and Lovnish Julka.
 
 ## Labels across languages and tokenizers
 

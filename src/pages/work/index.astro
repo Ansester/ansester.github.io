@@ -7,7 +7,7 @@ const projects = (await getCollection('work')).sort((a,b)=>a.data.order-b.data.o
   <div class="container projects-page">
     <header class="page-intro"><h1>Projects</h1><p>Research, industry work, and selected coursework.</p></header>
     <section class="project-list" aria-label="All projects">{projects.map(p=><article class="project-row"><div><h2><a href={`/work/${p.id}/`}>{p.data.title}</a></h2><p>{p.data.summary}</p></div><span class="byline">{p.data.status}{p.data.period && ` · ${p.data.period}`}</span></article>)}
-      <article class="project-row"><div><h2><a href="https://github.com/Ansester/crime-prediction-ml" target="_blank" rel="noopener noreferrer">Community crime data analysis ↗</a></h2><p>Observational regression and single-holdout evaluation across 1,994 U.S. communities, with an application for descriptive exploration.</p></div><span class="byline">Course project · Spring 2025</span></article>
+      <article class="project-row"><div><h2><a href="https://github.com/Ansester/crime-prediction-ml" target="_blank" rel="noopener noreferrer">Community crime data analysis ↗</a></h2><p>Regression analysis across 1,994 U.S. communities, evaluated on one holdout split, with an app for exploring the data.</p></div><span class="byline">Course project · Spring 2025</span></article>
     </section>
   </div>
 </Layout>

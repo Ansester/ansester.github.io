@@ -24,6 +24,6 @@ const summary = comparison.methods.map(method=>`${method.shortName} ${method.mea
       })}
       <div class="plot-row plot-axis" aria-hidden="true"><span class="plot-label"></span><span class="plot-track">{[82,84,86,88].map(tick=><span class="tick" style={`left:${x(tick)}`}>{tick}%</span>)}</span><span class="plot-value"></span></div>
     </div>
-    <figcaption>Exact cleavage-site match. Mean ± sample SD across three seeds, {comparison.positiveExamples.toLocaleString('en-US')} signal-peptide-positive examples. Full fine-tuning led at 150M and 3B. Feature injection is separate from the manuscript’s initialization method. The error bars do not establish statistical significance.</figcaption>
+    <figcaption>Exact cleavage-site match. Mean ± sample SD across three seeds, {comparison.positiveExamples.toLocaleString('en-US')} signal-peptide-positive examples.</figcaption>
     <details class="result-details"><summary>Data and evaluation scope</summary><table><thead><tr><th scope="col">Method</th><th scope="col">Mean ± SD</th></tr></thead><tbody>{comparison.methods.map(row=><tr><th scope="row">{row.name}</th><td>{row.mean.toFixed(2)}% ± {row.sd.toFixed(2)} pp</td></tr>)}</tbody></table><p>SP5; seeds {comparison.seeds.join(', ')}. Exact match is measured on the true signal-peptide-positive subset. The error bars are sample standard deviations in percentage points, not confidence intervals.</p><a href="/research/protein-comparison.csv" download>Download the summary data (CSV)</a></details>
   </figure>

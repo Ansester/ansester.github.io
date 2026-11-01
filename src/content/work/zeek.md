@@ -14,6 +14,6 @@ visual: zeek
 
 During my summer 2025 internship at Zeek, I worked on machine-learning components for a marketing-automation system in a four-person team.
 
-My work included customer-segmentation workflows, comparing preprocessing and model choices, and using SHAP to inspect which features contributed to predictions. This connected the modeling work to the questions the dashboard needed to answer about customer groups.
+I built customer-segmentation workflows, compared preprocessing and model choices, and used SHAP to inspect the features behind the predictions.
 
-Development and evaluation used generated customer and transaction records. The internship gave me experience taking a modeling pipeline through data preparation, evaluation, and explanation within a team.
+Development and evaluation used generated customer and transaction records.

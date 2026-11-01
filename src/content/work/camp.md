@@ -1,6 +1,6 @@
 ---
 title: "CAMP: Campus asset management"
-summary: A campus equipment-reservation application built by a five-person team, with contributions to staff APIs, backend testing, and client API utilities.
+summary: A campus equipment-reservation app. I built staff APIs, integration tests, and client API utilities within a five-person team.
 category: Software engineering
 role: Backend endpoints, integration testing, and client API utilities
 organization: Five-person software engineering team, NYU Abu Dhabi
@@ -23,7 +23,7 @@ CAMP is a campus equipment-reservation and inventory application, developed by a
 
 ## My part in the team
 
-I implemented Express.js REST endpoints for staff workflows, equipment alerts, and dashboard statistics. I configured the backend integration-testing setup with Mocha and Chai and worked on client API integration utilities.
+I implemented Express.js REST endpoints for staff workflows, equipment alerts, and dashboard statistics. I wrote Mocha/Chai integration tests and client API functions, including token handling and authentication-error handling.
 
 I also served as Product Owner in Sprint 1 and Scrum Master in Sprint 3. My teammates were Saad Iftikhar, Talal Naveed, Shaf Khalid, and Akshith Karthik; the interface, application-wide features, and deployment were shared work.
 
