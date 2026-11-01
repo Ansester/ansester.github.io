@@ -2,38 +2,34 @@
 title: Synthetic Pilot Lab
 summary: Offline diagnostics for faults in experimental software and the measurements it records.
 category: Independent research
-role: Diagnostic design, specification, development direction, and review
+role: Independent capstone; built the game engines and evaluator
 organization: New York University Abu Dhabi
-period: October 2026 — present
+period: October 2026 to present
 status: In development
 order: 3
 tags: [Synthetic participants, Experimental validation, Python, Reproducibility]
-updated: 27 October 2026
+updated: 1 November 2026
 visual: capstone
 ---
 
-## What I’m testing
+## What I built
 
-My capstone examines how faults in experimental software distort recorded outcomes. The standalone implementation pairs correct and faulty game engines, replays scripted decisions, and checks the resulting records with an independent evaluator.
+My capstone examines how faults in experimental software distort recorded outcomes. I built paired correct and faulty game engines, scripted decisions to replay through them, and an independent evaluator that reconstructs expected states and payoffs and compares them with the saved records.
 
-The evaluator reconstructs expected states and payoffs, then compares them with the saved observations. Some sequences of decisions expose a fault; others leave it unexposed. A passing check means no violation was observed in that sequence.
+The benchmark covers one three-player public-goods episode with public proposals, unanimous agreement, and private final decisions. A clean engine and six single-fault variants replay the same submitted decisions.
 
-## When correct totals hide an error
+## Key decisions
 
-One completed diagnostic deliberately assigned contributions to the wrong players. In a saved three-player episode, the correct and faulty engines produced these outcomes:
+- **Evaluating separately from the engine.** The evaluator recomputes outcomes from the original submitted actions, so a fault in the engine cannot also hide in the check.
+- **Reading a pass narrowly.** Some sequences of decisions expose a fault and others leave it unexposed. A passing check means no violation was observed in that sequence.
+- **Replaying from saved evidence.** A saved run can be rebuilt offline and has to reproduce. Missing, partial, or modified evidence is reported as such.
 
-| Outcome (tokens) | Correct engine | Faulty engine |
-| --- | --- | --- |
-| Contribution pool | 44 | 44 |
-| Total payoff | 82 | 82 |
-| Player payoffs, A / B / C | 26, 30, 26 | 26, 26, 30 |
+## What changed my conclusions
 
-Checks on the group totals missed the error. Recalculating each player's payoff from the original submitted actions exposed it. This was a deliberately constructed fault in a standalone synthetic benchmark.
+One diagnostic deliberately assigned contributions to the wrong players. The contribution pool and total payoff matched in both engines, so checks on group totals missed the error. Recalculating each player's payoff from the submitted actions exposed it.
 
-## Work completed
+Another fault exported public acceptance as compliance, so the economic calculations stayed correct while the label for following an agreement was wrong. Two scripted sequences together expose all six planted faults.
 
-I designed the diagnostic requirements, directed development, and reviewed the implementation and analysis. The current software includes offline diagnostics, a scripted benchmark, and measurement analysis, checked against saved synthetic records.
+## Limits
 
-## Scope
-
-The results shown here use synthetic records and scripted decisions, with no human participants. They do not measure a model's ability to discover faults.
+The results use synthetic records and scripted decisions chosen with the faults in mind, with no human participants. They do not establish human validity, model superiority, or general fault discovery, and they do not measure a model's ability to find faults.

@@ -1,0 +1,7 @@
+---
+import holdout from '../data/salary-holdout.json';
+const domain = Math.ceil(Math.max(...holdout.models.map(model=>model.mae))/5)*5;
+---
+<div class="salary-bars" role="img" aria-label={`${holdout.metric} on ${holdout.heldOutPostings} held-out postings: ${holdout.models.map(model=>`${model.label} ${model.mae.toFixed(2)}`).join(', ')}.`}>
+  {holdout.models.map(model=><div class:list={['bar-row',{'is-key':model.highlight}]} title={`${model.label}: $${model.mae.toFixed(2)}k mean absolute error`}><span class="bar-label">{model.name}</span><span class="bar-track"><i class="bar" style={`width:${(model.mae/domain*100).toFixed(2)}%`}><span class="bar-value">${model.mae.toFixed(1)}k</span></i></span></div>)}
+</div>

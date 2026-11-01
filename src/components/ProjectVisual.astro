@@ -1,10 +1,14 @@
 ---
 import { Image, getImage } from 'astro:assets';
 import fieldlens from '../../assets/fieldlens-review.png';
-interface Props { kind: 'human'|'protein'|'camp'|'ner'|'capstone'|'fieldlens'; }
+import roomwise from '../../assets/roomwise-sample.png';
+interface Props { kind: 'human'|'protein'|'camp'|'ner'|'capstone'|'fieldlens'|'zeek'|'salary'|'roomwise'; }
 const { kind } = Astro.props;
 const fieldlensFull = kind === 'fieldlens' ? await getImage({src:fieldlens,width:1440,format:'webp'}) : undefined;
 ---
 {kind === 'fieldlens' && fieldlensFull ? (
-  <figure class="case-visual fieldlens-visual"><p class="eyebrow">Working prototype / Synthetic demonstration</p><a href={fieldlensFull.src} target="_blank" rel="noopener noreferrer" aria-label="Open the FieldLens prototype screenshot at full size"><Image src={fieldlens} alt="FieldLens synthetic replay showing a question, model-selected answer, application warnings, and the exact supporting GPS record" width={1440} format="webp" loading="lazy" /></a><figcaption>Saved prototype run using fictional incident records. The answer and its supporting record remain visible together. <a href={fieldlensFull.src} target="_blank" rel="noopener noreferrer">View full-size screenshot ↗</a></figcaption></figure>
+  <figure class="case-visual fieldlens-visual"><p class="eyebrow">Working prototype / Synthetic demonstration</p><a href={fieldlensFull.src} target="_blank" rel="noopener noreferrer" aria-label="Open the FieldLens prototype screenshot at full size"><Image src={fieldlens} alt="FieldLens synthetic replay showing a question, model-selected answer, application warnings, and the exact supporting GPS record" width={1440} format="webp" loading="eager" /></a><figcaption>Saved prototype run using fictional incident records. The answer and its supporting record remain visible together. <a href={fieldlensFull.src} target="_blank" rel="noopener noreferrer">View full-size screenshot ↗</a></figcaption></figure>
+) : null}
+{kind === 'roomwise' ? (
+  <figure class="case-visual roomwise-visual"><Image src={roomwise} alt="RoomWise iPhone screen showing a sample L-shaped room, a scaled chair, rotation and movement controls, the status Fits captured geometry, and a furniture search" width={430} format="webp" loading="eager" /><figcaption>Hosted iPhone render. The room and chair are labelled synthetic samples, so this is not a measured room or a live search result. “Fits captured geometry” is the check on the sample’s floor footprint.</figcaption></figure>
 ) : null}

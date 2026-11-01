@@ -1,0 +1,9 @@
+{
+  "metric": "Mean absolute error, thousand USD",
+  "heldOutPostings": 92,
+  "models": [
+    { "name": "baseline", "label": "Mean baseline", "mae": 26.93 },
+    { "name": "linear", "label": "Linear regression", "mae": 24.49 },
+    { "name": "xgboost", "label": "XGBoost", "mae": 23.80, "highlight": true }
+  ]
+}
