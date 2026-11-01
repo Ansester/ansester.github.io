@@ -58,11 +58,11 @@ for (const [path,doc] of documents) {
     assert(doc.querySelector(`a[href="${target}"]`),`${name}: redirect fallback missing`);
   }
   const content = doc.body.textContent;
-  assert(!/3,000\+|87%|0\.85|15\+ models|Achieved 78%/.test(content),`${name}: superseded claim returned`);
+  assert(!/3,000\+|87%|0\.85|15\+ models|78%|23% increase|85% precision|AutoML|submitted to EMNLP/i.test(content),`${name}: superseded claim returned`);
 }
 const home = documents.get(join(root,'index.html'));
 for(const id of ['main','projects','research','experience','background','about','contact']) assert(home.getElementById(id),`Legacy anchor missing: ${id}`);
-for(const route of ['human-ai-collaboration','synthetic-pilot-lab','protein-language-models','fieldlens','camp','hinglish-ner']) assert(documents.has(join(root,'work',route,'index.html')),`Case study missing: ${route}`);
+for(const route of ['human-ai-collaboration','synthetic-pilot-lab','protein-language-models','fieldlens','camp','hinglish-ner','zeek','salary-regression','roomwise']) assert(documents.has(join(root,'work',route,'index.html')),`Case study missing: ${route}`);
 const research = documents.get(join(root,'research','index.html'));
 assert(research, 'Legacy research route missing');
 assert.equal(research.querySelector('meta[http-equiv="refresh"]')?.getAttribute('content'), '0; url=/#research', 'Research overview should resolve to the homepage');
@@ -82,10 +82,10 @@ for (const method of comparison.methods) {
   assert(summaryCSV.includes(`${method.mean.toFixed(2)},${method.sd.toFixed(2)}`), 'Figure data export differs from source summaries');
   assert(protein.body.textContent.includes(`${method.mean.toFixed(2)}% ± ${method.sd.toFixed(2)} pp`), 'Accessible results table differs from source summaries');
 }
-assert(!existsSync(join(root,'cv.pdf')),'Application CV must not be hosted on the website');
-for (const [path,doc] of documents) assert(!doc.querySelector('a[href="/cv.pdf"]'),`${relative(root,path)}: public CV link returned`);
+assert(existsSync(join(root,'cv.pdf')),'CV missing');
+assert(home.querySelector('nav a[href="/cv.pdf"]'),'Homepage navigation should link to the CV');
 assert.equal(readFileSync(join(root,'CNAME'),'utf8').trim(),'ashmitmukherjee.com');
 assert(existsSync(join(root,'sitemap-index.xml')),'Sitemap missing');
 assert(!existsSync(join(root,'cv.tex')),'CV source should not be in public output');
 assert(!existsSync(join(root,'CLAIM_AUDIT.md')),'Internal claim audit should not be in public output');
-console.log(`Passed: ${htmlFiles.length} pages, ${checkedLinks} local links/assets, six case studies, legacy anchors, metadata, application-CV separation, and claim regression checks.`);
+console.log(`Passed: ${htmlFiles.length} pages, ${checkedLinks} local links/assets, nine case studies, legacy anchors, metadata, CV link, and claim regression checks.`);

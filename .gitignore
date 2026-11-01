@@ -3,7 +3,6 @@ node_modules/
 dist/
 .astro/
 tmp/
-public/cv.pdf
 *.aux
 *.log
 *.out
@@ -15,7 +14,7 @@ output/
 
 # Local application documents and working notes
 cv.tex
-cv.pdf
+/cv.pdf
 CLAIM_AUDIT.md
 PORTFOLIO_OVERHAUL_PLAN.md
 .openai/

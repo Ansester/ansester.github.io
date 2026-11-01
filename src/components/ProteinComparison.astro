@@ -1,11 +1,44 @@
 ---
 import comparison from '../data/protein-comparison.json';
-interface Props { detailed?: boolean; }
-const { detailed = false } = Astro.props;
+interface Props { variant?: 'strip' | 'full'; }
+const { variant = 'full' } = Astro.props;
+const [min, max] = [81, 88];
+const x = (value: number) => `${((value-min)/(max-min)*100).toFixed(2)}%`;
+const span = (sd: number) => `${(sd*2/(max-min)*100).toFixed(2)}%`;
+const key = 'BLOSUM62 + LoRA', reference = 'Vanilla LoRA';
+const keyMethod = comparison.methods.find(method=>method.shortName===key)!;
+const referenceMethod = comparison.methods.find(method=>method.shortName===reference)!;
+const others = comparison.methods.filter(method=>method!==keyMethod);
+const summary = comparison.methods.map(method=>`${method.shortName} ${method.mean.toFixed(2)}%`).join(', ');
 ---
-<figure class="protein-comparison" id={detailed ? 'recorded-comparison' : undefined}>
-  <p class="figure-heading">Follow-up experiment · {comparison.model}</p>
-  <img src="/research/protein-comparison.svg" width="460" height="350" loading="lazy" alt="Six-method ESM-2 650M comparison. Mean exact cleavage-site match ranges from 83.64% for vanilla LoRA to 86.08% for BLOSUM62 feature injection. Error bars show sample standard deviation across three seeds." />
-  <figcaption>All six methods in the saved 650M comparison. Means ± sample SD across three seeds; 1,231 signal-peptide-positive examples. Full fine-tuning led the separate 150M and 3B comparisons.{!detailed && ' Feature injection is separate from the manuscript’s initialization method.'}</figcaption>
-  {detailed && <details class="result-details"><summary>Data and evaluation scope</summary><table><thead><tr><th scope="col">Method</th><th scope="col">Mean ± SD</th></tr></thead><tbody>{comparison.methods.map(row=><tr><th scope="row">{row.name}</th><td>{row.mean.toFixed(2)}% ± {row.sd.toFixed(2)} pp</td></tr>)}</tbody></table><p>SP5; seeds {comparison.seeds.join(', ')}. Exact match is measured on the true signal-peptide-positive subset. The error bars are sample standard deviations in percentage points, not confidence intervals.</p><a href="/research/protein-comparison.csv" download>Download the summary data (CSV)</a></details>}
-</figure>
+{variant === 'strip' ? (
+  <div class="protein-strip" role="img" aria-label={`Mean exact cleavage-site match at ${comparison.model} across three seeds: ${summary}.`}>
+    <div class="strip-track">
+      <i class="whisker is-key" style={`left:${x(keyMethod.mean-keyMethod.sd)};width:${span(keyMethod.sd)}`}></i>
+      {others.map(method=><i class="dot" style={`left:${x(method.mean)}`} title={`${method.shortName}: ${method.mean.toFixed(2)}%`}></i>)}
+      <i class="dot is-key" style={`left:${x(keyMethod.mean)}`} title={`${keyMethod.shortName}: ${keyMethod.mean.toFixed(2)}%`}></i>
+    </div>
+    <div class="strip-labels"><span style={`left:${x(referenceMethod.mean)}`}>{referenceMethod.mean.toFixed(2)}</span><span class="is-key" style={`left:${x(keyMethod.mean)}`}>{keyMethod.mean.toFixed(2)}</span></div>
+  </div>
+) : (
+  <figure class="protein-comparison" id="recorded-comparison">
+    <p class="figure-heading">Follow-up experiment, {comparison.model}</p>
+    <div class="dot-plot" role="img" aria-label={`Mean exact cleavage-site match across three seeds: ${summary}. Error bars show sample standard deviation.`}>
+      {comparison.methods.map(method=>{
+        const isKey = method===keyMethod;
+        return <div class:list={['plot-row',{'is-key':isKey}]} title={`${method.name}: ${method.mean.toFixed(2)}% ± ${method.sd.toFixed(2)} percentage points`}>
+          <span class="plot-label">{method.shortName}</span>
+          <span class="plot-track">
+            {[82,84,86,88].map(tick=><i class="grid" style={`left:${x(tick)}`}></i>)}
+            <i class:list={['whisker',{'is-key':isKey}]} style={`left:${x(method.mean-method.sd)};width:${span(method.sd)}`}></i>
+            <i class:list={['dot',{'is-key':isKey}]} style={`left:${x(method.mean)}`}></i>
+          </span>
+          <span class="plot-value">{(isKey || method===referenceMethod) && `${method.mean.toFixed(2)}%`}</span>
+        </div>;
+      })}
+      <div class="plot-row plot-axis" aria-hidden="true"><span class="plot-label"></span><span class="plot-track">{[82,84,86,88].map(tick=><span class="tick" style={`left:${x(tick)}`}>{tick}%</span>)}</span><span class="plot-value"></span></div>
+    </div>
+    <figcaption>Exact cleavage-site match. Mean ± sample SD across three seeds, {comparison.positiveExamples.toLocaleString('en-US')} signal-peptide-positive examples. Full fine-tuning led at 150M and 3B. Feature injection is separate from the manuscript’s initialization method. The error bars do not establish statistical significance.</figcaption>
+    <details class="result-details"><summary>Data and evaluation scope</summary><table><thead><tr><th scope="col">Method</th><th scope="col">Mean ± SD</th></tr></thead><tbody>{comparison.methods.map(row=><tr><th scope="row">{row.name}</th><td>{row.mean.toFixed(2)}% ± {row.sd.toFixed(2)} pp</td></tr>)}</tbody></table><p>SP5; seeds {comparison.seeds.join(', ')}. Exact match is measured on the true signal-peptide-positive subset. The error bars are sample standard deviations in percentage points, not confidence intervals.</p><a href="/research/protein-comparison.csv" download>Download the summary data (CSV)</a></details>
+  </figure>
+)}

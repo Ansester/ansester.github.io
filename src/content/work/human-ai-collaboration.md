@@ -2,13 +2,13 @@
 title: Human–AI collaboration
 summary: Software for studying how AI advice affects cooperation when individual and group incentives differ.
 category: Research engineering
-role: Research assistant · software development and review
+role: Research assistant; built the experiment platform
 organization: With Ben Rosche and Hanan Salam, NYU Abu Dhabi
-period: February 2026 — present
+period: February 2026 to present
 status: Ongoing faculty research
 order: 1
-tags: [Experimental systems, Python, AI agents, Evaluation]
-updated: 26 October 2026
+tags: [Experimental systems, Python, FastAPI, Empirica, Evaluation]
+updated: 1 November 2026
 visual: human
 links:
   - label: NYU research project
@@ -21,22 +21,23 @@ links:
 
 People often face choices where protecting their own interests can make everyone worse off. How does cooperation change when AI systems advise the people making those choices?
 
-The research examines repeated interactions between people and AI in social dilemmas. Different forms of assistance may change what people notice, how they interpret others’ actions, and whether they coordinate. Ben Rosche and Hanan Salam supervise my work at NYU Abu Dhabi as part of the wider NYU collaboration linked above.
+The research examines repeated interactions between people and AI in social dilemmas. Ben Rosche and Hanan Salam supervise my work at NYU Abu Dhabi as part of the wider NYU collaboration linked above. The scientific design is faculty-led.
 
-## My contribution
+## What I built
 
-I coordinate software development and review how the experimental design is translated into a working system. My work spans the Python game mechanics, participant and researcher interfaces, AI integration, session recovery, and data exports.
+I built the software that turns the study design into a working experiment: the Python and FastAPI game mechanics, the Empirica participant and researcher workflows, the AI integration, session recovery, and data exports.
 
-That means following a decision through the whole application. The participant must see the information allowed by their experimental condition; the game must apply the specified rules; and the exported records must preserve enough context to explain the outcome. I review implementation choices against those requirements and investigate mismatches between the interface, game state, and saved data.
+The participant flow covers onboarding, comprehension checks, repeated decisions, feedback, and a final debrief. Researchers can configure and monitor sessions, handle interrupted connections, and recover records for analysis.
 
-## What the software supports
+## Key decisions
 
-The participant flow covers onboarding, comprehension checks, repeated decisions, feedback, and a final debrief. Researchers need to configure and monitor sessions, handle interrupted connections, and recover records for analysis.
+- **Controlling what the adviser sees.** The software limits the information an adviser receives and keeps its recommendation separate from the participant's decision. A private recommendation stays private even when the group sees a shared outcome.
+- **Resuming from the record.** An interrupted session resumes from the recorded decision rather than applying it twice.
+- **Scripting the advisers first.** Scripted advisers exercise these paths before the study relies on model-generated advice.
+- **Recomputing outcomes separately.** Checks reconstruct outcomes from recorded actions instead of trusting the game engine's own totals. One test alters a saved payoff and confirms that validation fails and no summary is produced.
 
-AI advice adds a second layer of coordination. The software has to control what information an adviser receives and keep its recommendation separate from the participant’s decision. In the computational testing workflow, scripted advisers let us exercise those paths before relying on model-generated advice.
+These are software requirements with direct consequences for what an experiment can measure. If an adviser sees information it should not have, a change in behaviour could be attributed to the wrong part of the intervention.
 
-For example, an interrupted session should resume from the recorded decision rather than apply it twice. Likewise, a private recommendation should remain private even when the group sees a shared outcome. These are software requirements with direct consequences for what an experiment can measure.
+## Limits
 
-## Where the work stands
-
-The platform and its offline checks are under development. Scripted tests help check game mechanics, information access, and recorded outcomes. **No human-study results are reported here**, and passing those checks does not establish how AI changes cooperation.
+The platform and its offline checks are under development. Scripted tests check game mechanics, information access, and recorded outcomes. **No human-study results are reported here**, and passing those checks does not establish how AI changes cooperation.

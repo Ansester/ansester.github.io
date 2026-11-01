@@ -16,7 +16,7 @@ npm run dev
 - `src/pages/index.astro`: homepage and manuscript entry.
 - `src/content/work/`: project descriptions, credits, and current status.
 - `src/layouts/Layout.astro` and `src/styles/global.css`: shared layout and appearance.
-- `src/data/protein-comparison.json`: recorded follow-up experiment summaries. `scripts/plot-protein-comparison.py` generates the figure and CSV; it does not run models.
+- `src/data/`: recorded results behind the site's figures. `scripts/plot-protein-comparison.py` generates the protein CSV from these summaries (and a static SVG the site no longer uses); it does not run models.
 
 The site distinguishes ongoing research, unpublished work, and coursework. Project descriptions identify my contribution and the scope of the available evidence. Application documents and internal working notes are maintained separately.
 
@@ -32,4 +32,4 @@ The build runs Astro and TypeScript checks. The site checks cover local routes, 
 
 Pull requests to `master` run the build and checks. Pushes to `master` deploy `dist/` through `.github/workflows/pages.yml`. The custom domain is set in `public/CNAME`.
 
-Legacy research, publication, project, and CV URLs retain redirect pages. The application CV is not hosted on this site.
+Legacy research, publication, project, and CV URLs retain redirect pages. The CV is served from `public/cv.pdf`; its LaTeX source is kept outside this repository.

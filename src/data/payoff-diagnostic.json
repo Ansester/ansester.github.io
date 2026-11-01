@@ -1,0 +1,8 @@
+{
+  "unit": "tokens",
+  "players": ["A", "B", "C"],
+  "engines": [
+    { "name": "correct", "pool": 44, "total": 82, "payoffs": [26, 30, 26] },
+    { "name": "faulty", "pool": 44, "total": 82, "payoffs": [26, 26, 30] }
+  ]
+}
