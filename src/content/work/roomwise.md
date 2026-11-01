@@ -1,6 +1,6 @@
 ---
 title: RoomWise
-summary: Describe what you want to buy, browse furniture listings, and see the room preview update as you choose different items.
+summary: Talk through what you want to buy, swipe through furniture listings, and see the room preview change with each selection.
 category: Software engineering
 role: Co-developer
 organization: Collaborative software project
@@ -17,18 +17,20 @@ links:
     url: https://github.com/Ansester/RoomWise/blob/HEAD/docs/VALIDATION.md
 ---
 
-I co-developed RoomWise to bring furniture shopping and room previews into the same app. You describe the chair you want in ordinary language, browse options from different retailers, and see the preview change as you select another item.
+I co-developed RoomWise to bring furniture shopping and room previews into the same app. You talk through what you want with a language model, swipe through product listings, and see each selection appear in your room preview.
 
 ## Shopping with your room in view
 
-A language model interprets requests such as “a black office chair with armrests under 500 AED.” The app searches retailer listings and builds a shortlist with product details and links to the shopping pages.
+The conversation keeps track of your preferences. You can ask for “a black office chair under 500 AED,” then refine it with “make it white” or “under 300 instead.” When you are ready, the app searches retailer listings using those preferences.
 
-Selecting a different chair updates the room preview with its dimensions. You can move and rotate it to compare placements, then switch to another option without starting a new room scan. On iPhone, an AR view also places a simplified chair model, sized to the selected product, in the camera view.
+The phone keeps the room preview visible as you swipe through the shortlist. Each shopping page selects its chair and updates the preview, so you can compare options without a separate preview step or a new room scan. You can move and rotate the chair, inspect the listing, and open the retailer’s page to check the offer.
 
-## Connecting search and the preview
+The preview uses a simplified chair sized from the listing’s assembled dimensions. An optional camera AR view places it in the room; the Simulator provides a 3D rehearsal. If dimensions are missing, the app asks for measurements before showing a size-based preview.
 
-The iPhone app uses SwiftUI, RoomPlan, and ARKit; a Compose desktop companion shares the Kotlin geometry and product models. RoomPlan captures the room, while imported room files and the included sample make the same workflow available without scanning hardware.
+## Browse on desktop, preview on your phone
 
-Product selection connects the shopping interface to the preview. The language model interprets the request, retailer records supply the product dimensions, and geometry code checks the chair’s footprint against room boundaries and other objects. Missing dimensions stay visible so the user can enter measurements rather than previewing a guessed size.
+You can also pair the desktop app and phone over a trusted local Wi-Fi network. Browsing another RoomWise product page on desktop updates the phone’s selected chair while its room or camera AR preview stays visible. Changing the selection on the phone updates the desktop too. Both apps also work independently.
+
+The iPhone app uses SwiftUI, RoomPlan, and ARKit; the Compose desktop app shares Kotlin geometry and product models. RoomPlan captures the room, while imported room files and the included sample support the same workflow without scanning hardware. The language model handles the conversation, retailer records supply product information, and shared code handles placement and footprint checks.
 
 The public repository includes the completed iPhone and desktop apps, automated tests, and build instructions.
