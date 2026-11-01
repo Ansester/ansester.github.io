@@ -15,19 +15,14 @@ links:
     url: https://github.com/Ansester/hinglish-ner-research
 ---
 
-## The project
+This course project studied named-entity recognition in COMI-LINGUA, a Hindi–English dataset. We used mBERT and XLM-RoBERTa to identify entities in text that switches between languages and writing systems.
 
-This course project studied named-entity recognition on COMI-LINGUA, a Hindi–English code-mixed dataset. Language switching, variable spelling, and ambiguous entity boundaries complicate the task.
+I worked with Akshith Karthik, Harsh Agarwal, and Lovnish Julka, contributing to the fine-tuning pipelines, evaluation tooling, and error analysis.
 
-## What I contributed
+## Labels across languages and tokenizers
 
-I contributed to the fine-tuning pipelines, evaluation tooling, and error analysis. The project was completed with Akshith Karthik, Harsh Agarwal, and Lovnish Julka at NYU Abu Dhabi.
+The pipeline keeps word-level labels aligned when a tokenizer splits a word into several pieces, then maps predictions back to the original text. This matters when language switching and spelling variation produce different token boundaries.
 
-## Key decisions
+The coursework evaluated encoders on 4,829 test examples and explored zero-shot language models on a separate 100-example sample. Those runs answer different comparison questions because they use different samples.
 
-- **Keeping labels aligned.** We worked with mBERT and XLM-RoBERTa token-classification models. Word-level entity labels have to stay aligned when a tokenizer divides a word into several pieces, and predictions have to map back to the original text for evaluation.
-- **Separating the baselines.** The encoders were evaluated on the full 4,829-example test split. Zero-shot language models ran on a separate 100-example sample, so the two cannot support a matched comparison.
-
-## Limits
-
-The repository contains the preprocessing, training, prediction, and evaluation pipeline. It does not include trained checkpoints or saved model predictions, so this page does not present model scores as a reproduced benchmark. The zero-shot runs are not packaged in the public repository.
+The public repository contains the preprocessing, training, prediction, and evaluation code. Trained checkpoints and the original model outputs are not included.

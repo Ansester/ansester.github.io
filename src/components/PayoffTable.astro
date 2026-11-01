@@ -1,8 +1,0 @@
----
-import diagnostic from '../data/payoff-diagnostic.json';
-const [correct] = diagnostic.engines;
----
-<table class="payoff-table">
-  <thead><tr><th scope="col">{diagnostic.unit}</th><th scope="col">pool</th><th scope="col">total</th><th scope="col">{diagnostic.players.join(' / ')}</th></tr></thead>
-  <tbody>{diagnostic.engines.map(engine=><tr><th scope="row">{engine.name}</th><td>{engine.pool}</td><td>{engine.total}</td><td>{engine.payoffs.map((payoff,i)=><>{i>0 && ' / '}<span class={payoff!==correct.payoffs[i] ? 'payoff-wrong' : undefined}>{payoff}</span></>)}</td></tr>)}</tbody>
-</table>

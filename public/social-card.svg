@@ -1,12 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
-<title id="title">Ashmit Mukherjee: ML systems and computational social science</title>
-<desc id="description">I build ML systems and experiments, then check whether their results hold up. Computer Science with a minor in Economics at NYU Abu Dhabi.</desc>
-<rect width="1200" height="630" fill="#12161A"/>
-<path d="M72 112H1128M72 520H1128" stroke="#343B40"/>
-<text x="72" y="82" fill="#E9EBE7" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="600">Ashmit Mukherjee</text>
-<text x="72" y="225" fill="#E9EBE7" font-family="Helvetica,Arial,sans-serif" font-size="62" font-weight="500">I build ML systems and</text>
-<text x="72" y="303" fill="#E9EBE7" font-family="Helvetica,Arial,sans-serif" font-size="62" font-weight="500">experiments, then check whether</text>
-<text x="72" y="381" fill="#E9EBE7" font-family="Helvetica,Arial,sans-serif" font-size="62" font-weight="500">their results hold up.</text>
-<text x="72" y="462" fill="#A3ABAD" font-family="Helvetica,Arial,sans-serif" font-size="28">Computer Science, minor in Economics, NYU Abu Dhabi</text>
-<text x="72" y="575" fill="#8EAEFF" font-family="Helvetica,Arial,sans-serif" font-size="26">ashmitmukherjee.com</text>
+<title id="title">Ashmit Mukherjee — NYU Abu Dhabi</title>
+<desc id="description">Computer Science. Human–AI cooperation, experimental software, and protein language models.</desc>
+<rect width="1200" height="630" fill="#fcfbf8"/>
+<path d="M80 120H1120M80 510H1120" stroke="#dcded6"/>
+<text x="80" y="92" fill="#626b65" font-family="Helvetica,Arial,sans-serif" font-size="25">COMPUTER SCIENCE · NYU ABU DHABI</text>
+<text x="80" y="270" fill="#252b28" font-family="Georgia,serif" font-size="76">Ashmit Mukherjee</text>
+<text x="80" y="355" fill="#626b65" font-family="Helvetica,Arial,sans-serif" font-size="30">Human–AI cooperation, experimental software,</text>
+<text x="80" y="402" fill="#626b65" font-family="Helvetica,Arial,sans-serif" font-size="30">and protein language models.</text>
+<text x="80" y="570" fill="#285e4c" font-family="Helvetica,Arial,sans-serif" font-size="26">ashmitmukherjee.com</text>
 </svg>

@@ -2,8 +2,8 @@
 import '../styles/global.css';
 interface Props { title?: string; description?: string; noindex?: boolean; }
 const {
-  title = 'Ashmit Mukherjee: ML systems and computational social science',
-  description = 'I build ML systems and experiments, then check whether their results hold up. Computer Science at NYU Abu Dhabi, with research in computational social science and human–AI interaction.',
+  title = 'Ashmit Mukherjee — Computer Science, NYU Abu Dhabi',
+  description = 'Computer Science at NYU Abu Dhabi. Research on human–AI cooperation, experimental software, and protein language models.',
   noindex = false,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -51,12 +51,9 @@ const isWork = Astro.url.pathname.startsWith('/work');
       <div class="container header-inner">
         <a class="brand" href="/" aria-label="Ashmit Mukherjee, home"><span>Ashmit Mukherjee</span></a>
         <nav aria-label="Main navigation">
-          <a href="/work/" aria-current={isWork ? 'page' : undefined}>Work</a>
+          <a href="/#research">Research</a>
+          <a href="/work/" aria-current={isWork ? 'page' : undefined}>Projects</a>
           <a href="/#about">About</a>
-          <a href="/cv.pdf">CV</a>
-          <a href="mailto:asm8879@nyu.edu">Email</a>
-          <a href="https://github.com/Ansester" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
         </nav>
         <button class="theme-toggle" type="button" aria-label="Switch color theme" hidden><span data-theme-label>Theme</span><span aria-hidden="true">◐</span></button>
       </div>

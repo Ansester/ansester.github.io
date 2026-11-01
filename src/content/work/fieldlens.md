@@ -2,7 +2,7 @@
 title: FieldLens
 summary: A local prototype for reviewing fictional incident records, with model answers linked to their sources.
 category: Research engineering
-role: Built the prototype; set its requirements and evaluation criteria
+role: Project direction, requirements, and evaluation
 organization: Independent prototype
 period: October 2026
 status: Working prototype
@@ -12,29 +12,18 @@ updated: 1 November 2026
 visual: fieldlens
 ---
 
-## The question
+FieldLens is a local-model tool for inspecting incident records. A reader can ask a question, read an answer, and open the records behind it. I set the requirements for retrieval and failure handling, defined the evaluation criteria, and reviewed successive prototypes.
 
-How can a small local language model help someone inspect an incident while keeping its answer connected to the available evidence?
+## Keeping answers connected to records
 
-## What I built
+Each request works from a fixed snapshot. Code calculates quantities such as record age, while the model uses bounded, read-only retrieval tools. In the current answer path, the model selects statements derived from the records. The interface displays those statements with their source links and caveats.
 
-FieldLens lets a reader ask a small local language model about a fictional incident, then inspect the records behind its answer. Timestamps, uncertainty, and missing information stay visible as records pass through retrieval and answer generation.
+The prototype also has a deterministic answer path for requests where model inference fails.
 
-I built the prototype and set its requirements for retrieval and failure handling, along with the criteria used to evaluate it.
+## Evaluation
 
-## Key decisions
+The v0.2.0 evaluation compared deterministic, free-prose, and constrained-selection answers on the same fictional incident cases. It measured validity, coverage, and relevance, retaining failed and incomplete answers in the results.
 
-- **Fixing the records.** Each request uses an immutable snapshot of the records.
-- **Leaving arithmetic to code.** Ordinary code calculates quantities such as record age. The model can call three retrieval tools, all read-only and subject to limits enforced by the application.
-- **Constraining the answer.** In the released answer path, the model chooses from statements derived from the retrieved records. The interface displays them verbatim, with their caveats and source links.
-- **Planning for failure.** Warnings and a deterministic baseline remain available when inference fails.
+Some answers cited the right records but left out information the question asked for. That distinction is why the evaluation checks coverage as well as source references.
 
-## What changed my conclusions
-
-The v0.2.0 evaluation compared deterministic, free-prose, and constrained-selection answers on matched synthetic cases. It measured valid output, coverage, and relevance, and kept failed and incomplete answers in the results.
-
-Some answers cited their sources correctly but still omitted information the question asked for. A correct citation is not enough to show that an answer is complete.
-
-## Limits
-
-The checks used fictional records and procedures. The frozen application and local runtime also ran on ARM64 Linux CPU and Jubail CUDA environments, and CPU runs that exceeded the deadline were recorded as failures. Evaluation with human reviewers and on the intended physical device remains future work. The repository is private.
+The application and local runtime have run on ARM64 Linux CPU and Jubail CUDA environments. Evaluation with incident reviewers and on the intended physical device is the next step.

@@ -21,7 +21,7 @@ links:
 
 CAMP is a campus equipment-reservation and inventory application, developed by a five-person software engineering team at NYU Abu Dhabi. Students can browse equipment and request reservations; staff manage inventory, issue items, and record returns.
 
-## What I built
+## My part in the team
 
 I implemented Express.js REST endpoints for staff workflows, equipment alerts, and dashboard statistics. I configured the backend integration-testing setup with Mocha and Chai and worked on client API integration utilities.
 
@@ -31,6 +31,4 @@ I also served as Product Owner in Sprint 1 and Scrum Master in Sprint 3. My team
 
 The application uses React, an Express API on Node.js, and MongoDB. JWT authentication and role-based access distinguish student and staff operations. Reservation workflows include booking-conflict checks, item issuance, and returns.
 
-## Limits
-
-The original coursework deployment used a DigitalOcean droplet with Nginx and PM2. The public repository provides local setup instructions and automated checks; it does not advertise a running hosted service.
+The original coursework deployment used a DigitalOcean droplet with Nginx and PM2. The source repository includes setup instructions and automated checks for running the application locally.

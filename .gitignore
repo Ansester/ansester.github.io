@@ -15,6 +15,7 @@ output/
 # Local application documents and working notes
 cv.tex
 /cv.pdf
+public/cv.pdf
 CLAIM_AUDIT.md
 PORTFOLIO_OVERHAUL_PLAN.md
 .openai/

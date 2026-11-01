@@ -2,76 +2,51 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import portrait from '../../ashmit-profile.jpg';
-import ProteinComparison from '../components/ProteinComparison.astro';
-import PayoffTable from '../components/PayoffTable.astro';
-import SalaryBars from '../components/SalaryBars.astro';
 ---
 <Layout>
   <div class="container">
-    <header class="hero">
-      <h1>I build ML systems and experiments, then check whether their results hold up.</h1>
-      <p>Computer Science with a minor in Economics at NYU Abu Dhabi, expected May 2027. I research how AI advice changes the decisions people make together.</p>
+    <header class="introduction">
+      <div>
+        <p class="affiliation">Computer Science · NYU Abu Dhabi</p>
+        <h1>Ashmit Mukherjee</h1>
+        <p>I’m a Computer Science senior with a minor in Economics. I’m interested in how people make decisions together, and how those decisions change when AI advice is involved.</p>
+        <div class="intro-links"><a href="mailto:asm8879@nyu.edu">asm8879@nyu.edu</a><a href="https://github.com/Ansester" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+      </div>
+      <Image class="portrait" src={portrait} alt="Ashmit Mukherjee" width={144} height={144} format="webp" loading="eager" />
     </header>
 
-    <section id="research" aria-labelledby="work-heading">
-      <h2 class="visually-hidden" id="work-heading">Selected work</h2>
-      <div class="work-head" aria-hidden="true"><span>work</span><span>what I did</span><span>what the evidence shows</span></div>
-      <article class="work-row">
-        <div><h3><a href="/work/human-ai-collaboration/">Human–AI collaboration</a></h3><span class="kind">research / 2026–present</span></div>
-        <p class="what">Built the experiment platform, with Ben Rosche and Hanan Salam.</p>
-        <div class="evidence">in development; <b>no human-study results yet</b></div>
+    <section class="home-section" id="research" aria-labelledby="research-heading">
+      <h2 id="research-heading">Research</h2>
+      <article class="research-entry">
+        <h3><a href="/work/human-ai-collaboration/">Human–AI collaboration</a></h3>
+        <p class="byline">Research assistant with Ben Rosche and Hanan Salam · 2026–present</p>
+        <p>I work on the software behind experiments on AI advice and cooperation. My role spans development coordination and review of the game rules, participant interfaces, and records used for analysis.</p>
+        <p>I’m interested in what people learn from working with an assistant, and whether that carries over when the assistant is no longer there.</p>
       </article>
-      <article class="work-row">
-        <div><h3><a href="/work/protein-language-models/">Bio-LoRA and protein-model evaluation</a></h3><span class="kind">research / co-first author, unpublished</span></div>
-        <p class="what">Built the signal-peptide evaluation and ran three model sizes on HPC.</p>
-        <div class="evidence"><ProteinComparison variant="strip" /><span class="evidence-note">BLOSUM62 feature injection vs vanilla LoRA at 650M, 3 seeds; full fine-tuning led at 150M and 3B</span></div>
+      <article class="research-entry" id="manuscript">
+        <h3><a href="/work/protein-language-models/">Bio-LoRA and protein models</a></h3>
+        <p class="byline">Research assistant, eBRAIN Lab · Co-first author, unpublished manuscript</p>
+        <p>I work on adapting protein language models with biological information. I added signal-peptide prediction to the evaluation and ran comparisons across three model sizes. Follow-up experiments examined which settings held up across repeated runs.</p>
       </article>
-      <article class="work-row">
-        <div><h3><a href="/work/synthetic-pilot-lab/">Synthetic Pilot Lab</a></h3><span class="kind">research / capstone, in development</span></div>
-        <p class="what">Built paired game engines and an independent evaluator.</p>
-        <div class="evidence"><PayoffTable /><span class="evidence-note">scripted synthetic benchmark; group totals hid the error</span></div>
+      <article class="research-entry">
+        <h3><a href="/work/synthetic-pilot-lab/">Synthetic Pilot Lab</a></h3>
+        <p class="byline">Independent capstone · 2026–present</p>
+        <p>My capstone studies how to test experimental software before using it with participants. I design diagnostics that replay scripted decisions through correct and deliberately faulty game engines. One test exposed incorrect individual payoffs that checks on the group total missed.</p>
       </article>
-      <article class="work-row">
-        <div><h3><a href="/work/roomwise/">RoomWise</a></h3><span class="kind">software / prototype, 2026</span></div>
-        <p class="what">Co-developed an iPhone and desktop chair-fit checker with Aadil Chasmawala; geometry code, not the language model, decides the fit.</p>
-        <div class="evidence">67 automated tests pass in public CI; <b>not yet measured in a real room</b></div>
-      </article>
-      <article class="work-row">
-        <div><h3><a href="/work/fieldlens/">FieldLens</a></h3><span class="kind">research engineering / prototype, 2026</span></div>
-        <p class="what">Built a local-model tool that links each answer to its source records.</p>
-        <div class="evidence">some answers cited sources correctly and still missed what was asked; fictional records</div>
-      </article>
-      <article class="work-row" id="experience">
-        <div><h3><a href="/work/zeek/">Marketing ML system, Zeek</a></h3><span class="kind">industry / ML engineering intern, 2025</span></div>
-        <p class="what">Built discovery, ROI prediction, explainability, campaign and feedback-learning components in a four-person team.</p>
-        <div class="evidence">synthetic data only; no real-customer results</div>
-      </article>
-      <article class="work-row">
-        <div><h3><a href="/work/salary-regression/">Salary regression</a></h3><span class="kind">course project, Fall 2025</span></div>
-        <p class="what">Repaired a leaky train/test split, then re-evaluated against baselines.</p>
-        <div class="evidence"><SalaryBars /><span class="evidence-note">error on 92 held-out postings; replaces an earlier R² from the leaky split</span></div>
-      </article>
-      <p class="work-also" id="projects"><span>Also: <a href="/work/hinglish-ner/">Hinglish NER</a>, <a href="/work/camp/">CAMP</a></span><a href="/work/">All work</a></p>
     </section>
 
-    <section class="home-section" aria-labelledby="direction-heading">
-      <h2 id="direction-heading">Research direction</h2>
-      <p>I work in computational social science and human–AI interaction. I want to understand how AI advice changes cooperation: a group can follow an assistant’s plan without building a shared understanding of what each member can contribute. My next studies ask when that difference matters: while people use the assistant, after it is removed, and when they work with someone new.</p>
-    </section>
-
-    <section class="home-section" id="manuscript" aria-labelledby="manuscript-heading">
-      <h2 id="manuscript-heading">Manuscript</h2>
-      <p><cite>Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation.</cite><br />Co-first author. Unpublished manuscript, 2026.<br /><a href="/work/protein-language-models/#the-manuscript">About the manuscript and my contribution</a></p>
+    <section class="home-section" id="projects" aria-labelledby="projects-heading">
+      <div class="section-heading"><h2 id="projects-heading">Other projects</h2><a href="/work/">All projects ↗</a></div>
+      <p><a href="/work/roomwise/">RoomWise</a> is a chair-fit checker I’m developing with Aadil Chasmawala for iPhone and desktop. <a href="/work/fieldlens/">FieldLens</a> is a local-model tool for reading incident records and tracing answers back to their sources.</p>
+      <p>I’ve also worked on <a href="/work/hinglish-ner/">Hindi–English named-entity recognition</a>, <a href="/work/salary-regression/">salary regression</a>, and <a href="/work/camp/">a campus equipment app</a>.</p>
     </section>
 
     <section class="home-section" id="about" aria-labelledby="about-heading">
-      <h2 id="about-heading">About</h2>
-      <div class="about-copy" id="background">
-        <Image class="portrait" src={portrait} alt="Ashmit Mukherjee" width={96} height={96} format="webp" loading="lazy" />
-        <div>
-          <p>I studied away at NYU Paris and NYU New York. On campus, I’ve facilitated workshops for first-year students and worked front of house at the Arts Center.</p>
-          <p class="tools">Tools in the work above: Python, PyTorch, Hugging Face Transformers, XGBoost, SHAP, scikit-learn, FastAPI, Empirica, Slurm, pytest, Streamlit, Kotlin Multiplatform, SwiftUI, ARKit.</p>
-        </div>
+      <h2 id="about-heading">A little background</h2>
+      <div id="background">
+        <p>I expect to graduate in May 2027 and am preparing for doctoral research. Alongside human–AI interaction, I’m interested in applying computation to social, economic, and historical questions.</p>
+        <p>I studied away at NYU Paris and NYU New York. At NYU Abu Dhabi, I’ve facilitated workshops for first-year students and worked front of house at the Arts Center.</p>
+        <p id="experience">Previously, I was an <a href="/work/zeek/">ML engineering intern at Zeek</a>, working on customer segmentation and model comparison.</p>
       </div>
     </section>
   </div>

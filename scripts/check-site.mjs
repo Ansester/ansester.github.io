@@ -82,10 +82,10 @@ for (const method of comparison.methods) {
   assert(summaryCSV.includes(`${method.mean.toFixed(2)},${method.sd.toFixed(2)}`), 'Figure data export differs from source summaries');
   assert(protein.body.textContent.includes(`${method.mean.toFixed(2)}% ± ${method.sd.toFixed(2)} pp`), 'Accessible results table differs from source summaries');
 }
-assert(existsSync(join(root,'cv.pdf')),'CV missing');
-assert(home.querySelector('nav a[href="/cv.pdf"]'),'Homepage navigation should link to the CV');
+assert(!existsSync(join(root,'cv.pdf')),'Application CV must not be hosted on the website');
+for (const [path,doc] of documents) assert(!doc.querySelector('a[href="/cv.pdf"]'),`${relative(root,path)}: public CV link returned`);
 assert.equal(readFileSync(join(root,'CNAME'),'utf8').trim(),'ashmitmukherjee.com');
 assert(existsSync(join(root,'sitemap-index.xml')),'Sitemap missing');
 assert(!existsSync(join(root,'cv.tex')),'CV source should not be in public output');
 assert(!existsSync(join(root,'CLAIM_AUDIT.md')),'Internal claim audit should not be in public output');
-console.log(`Passed: ${htmlFiles.length} pages, ${checkedLinks} local links/assets, nine case studies, legacy anchors, metadata, CV link, and claim regression checks.`);
+console.log(`Passed: ${htmlFiles.length} pages, ${checkedLinks} local links/assets, nine case studies, legacy anchors, metadata, application-CV separation, and claim regression checks.`);

@@ -3,9 +3,6 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import ProjectVisual from '../../components/ProjectVisual.astro';
 import ProteinComparison from '../../components/ProteinComparison.astro';
-import SalaryBars from '../../components/SalaryBars.astro';
-import PayoffTable from '../../components/PayoffTable.astro';
-import PlatformDiagram from '../../components/PlatformDiagram.astro';
 export async function getStaticPaths() {
   return (await getCollection('work')).map(post => ({ params: { id: post.id }, props: { post } }));
 }
@@ -16,22 +13,16 @@ const research = ['human-ai-collaboration','protein-language-models','synthetic-
 <Layout title={`${post.data.title} · Ashmit Mukherjee`} description={post.data.summary}>
   <article class="container case-page">
     <header class="case-header">
-      <a class="back-link" href={research ? '/#research' : '/work/'}>← {research ? 'Research' : 'Work'}</a>
+      <a class="back-link" href={research ? '/#research' : '/work/'}>← {research ? 'Research' : 'Projects'}</a>
       <h1>{post.data.title}</h1>
       <p class="case-summary">{post.data.summary}</p>
-      <dl class="glance">
-        <div><dt>role</dt><dd>{post.data.role}</dd></div>
-        <div><dt>where</dt><dd>{post.data.organization}</dd></div>
-        <div><dt>status</dt><dd>{post.data.status}{post.data.period && ` · ${post.data.period}`}</dd></div>
-      </dl>
+      <p class="case-credit">{post.data.role}<br />{post.data.organization}</p>
+      <p class="byline">{post.data.status}{post.data.period && ` · ${post.data.period}`}</p>
       {post.data.links.length>0 && <div class="inline-links">{post.data.links.map(link=><a href={link.url} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}</div>}
     </header>
-    {post.data.visual === 'protein' && <div class="case-figure"><ProteinComparison /></div>}
-    {post.data.visual === 'salary' && <figure class="case-figure"><p class="figure-heading">Mean absolute error on 92 held-out postings</p><SalaryBars /><figcaption>All three models fit the same 365 training rows and evaluate the same 92 held-out rows. Lower is better; bars start at zero.</figcaption></figure>}
-    {post.data.visual === 'human' && <div class="case-figure"><PlatformDiagram /></div>}
-    {post.data.visual === 'capstone' && <figure class="case-figure"><p class="figure-heading">The same submitted actions, through correct and faulty engines</p><PayoffTable /><figcaption>Saved three-player episode in a scripted synthetic benchmark. The pool and total match; two player payoffs do not.</figcaption></figure>}
-    {(post.data.visual === 'fieldlens' || post.data.visual === 'roomwise') && <ProjectVisual kind={post.data.visual} />}
     <div class="prose"><Content /></div>
-    <footer class="case-end"><a href={research ? '/#research' : '/work/'}>{research ? 'Back to research' : 'All work'}</a>{post.data.updated && <span>Updated {post.data.updated}</span>}</footer>
+    {post.data.visual === 'protein' && <div class="case-figure"><ProteinComparison /></div>}
+    {(post.data.visual === 'fieldlens' || post.data.visual === 'roomwise') && <ProjectVisual kind={post.data.visual} />}
+    <footer class="case-end"><a href={research ? '/#research' : '/work/'}>{research ? 'Back to research' : 'All projects'}</a>{post.data.updated && <span>Updated {post.data.updated}</span>}</footer>
   </article>
 </Layout>

@@ -32,4 +32,4 @@ The build runs Astro and TypeScript checks. The site checks cover local routes, 
 
 Pull requests to `master` run the build and checks. Pushes to `master` deploy `dist/` through `.github/workflows/pages.yml`. The custom domain is set in `public/CNAME`.
 
-Legacy research, publication, project, and CV URLs retain redirect pages. The CV is served from `public/cv.pdf`; its LaTeX source is kept outside this repository.
+Legacy research, publication, project, and CV URLs retain redirect pages. Application CVs and their LaTeX sources are kept off the public site.
