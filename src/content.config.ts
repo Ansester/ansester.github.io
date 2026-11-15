@@ -8,7 +8,7 @@ const work = defineCollection({
     title: z.string(), summary: z.string(), category: z.string(),
     role: z.string(), organization: z.string(), period: z.string().optional(), status: z.string(),
     order: z.number(), tags: z.array(z.string()),
-    visual: z.enum(['human', 'protein', 'camp', 'ner', 'capstone', 'fieldlens', 'zeek', 'salary', 'roomwise']),
+    visual: z.enum(['human', 'protein', 'camp', 'ner', 'capstone', 'fieldlens', 'zeek', 'salary', 'roomwise', 'biosynthesis', 'csaw']),
     updated: z.string().optional(),
     links: z.array(z.object({ label: z.string(), url: z.url() })).default([]),
   }),

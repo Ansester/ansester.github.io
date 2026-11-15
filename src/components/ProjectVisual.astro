@@ -2,13 +2,34 @@
 import { Image, getImage } from 'astro:assets';
 import fieldlens from '../../assets/fieldlens-review.png';
 import roomwise from '../../assets/roomwise-sample.png';
-interface Props { kind: 'human'|'protein'|'camp'|'ner'|'capstone'|'fieldlens'|'zeek'|'salary'|'roomwise'; }
+
+const screenshots = {
+  fieldlens: {
+    source: fieldlens,
+    width: 1440,
+    alt: 'FieldLens synthetic replay showing a question, model-selected answer, application warnings, and the exact supporting GPS record.',
+    caption: 'My prototype run with fictional incident records: the answer and its supporting record are visible together.',
+  },
+  roomwise: {
+    source: roomwise,
+    width: 430,
+    alt: 'RoomWise iPhone screen showing shopping page 2 of 3, a sample compact desk chair listing, and the same chair’s dimensions in the persistent room preview above.',
+    caption: 'My iPhone Simulator run with sample listings: the selected shopping page and room preview show the same chair.',
+  },
+};
+
+interface Props {
+  kind: keyof typeof screenshots;
+}
+
 const { kind } = Astro.props;
-const fieldlensFull = kind === 'fieldlens' ? await getImage({src:fieldlens,width:1440,format:'webp'}) : undefined;
+const { source, width, alt, caption } = screenshots[kind];
+const full = await getImage({ src: source, width: source.width, format: 'webp' });
 ---
-{kind === 'fieldlens' && fieldlensFull ? (
-  <figure class="case-visual fieldlens-visual"><p class="eyebrow">Working prototype / Synthetic demonstration</p><a href={fieldlensFull.src} target="_blank" rel="noopener noreferrer" aria-label="Open the FieldLens prototype screenshot at full size"><Image src={fieldlens} alt="FieldLens synthetic replay showing a question, model-selected answer, application warnings, and the exact supporting GPS record" width={1440} format="webp" loading="eager" /></a><figcaption>Saved prototype run using fictional incident records. The answer and its supporting record remain visible together. <a href={fieldlensFull.src} target="_blank" rel="noopener noreferrer">View full-size screenshot ↗</a></figcaption></figure>
-) : null}
-{kind === 'roomwise' ? (
-  <figure class="case-visual roomwise-visual"><Image src={roomwise} alt="RoomWise iPhone screen showing shopping page 2 of 3, a sample compact desk chair listing, and the same chair’s dimensions in the persistent room preview above" width={430} format="webp" loading="eager" /><figcaption>iPhone Simulator with sample listings. The selected shopping page and room preview show the same chair.</figcaption></figure>
-) : null}
+<figure class:list={['case-visual', `${kind}-visual`]}>
+  <a class="figure-link" href={full.src}>
+    <Image src={source} alt={alt} width={width} format="webp" loading="lazy" />
+    <span class="full-size-link">Full size ↗</span>
+  </a>
+  <figcaption>{caption}</figcaption>
+</figure>

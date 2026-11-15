@@ -1,28 +1,28 @@
 ---
-title: Named-entity recognition in Hinglish
-summary: A team course project on recognizing named entities in Hindi–English text with multilingual encoders.
-category: Multilingual NLP
-role: Training pipelines, evaluation tooling, and error analysis within a team
-organization: Four-person course project, NYU Abu Dhabi
-period: Fall 2025
-status: Course project
+title: "Named-entity recognition in Hinglish"
+summary: "I implemented training and evaluation tools for recognizing named entities in Hindi–English text."
+category: "Multilingual NLP"
+role: "Training pipelines, evaluation, and error analysis"
+organization: "Four-person course project, NYU Abu Dhabi"
+period: "Fall 2025"
+status: "Course project"
 order: 8
 tags: [PyTorch, Transformers, mBERT, XLM-RoBERTa]
-updated: 1 November 2026
+updated: "15 November 2026"
 visual: ner
 links:
-  - label: Source code
-    url: https://github.com/Ansester/hinglish-ner-research
+  - label: "Source code"
+    url: "https://github.com/Ansester/hinglish-ner-research"
 ---
 
-This course project studied named-entity recognition in COMI-LINGUA, a Hindi–English dataset. We used mBERT and XLM-RoBERTa to identify entities in text that switches between languages and writing systems.
+## Hindi–English named entities
 
-I implemented training, prediction, evaluation, and error-analysis tools as part of a team with Akshith Karthik, Harsh Agarwal, and Lovnish Julka.
+I worked with Akshith Karthik, Harsh Agarwal, and Lovnish Julka on named-entity recognition in COMI-LINGUA, a Hindi–English dataset. I implemented training, prediction, evaluation, and error-analysis tools for mBERT and XLM-RoBERTa.
 
-## Labels across languages and tokenizers
+## Labels across tokenizers
 
-The pipeline keeps word-level labels aligned when a tokenizer splits a word into several pieces, then maps predictions back to the original text. This matters when language switching and spelling variation produce different token boundaries.
+I kept word-level entity labels aligned when a tokenizer split a word into several pieces, then mapped predictions back to the original text. I used error analysis to inspect mistakes in text that switches between languages and writing systems.
 
-The coursework evaluated encoders on 4,829 test examples and explored zero-shot language models on a separate 100-example sample. Those runs answer different comparison questions because they use different samples.
+I evaluated encoders on 4,829 test examples and zero-shot language-model baselines on a separate 100-example sample. I keep those evaluations distinct because they use different samples.
 
-The public repository contains the preprocessing, training, prediction, and evaluation code. Trained checkpoints and the original model outputs are not included.
+I published the preprocessing, training, prediction, and evaluation code. The repository does not include the trained checkpoints or original model outputs.

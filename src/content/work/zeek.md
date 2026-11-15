@@ -1,19 +1,20 @@
 ---
-title: Machine learning internship at Zeek
-summary: Customer segmentation, model comparison, and explainability for a marketing-automation system.
-category: Industry
-role: Machine learning engineer intern
-organization: Zeek
-period: June to August 2025
-status: Internship
-order: 6
+title: "Machine learning internship at Zeek"
+summary: "I built customer-segmentation workflows and compared models for a marketing-automation system."
+category: "Industry"
+role: "Machine learning engineer intern"
+organization: "Zeek"
+period: "June–August 2025"
+status: "Internship"
+order: 10
 tags: [XGBoost, SHAP, Model evaluation]
-updated: 1 November 2026
+updated: "15 November 2026"
 visual: zeek
+links: []
 ---
 
-During my summer 2025 internship at Zeek, I worked on machine-learning components for a marketing-automation system in a four-person team.
+## Customer segmentation and model comparison
 
-I built customer-segmentation workflows, compared preprocessing and model choices, and used SHAP to inspect the features behind the predictions.
+I worked in a four-person marketing-automation team during my summer 2025 internship at Zeek. I built customer-segmentation workflows, compared preprocessing and model choices, and used SHAP to inspect the features behind the predictions.
 
-Development and evaluation used generated customer and transaction records.
+The workflows used generated customer and transaction records.

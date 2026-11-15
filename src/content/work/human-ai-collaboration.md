@@ -1,34 +1,34 @@
 ---
-title: Human–AI collaboration
-summary: Software for studying how AI advice affects cooperation when individual and group incentives differ.
-category: Research engineering
-role: Research assistant · developer and technical lead
-organization: With Ben Rosche and Hanan Salam, NYU Abu Dhabi
-period: February 2026 — present
-status: Ongoing faculty research
+title: "Human–AI collaboration"
+summary: "I built and lead development of a platform for studying AI advice and cooperation."
+category: "Research engineering"
+role: "Research assistant · developer and technical lead"
+organization: "With Ben Rosche and Hanan Salam, NYU Abu Dhabi"
+period: "2026–present"
+status: "Faculty research"
 order: 1
 tags: [Experimental systems, Python, AI agents, Evaluation]
-updated: 1 November 2026
+updated: "15 November 2026"
 visual: human
 links:
-  - label: NYU research project
-    url: https://cs.shanghai.nyu.edu/characterizing-values-and-norms-multi-agent-human-ai-collaboration-resolve-social-dilemma
-  - label: Social Dynamics Lab
-    url: https://benrosche.com/social-dynamics-lab/
+  - label: "NYU research project"
+    url: "https://cs.shanghai.nyu.edu/characterizing-values-and-norms-multi-agent-human-ai-collaboration-resolve-social-dilemma"
+  - label: "Social Dynamics Lab"
+    url: "https://benrosche.com/social-dynamics-lab/"
 ---
 
 ## AI advice and cooperation
 
-How does cooperation change when people receive advice from AI? This faculty-led project studies repeated decisions in social dilemmas, where individual and group incentives can conflict. I work with Ben Rosche and Hanan Salam at NYU Abu Dhabi as part of the wider NYU collaboration linked above.
+I work with Ben Rosche and Hanan Salam on how AI advice affects decisions when individual and group incentives conflict. I built the experiment platform and lead its development, from the game engines and adviser integration to participant interfaces, researcher tools, and data exports.
 
-## My work on the platform
+## Game mechanics and information access
 
-I built the experiment platform and lead its ongoing development. It includes the Python game mechanics, participant and researcher interfaces, AI integration, session recovery, and data exports.
+I implemented three game engines in Python, connected them to FastAPI and Empirica, and built the participant workflows. The minimum-effort, public-goods, and Snowdrift games each have explicit action rules, observations, adviser messages, and payoff calculations. Those records let me check what a participant saw and reconstruct how an outcome was produced.
 
-A decision has to remain consistent across those parts. The participant sees the information allowed by their condition, the game applies the specified rules, and the exported records preserve the outcome. I implement and test these paths, and investigate mismatches between the interface, game state, and saved data.
+I implemented controls that keep private advice out of shared outcomes, and session recovery that resumes recorded decisions without applying them twice. I test these paths across the interface, game state, and exported records.
 
-I implemented session recovery that resumes from recorded decisions without applying them twice, and information controls that keep private recommendations out of shared outcomes. These details affect what the experiment can measure.
+## Model-adviser experiments
 
-## Current work
+I built simulation workflows that run model advisers, capture their responses, track failures and cost, and reconstruct outcomes from recorded actions. I used them in an exploratory public-goods pilot to check the system and experimental setup.
 
-The platform is under development. Scripted advisers and offline checks exercise the game mechanics, information access, and recorded outcomes. No human-study results are reported here.
+I also want to understand whether people carry what they learn from an assistant into later decisions without assistance.

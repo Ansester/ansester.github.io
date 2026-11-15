@@ -1,31 +1,33 @@
 ---
-title: Salary regression
-summary: A dashboard and model comparison using historical Glassdoor salary estimates.
-category: Machine learning evaluation
-role: Dashboard and model evaluation
-organization: Data Science / Applied Machine Learning project, NYU Abu Dhabi
-period: Fall 2025
-status: Course project
-order: 7
+title: "Salary regression"
+summary: "I built a Streamlit dashboard and compared salary-regression models using historical Glassdoor estimates."
+category: "Machine learning evaluation"
+role: "Dashboard and model evaluation"
+organization: "Data Science / Applied Machine Learning project, NYU Abu Dhabi"
+period: "Fall 2025"
+status: "Course project"
+order: 11
 tags: [Python, scikit-learn, XGBoost, Streamlit]
-updated: 1 November 2026
+updated: "15 November 2026"
 visual: salary
 links:
-  - label: Source code
-    url: https://github.com/Ansester/salary-prediction-ml
-  - label: Evaluation record
-    url: https://github.com/Ansester/salary-prediction-ml/blob/HEAD/results/holdout.json
+  - label: "Source code"
+    url: "https://github.com/Ansester/salary-prediction-ml"
+  - label: "Evaluation record"
+    url: "https://github.com/Ansester/salary-prediction-ml/blob/HEAD/results/holdout.json"
+  - label: "Teaching dataset"
+    url: "https://github.com/PlayingNumbers/ds_salary_proj"
 ---
 
-I built a Streamlit dashboard to compare salary estimates from historical Glassdoor job postings. It fits a mean baseline, linear regression, and XGBoost using whether a posting mentions Python, company size, revenue, state, and ownership.
+## Comparing salary estimates
 
-The postings come from the [PlayingNumbers teaching dataset](https://github.com/PlayingNumbers/ds_salary_proj).
+I built a Streamlit dashboard using historical Glassdoor job postings from the PlayingNumbers teaching dataset. I compared a mean baseline, linear regression, and XGBoost using company size, revenue, state, ownership, and whether a posting mentions Python.
 
 ## Preparing the comparison
 
-I removed duplicate postings and kept related employer, title, and location groups together when splitting the data. I also excluded hourly listings rather than converting them to annual salaries using an assumed number of working hours.
+I removed duplicate postings and kept related employer, title, and location groups together in the train/evaluation split. I excluded hourly listings to avoid converting them with an assumed number of annual working hours.
 
-That left 457 annual-salary postings: 365 for training and 92 for evaluation. All three models use the same split, and XGBoost uses fixed settings.
+I retained 457 annual-salary postings: 365 for training and 92 for evaluation. I used the same split for all three models and fixed the XGBoost settings.
 
 | Model | Holdout R² | MAE ($1,000) | RMSE ($1,000) |
 | --- | ---: | ---: | ---: |
@@ -33,6 +35,4 @@ That left 457 annual-salary postings: 365 for training and 92 for evaluation. Al
 | Linear regression | 0.1268 | 24.49 | 31.61 |
 | XGBoost | 0.1872 | 23.80 | 30.50 |
 
-XGBoost had the lowest error on this holdout, with a modest improvement over the mean baseline.
-
-The target is the midpoint of each listing’s estimated salary range. This is a comparison on one small historical holdout, rather than a forecast of current compensation. The dashboard also uses permutation importance to explore which inputs the fitted model relies on.
+XGBoost had the lowest error on this holdout, with a modest improvement over the mean baseline. I used each listing’s estimated salary-range midpoint as the target and permutation importance to inspect the fitted model’s inputs.

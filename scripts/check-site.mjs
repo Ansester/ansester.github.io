@@ -62,7 +62,7 @@ for (const [path,doc] of documents) {
 }
 const home = documents.get(join(root,'index.html'));
 for(const id of ['main','projects','research','experience','background','about','contact']) assert(home.getElementById(id),`Legacy anchor missing: ${id}`);
-for(const route of ['human-ai-collaboration','synthetic-pilot-lab','protein-language-models','fieldlens','camp','hinglish-ner','zeek','salary-regression','roomwise']) assert(documents.has(join(root,'work',route,'index.html')),`Case study missing: ${route}`);
+for(const route of ['human-ai-collaboration','synthetic-pilot-lab','protein-language-models','biosynthesis-paper-database','csaw-llm-ctf','fieldlens','camp','hinglish-ner','zeek','salary-regression','roomwise']) assert(documents.has(join(root,'work',route,'index.html')),`Case study missing: ${route}`);
 const research = documents.get(join(root,'research','index.html'));
 assert(research, 'Legacy research route missing');
 assert.equal(research.querySelector('meta[http-equiv="refresh"]')?.getAttribute('content'), '0; url=/#research', 'Research overview should resolve to the homepage');
@@ -73,7 +73,7 @@ for (const name of ['index.html','work/protein-language-models/index.html']) {
   assert.match(text,/unpublished/i, `${name}: manuscript must be labeled unpublished`);
 }
 assert.match(documents.get(join(root,'work/synthetic-pilot-lab/index.html')).body.textContent,/In development/,'Capstone status missing');
-assert.match(documents.get(join(root,'work/human-ai-collaboration/index.html')).body.textContent,/No human-study results are reported here/,'Human–AI evidence boundary missing');
+assert.match(documents.get(join(root,'work/human-ai-collaboration/index.html')).body.textContent,/exploratory public-goods pilot/,'Human–AI pilot description missing');
 assert(!home.querySelector('a[href*="payoff-integrity-check"]'), 'Internal test report returned to the homepage');
 const comparison = JSON.parse(readFileSync('src/data/protein-comparison.json','utf8'));
 const summaryCSV = readFileSync(join(root,'research/protein-comparison.csv'),'utf8');
@@ -88,4 +88,4 @@ assert.equal(readFileSync(join(root,'CNAME'),'utf8').trim(),'ashmitmukherjee.com
 assert(existsSync(join(root,'sitemap-index.xml')),'Sitemap missing');
 assert(!existsSync(join(root,'cv.tex')),'CV source should not be in public output');
 assert(!existsSync(join(root,'CLAIM_AUDIT.md')),'Internal claim audit should not be in public output');
-console.log(`Passed: ${htmlFiles.length} pages, ${checkedLinks} local links/assets, nine case studies, legacy anchors, metadata, application-CV separation, and claim regression checks.`);
+console.log(`Passed: ${htmlFiles.length} pages, ${checkedLinks} local links/assets, eleven case studies, legacy anchors, metadata, application-CV separation, and claim regression checks.`);

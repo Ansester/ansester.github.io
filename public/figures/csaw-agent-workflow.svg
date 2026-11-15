@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title description">
+<title id="title">The CSAW workflow</title>
+<desc id="description">Workflow diagram showing six parallel category agents for cryptography, forensics, web, binary exploitation, reverse engineering, and miscellaneous challenges. Their candidate outputs feed review of solver and service evidence, with adversarial verification or second-model analysis for selected hard cases. The output is a per-challenge record of a recovery or blocker, execution evidence, and assistance history. Review paths varied by challenge.</desc>
+<rect width="1280" height="760" fill="#F7F5EE"/>
+<text x="64" y="74" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#23382F" text-anchor="start">The CSAW workflow</text>
+<text x="64" y="118" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#697369" text-anchor="start">Parallel category agents, review, and per-challenge evidence</text>
+<text x="64" y="185" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#23382F" text-anchor="start">Six parallel agents</text>
+<rect x="64" y="216" width="284" height="48" rx="4" fill="#FDFCF7" stroke="#DADFD4" stroke-width="1.2"/>
+<text x="82" y="249" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#23382F" text-anchor="start">Cryptography</text>
+<line x1="348" y1="240" x2="391" y2="240" stroke="#315F4D" stroke-width="1.4"/>
+<rect x="64" y="278" width="284" height="48" rx="4" fill="#FDFCF7" stroke="#DADFD4" stroke-width="1.2"/>
+<text x="82" y="311" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#23382F" text-anchor="start">Forensics</text>
+<line x1="348" y1="302" x2="391" y2="302" stroke="#315F4D" stroke-width="1.4"/>
+<rect x="64" y="340" width="284" height="48" rx="4" fill="#FDFCF7" stroke="#DADFD4" stroke-width="1.2"/>
+<text x="82" y="373" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#23382F" text-anchor="start">Web</text>
+<line x1="348" y1="364" x2="391" y2="364" stroke="#315F4D" stroke-width="1.4"/>
+<rect x="64" y="402" width="284" height="48" rx="4" fill="#FDFCF7" stroke="#DADFD4" stroke-width="1.2"/>
+<text x="82" y="435" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#23382F" text-anchor="start">Binary exploitation</text>
+<line x1="348" y1="426" x2="391" y2="426" stroke="#315F4D" stroke-width="1.4"/>
+<rect x="64" y="464" width="284" height="48" rx="4" fill="#FDFCF7" stroke="#DADFD4" stroke-width="1.2"/>
+<text x="82" y="497" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#23382F" text-anchor="start">Reverse engineering</text>
+<line x1="348" y1="488" x2="391" y2="488" stroke="#315F4D" stroke-width="1.4"/>
+<rect x="64" y="526" width="284" height="48" rx="4" fill="#FDFCF7" stroke="#DADFD4" stroke-width="1.2"/>
+<text x="82" y="559" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#23382F" text-anchor="start">Miscellaneous</text>
+<line x1="348" y1="550" x2="391" y2="550" stroke="#315F4D" stroke-width="1.4"/>
+<line x1="391" y1="240" x2="391" y2="550" stroke="#315F4D" stroke-width="1.4"/>
+<line x1="391" y1="395" x2="454" y2="395" stroke="#315F4D" stroke-width="2"/>
+<polygon points="454.00,395.00 444.87,399.08 444.87,390.92" fill="#315F4D"/>
+<rect x="464" y="248" width="340" height="294" rx="5" fill="#FDFCF7" stroke="#DADFD4" stroke-width="1.2"/>
+<text x="490" y="294" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#23382F" text-anchor="start">Candidate review</text>
+<text x="490" y="338" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#23382F" text-anchor="start">Solver / service evidence</text>
+<line x1="490" y1="366" x2="778" y2="366" stroke="#DADFD4" stroke-width="1.2"/>
+<text x="490" y="410" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#697369" text-anchor="start">Selected hard cases</text>
+<text x="490" y="454" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#23382F" text-anchor="start">Adversarial verification</text>
+<text x="490" y="492" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#23382F" text-anchor="start">Second-model analysis</text>
+<line x1="804" y1="395" x2="898" y2="395" stroke="#315F4D" stroke-width="2"/>
+<polygon points="898.00,395.00 888.87,399.08 888.87,390.92" fill="#315F4D"/>
+<rect x="908" y="280" width="308" height="230" rx="5" fill="#FDFCF7" stroke="#DADFD4" stroke-width="1.2"/>
+<text x="932" y="326" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#23382F" text-anchor="start">Per-challenge record</text>
+<text x="932" y="374" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#23382F" text-anchor="start">Recovery or blocker</text>
+<text x="932" y="415" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#23382F" text-anchor="start">Execution evidence</text>
+<text x="932" y="456" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#23382F" text-anchor="start">Assistance history</text>
+<text x="64" y="680" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#697369" text-anchor="start">Review paths varied by challenge.</text>
+</svg>

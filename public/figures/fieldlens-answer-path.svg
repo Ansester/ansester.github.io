@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 548" width="820" height="548" role="img" aria-labelledby="title desc">
+  <title id="title">FieldLens: how an answer gets its sources</title>
+  <desc id="desc">FieldLens freezes an incident's records. Read-only tools return evidence from those records. The app derives statements with any required qualifications. A local model selects statement IDs, and the app displays the corresponding text and source links. A rule-based answer prepared from the same snapshot is available if inference fails.</desc>
+  <style>
+    text {fill:#21332e;font-family:Arial,Helvetica,sans-serif}
+    .heading {font:36px Georgia,serif}
+    .stage {font:24px Georgia,serif}
+    .body {font-size:18px}
+    .minor {font-size:16px;fill:#3e534b}
+    .rail {fill:none;stroke:#286144;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1 7 4 1 7" fill="none" stroke="#286144" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+  <rect width="820" height="548" fill="#faf8f1"/>
+  <text class="heading" x="34" y="59">FieldLens</text>
+  <path d="M35 82H785" stroke="#b5beb2"/>
+  <g class="rail" aria-hidden="true">
+    <path d="M57 136v51m0 40v51m0 40v51m0 40v51" marker-end="url(#arrow)"/>
+    <circle cx="57" cy="120" r="7" fill="#e1ebdc"/>
+    <circle cx="57" cy="211" r="7" fill="#e1ebdc"/>
+    <circle cx="57" cy="302" r="7" fill="#e1ebdc"/>
+    <circle cx="57" cy="393" r="7" fill="#e1ebdc"/>
+    <circle cx="57" cy="484" r="7" fill="#286144"/>
+  </g>
+  <text class="stage" x="87" y="127">Incident snapshot</text>
+  <text class="body" x="87" y="155">Freeze the records for this request.</text>
+  <text class="stage" x="87" y="218">Read-only retrieval</text>
+  <text class="body" x="87" y="246">The model picks tools to read the records.</text>
+  <text class="stage" x="87" y="309">Claim catalog</text>
+  <text class="body" x="87" y="337">Code builds statements from retrieved evidence.</text>
+  <text class="body" x="87" y="360">Stale or conflicting records are flagged in the text.</text>
+  <text class="stage" x="87" y="400">Local model selection</text>
+  <text class="body" x="87" y="428">The model selects statements by ID.</text>
+  <text class="stage" x="87" y="491">Answer with source links</text>
+  <text class="body" x="87" y="519">The app displays the selected text and links to its records.</text>
+  <g class="rail" aria-hidden="true">
+    <path d="M302 120H535v50" stroke-dasharray="4 5" marker-end="url(#arrow)"/>
+    <path d="M535 185v141" stroke-width="1.5"/>
+  </g>
+  <text class="stage" x="554" y="206">Rule-based answer</text>
+  <text class="minor" x="554" y="238">Computed from the same</text>
+  <text class="minor" x="554" y="261">snapshot before inference.</text>
+  <text class="minor" x="554" y="295">Shown if the model fails.</text>
+</svg>

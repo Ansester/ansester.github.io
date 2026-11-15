@@ -8,7 +8,7 @@ export async function getStaticPaths() {
 }
 const { post } = Astro.props;
 const { Content } = await render(post);
-const research = ['human-ai-collaboration','protein-language-models','synthetic-pilot-lab'].includes(post.id);
+const research = ['human-ai-collaboration','protein-language-models','synthetic-pilot-lab','biosynthesis-paper-database'].includes(post.id);
 ---
 <Layout title={`${post.data.title} · Ashmit Mukherjee`} description={post.data.summary}>
   <article class="container case-page">

@@ -1,35 +1,40 @@
 ---
-title: Synthetic Pilot Lab
-summary: Offline diagnostics for faults in experimental software and the measurements it records.
-category: Independent research
-role: Independent developer · diagnostic design and evaluation
-organization: New York University Abu Dhabi
-period: October 2026 — present
-status: In development
-order: 3
+title: "Synthetic Pilot Lab"
+summary: "I compare language-model forecasts and agent simulations against archived human experiments on punishment and cooperation."
+category: "Independent research"
+role: "Independent researcher and developer"
+organization: "Computer Science capstone, NYU Abu Dhabi"
+period: "2026–present"
+status: "In development"
+order: 4
 tags: [Synthetic participants, Experimental validation, Python, Reproducibility]
-updated: 1 November 2026
+updated: "15 November 2026"
 visual: capstone
+links:
+  - label: "Published study"
+    url: "https://arxiv.org/abs/2508.17151"
+  - label: "Study data archive"
+    url: "https://doi.org/10.17605/OSF.IO/2D56W"
 ---
 
-My capstone examines how faults in experimental software affect the outcomes researchers record. I built the offline benchmark and measurement-analysis tools, and continue developing the diagnostics.
+## Can simulated interaction improve a forecast?
 
-## Checking the same decisions in two engines
+My capstone asks whether language models can predict how punishment changes human group earnings, and whether simulating interactions improves those predictions enough to justify the additional computation.
 
-I built paired correct and deliberately faulty game engines that replay the same submitted actions, and an independent evaluator that reconstructs the expected states and payoffs from those actions. It then compares them with the saved observations.
+I built the forecasting benchmark, simulation software, and evaluation tools around archived human social-dilemma experiments, using the recorded outcomes from Alsobay, Rand, Watts, and Almaatouq’s public-goods experiments as the reference.
 
-Different sequences can expose different faults. A passing check means that the particular sequence did not reveal a violation.
+## Direct forecasts and interacting agents
 
-## When group totals miss an error
+I evaluated direct forecasts from four model configurations on 20 archived experimental designs under a retrospective scoring plan. Given the game settings and the observed no-punishment outcome, each forecast predicts average group efficiency with punishment: total group earnings relative to a group that always contributes everything. I compared root mean squared error (RMSE, in percentage points) with expert and lay crowds and published regression models.
 
-One diagnostic assigned contributions to the wrong players. In a saved three-player episode, both engines produced the same contribution pool and total payoff:
+My comparison did not establish lower RMSE for any of the three Claude configurations than for the expert crowd. The published regressions had lower error. GPT-5’s budget-limited collection stopped early, leaving uneven forecasts per design; its RMSE was 9.28 points versus 6.55 for the expert crowd. These are direct-forecast results; the comparison with interacting agents is still ongoing.
 
-| Outcome (tokens) | Correct engine | Faulty engine |
-| --- | --- | --- |
-| Contribution pool | 44 | 44 |
-| Total payoff | 82 | 82 |
-| Player payoffs, A / B / C | 26, 30, 26 | 26, 26, 30 |
+<figure class="case-visual diagram-visual"><a class="figure-link" href="/figures/capstone-direct-forecast-rmse.svg"><img src="/figures/capstone-direct-forecast-rmse.svg" width="1280" height="1160" loading="lazy" alt="Horizontal bar chart of direct-forecast error across 20 validation public-goods game designs. The target is mean group efficiency in the punishment arm. RMSE in percentage points, lower is better: Claude Haiku 4.5, 6.21; Claude Sonnet 4.5, 6.62; Claude Sonnet 5.5, 6.65; GPT-5, 9.28; expert crowd, 6.55; lay crowd, 6.42; published elastic net, 4.52; published ordinary regression, 5.22. GPT-5 stopped at its spending ceiling with 235 usable replies, 4 to 17 per design. Sonnet 5.5 was trained after the study results were public. Human forecast scores were recalculated from archived data; regression scores are published."><span class="full-size-link">Full size ↗</span></a><figcaption>My retrospective direct forecasts of punishment-arm group efficiency across 20 designs. Error is RMSE in percentage points; crowd scores were recalculated from the archive.</figcaption></figure>
 
-Recalculating each player's payoff exposed the error. The example shows why checks on aggregate results need to be accompanied by checks on individual records.
+I implemented a simulator for seven no-chat designs from the archive. Model players make decisions under each game’s rules, and the software calculates earnings from their actions. I ran a feasibility pilot on two designs to test whether groups could complete valid games.
 
-This diagnostic uses scripted synthetic records and a deliberately introduced fault. Testing whether model participants can discover faults is a separate research question.
+## Replay, scoring, and failure handling
+
+I save model responses and submitted actions so that I can replay a run and recalculate its states and payoffs independently. I record invalid actions and unfinished groups alongside completed runs. That lets me distinguish a plausible-looking prediction from a valid simulation and account for the computation used to produce it.
+
+To test the evaluator, I introduced a fault that assigned contributions to the wrong players. The group payoff stayed at 82 tokens, but the individual payoffs changed from 26 / 30 / 26 to 26 / 26 / 30. Reconstructing each player's payoff exposed the mismatch.
