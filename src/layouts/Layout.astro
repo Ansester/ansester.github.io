@@ -14,7 +14,7 @@ const isWork = Astro.url.pathname.startsWith('/work');
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light" />
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex" />}
     <title>{title}</title>
@@ -31,12 +31,6 @@ const isWork = Astro.url.pathname.startsWith('/work');
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://ashmitmukherjee.com/social-card.png" />
-    <script is:inline>
-      try {
-        const theme = localStorage.getItem('theme');
-        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
-      } catch {}
-    </script>
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org', '@type': 'Person', name: 'Ashmit Mukherjee',
       url: 'https://ashmitmukherjee.com/', jobTitle: 'Computer Science Student',
@@ -55,7 +49,6 @@ const isWork = Astro.url.pathname.startsWith('/work');
           <a href="/work/" aria-current={isWork ? 'page' : undefined}>Projects</a>
           <a href="/#about">About</a>
         </nav>
-        <button class="theme-toggle" type="button" aria-label="Switch color theme" hidden><span data-theme-label>Theme</span><span aria-hidden="true">◐</span></button>
       </div>
     </header>
     <main id="main"><slot /></main>
@@ -65,27 +58,6 @@ const isWork = Astro.url.pathname.startsWith('/work');
       <p class="copy-status" role="status" aria-live="polite"></p>
     </footer>
     <script>
-      const root = document.documentElement;
-      const button = document.querySelector<HTMLButtonElement>('.theme-toggle');
-      const media = window.matchMedia('(prefers-color-scheme: dark)');
-      function isDark() { return root.dataset.theme ? root.dataset.theme === 'dark' : media.matches; }
-      function updateThemeLabel() {
-        if (!button) return;
-        button.setAttribute('aria-label', `Switch to ${isDark() ? 'light' : 'dark'} theme`);
-        const label = button.querySelector('[data-theme-label]');
-        if (label) label.textContent = isDark() ? 'Light' : 'Dark';
-      }
-      if (button) {
-        button.hidden = false;
-        button.addEventListener('click', () => {
-          const theme = isDark() ? 'light' : 'dark';
-          root.dataset.theme = theme;
-          try { localStorage.setItem('theme', theme); } catch {}
-          updateThemeLabel();
-        });
-        media.addEventListener('change', updateThemeLabel);
-        updateThemeLabel();
-      }
       const copy = document.querySelector<HTMLButtonElement>('.copy-email');
       const status = document.querySelector<HTMLElement>('.copy-status');
       if (copy && status && navigator.clipboard) {
