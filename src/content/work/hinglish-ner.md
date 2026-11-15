@@ -18,7 +18,7 @@ links:
     url: "https://huggingface.co/datasets/LingoIITGN/COMI-LINGUA/blob/a6b719588f14b3e29f4e0c93e7201a5d55199779/NER_test.csv"
 ---
 
-Hindi and English often share a sentence in informal writing. With [Akshith Karthik](https://github.com/Ak1016-stack), [Harsh Agarwal](https://github.com/harshagarwalnyu), and [Lovnish Julka](https://nyunetimpact.org/lovnish-julka), I studied how well multilingual models could tag names in Roman-script Hinglish. I built the training and evaluation pipelines for mBERT and XLM-RoBERTa using the COMI-LINGUA dataset.
+Hindi and English often share a sentence in informal writing. With [Akshith Karthik](https://github.com/Ak1016-stack), [Harsh Agarwal](https://github.com/harshagarwalnyu), and Lovnish Julka, I studied how well multilingual models could tag names in Roman-script Hinglish. I built the training and evaluation pipelines for mBERT and XLM-RoBERTa using the COMI-LINGUA dataset.
 
 We measured whether each word had the right label. Across 25,246 words in 4,829 test examples, XLM-RoBERTa reached 89.7% accuracy and mBERT reached 89.0%. Always predicting “not an entity” would score 31.7%. Even the most common label in the test set, “person,” covered only 32.8% of the words.
 
