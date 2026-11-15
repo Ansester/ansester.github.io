@@ -14,7 +14,7 @@ links:
     url: "/research/fieldlens-answer-coverage.csv"
 ---
 
-I built FieldLens to answer questions about vehicle incidents using GPS readings, camera observations, and procedure documents. The app takes a snapshot of those records and calculates the facts each one supports. A local Qwen3-4B model chooses which facts answer the question. Readers can open the original record behind each statement.
+I built FieldLens to answer questions about vehicle incidents using GPS readings, camera observations, and procedure documents. The app calculates the facts those records support and gives each fact an ID. I ran Qwen3-4B locally with llama.cpp to select the IDs relevant to a question. FieldLens displays the corresponding statements with a link back to each source record.
 
 I gave three methods the same records for seven questions about a fictional vehicle incident. I counted an answer as complete when it included all the facts I had specified for that question. If a model’s answer failed validation, the app showed the rule-based summary instead.
 

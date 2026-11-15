@@ -1,4 +1,4 @@
-export const researchQuestion = 'Does advice from AI change how people cooperate after the advice is gone?';
+export const portfolioDescription = 'Software and research projects by Ashmit Mukherjee at NYU Abu Dhabi, including multiplayer experiments with AI advisers, protein model evaluation, and the RoomWise furniture app.';
 export const affiliation = 'Computer science undergraduate at NYU Abu Dhabi';
 export const researchProjects = [
   'human-ai-collaboration',

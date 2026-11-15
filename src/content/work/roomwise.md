@@ -18,4 +18,4 @@ links:
 
 I built the shopping and room-preview interfaces for RoomWise, an app I co-developed with [Aadil Chasmawala](https://github.com/Aarz1401). You can describe a chair to a language model, change your budget or color preference, and swipe through matching retailer listings. As you swipe, the preview keeps the chair in the same spot and scales it to each listing’s dimensions. If a listing has no measurements, the preview clears.
 
-I also built the connection that lets you browse on a desktop while keeping the phone preview in sync. In testing, the desktop app and iPhone Simulator exchanged selections in both directions on the same computer.
+I connected the Kotlin desktop app to the SwiftUI iPhone app over HTTP. They share the listings and the selected product, so you can browse on the desktop and see the preview change on the phone. I tested selection in both directions between the desktop app and the iPhone Simulator.

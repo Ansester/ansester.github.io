@@ -1,0 +1,11 @@
+---
+interface Props { title: string; href: string; id?: string; }
+const { title, href, id } = Astro.props;
+---
+<article class="home-project" id={id}>
+  <div>
+    <h3><a href={href}>{title}</a></h3>
+    <slot />
+  </div>
+  <div class="project-notes"><slot name="notes" /></div>
+</article>

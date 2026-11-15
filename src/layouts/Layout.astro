@@ -1,10 +1,10 @@
 ---
 import '../styles/global.css';
-import { affiliation, researchProjects, researchQuestion } from '../data/profile';
+import { portfolioDescription, researchProjects } from '../data/profile';
 interface Props { title?: string; description?: string; noindex?: boolean; }
 const {
   title = 'Ashmit Mukherjee · NYU Abu Dhabi',
-  description = `${affiliation}. ${researchQuestion}`,
+  description = portfolioDescription,
   noindex = false,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -38,7 +38,7 @@ const projectsCurrent = path === '/work/' ? 'page' : path.startsWith('/work/') &
     <meta name="twitter:image" content="https://ashmitmukherjee.com/social-card.png" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org', '@type': 'Person', name: 'Ashmit Mukherjee',
-      url: 'https://ashmitmukherjee.com/', jobTitle: 'Computer science undergraduate', description: researchQuestion,
+      url: 'https://ashmitmukherjee.com/', jobTitle: 'Computer science undergraduate', description: portfolioDescription,
       affiliation: { '@type': 'CollegeOrUniversity', name: 'New York University Abu Dhabi' },
       email: 'mailto:asm8879@nyu.edu',
       sameAs: ['https://github.com/Ansester'],
@@ -58,8 +58,8 @@ const projectsCurrent = path === '/work/' ? 'page' : path.startsWith('/work/') &
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer container" id="contact">
-      <div class="contact-heading"><h2>Contact</h2><Fragment set:html={'<!--email_off--><a class="contact-email" href="mailto:asm8879@nyu.edu">asm8879@nyu.edu</a><!--/email_off-->'} /></div>
-      <div class="footer-bottom"><span>© {new Date().getFullYear()} Ashmit Mukherjee</span><div><a href="https://github.com/Ansester">GitHub</a><button class="copy-email" type="button" hidden>Copy email</button></div></div>
+      <div class="contact-heading"><h2>Get in touch</h2><Fragment set:html={'<!--email_off--><a class="contact-email" href="mailto:asm8879@nyu.edu">asm8879@nyu.edu</a><!--/email_off-->'} /><button class="copy-email" type="button" hidden>Copy email</button></div>
+      <div class="footer-bottom"><span>© {new Date().getFullYear()} Ashmit Mukherjee</span><a href="https://github.com/Ansester">GitHub</a></div>
       <p class="copy-status" role="status" aria-live="polite"></p>
     </footer>
     <script>

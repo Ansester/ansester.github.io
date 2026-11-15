@@ -1,0 +1,107 @@
+.forecast-chart {
+  max-width: 37rem;
+  margin-block: 1.2rem 1.6rem;
+  font-size: .9375rem;
+  line-height: 1.45;
+}
+
+.forecast-chart .forecast-table {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+.forecast-chart .forecast-table caption {
+  margin-bottom: .65rem;
+  text-align: left;
+  font: inherit;
+}
+
+.forecast-chart .forecast-table :is(th, td) {
+  padding: .28rem 0;
+  border: none;
+  vertical-align: middle;
+  text-align: left;
+  font-weight: 400;
+}
+
+.forecast-chart .forecast-table th:first-child {
+  width: 41%;
+  padding-right: .75rem;
+}
+
+.forecast-chart .forecast-table thead th {
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .84em;
+}
+
+.forecast-chart .forecast-table thead th:last-child {
+  text-align: right;
+}
+
+.forecast-reading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 4ch;
+  align-items: center;
+  gap: .65rem;
+  text-align: right;
+}
+
+.forecast-track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: .95rem;
+}
+
+.forecast-bar {
+  display: block;
+  height: 4px;
+  background: var(--ink);
+  print-color-adjust: exact;
+}
+
+[data-group="regression"] .forecast-bar { background: var(--accent); }
+[data-group="crowd"] .forecast-bar { background: var(--mark); }
+[data-group="baseline"] .forecast-bar { background: var(--muted); height: 1px; }
+
+.forecast-track::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: var(--reference-position);
+  border-left: 1px dashed var(--muted);
+}
+
+.forecast-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: .35rem 1rem;
+  flex-wrap: wrap;
+  margin-top: .4rem;
+  padding-top: .45rem;
+  border-top: 1px solid var(--line);
+  font-size: .875rem;
+}
+
+.forecast-key {
+  display: inline-flex;
+  gap: .4rem;
+  align-items: center;
+  color: var(--muted);
+}
+
+.forecast-key::before {
+  content: "";
+  height: .9em;
+  border-left: 1px dashed currentColor;
+}
+
+@media (forced-colors: active) {
+  .forecast-bar { background: CanvasText !important; forced-color-adjust: none; }
+}

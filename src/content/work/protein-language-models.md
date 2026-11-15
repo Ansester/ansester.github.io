@@ -16,7 +16,7 @@ links:
 
 Can the chemistry of amino acids give a protein model a better starting point for a new task? In Bio-LoRA, we used patterns of amino-acid substitution and chemical similarity to initialize ESM-2’s low-rank adapters. This keeps the number of trainable parameters the same as in standard LoRA.
 
-I wrote the training and evaluation code for the signal-peptide task, where the model identifies proteins that carry a targeting sequence and predicts where that sequence is cut.
+I wrote the PyTorch training and evaluation code for the signal-peptide task. The model labels individual amino acids to predict whether a protein starts with a targeting sequence and where that sequence is cut.
 
 We also tested whether the model could rank mutations by their measured effect on alpha-synuclein. In our May manuscript, the model initialized with the BLOSUM62 substitution matrix reached a Spearman correlation of 0.45 on that task, compared with 0.43 for standard LoRA and 0.55 for full fine-tuning.
 

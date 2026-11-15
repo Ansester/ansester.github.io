@@ -4,12 +4,13 @@ import Layout from '../../layouts/Layout.astro';
 import { researchProjects, softwareProjects } from '../../data/profile';
 const projects = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
 const groups = [
+  { title: 'Software and competitions', ids: [...softwareProjects, 'camp'] },
+  { title: 'Industry experience', ids: ['zeek'] },
   { title: 'Research', ids: researchProjects },
-  { title: 'Software and competitions', ids: softwareProjects },
 ];
 const earlier = projects.filter(project => !groups.some(group => group.ids.includes(project.id)));
 ---
-<Layout title="Projects · Ashmit Mukherjee" description="My research on AI advice, cooperation, and protein language models at NYU Abu Dhabi, alongside selected software projects.">
+<Layout title="Projects · Ashmit Mukherjee" description="Software projects, my machine learning internship at Zeek, and research at NYU Abu Dhabi.">
   <div class="container projects-page">
     <header class="page-intro"><h1>Projects</h1></header>
     {groups.map(group => (

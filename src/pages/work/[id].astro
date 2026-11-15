@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import ForecastChart from '../../components/ForecastChart.astro';
+import { Content as CapstoneDiscussion } from '../../content/notes/capstone-discussion.md';
 import ProjectVisual from '../../components/ProjectVisual.astro';
 import { researchProjects } from '../../data/profile';
 
@@ -10,21 +12,125 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 const research = researchProjects.includes(post.id);
+const capstone = post.data.visual === 'capstone';
 ---
 <Layout title={`${post.data.title} · Ashmit Mukherjee`} description={post.data.summary}>
-  <article class="container case-page">
+  <article class:list={['container', 'case-page', { 'capstone-page': capstone }]}>
     <header class="case-header">
-      <a class="back-link" href={research ? '/#research' : '/work/'}><span aria-hidden="true">← </span>{research ? 'Research' : 'Projects'}</a>
+      <a class="back-link" href={research ? '/#research' : '/work/'}><span aria-hidden="true">← </span>{capstone ? 'Back to research' : research ? 'Research' : 'Projects'}</a>
       <h1>{post.data.title}</h1>
-      <p class="case-credit">{post.data.role} · {post.data.organization}</p>
-      {post.data.period && <p class="byline">{post.data.period}</p>}
+      {!capstone && <p class="case-credit">{post.data.role} · {post.data.organization}</p>}
+      {!capstone && post.data.period && <p class="byline">{post.data.period}</p>}
     </header>
-    <div class="prose"><Content /></div>
+    {capstone ? (
+      <div class="capstone-layout">
+        <div class="prose">
+          <Content />
+          <ForecastChart />
+          <CapstoneDiscussion />
+        </div>
+        <aside class="capstone-margin" aria-label="Capstone details">
+          <dl>
+            <dt>Role</dt>
+            <dd>{post.data.role}</dd>
+            <dt>Institution</dt>
+            <dd>{post.data.organization}</dd>
+            <dt>Advisers</dt>
+            <dd>
+              <a href="https://scholar.google.com/citations?user=9lTiKjwAAAAJ">Professor Hanan Salam</a>
+              <a href="https://scholar.google.com/citations?user=GAxIreYAAAAJ">Professor Benjamin Rosche</a>
+            </dd>
+            <dt>Period</dt>
+            <dd>{post.data.period}</dd>
+            <dt>Sources</dt>
+            <dd>{post.data.links.map(link => <a href={link.url}>{link.label}</a>)}</dd>
+          </dl>
+        </aside>
+      </div>
+    ) : <div class="prose"><Content /></div>}
     {(post.data.visual === 'human' || post.data.visual === 'fieldlens' || post.data.visual === 'roomwise') && <ProjectVisual kind={post.data.visual} />}
-    {post.data.links.length > 0 && (
+    {!capstone && post.data.links.length > 0 && (
       <footer class="case-sources">
         <div class="inline-links">{post.data.links.map(link => <a href={link.url}>{link.label}</a>)}</div>
       </footer>
     )}
   </article>
 </Layout>
+
+<style>
+  .capstone-page {
+    padding-bottom: 3rem;
+  }
+
+  .capstone-page .case-header {
+    padding: 2.75rem 0 1.4rem;
+  }
+
+  .capstone-page h1 {
+    max-width: 25ch;
+    margin: 1.75rem 0 0;
+    font: 400 clamp(2.25rem, 4vw, 3.25rem)/1.09 var(--serif);
+    letter-spacing: -.035em;
+    text-wrap: initial;
+  }
+
+  .capstone-page .capstone-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 11.75rem;
+    align-items: start;
+    gap: clamp(2.5rem, 6vw, 4.5rem);
+    max-width: none;
+  }
+
+  .capstone-layout .prose,
+  .capstone-margin {
+    padding-top: 0;
+  }
+
+  .capstone-margin {
+    font-size: .875rem;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+  }
+
+  .capstone-margin dl,
+  .capstone-margin dd {
+    margin: 0;
+  }
+
+  .capstone-margin dt {
+    margin: 1.25rem 0 .2rem;
+    color: var(--muted);
+    font-size: .8rem;
+  }
+
+  .capstone-margin dt:first-child {
+    margin-top: 0;
+  }
+
+  .capstone-margin a {
+    display: block;
+    width: fit-content;
+    margin-bottom: .35rem;
+  }
+
+  @media (max-width: 760px) {
+    .capstone-page .capstone-layout {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    .capstone-page .case-header {
+      padding: 1.5rem 0;
+    }
+
+    .capstone-page h1 {
+      margin-top: 1.25rem;
+    }
+
+    .capstone-margin {
+      border-top: 1px solid var(--line);
+      padding-top: 1.25rem;
+    }
+  }
+</style>

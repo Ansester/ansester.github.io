@@ -74,8 +74,8 @@ for (const name of ['index.html','work/protein-language-models/index.html']) {
   if (name.startsWith('work/')) assert.match(text, /revis(ed|ing).*submission|resubmission/i, 'Manuscript revision status missing');
 }
 const capstone = documents.get(join(root,'work/synthetic-pilot-lab/index.html')).body.textContent;
-assert.match(capstone,/20 archived experimental designs/, 'Forecast evaluation scope missing');
-assert.match(capstone,/feasibility pilot on two designs/, 'Simulation pilot scope missing');
+assert.match(capstone,/20 public-goods experiments/, 'Forecast evaluation scope missing');
+assert.match(capstone,/seven designs played without chat, and ran a feasibility pilot on two of them/, 'Simulation pilot scope missing');
 assert.match(documents.get(join(root,'work/human-ai-collaboration/index.html')).body.textContent,/model players/,'Human–AI pilot population missing');
 assert(!home.querySelector('a[href*="payoff-integrity-check"]'), 'Internal test report returned to the homepage');
 const scores = documents.get(join(root, 'work/synthetic-pilot-lab/index.html')).querySelectorAll('tbody tr');
@@ -86,7 +86,7 @@ assert.doesNotMatch(protein.body.textContent, /86\.08|83\.64/, 'Unverified prote
 for (const extension of ['svg', 'csv']) {
   assert(!existsSync(join(root, `research/protein-comparison.${extension}`)), 'Withdrawn comparison must not be public');
 }
-assert(home.body.textContent.includes('Class of 2027'), 'Degree context missing');
+assert(home.body.textContent.includes('May 2027'), 'Graduation date missing');
 assert(!existsSync(join(root,'cv.pdf')),'Application CV must not be hosted on the website');
 for (const [path,doc] of documents) assert(!doc.querySelector('a[href="/cv.pdf"]'),`${relative(root,path)}: public CV link returned`);
 assert.equal(readFileSync(join(root,'CNAME'),'utf8').trim(),'ashmitmukherjee.com');

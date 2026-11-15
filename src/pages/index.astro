@@ -1,51 +1,80 @@
 ---
-import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import HomeProject from '../components/HomeProject.astro';
+import ForecastChart from '../components/ForecastChart.astro';
 import portrait from '../../assets/ashmit-portrait.png';
-import { affiliation, researchQuestion } from '../data/profile';
+import { affiliation } from '../data/profile';
 ---
 <Layout>
   <div class="container">
     <header class="introduction" id="about">
       <div id="background">
-        <p class="affiliation">{affiliation} · Class of 2027</p>
-        <h1>Ashmit Mukherjee</h1>
-        <p>{researchQuestion} I want to study this in a computer science PhD starting in fall 2027.</p>
+        <p class="affiliation">{affiliation}, class of 2027</p>
+        <h1>I build AI systems, from multi-agent workflows to the pipelines and platforms research runs on.</h1>
+        <p>I graduate in May 2027. I'm looking for AI and ML engineering roles, and applying to MSc and PhD programs in computer science.</p>
+        <p class="hero-tools" aria-label="Languages and frameworks">Python, TypeScript, Kotlin, Swift · PyTorch, FastAPI, React, SwiftUI</p>
+        <div class="hero-links"><Fragment set:html={'<!--email_off--><a href="mailto:asm8879@nyu.edu">asm8879@nyu.edu</a><!--/email_off-->'} /><a href="https://github.com/Ansester">GitHub</a></div>
       </div>
-      <Image class="portrait" src={portrait} alt="Ashmit Mukherjee" width={128} height={128} densities={[1, 2, 3]} format="webp" loading="eager" />
+      <Image class="portrait" src={portrait} alt="Ashmit Mukherjee" width={160} height={160} densities={[1, 2]} format="webp" loading="eager" />
     </header>
 
-    <section class="home-section" id="research" aria-labelledby="research-heading">
-      <h2 id="research-heading">Group decisions and AI</h2>
-      <p class="research-bridge">In the lab, I study how people make decisions with advice from AI. In my capstone, I give models the rules of a game and ask them to predict how human groups will do.</p>
-      <article class="research-entry">
-        <h3><a href="/work/human-ai-collaboration/">AI advice and cooperation</a></h3>
-        <p>I built the Social Dynamics Lab’s experiment platform and lead its development. Each player can get private advice from a language model. We can vary whether the advisers talk to each other first and see what each player was told before they made their move.</p>
-        <p class="byline">NYU Abu Dhabi faculty mentors · Professors <a href="https://scholar.google.com/citations?user=GAxIreYAAAAJ">Benjamin Rosche</a> and <a href="https://scholar.google.com/citations?user=9lTiKjwAAAAJ">Hanan Salam</a></p>
-      </article>
-      <article class="research-entry">
-        <h3><a href="/work/synthetic-pilot-lab/">Forecasting the effect of punishment on group earnings</a></h3>
-        <p>Would groups earn more if players could punish each other? Claude Haiku 4.5 and the human experts both expected a small gain. Across the 20 game designs, groups actually earned less on average with punishment. The original study’s regression made more accurate forecasts than either.</p>
-      </article>
+    <section class="home-section" id="research" aria-labelledby="group-decisions">
+      <h2 id="group-decisions">Group decisions and AI advice</h2>
+      <HomeProject title="AI advice and cooperation" href="/work/human-ai-collaboration/">
+        <p>In the Social Dynamics Lab, I built the platform for our experiments and lead its development. Each player can get a private recommendation from an AI adviser. We vary whether the advisers talk to each other first, then trace how players respond. So far I have tested it with model players across three games.</p>
+        <Fragment slot="notes">
+          <p>Social Dynamics Lab</p>
+          <p>Faculty mentors · Professors <a href="https://scholar.google.com/citations?user=GAxIreYAAAAJ">Benjamin Rosche</a> and <a href="https://scholar.google.com/citations?user=9lTiKjwAAAAJ">Hanan Salam</a></p>
+          <p>2026 to present</p>
+        </Fragment>
+      </HomeProject>
+      <HomeProject title="Forecasting the effect of punishment on group earnings" href="/work/synthetic-pilot-lab/">
+        <p>For my capstone, I asked whether language models could forecast what punishment does to a group’s earnings. Claude Haiku 4.5 and the human experts both expected a small gain. Across the 20 game designs, groups earned less on average with punishment. The three Claude models and both crowds beat a no-change guess by under a point. GPT-5 had more error than the no-change guess. The original study’s elastic net beat it by 2.6.</p>
+        <ForecastChart compact />
+        <Fragment slot="notes">
+          <p>Independent capstone</p>
+          <p>Advisers · Professors <a href="https://scholar.google.com/citations?user=9lTiKjwAAAAJ">Hanan Salam</a> and <a href="https://scholar.google.com/citations?user=GAxIreYAAAAJ">Benjamin Rosche</a></p>
+          <p>2026 to present</p>
+          <p><a href="/research/group-earnings-forecast-note.pdf">My forecast study (PDF)</a></p>
+        </Fragment>
+      </HomeProject>
     </section>
 
-    <section class="home-section" aria-labelledby="ebrain-heading">
-      <h2 id="ebrain-heading">Protein models and scientific literature</h2>
-      <article class="research-entry" id="manuscript">
-        <h3><a href="/work/protein-language-models/">Bio-LoRA for protein language models</a></h3>
-        <p>At the eBRAIN Lab, I wrote the training and evaluation code for identifying signal peptides and predicting where they are cut. I’m a co-first author of Bio-LoRA, our manuscript on using amino-acid chemistry to initialize protein models.</p>
-      </article>
-      <article class="research-entry">
-        <h3><a href="/work/biosynthesis-paper-database/">Biosynthesis paper database</a></h3>
-        <p>My pipeline collected 139,011 paper records for a study of how AI systems retrieve methods from the biosynthesis literature. About a third lacked abstracts. The lipid search also pulled in papers on cell signaling, a different question from how cells make lipids.</p>
-        <p class="byline">Led by <a href="https://scholar.google.com/citations?user=USe518cAAAAJ">Minghao Shao</a>, with faculty lead Professor <a href="https://scholar.google.com/citations?user=xSR276UAAAAJ">Muhammad Shafique</a></p>
-      </article>
+    <section class="home-section" aria-labelledby="protein">
+      <h2 id="protein">Protein language models</h2>
+      <HomeProject id="manuscript" title="Bio-LoRA for protein language models" href="/work/protein-language-models/">
+        <p>Bio-LoRA uses the chemistry of amino acids to give protein models a better starting point for training. My part was the pipeline for identifying signal peptides and predicting where they are cut. On a separate test of mutation effects, Bio-LoRA reached a rank correlation of 0.45, compared with 0.43 for standard LoRA and 0.55 for full fine-tuning.</p>
+        <Fragment slot="notes">
+          <p>eBRAIN Lab</p>
+          <p><a href="/work/protein-language-models/#manuscript">All nine authors share first authorship.</a></p>
+          <p>Manuscript in revision, October 2026</p>
+        </Fragment>
+      </HomeProject>
+      <HomeProject title="Biosynthesis paper database" href="/work/biosynthesis-paper-database/">
+        <p>For a project on how AI systems retrieve methods from the biosynthesis literature, I wrote the pipeline that collected 139,011 paper records. About a third lacked abstracts. The lipid search also pulled in papers on cell signaling, a different question from how cells make lipids.</p>
+        <Fragment slot="notes">
+          <p>eBRAIN Lab</p>
+          <p>Led by <a href="https://scholar.google.com/citations?user=USe518cAAAAJ">Minghao Shao</a>, with faculty lead Professor <a href="https://scholar.google.com/citations?user=xSR276UAAAAJ">Muhammad Shafique</a></p>
+          <p>Fall 2026</p>
+        </Fragment>
+      </HomeProject>
     </section>
 
-    <section class="home-section" id="projects" aria-labelledby="projects-heading">
-      <div class="section-heading" id="experience"><h2 id="projects-heading">Software and competitions</h2><a href="/work/">All projects</a></div>
-      <p>My team, SegfaultObservers, took first place in the MENA region at the <a href="/work/csaw-llm-ctf/">CSAW LLM CTF Attack Competition</a>. I ran six agents in parallel and built the verifier we used to check their solutions.</p>
-      <p>With <a href="/work/fieldlens/">FieldLens</a>, I tested whether a local model could answer questions about a vehicle incident and show the camera or GPS records behind its answer. For <a href="/work/roomwise/">RoomWise</a>, I connected furniture listings to a room preview so shoppers can see how each chair fits as they swipe.</p>
+    <section class="home-section" id="projects" aria-labelledby="software">
+      <div class="section-heading" id="experience"><h2 id="software">Software and competitions</h2><a href="/work/">All projects</a></div>
+      <HomeProject title="CSAW 2026 LLM CTF Attack Competition" href="/work/csaw-llm-ctf/">
+        <p>My team, SegfaultObservers, took first place in the MENA region. I designed the six-agent system we used to work challenges in parallel and check each proposed flag.</p>
+        <p slot="notes">November 2026</p>
+      </HomeProject>
+      <HomeProject title="FieldLens" href="/work/fieldlens/">
+        <p>A local language model answers questions about vehicle incidents and links each statement to the camera or GPS record behind it.</p>
+        <p slot="notes">Independent project, 2026</p>
+      </HomeProject>
+      <HomeProject title="RoomWise" href="/work/roomwise/">
+        <p>Describe a chair in chat, swipe through listings, and compare how each one fits the same spot in your room. I made the browsing and room-preview interfaces.</p>
+        <p slot="notes">With <a href="https://github.com/Aarz1401">Aadil Chasmawala</a>, 2026</p>
+      </HomeProject>
     </section>
   </div>
 </Layout>
