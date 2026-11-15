@@ -72,8 +72,10 @@ for (const name of ['index.html','work/protein-language-models/index.html']) {
   assert.match(text,/co-first author/i, `${name}: manuscript contribution missing`);
   assert.match(text,/unpublished/i, `${name}: manuscript must be labeled unpublished`);
 }
-assert.match(documents.get(join(root,'work/synthetic-pilot-lab/index.html')).body.textContent,/In development/,'Capstone status missing');
-assert.match(documents.get(join(root,'work/human-ai-collaboration/index.html')).body.textContent,/exploratory public-goods pilot/,'Human–AI pilot description missing');
+const capstone = documents.get(join(root,'work/synthetic-pilot-lab/index.html')).body.textContent;
+assert.match(capstone,/20 archived experimental designs/, 'Forecast evaluation scope missing');
+assert.match(capstone,/feasibility pilot on two designs/, 'Simulation pilot scope missing');
+assert.match(documents.get(join(root,'work/human-ai-collaboration/index.html')).body.textContent,/model players/,'Human–AI pilot population missing');
 assert(!home.querySelector('a[href*="payoff-integrity-check"]'), 'Internal test report returned to the homepage');
 const comparison = JSON.parse(readFileSync('src/data/protein-comparison.json','utf8'));
 const summaryCSV = readFileSync(join(root,'research/protein-comparison.csv'),'utf8');

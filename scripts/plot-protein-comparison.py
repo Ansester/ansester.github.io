@@ -33,12 +33,20 @@ ax.grid(axis='x', color='#dadcd6', linewidth=.7, zorder=0)
 for spine in ax.spines.values():
     spine.set_visible(False)
 fig.subplots_adjust(left=.36, right=.97, top=.97, bottom=.18)
-fig.savefig(out / 'protein-comparison.svg', metadata={'Date': None, 'Title': 'ESM-2 650M follow-up: exact cleavage-site match', 'Description': 'Means and sample standard deviations across three seeds. 1,231 true signal-peptide-positive examples. Feature injection is separate from the Bio-LoRA initialization method.'})
+fig.savefig(out / 'protein-comparison.svg', metadata={'Date': None, 'Title': 'ESM-2 650M follow-up: exact cleavage-site match', 'Description': 'Means and sample standard deviations across three seeds. Feature injection is separate from the Bio-LoRA initialization method. ' + data['evaluationNote']})
 plt.close(fig)
 svg = out / 'protein-comparison.svg'
 svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines()) + '\n')
 with (out / 'protein-comparison.csv').open('w', newline='') as f:
     writer = csv.writer(f, lineterminator="\n")
-    writer.writerow(['method', 'mean_exact_match_percent', 'sample_sd_percentage_points', 'model', 'benchmark', 'seed_count', 'positive_test_examples'])
+    writer.writerow([
+        'method', 'mean_exact_match_percent', 'sample_sd_percentage_points', 'model',
+        'benchmark', 'seed_count', 'positive_benchmark_examples',
+        'positives_also_in_local_fitting_split', 'evaluation_note',
+    ])
     for row in data['methods']:
-        writer.writerow([row['name'], f"{row['mean']:.2f}", f"{row['sd']:.2f}", data['model'], data['benchmark'], len(data['seeds']), data['positiveExamples']])
+        writer.writerow([
+            row['name'], f"{row['mean']:.2f}", f"{row['sd']:.2f}", data['model'],
+            data['benchmark'], len(data['seeds']), data['positiveExamples'],
+            data['positiveExamplesAlsoInLocalFit'], data['evaluationNote'],
+        ])

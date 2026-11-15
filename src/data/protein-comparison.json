@@ -3,6 +3,8 @@
   "benchmark": "SP5",
   "metric": "Exact cleavage-site match",
   "positiveExamples": 1231,
+  "positiveExamplesAlsoInLocalFit": 549,
+  "evaluationNote": "The available fitting and benchmark files share positive sequences. The historical run inputs are unverified, so the scores do not establish performance on unseen proteins.",
   "seeds": [
     11,
     22,

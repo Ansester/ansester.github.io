@@ -8,7 +8,7 @@
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
     <dc:title>ESM-2 650M follow-up: exact cleavage-site match</dc:title>
-    <dc:description>Means and sample standard deviations across three seeds. 1,231 true signal-peptide-positive examples. Feature injection is separate from the Bio-LoRA initialization method.</dc:description>
+    <dc:description>Means and sample standard deviations across three seeds. Feature injection is separate from the Bio-LoRA initialization method. The available fitting and benchmark files share positive sequences. The historical run inputs are unverified, so the scores do not establish performance on unseen proteins.</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>

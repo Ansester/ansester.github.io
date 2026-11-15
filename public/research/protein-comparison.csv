@@ -1,7 +1,7 @@
-method,mean_exact_match_percent,sample_sd_percentage_points,model,benchmark,seed_count,positive_test_examples
-Full fine-tuning,84.08,1.27,ESM-2 650M,SP5,3,1231
-Vanilla LoRA,83.64,2.09,ESM-2 650M,SP5,3,1231
-Hydrophobicity feature injection with LoRA,84.57,1.07,ESM-2 650M,SP5,3,1231
-BLOSUM62 feature injection with LoRA,86.08,1.10,ESM-2 650M,SP5,3,1231
-Grantham feature injection with LoRA,85.32,0.45,ESM-2 650M,SP5,3,1231
-Combined feature injection with LoRA,85.03,1.69,ESM-2 650M,SP5,3,1231
+method,mean_exact_match_percent,sample_sd_percentage_points,model,benchmark,seed_count,positive_benchmark_examples,positives_also_in_local_fitting_split,evaluation_note
+Full fine-tuning,84.08,1.27,ESM-2 650M,SP5,3,1231,549,"The available fitting and benchmark files share positive sequences. The historical run inputs are unverified, so the scores do not establish performance on unseen proteins."
+Vanilla LoRA,83.64,2.09,ESM-2 650M,SP5,3,1231,549,"The available fitting and benchmark files share positive sequences. The historical run inputs are unverified, so the scores do not establish performance on unseen proteins."
+Hydrophobicity feature injection with LoRA,84.57,1.07,ESM-2 650M,SP5,3,1231,549,"The available fitting and benchmark files share positive sequences. The historical run inputs are unverified, so the scores do not establish performance on unseen proteins."
+BLOSUM62 feature injection with LoRA,86.08,1.10,ESM-2 650M,SP5,3,1231,549,"The available fitting and benchmark files share positive sequences. The historical run inputs are unverified, so the scores do not establish performance on unseen proteins."
+Grantham feature injection with LoRA,85.32,0.45,ESM-2 650M,SP5,3,1231,549,"The available fitting and benchmark files share positive sequences. The historical run inputs are unverified, so the scores do not establish performance on unseen proteins."
+Combined feature injection with LoRA,85.03,1.69,ESM-2 650M,SP5,3,1231,549,"The available fitting and benchmark files share positive sequences. The historical run inputs are unverified, so the scores do not establish performance on unseen proteins."

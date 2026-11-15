@@ -5,11 +5,11 @@ import portrait from '../../assets/ashmit-portrait.png';
 ---
 <Layout>
   <div class="container">
-    <header class="introduction">
-      <div>
+    <header class="introduction" id="about">
+      <div id="background">
         <p class="affiliation">Computer Science · NYU Abu Dhabi</p>
         <h1>Ashmit Mukherjee</h1>
-        <p>I build software for human–AI experiments, agent simulations, protein language models, and scientific data collection.</p>
+        <p>I study how AI advice shapes people’s decisions and whether simulations can predict how groups behave.</p>
         <div class="intro-links"><a href="mailto:asm8879@nyu.edu">asm8879@nyu.edu</a><a href="https://github.com/Ansester" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
       </div>
       <Image class="portrait" src={portrait} alt="Ashmit Mukherjee" width={144} height={144} format="webp" loading="eager" />
@@ -19,40 +19,31 @@ import portrait from '../../assets/ashmit-portrait.png';
       <h2 id="research-heading">Research</h2>
       <article class="research-entry">
         <h3><a href="/work/human-ai-collaboration/">Human–AI collaboration</a></h3>
-        <p class="byline">Research assistant with Ben Rosche and Hanan Salam · 2026–present</p>
-        <p>I built the platform for experiments on AI advice and cooperation and lead its development. I connect Python game engines, adviser workflows, participant interfaces, and records that I can replay and check independently.</p>
-      </article>
-      <article class="research-entry" id="manuscript">
-        <h3><a href="/work/protein-language-models/">Bio-LoRA and protein models</a></h3>
-        <p class="byline">Research assistant, eBRAIN Lab · Co-first author, unpublished manuscript</p>
-        <p>I developed signal-peptide training and evaluation pipelines for protein language models. At 650M, BLOSUM62 feature injection reached 86.08% mean exact cleavage-site match across three seeds, compared with 83.64% for vanilla LoRA.</p>
-      </article>
-      <article class="research-entry">
-        <h3><a href="/work/biosynthesis-paper-database/">Biosynthesis paper database</a></h3>
-        <p class="byline">Research assistant, eBRAIN Lab · 2026–present</p>
-        <p>I built an OpenAlex collection pipeline for the biosynthesis portion of a scientific-paper database. The November 2026 pull contains 139,011 raw records across three subdomains, with data cards and checks for coverage and topic mismatch.</p>
+        <p class="byline">Faculty mentors at NYU Abu Dhabi · Professors <a href="https://scholar.google.com/citations?user=GAxIreYAAAAJ">Benjamin Rosche</a> and <a href="https://scholar.google.com/citations?user=9lTiKjwAAAAJ">Hanan Salam</a></p>
+        <p>I built the platform for our experiments on AI advice and cooperation, and I lead its development. Researchers can replay a game to see what advice each participant received, what they did next, and how much they earned.</p>
       </article>
       <article class="research-entry">
         <h3><a href="/work/synthetic-pilot-lab/">Synthetic Pilot Lab</a></h3>
-        <p class="byline">Independent capstone · 2026–present</p>
-        <p>I compare direct language-model forecasts with agent simulations against archived human experiments on punishment and cooperation. I built the benchmark and simulation tools to test whether interacting agents improve predictions enough to justify their extra computation.</p>
+        <p class="byline">Independent computer science capstone · 2026</p>
+        <p>For my capstone, I tested how well language models predict the effect of punishment on group earnings across 20 public-goods game designs. I also built a simulator to test whether having the models play the games improves their forecasts.</p>
+      </article>
+      <article class="research-entry" id="manuscript">
+        <h3><a href="/work/protein-language-models/">Bio-LoRA and protein models</a></h3>
+        <p class="byline">eBRAIN Lab · Co-first author, November 2026 manuscript (unpublished)</p>
+        <p>I developed training and evaluation pipelines for signal-peptide prediction and compared protein-model adaptation methods. In separate follow-up work, I tested residue-level biological features alongside LoRA.</p>
+      </article>
+      <article class="research-entry">
+        <h3><a href="/work/biosynthesis-paper-database/">Biosynthesis paper database</a></h3>
+        <p class="byline">eBRAIN Lab · Project led by <a href="https://scholar.google.com/citations?user=USe518cAAAAJ">Minghao Shao</a>, with Professor <a href="https://scholar.google.com/citations?user=xSR276UAAAAJ">Muhammad Shafique</a> as faculty lead</p>
+        <p>I built the pipeline that collected 139,011 OpenAlex records for a biosynthesis database in November 2026. The lipid search also returned papers on signalling, which made its raw count a poor measure of biosynthesis coverage.</p>
       </article>
     </section>
 
     <section class="home-section" id="projects" aria-labelledby="projects-heading">
-      <div class="section-heading"><h2 id="projects-heading">Other projects</h2><a href="/work/">All projects ↗</a></div>
-      <p>I won the <a href="/work/csaw-llm-ctf/">CSAW 2026 LLM-CTF</a> with SegfaultObservers (Team MENA). I built a parallel agent workflow and per-challenge evidence records; my team recorded 22 flag recoveries across 23 challenges.</p>
-      <p>I co-developed <a href="/work/roomwise/">RoomWise</a>, where you talk through furniture choices, swipe through listings, and see the room preview update with each selection. I also built <a href="/work/fieldlens/">FieldLens</a>, a local-model tool for querying incident records and inspecting the sources behind an answer.</p>
-      <p>I’ve also worked on <a href="/work/hinglish-ner/">Hindi–English named-entity recognition</a>, <a href="/work/salary-regression/">salary regression</a>, and <a href="/work/camp/">a campus equipment app</a>.</p>
+      <div class="section-heading" id="experience"><h2 id="projects-heading">Other projects</h2><a href="/work/">All projects ↗</a></div>
+      <p>My team, SegfaultObservers (Team MENA), won the <a href="/work/csaw-llm-ctf/">CSAW 2026 LLM-CTF</a>. I built and ran the six-agent setup we used to solve challenges in parallel and check the answers.</p>
+      <p>I co-developed <a href="/work/roomwise/">RoomWise</a> to help people talk through furniture choices, swipe through listings, and see each selection in a room preview. <a href="/work/fieldlens/">FieldLens</a> is a local-model tool I built for querying incident records and checking the sources behind an answer.</p>
     </section>
 
-    <section class="home-section" id="about" aria-labelledby="about-heading">
-      <h2 id="about-heading">A little background</h2>
-      <div id="background">
-        <p>I’m interested in computational social science, human–AI interaction, and the research methods needed to study them.</p>
-        <p>I’m IT Head of the NYU Abu Dhabi Journal of Social Sciences, where I lead the journal’s technical work. I’m also part of the NYUAD Model United Nations Research Team and review conference background guides.</p>
-        <p id="experience">I studied away at NYU Paris and NYU New York. At NYU Abu Dhabi, I’ve facilitated workshops for first-year students and worked front of house at the Arts Center. Previously, I was an <a href="/work/zeek/">ML engineering intern at Zeek</a>, working on customer segmentation and model comparison.</p>
-      </div>
-    </section>
   </div>
 </Layout>

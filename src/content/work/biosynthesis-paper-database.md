@@ -1,30 +1,21 @@
 ---
 title: "Biosynthesis paper database"
-summary: "I built a pipeline to collect and assess biosynthesis paper records for a research retrieval database."
+summary: "A pipeline I built to collect biosynthesis paper records and check how closely each search matched its topic."
 category: "Research data collection"
 role: "Research assistant · biosynthesis data collection"
-organization: "eBRAIN Lab, NYU Abu Dhabi · Project led by Minghao Shao, faculty lead Muhammad Shafique"
-period: "2026–present"
-status: "Research in progress"
-order: 3
+organization: "eBRAIN Lab, NYU Abu Dhabi"
+period: "Fall 2026 collection"
+status: "Research dataset"
+order: 4
 tags: []
-updated: "15 November 2026"
 visual: biosynthesis
 links: []
 ---
 
-## A database for scientific retrieval
+At the eBRAIN Lab, [Minghao Shao](https://scholar.google.com/citations?user=USe518cAAAAJ) leads a project on how AI scientists find and use research papers, with Professor [Muhammad Shafique](https://scholar.google.com/citations?user=xSR276UAAAAJ) as faculty lead. I built the biosynthesis collection as a source for methods summaries and benchmarks of how well an AI system can retrieve a relevant paper.
 
-I work on the biosynthesis domain of a paper-knowledge database at the eBRAIN Lab, in a project led by Minghao Shao with Muhammad Shafique as faculty lead. The aim is to make scientific literature easier for AI scientists to find and use, then build benchmark tasks around that knowledge. My current work is the raw collection stage; structured summaries and benchmarks are later project goals.
+My pipeline searched OpenAlex for articles and reviews published from 2011 onward on protein and RNA synthesis, enzymes and biocatalysis, and lipids and primary metabolites. The November 2026 collection contained 139,011 raw records across the three searches. Each file matched its query count and contained no repeated OpenAlex IDs.
 
-## Building the collection pipeline
+About 34% of the records lacked abstracts, limiting what a retrieval system could learn from the metadata alone. Topic labels also proved too broad. Sphingolipid signalling accounted for 43% of the lipid file and brought in many papers on how lipids carry signals, outside the scope of biosynthesis.
 
-I wrote a resumable OpenAlex pipeline that queries each subdomain separately for articles and reviews published from 2011 onward. It saves the full OpenAlex record alongside 23 selected metadata fields in Parquet and generates a data card for each file.
-
-In the November 2026 collection, I gathered 139,011 raw records: 29,761 for protein and RNA synthesis, 83,841 for enzymes and biocatalysis, and 25,409 for lipids and primary metabolites. Each file matched the OpenAlex count at collection time, and I checked for duplicate records. OpenAlex counts can change as the index changes.
-
-<figure class="case-visual diagram-visual"><a class="figure-link" href="/figures/biosynthesis-openalex-records.svg"><img src="/figures/biosynthesis-openalex-records.svg" width="1280" height="650" loading="lazy" alt="Horizontal bar chart of raw OpenAlex record counts collected in November 2026: protein and RNA synthesis, 29,761; enzymes and biocatalysis, 83,841; lipid and primary metabolites, 25,409. Each bar represents one subdomain query."><span class="full-size-link">Full size ↗</span></a><figcaption>My November 2026 OpenAlex raw-record collection across three biosynthesis subdomains.</figcaption></figure>
-
-## Checking the raw data
-
-I inspected the collection before organizing it. About 34% of records lacked abstracts and 9.4% were non-English. One lipid topic, sphingolipid signalling, made up 43% of that file and included many papers outside biosynthesis. I also identified retracted records and documented these quality issues for the next stage of dataset preparation.
+<figure class="case-visual diagram-visual"><a class="figure-link" href="/figures/biosynthesis-openalex-records.svg"><img src="/figures/biosynthesis-openalex-records.svg" width="1280" height="650" loading="lazy" alt="Horizontal bar chart of raw OpenAlex record counts collected in November 2026: protein and RNA synthesis, 29,761; enzymes and biocatalysis, 83,841; lipid and primary metabolites, 25,409. Each bar represents one subdomain query."><span class="full-size-link">Full size ↗</span></a><figcaption>Raw OpenAlex records collected in November 2026, by subdomain.</figcaption></figure>
