@@ -2,48 +2,50 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import portrait from '../../assets/ashmit-portrait.png';
+import { affiliation, researchQuestion } from '../data/profile';
 ---
 <Layout>
   <div class="container">
     <header class="introduction" id="about">
       <div id="background">
-        <p class="affiliation">Computer Science · NYU Abu Dhabi</p>
+        <p class="affiliation">{affiliation} · Class of 2027</p>
         <h1>Ashmit Mukherjee</h1>
-        <p>I study how AI advice shapes people’s decisions and whether simulations can predict how groups behave.</p>
-        <div class="intro-links"><a href="mailto:asm8879@nyu.edu">asm8879@nyu.edu</a><a href="https://github.com/Ansester" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+        <p>{researchQuestion} I want to study this in a computer science PhD starting in fall 2027.</p>
       </div>
-      <Image class="portrait" src={portrait} alt="Ashmit Mukherjee" width={144} height={144} format="webp" loading="eager" />
+      <Image class="portrait" src={portrait} alt="Ashmit Mukherjee" width={128} height={128} densities={[1, 2, 3]} format="webp" loading="eager" />
     </header>
 
     <section class="home-section" id="research" aria-labelledby="research-heading">
-      <h2 id="research-heading">Research</h2>
+      <h2 id="research-heading">Group decisions and AI</h2>
+      <p class="research-bridge">In the lab, I study how people make decisions with advice from AI. In my capstone, I give models the rules of a game and ask them to predict how human groups will do.</p>
       <article class="research-entry">
-        <h3><a href="/work/human-ai-collaboration/">Human–AI collaboration</a></h3>
-        <p class="byline">Faculty mentors at NYU Abu Dhabi · Professors <a href="https://scholar.google.com/citations?user=GAxIreYAAAAJ">Benjamin Rosche</a> and <a href="https://scholar.google.com/citations?user=9lTiKjwAAAAJ">Hanan Salam</a></p>
-        <p>I built the platform for our experiments on AI advice and cooperation, and I lead its development. Researchers can replay a game to see what advice each participant received, what they did next, and how much they earned.</p>
+        <h3><a href="/work/human-ai-collaboration/">AI advice and cooperation</a></h3>
+        <p>I built the Social Dynamics Lab’s experiment platform and lead its development. Each player can get private advice from a language model. We can vary whether the advisers talk to each other first and see what each player was told before they made their move.</p>
+        <p class="byline">NYU Abu Dhabi faculty mentors · Professors <a href="https://scholar.google.com/citations?user=GAxIreYAAAAJ">Benjamin Rosche</a> and <a href="https://scholar.google.com/citations?user=9lTiKjwAAAAJ">Hanan Salam</a></p>
       </article>
       <article class="research-entry">
-        <h3><a href="/work/synthetic-pilot-lab/">Synthetic Pilot Lab</a></h3>
-        <p class="byline">Independent computer science capstone · 2026</p>
-        <p>For my capstone, I tested how well language models predict the effect of punishment on group earnings across 20 public-goods game designs. I also built a simulator to test whether having the models play the games improves their forecasts.</p>
+        <h3><a href="/work/synthetic-pilot-lab/">Forecasting the effect of punishment on group earnings</a></h3>
+        <p>Would groups earn more if players could punish each other? Claude Haiku 4.5 and the human experts both expected a small gain. Across the 20 game designs, groups actually earned less on average with punishment. The original study’s regression made more accurate forecasts than either.</p>
       </article>
+    </section>
+
+    <section class="home-section" aria-labelledby="ebrain-heading">
+      <h2 id="ebrain-heading">Protein models and scientific literature</h2>
       <article class="research-entry" id="manuscript">
-        <h3><a href="/work/protein-language-models/">Bio-LoRA and protein models</a></h3>
-        <p class="byline">eBRAIN Lab · Co-first author, November 2026 manuscript (unpublished)</p>
-        <p>I developed training and evaluation pipelines for signal-peptide prediction and compared protein-model adaptation methods. In separate follow-up work, I tested residue-level biological features alongside LoRA.</p>
+        <h3><a href="/work/protein-language-models/">Bio-LoRA for protein language models</a></h3>
+        <p>At the eBRAIN Lab, I wrote the training and evaluation code for identifying signal peptides and predicting where they are cut. I’m a co-first author of Bio-LoRA, our manuscript on using amino-acid chemistry to initialize protein models.</p>
       </article>
       <article class="research-entry">
         <h3><a href="/work/biosynthesis-paper-database/">Biosynthesis paper database</a></h3>
-        <p class="byline">eBRAIN Lab · Project led by <a href="https://scholar.google.com/citations?user=USe518cAAAAJ">Minghao Shao</a>, with Professor <a href="https://scholar.google.com/citations?user=xSR276UAAAAJ">Muhammad Shafique</a> as faculty lead</p>
-        <p>I built the pipeline that collected 139,011 OpenAlex records for a biosynthesis database in November 2026. The lipid search also returned papers on signalling, which made its raw count a poor measure of biosynthesis coverage.</p>
+        <p>My pipeline collected 139,011 paper records for a study of how AI systems retrieve methods from the biosynthesis literature. About a third lacked abstracts. The lipid search also pulled in papers on cell signaling, a different question from how cells make lipids.</p>
+        <p class="byline">Led by <a href="https://scholar.google.com/citations?user=USe518cAAAAJ">Minghao Shao</a>, with faculty lead Professor <a href="https://scholar.google.com/citations?user=xSR276UAAAAJ">Muhammad Shafique</a></p>
       </article>
     </section>
 
     <section class="home-section" id="projects" aria-labelledby="projects-heading">
-      <div class="section-heading" id="experience"><h2 id="projects-heading">Other projects</h2><a href="/work/">All projects ↗</a></div>
-      <p>My team, SegfaultObservers (Team MENA), won the <a href="/work/csaw-llm-ctf/">CSAW 2026 LLM-CTF</a>. I built and ran the six-agent setup we used to solve challenges in parallel and check the answers.</p>
-      <p>I co-developed <a href="/work/roomwise/">RoomWise</a> to help people talk through furniture choices, swipe through listings, and see each selection in a room preview. <a href="/work/fieldlens/">FieldLens</a> is a local-model tool I built for querying incident records and checking the sources behind an answer.</p>
+      <div class="section-heading" id="experience"><h2 id="projects-heading">Software and competitions</h2><a href="/work/">All projects</a></div>
+      <p>My team, SegfaultObservers, took first place in the MENA region at the <a href="/work/csaw-llm-ctf/">CSAW LLM CTF Attack Competition</a>. I ran six agents in parallel and built the verifier we used to check their solutions.</p>
+      <p>With <a href="/work/fieldlens/">FieldLens</a>, I tested whether a local model could answer questions about a vehicle incident and show the camera or GPS records behind its answer. For <a href="/work/roomwise/">RoomWise</a>, I connected furniture listings to a room preview so shoppers can see how each chair fits as they swipe.</p>
     </section>
-
   </div>
 </Layout>

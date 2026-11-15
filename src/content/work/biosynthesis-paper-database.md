@@ -1,21 +1,17 @@
 ---
 title: "Biosynthesis paper database"
-summary: "A pipeline I built to collect biosynthesis paper records and check how closely each search matched its topic."
-category: "Research data collection"
-role: "Research assistant · biosynthesis data collection"
+summary: "I collected 139,011 OpenAlex records for a biosynthesis database and checked what the topic searches brought in."
+category: "Scientific information retrieval"
+role: "Research assistant"
 organization: "eBRAIN Lab, NYU Abu Dhabi"
-period: "Fall 2026 collection"
-status: "Research dataset"
+period: "Fall 2026"
+status: "Biosynthesis collection"
 order: 4
 tags: []
 visual: biosynthesis
 links: []
 ---
 
-At the eBRAIN Lab, [Minghao Shao](https://scholar.google.com/citations?user=USe518cAAAAJ) leads a project on how AI scientists find and use research papers, with Professor [Muhammad Shafique](https://scholar.google.com/citations?user=xSR276UAAAAJ) as faculty lead. I built the biosynthesis collection as a source for methods summaries and benchmarks of how well an AI system can retrieve a relevant paper.
+How well can an AI system find a paper that describes the method it needs? At the eBRAIN Lab, [Minghao Shao](https://scholar.google.com/citations?user=USe518cAAAAJ) leads a project on that question with Professor [Muhammad Shafique](https://scholar.google.com/citations?user=xSR276UAAAAJ) as faculty lead. I built the pipeline for its biosynthesis collection, gathering 139,011 OpenAlex records on protein and RNA synthesis, enzymes and biocatalysis, and lipid and primary metabolite synthesis.
 
-My pipeline searched OpenAlex for articles and reviews published from 2011 onward on protein and RNA synthesis, enzymes and biocatalysis, and lipids and primary metabolites. The November 2026 collection contained 139,011 raw records across the three searches. Each file matched its query count and contained no repeated OpenAlex IDs.
-
-About 34% of the records lacked abstracts, limiting what a retrieval system could learn from the metadata alone. Topic labels also proved too broad. Sphingolipid signalling accounted for 43% of the lipid file and brought in many papers on how lipids carry signals, outside the scope of biosynthesis.
-
-<figure class="case-visual diagram-visual"><a class="figure-link" href="/figures/biosynthesis-openalex-records.svg"><img src="/figures/biosynthesis-openalex-records.svg" width="1280" height="650" loading="lazy" alt="Horizontal bar chart of raw OpenAlex record counts collected in November 2026: protein and RNA synthesis, 29,761; enzymes and biocatalysis, 83,841; lipid and primary metabolites, 25,409. Each bar represents one subdomain query."><span class="full-size-link">Full size ↗</span></a><figcaption>Raw OpenAlex records collected in November 2026, by subdomain.</figcaption></figure>
+About a third of the records lacked an abstract, so a search of the metadata alone could miss a paper describing the right method. In the lipid collection, 43% of records came from a topic that groups sphingolipid metabolism with signaling. It pulled in papers about how cells use lipids to send signals as well as papers about how cells make them.

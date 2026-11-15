@@ -1,25 +1,23 @@
 ---
-title: "CSAW 2026 LLM-CTF"
-summary: "I built a parallel LLM-agent workflow for security challenges and won with SegfaultObservers (Team MENA)."
+title: "CSAW 2026 LLM CTF Attack Competition"
+summary: "First place, MENA region. I built the workflow that ran six Claude Code agents in parallel and checked their proposed solutions."
 category: "Security competition"
-role: "Agent workflow, verification, and evidence records"
-organization: "SegfaultObservers · Team MENA"
+role: "Agent workflow design and verification"
+organization: "SegfaultObservers"
 period: "November 2026"
-status: "Competition winner"
+status: "First place, MENA region"
 order: 5
 tags: []
 visual: csaw
 links:
-  - label: "Public submission and code"
+  - label: "Competition"
+    url: "https://csaw.io/competition/llm-ctf-attack-competition"
+  - label: "Code and submission"
     url: "https://github.com/Ansester/csaw26-llmac-ctf"
-  - label: "Approach"
-    url: "https://github.com/Ansester/csaw26-llmac-ctf/blob/master/submission/APPROACH.md"
-  - label: "Per-challenge record"
+  - label: "Challenge results"
     url: "https://github.com/Ansester/csaw26-llmac-ctf/blob/master/MANIFEST.md"
 ---
 
-I built and ran a system that assigned one Claude Code agent to each of six challenge categories. On harder problems, I ran competing solutions and used a verifier to try to reproduce their results. For one reverse-engineering challenge, we reconstructed a virtual machine hidden inside a Pure Data patch and tested candidate keys in a Python emulator.
+My teammates were [Maryam Emaan Fiyaz](https://intro.nyuadim.com/author/mef9957/), [Akshith Karthik](https://github.com/Ak1016-stack), and [Aadil Chasmawala](https://github.com/Aarz1401). Together we took first place in the MENA region as SegfaultObservers. I built and ran our agent workflow. Six Claude Code agents worked in parallel, one per challenge category. On the hardest problems, I had agents try different approaches and gave a separate agent the proposed solution to look for a flaw. On an audio puzzle, it found that the decoder reproduced a known piece of the flag without deriving it from the recording. We left that challenge unsolved.
 
-Our team recorded flag recoveries for 22 of 23 challenges. I documented how we obtained each flag, including cases where we used a reference or had already seen the answer. We left one audio challenge unsolved after verification showed that the proposed decoding had been fitted to the expected flag.
-
-<figure class="case-visual diagram-visual"><a class="figure-link" href="/figures/csaw-agent-workflow.svg"><img src="/figures/csaw-agent-workflow.svg" width="1280" height="760" loading="lazy" alt="Workflow diagram showing six parallel category agents for cryptography, forensics, web, binary exploitation, reverse engineering, and miscellaneous challenges. Their candidate outputs feed review of solver and service evidence, with adversarial verification or second-model analysis for selected hard cases. The output is a per-challenge record of a recovery or blocker, execution evidence, and assistance history. Review paths varied by challenge."><span class="full-size-link">Full size ↗</span></a></figure>
+We recovered flags for 22 of 23 challenges. The organizers allowed the reference files supplied with the challenges and ruled out web search. We used the supplied files for twelve recoveries. Our submission also identifies two prompts with an answer visible and one challenge where a second model found a solution method online.

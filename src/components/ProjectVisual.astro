@@ -1,9 +1,16 @@
 ---
 import { Image, getImage } from 'astro:assets';
+import humanGame from '../../assets/human-game-preview.png';
 import fieldlens from '../../assets/fieldlens-review.png';
 import roomwise from '../../assets/roomwise-sample.png';
 
 const screenshots = {
+  human: {
+    source: humanGame,
+    width: 1300,
+    alt: 'Two players’ previous contributions and earnings appear above six buttons for choosing the next contribution.',
+    caption: 'The participant screen in a test game. Players see how the previous round paid out before choosing their next contribution.',
+  },
   fieldlens: {
     source: fieldlens,
     width: 1440,
@@ -29,7 +36,7 @@ const full = await getImage({ src: source, width: source.width, format: 'webp' }
 <figure class:list={['case-visual', `${kind}-visual`]}>
   <a class="figure-link" href={full.src}>
     <Image src={source} alt={alt} width={width} format="webp" loading="lazy" />
-    <span class="full-size-link">Full size ↗</span>
+    <span class="full-size-link">View full size</span>
   </a>
   <figcaption>{caption}</figcaption>
 </figure>

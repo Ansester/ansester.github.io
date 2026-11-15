@@ -1,0 +1,90 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage{sourcesans}
+\usepackage{newtxmath}
+\usepackage[margin=24mm,top=21mm,bottom=20mm]{geometry}
+\usepackage{booktabs,tabularx,xcolor,microtype}
+\usepackage[colorlinks=true]{hyperref}
+
+\definecolor{ink}{HTML}{242A26}
+\definecolor{accent}{HTML}{2D5748}
+\definecolor{muted}{HTML}{505D55}
+\hypersetup{
+  urlcolor=accent,
+  pdftitle={Forecasting the effect of punishment on group earnings},
+  pdfauthor={Ashmit Mukherjee},
+  pdfsubject={A retrospective evaluation across 20 public-goods game designs}
+}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\newcommand{\minorheading}[1]{%
+  \par\vspace{5pt}{\sffamily\bfseries\large\color{accent}#1}\par\nobreak}
+\newcommand{\advisor}[2]{\href{#2}{#1}}
+
+\begin{document}
+\color{ink}
+{\sffamily\small\color{muted} NYU Abu Dhabi \hfill Computer Science Capstone \enspace / \enspace November 2026}\par
+{\color{accent}\hrule height .6pt}
+\vspace{15pt}
+{\fontsize{26}{29}\selectfont Forecasting the effect of punishment\\on group earnings\par}
+\vspace{2pt}
+{\sffamily\bfseries \href{https://ashmitmukherjee.com/}{Ashmit Mukherjee}}\par
+{\sffamily\small Advised by Professor \advisor{Hanan Salam}{https://scholar.google.com/citations?user=9lTiKjwAAAAJ} and Professor \advisor{Benjamin Rosche}{https://scholar.google.com/citations?user=GAxIreYAAAAJ}}\par
+
+\minorheading{The forecasting task}
+Punishment can encourage people to contribute more to a common fund, but imposing a penalty costs the group money. Can a language model predict the net effect on earnings? I used the 20 public-goods game designs that Alsobay and colleagues gave to human forecasters in their validation study.
+
+Each model saw 15 settings for one game, including group size, the return on contributions, and the cost of punishment. I gave it the average earnings of human groups that played without punishment and asked it to predict earnings with punishment. Earnings are expressed as a percentage of what the group would earn if everyone always contributed everything.
+
+I fixed the prompt and scoring rules before collecting model forecasts. The human outcomes were already public. I averaged each model’s valid forecasts within each design, then calculated root mean squared error (RMSE) across the 20 designs, weighting each design equally.
+
+\vspace{6pt}
+\noindent\begin{minipage}[t]{.48\textwidth}\vspace{0pt}
+{\sffamily\bfseries\large\color{accent}Forecast error}\par
+{\small Lower RMSE indicates greater accuracy.}\par
+\vspace{3pt}
+{\small\renewcommand{\arraystretch}{1.18}%
+\begin{tabularx}{\linewidth}{@{}Xr@{}}
+\toprule
+\textbf{Forecast} & \textbf{RMSE (points)}\\
+\midrule
+Elastic net & 4.52\\
+Ordinary linear regression & 5.22\\
+Claude Haiku 4.5 & 6.21\\
+Lay crowd & 6.42\\
+Expert crowd & 6.55\\
+Claude Sonnet 4.5 & 6.62\\
+Claude Sonnet 5.5 & 6.65\\
+Predict no change & 7.14\\
+GPT-5 & 9.28\\
+\bottomrule
+\end{tabularx}}\par
+{\footnotesize\color{muted} Both regressions are reported in the source study. I recalculated the crowd scores from its archived forecasts.}\par
+\end{minipage}\hfill
+\begin{minipage}[t]{.47\textwidth}\vspace{0pt}
+\setlength{\parskip}{5pt}
+{\sffamily\bfseries\large\color{accent}What the forecasts missed}\par
+\raggedright
+Across these 20 designs, group earnings fell by 2.2 percentage points on average with punishment. Three models and the expert crowd expected a gain. Sonnet 5.5 alone among the models predicted a loss. Its training cutoff came after publication of the human outcomes.
+
+The three Claude models and both human crowds improved on predicting no change by less than one point of RMSE. The elastic net improved on it by 2.62 points. GPT-5 had higher error than the no-change forecast and provided fewer forecasts per design after reaching its spending limit.
+
+Haiku had the lowest error among the language models. The 95\% interval for its RMSE minus the experts' was $-0.89$ to $+0.17$ points, from 10,000 paired resamples of the designs.
+\end{minipage}
+
+\minorheading{From forecasting to playing}
+I built a simulator for the seven designs played without chat. A two-design pilot tested whether groups of model players could finish a game. Whether playing improves on a direct forecast remains open.
+
+\vfill
+{\color{accent}\hrule height .5pt}
+\vspace{4pt}
+{\sffamily\small\color{muted}
+\href{https://arxiv.org/abs/2508.17151}{\textit{Integrative Experiments Identify How Punishment Impacts Welfare in Public Goods Games}} (2025).\\
+\href{https://scholar.google.com/citations?user=DxlsyhcAAAAJ}{Mohammed Alsobay},
+\href{https://scholar.google.com/citations?user=C0ANojIAAAAJ}{David G. Rand},
+\href{https://scholar.google.com/citations?user=LhOAiXMAAAAJ}{Duncan J. Watts}, and
+\href{https://scholar.google.com/citations?user=nrEeeY4AAAAJ}{Abdullah Almaatouq}.
+\enspace\href{https://doi.org/10.17605/OSF.IO/2D56W}{Data archive.}}\par
+\end{document}

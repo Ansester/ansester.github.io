@@ -1,13 +1,16 @@
 ---
 import '../styles/global.css';
+import { affiliation, researchProjects, researchQuestion } from '../data/profile';
 interface Props { title?: string; description?: string; noindex?: boolean; }
 const {
-  title = 'Ashmit Mukherjee — Computer Science, NYU Abu Dhabi',
-  description = 'I build research software and study human–AI cooperation, agent simulation, and protein language models at NYU Abu Dhabi.',
+  title = 'Ashmit Mukherjee · NYU Abu Dhabi',
+  description = `${affiliation}. ${researchQuestion}`,
   noindex = false,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const isWork = Astro.url.pathname.startsWith('/work');
+const path = Astro.url.pathname;
+const isResearch = researchProjects.some(id => path === `/work/${id}/`);
+const projectsCurrent = path === '/work/' ? 'page' : path.startsWith('/work/') && !isResearch ? 'location' : undefined;
 ---
 <!doctype html>
 <html lang="en">
@@ -19,6 +22,8 @@ const isWork = Astro.url.pathname.startsWith('/work');
     {noindex && <meta name="robots" content="noindex" />}
     <title>{title}</title>
     <link rel="canonical" href={canonical} />
+    <link rel="icon" sizes="any" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -33,7 +38,7 @@ const isWork = Astro.url.pathname.startsWith('/work');
     <meta name="twitter:image" content="https://ashmitmukherjee.com/social-card.png" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org', '@type': 'Person', name: 'Ashmit Mukherjee',
-      url: 'https://ashmitmukherjee.com/', jobTitle: 'Computer Science Student',
+      url: 'https://ashmitmukherjee.com/', jobTitle: 'Computer science undergraduate', description: researchQuestion,
       affiliation: { '@type': 'CollegeOrUniversity', name: 'New York University Abu Dhabi' },
       email: 'mailto:asm8879@nyu.edu',
       sameAs: ['https://github.com/Ansester', 'https://www.linkedin.com/in/ashmit-mukherjee/'],
@@ -43,18 +48,18 @@ const isWork = Astro.url.pathname.startsWith('/work');
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="/" aria-label="Ashmit Mukherjee, home"><span>Ashmit Mukherjee</span></a>
+        <a class="brand" href="/" aria-label="Ashmit Mukherjee, home" aria-current={path === '/' ? 'page' : undefined}><span>Ashmit Mukherjee</span></a>
         <nav aria-label="Main navigation">
-          <a href="/#research">Research</a>
-          <a href="/work/" aria-current={isWork ? 'page' : undefined}>Projects</a>
+          <a href="/#research" aria-current={isResearch ? 'location' : undefined}>Research</a>
+          <a href="/work/" aria-current={projectsCurrent}>Projects</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer container" id="contact">
-      <div class="contact-heading"><h2>Get in touch</h2><a class="contact-email" href="mailto:asm8879@nyu.edu">asm8879@nyu.edu</a></div>
-      <div class="footer-bottom"><span>© {new Date().getFullYear()} Ashmit Mukherjee</span><div><a href="https://github.com/Ansester" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/ashmit-mukherjee/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><button class="copy-email" type="button" hidden>Copy email</button></div></div>
+      <div class="contact-heading"><h2>Contact</h2><Fragment set:html={'<!--email_off--><a class="contact-email" href="mailto:asm8879@nyu.edu">asm8879@nyu.edu</a><!--/email_off-->'} /></div>
+      <div class="footer-bottom"><span>© {new Date().getFullYear()} Ashmit Mukherjee</span><div><a href="https://github.com/Ansester">GitHub</a><a href="https://www.linkedin.com/in/ashmit-mukherjee/">LinkedIn</a><button class="copy-email" type="button" hidden>Copy email</button></div></div>
       <p class="copy-status" role="status" aria-live="polite"></p>
     </footer>
     <script>

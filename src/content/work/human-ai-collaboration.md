@@ -1,10 +1,10 @@
 ---
-title: "Human–AI collaboration"
-summary: "An experiment platform I built to study AI advice and cooperation."
+title: "AI advice and cooperation"
+summary: "Does it matter whether AI advisers talk to one another before giving players advice?"
 category: "Research engineering"
-role: "Research assistant · developer and technical lead"
+role: "Undergraduate researcher"
 organization: "Social Dynamics Lab, NYU Abu Dhabi"
-period: "Began in 2026"
+period: "2026–present"
 status: "Faculty research"
 order: 1
 tags: [Experimental systems, Python, AI agents, Evaluation]
@@ -16,8 +16,8 @@ links:
     url: "https://benrosche.com/social-dynamics-lab/"
 ---
 
-A player in a public-goods game can earn more by contributing less, even when the whole group would benefit from cooperation. We study how AI advice affects choices like this. I’m interested in whether that advice still influences people when they play again without it.
+When people have to decide how much to contribute to a common fund, does it matter whether their AI advisers talk to one another first? I built the experiment platform and lead its development. Our NYU Abu Dhabi faculty mentors are Professor [Benjamin Rosche](https://scholar.google.com/citations?user=GAxIreYAAAAJ), who leads the Social Dynamics Lab, and Professor [Hanan Salam](https://scholar.google.com/citations?user=9lTiKjwAAAAJ), who directs the Social Machines and Robotics Lab.
 
-I built the experiment platform and lead its development with Professor [Benjamin Rosche](https://scholar.google.com/citations?user=GAxIreYAAAAJ) and Professor [Hanan Salam](https://scholar.google.com/citations?user=9lTiKjwAAAAJ) as our NYU Abu Dhabi faculty mentors. I wrote the engines for three games and built the interfaces players use to receive private advice and make decisions.
+In one version of the experiment, each language model advises its player privately. In another, the advisers discuss a plan before making their recommendations. Each player decides how to act. The platform records what each player could see at that point, so we can trace a decision back to the advice they received.
 
-The platform records what each player could see when they made a move. I tested the advisers with model players in the minimum-effort, public-goods, and Snowdrift games. The simulator I built can replay those moves and reconstruct each player’s earnings.
+I tested the advisers with model players in public-goods, minimum-effort and Snowdrift games. We don’t yet have a confirmed date to start recruiting people. I want to know whether the advice still shapes their choices when they play again without it.

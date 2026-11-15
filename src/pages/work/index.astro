@@ -1,13 +1,36 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-const projects = (await getCollection('work')).sort((a,b)=>a.data.order-b.data.order);
+import { researchProjects, softwareProjects } from '../../data/profile';
+const projects = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+const groups = [
+  { title: 'Research', ids: researchProjects },
+  { title: 'Software and competitions', ids: softwareProjects },
+];
+const earlier = projects.filter(project => !groups.some(group => group.ids.includes(project.id)));
 ---
-<Layout title="Projects · Ashmit Mukherjee" description="Research software, model evaluations, and applications built by Ashmit Mukherjee.">
+<Layout title="Projects · Ashmit Mukherjee" description="My research on AI advice, cooperation, and protein language models at NYU Abu Dhabi, alongside selected software projects.">
   <div class="container projects-page">
     <header class="page-intro"><h1>Projects</h1></header>
-    <section class="project-list" aria-label="All projects">{projects.map(p=><article class="project-row"><div><h2><a href={`/work/${p.id}/`}>{p.data.title}</a></h2><p>{p.data.summary}</p></div><span class="byline">{p.data.status}{p.data.period && ` · ${p.data.period}`}</span></article>)}
-      <article class="project-row"><div><h2><a href="https://github.com/Ansester/crime-prediction-ml" target="_blank" rel="noopener noreferrer">Community crime data analysis ↗</a></h2><p>I analyzed regression models across 1,994 U.S. communities and built an app for exploring the data, using one holdout split for evaluation.</p></div><span class="byline">Course project · Spring 2025</span></article>
-    </section>
+    {groups.map(group => (
+      <section class="project-group">
+        <h2>{group.title}</h2>
+        <div class="project-list">
+          {projects.filter(project => group.ids.includes(project.id)).map(project => (
+            <article class="project-row">
+              <h3><a href={`/work/${project.id}/`}>{project.data.title}</a></h3>
+              <p>{project.data.summary}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+    <details class="archive">
+      <summary>Earlier projects and coursework</summary>
+      <ul>
+        {earlier.map(project => <li><a href={`/work/${project.id}/`}>{project.data.title}</a></li>)}
+        <li><a href="https://github.com/Ansester/crime-prediction-ml">Community crime data analysis (GitHub)</a></li>
+      </ul>
+    </details>
   </div>
 </Layout>

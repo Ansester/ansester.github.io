@@ -69,21 +69,24 @@ assert.equal(research.querySelector('meta[http-equiv="refresh"]')?.getAttribute(
 assert(home.getElementById('manuscript'), 'Homepage manuscript anchor missing');
 for (const name of ['index.html','work/protein-language-models/index.html']) {
   const text = documents.get(join(root,name)).body.textContent;
-  assert.match(text,/co-first author/i, `${name}: manuscript contribution missing`);
-  assert.match(text,/unpublished/i, `${name}: manuscript must be labeled unpublished`);
+  assert.match(text,/co-first author|share first authorship/i, `${name}: manuscript contribution missing`);
+  assert.match(text,/manuscript/i, `${name}: manuscript status missing`);
+  if (name.startsWith('work/')) assert.match(text, /revis(ed|ing).*submission|resubmission/i, 'Manuscript revision status missing');
 }
 const capstone = documents.get(join(root,'work/synthetic-pilot-lab/index.html')).body.textContent;
 assert.match(capstone,/20 archived experimental designs/, 'Forecast evaluation scope missing');
 assert.match(capstone,/feasibility pilot on two designs/, 'Simulation pilot scope missing');
 assert.match(documents.get(join(root,'work/human-ai-collaboration/index.html')).body.textContent,/model players/,'Human–AI pilot population missing');
 assert(!home.querySelector('a[href*="payoff-integrity-check"]'), 'Internal test report returned to the homepage');
-const comparison = JSON.parse(readFileSync('src/data/protein-comparison.json','utf8'));
-const summaryCSV = readFileSync(join(root,'research/protein-comparison.csv'),'utf8');
-const protein = documents.get(join(root,'work/protein-language-models/index.html'));
-for (const method of comparison.methods) {
-  assert(summaryCSV.includes(`${method.mean.toFixed(2)},${method.sd.toFixed(2)}`), 'Figure data export differs from source summaries');
-  assert(protein.body.textContent.includes(`${method.mean.toFixed(2)}% ± ${method.sd.toFixed(2)} pp`), 'Accessible results table differs from source summaries');
+const scores = documents.get(join(root, 'work/synthetic-pilot-lab/index.html')).querySelectorAll('tbody tr');
+assert.equal(scores.length, 9, 'Forecast table must include both regression scores and the no-change baseline');
+assert([...scores].some(row => row.textContent.includes('Predict no change') && row.textContent.includes('7.14')));
+const protein = documents.get(join(root, 'work/protein-language-models/index.html'));
+assert.doesNotMatch(protein.body.textContent, /86\.08|83\.64/, 'Unverified protein ranking must stay off the public page');
+for (const extension of ['svg', 'csv']) {
+  assert(!existsSync(join(root, `research/protein-comparison.${extension}`)), 'Withdrawn comparison must not be public');
 }
+assert(home.body.textContent.includes('Class of 2027'), 'Degree context missing');
 assert(!existsSync(join(root,'cv.pdf')),'Application CV must not be hosted on the website');
 for (const [path,doc] of documents) assert(!doc.querySelector('a[href="/cv.pdf"]'),`${relative(root,path)}: public CV link returned`);
 assert.equal(readFileSync(join(root,'CNAME'),'utf8').trim(),'ashmitmukherjee.com');

@@ -12,7 +12,7 @@ visual: salary
 links:
   - label: "Source code"
     url: "https://github.com/Ansester/salary-prediction-ml"
-  - label: "Evaluation record"
+  - label: "Test results"
     url: "https://github.com/Ansester/salary-prediction-ml/blob/HEAD/results/holdout.json"
   - label: "Teaching dataset"
     url: "https://github.com/PlayingNumbers/ds_salary_proj"

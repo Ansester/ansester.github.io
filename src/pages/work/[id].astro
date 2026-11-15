@@ -2,26 +2,29 @@
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import ProjectVisual from '../../components/ProjectVisual.astro';
-import ProteinComparison from '../../components/ProteinComparison.astro';
+import { researchProjects } from '../../data/profile';
+
 export async function getStaticPaths() {
   return (await getCollection('work')).map(post => ({ params: { id: post.id }, props: { post } }));
 }
 const { post } = Astro.props;
 const { Content } = await render(post);
-const research = ['human-ai-collaboration','protein-language-models','synthetic-pilot-lab','biosynthesis-paper-database'].includes(post.id);
+const research = researchProjects.includes(post.id);
 ---
 <Layout title={`${post.data.title} · Ashmit Mukherjee`} description={post.data.summary}>
   <article class="container case-page">
     <header class="case-header">
-      <a class="back-link" href={research ? '/#research' : '/work/'}>← {research ? 'Research' : 'Projects'}</a>
+      <a class="back-link" href={research ? '/#research' : '/work/'}><span aria-hidden="true">← </span>{research ? 'Research' : 'Projects'}</a>
       <h1>{post.data.title}</h1>
-      <p class="case-credit">{post.data.role}<br />{post.data.organization}</p>
-      <p class="byline">{post.data.status}{post.data.period && ` · ${post.data.period}`}</p>
-      {post.data.links.length>0 && <div class="inline-links">{post.data.links.map(link=><a href={link.url} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}</div>}
+      <p class="case-credit">{post.data.role} · {post.data.organization}</p>
+      {post.data.period && <p class="byline">{post.data.period}</p>}
     </header>
     <div class="prose"><Content /></div>
-    {post.data.visual === 'protein' && <div class="case-figure"><ProteinComparison /></div>}
-    {(post.data.visual === 'fieldlens' || post.data.visual === 'roomwise') && <ProjectVisual kind={post.data.visual} />}
-    <footer class="case-end"><a href={research ? '/#research' : '/work/'}>{research ? 'Back to research' : 'All projects'}</a></footer>
+    {(post.data.visual === 'human' || post.data.visual === 'fieldlens' || post.data.visual === 'roomwise') && <ProjectVisual kind={post.data.visual} />}
+    {post.data.links.length > 0 && (
+      <footer class="case-sources">
+        <div class="inline-links">{post.data.links.map(link => <a href={link.url}>{link.label}</a>)}</div>
+      </footer>
+    )}
   </article>
 </Layout>

@@ -1,0 +1,22 @@
+Question topic,Method,Displayed answer,All required facts in original answer
+Incident overview,Rule-based summary,Original answer,Yes
+Incident overview,Model selecting facts,Original answer,No
+Incident overview,Model writing freely,Original answer,No
+Current GPS fix,Rule-based summary,Original answer,Yes
+Current GPS fix,Model selecting facts,Original answer,Yes
+Current GPS fix,Model writing freely,Rule-based fallback,Not scored (fallback)
+Stale GPS fix,Rule-based summary,Original answer,Yes
+Stale GPS fix,Model selecting facts,Original answer,Yes
+Stale GPS fix,Model writing freely,Rule-based fallback,Not scored (fallback)
+Change in speed,Rule-based summary,Original answer,Yes
+Change in speed,Model selecting facts,Original answer,Yes
+Change in speed,Model writing freely,Original answer,No
+Conflicting camera observations,Rule-based summary,Original answer,Yes
+Conflicting camera observations,Model selecting facts,Original answer,Yes
+Conflicting camera observations,Model writing freely,Original answer,No
+Missing camera evidence,Rule-based summary,Original answer,Yes
+Missing camera evidence,Model selecting facts,Original answer,Yes
+Missing camera evidence,Model writing freely,Rule-based fallback,Not scored (fallback)
+Instructions embedded in a procedure,Rule-based summary,Original answer,Yes
+Instructions embedded in a procedure,Model selecting facts,Original answer,Yes
+Instructions embedded in a procedure,Model writing freely,Rule-based fallback,Not scored (fallback)

@@ -1,8 +1,8 @@
 ---
 title: "Named-entity recognition in Hinglish"
-summary: "Evaluating entity recognition in text that switches between Hindi and English."
+summary: "How well do multilingual models recognize names in text that switches between Hindi and English?"
 category: "Multilingual NLP"
-role: "Training pipelines, evaluation, and error analysis"
+role: "Training and evaluation"
 organization: "NYU Abu Dhabi"
 period: "Fall 2025"
 status: "Course project"
@@ -10,10 +10,16 @@ order: 8
 tags: [PyTorch, Transformers, mBERT, XLM-RoBERTa]
 visual: ner
 links:
-  - label: "Source code"
-    url: "https://github.com/Ansester/hinglish-ner-research"
+  - label: "Team presentation and results"
+    url: "https://docs.google.com/presentation/d/1GjE8JbgA_ZhB4hURyWyFlw7prpqojoP13Gg2d-07yyk/view"
+  - label: "Course project code"
+    url: "https://github.com/Ansester/hinglish-ner-research/tree/c799e7d89105e73761b0261a534fa956313c9864"
+  - label: "Original test data"
+    url: "https://huggingface.co/datasets/LingoIITGN/COMI-LINGUA/blob/a6b719588f14b3e29f4e0c93e7201a5d55199779/NER_test.csv"
 ---
 
-With [Akshith Karthik](https://github.com/Ak1016-stack), [Harsh Agarwal](https://github.com/harshagarwalnyu), and [Lovnish Julka](https://nyunetimpact.org/lovnish-julka), I studied how multilingual models recognize named entities in COMI-LINGUA, a Hindi–English dataset. I built the training and evaluation pipelines for mBERT and XLM-RoBERTa. The two models can split the same word differently, so I mapped their predictions back to the original words before scoring them.
+Hindi and English often share a sentence in informal writing. With [Akshith Karthik](https://github.com/Ak1016-stack), [Harsh Agarwal](https://github.com/harshagarwalnyu), and [Lovnish Julka](https://nyunetimpact.org/lovnish-julka), I studied how well multilingual models could tag names in Roman-script Hinglish. I built the training and evaluation pipelines for mBERT and XLM-RoBERTa using the COMI-LINGUA dataset.
 
-I evaluated the encoders on 4,829 test examples and tested zero-shot language models on a separate sample of 100.
+We measured whether each word had the right label. Across 25,246 words in 4,829 test examples, XLM-RoBERTa reached 89.7% accuracy and mBERT reached 89.0%. Always predicting “not an entity” would score 31.7%. Even the most common label in the test set, “person,” covered only 32.8% of the words.
+
+In a separate zero-shot test on 100 of those examples, GPT-4o often returned an empty list for sentences that contained names.

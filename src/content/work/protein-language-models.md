@@ -1,30 +1,27 @@
 ---
-title: "Bio-LoRA and protein-model evaluation"
-summary: "Training and evaluation pipelines for adapting protein language models to signal-peptide prediction."
+title: "Bio-LoRA for protein language models"
+summary: "I wrote the signal-peptide training and evaluation code for Bio-LoRA, a method that uses biochemical information to initialize protein model adapters."
 category: "Machine learning research"
-role: "Co-first author · signal-peptide modeling and evaluation"
+role: "Co-first author"
 organization: "eBRAIN Lab, NYU Abu Dhabi"
 period: "2026"
-status: "Unpublished manuscript and follow-up experiments"
+status: "Manuscript in preparation for resubmission, October 2026"
 order: 3
 tags: [ESM-2, LoRA, Signal peptides, HPC]
 visual: protein
 links:
-  - label: "Signal-peptide container"
+  - label: "Signal-peptide software"
     url: "https://hub.docker.com/r/ashmit1308/biolora-signalp"
-  - label: "SignalP 6.0 background"
-    url: "https://www.nature.com/articles/s41587-021-01156-3"
 ---
 
-Signal peptides help direct proteins for secretion or transport across a membrane. As a co-first author of the Bio-LoRA manuscript, I developed the code to train and evaluate models that identify these peptides and predict where they are cut. Our method uses biological matrices and ESM-2 embeddings to initialize low-rank adapters.
+Can the chemistry of amino acids give a protein model a better starting point for a new task? In Bio-LoRA, we used patterns of amino-acid substitution and chemical similarity to initialize ESM-2’s low-rank adapters. This keeps the number of trainable parameters the same as in standard LoRA.
 
-In separate follow-up experiments, I tested whether adding biological features for each amino acid to the model’s hidden states improved cleavage-site prediction. I compared this approach with standard LoRA and full fine-tuning at three ESM-2 model sizes. At 650M parameters, the saved three-seed comparison gave 86.08% exact cleavage-site matches with BLOSUM62 features and 83.64% with standard LoRA.
+I wrote the training and evaluation code for the signal-peptide task, where the model identifies proteins that carry a targeting sequence and predicts where that sequence is cut.
 
-Of the 1,231 signal-peptide-positive sequences scored on SP5, 549 also appear in the fitting split in the available files. The original run inputs remain unverified, so performance on unseen proteins is unresolved.
+We also tested whether the model could rank mutations by their measured effect on alpha-synuclein. In our May manuscript, the model initialized with the BLOSUM62 substitution matrix reached a Spearman correlation of 0.45 on that task, compared with 0.43 for standard LoRA and 0.55 for full fine-tuning.
 
-<details>
-<summary>Manuscript record</summary>
+## Manuscript
 
-[Dheyab Saleh Abubaker](https://openreview.net/profile?id=~Dheyab_Saleh_Abubaker1), [Mohammed Faheem](https://openreview.net/profile?id=~Mohammed_Faheem1), [Ashmit Shankar Mukherjee](/), [Saya Othman](https://openreview.net/profile?id=~Saya_Othman1), [Saad Sifar](https://openreview.net/profile?id=~Saad_Sifar1), [Srijan Sthapit](https://openreview.net/profile?id=~Srijan_Sthapit1), [Yusong Wang](https://openreview.net/profile?id=~Yusong_Wang2), [Minghao Shao](https://scholar.google.com/citations?user=USe518cAAAAJ), and [Muhammad Shafique](https://scholar.google.com/citations?user=xSR276UAAAAJ). Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation. November 2026 manuscript (unpublished). Co-first author.
+*Bio-LoRA: Biological Priors as Inductive Bias for Low-Rank Adaptation*. In October 2026 we were preparing a revised submission. All nine authors listed below share first authorship.
 
-</details>
+[Dheyab Saleh Abubaker](https://openreview.net/profile?id=~Dheyab_Saleh_Abubaker1), [Mohammed Faheem](https://openreview.net/profile?id=~Mohammed_Faheem1), [Ashmit Shankar Mukherjee](/), [Saya Othman](https://openreview.net/profile?id=~Saya_Othman1), [Saad Sifar](https://openreview.net/profile?id=~Saad_Sifar1), [Srijan Sthapit](https://openreview.net/profile?id=~Srijan_Sthapit1), [Yusong Wang](https://openreview.net/profile?id=~Yusong_Wang2), [Minghao Shao](https://scholar.google.com/citations?user=USe518cAAAAJ), and Professor [Muhammad Shafique](https://scholar.google.com/citations?user=xSR276UAAAAJ), director of the eBRAIN Lab.
